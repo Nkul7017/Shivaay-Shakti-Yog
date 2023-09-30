@@ -22,37 +22,39 @@ const DeskNavbar = () => {
   });
   return (
     <>
-      <div className="hidden sm:flex justify-between md:px-20 sm:px-4 text-center items-center">
+      <div className="hidden lg:flex justify-between md:px-8 sm:px-4 text-center items-center">
         <div>
           {" "}
-          <img className="h-[180px] -mt-10 w-[170px] " src={logo} alt="" />
+          <img className="h-[200px] -mt-10 w-[200px] " src={logo} alt="" />
         </div>
-        <div className="flex sm:gap-x-4 -mt-12 md:gap-x-14 items-center">
+        <div className="flex sm:gap-x-4 -mt-12 md:gap-x-12 items-center">
           <Link to="/">
             <span>Home</span>
+          </Link>
+          <Link to="/">
+            <span>Programs</span>
           </Link>
           <Link to="/about-us">
             <span>About Us</span>
           </Link>
           <Link to="/contact-us">
-            <span>Contact Us</span>
+            <span>Channels</span>
           </Link>
-          {/* {
-Logged == true &&
-
-
-                <span className="text-black hover:text-yellow-400">
-                  <Link to="/category/our-programs" className=" font-medium">
-                    Our Courses
-                  </Link>
-                </span>
-} */}
-          {Logged == false ? (
-            <span className="text-black   hover:text-yellow-400">
-              <Link to="/Login" className=" font-medium ">
-                Login/Sign Up
-              </Link>
+          {!Logged == false ? (
+            <>
+            <div className="flex gap-4">
+              <Link to="/Login" className=" button3 ">
+            <span className="">
+                Login
             </span>
+              </Link>
+              <Link to="/Login" className=" button2 ">
+            <span className="">
+                Sign Up
+            </span>
+              </Link>
+            </div>
+            </>
           ) : (
             <>
               <div className="  items-center hover:text-yellow-400 cursor-pointer ">

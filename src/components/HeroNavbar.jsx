@@ -45,12 +45,12 @@ export default function HeroNavbar({ login }) {
 
   return (
     <>
-      <Disclosure as="nav" className="sm:hidden -mt-2 pt-[20px]">
+      <Disclosure as="nav" className="lg:hidden -mt-2 pt-[20px]">
         {({ open }) => (
           <>
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 ">
               <div className="relative flex flex-row-reverse h-16 items-center justify-between">
-                <div className="flex flex-1 items-start sm:items-stretch sm:justify-start">
+                <div className="flex flex-1 items-start lg:items-stretch lg:justify-start">
                   <div className="flex items-center">
                     <img
                       className="block lg:hidden"
@@ -80,7 +80,7 @@ export default function HeroNavbar({ login }) {
                     </div>
                   </div>
                 </div>
-                <div className="absolute inset-y-0 right-0 top-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                <div className="absolute inset-y-0 right-0 top-0 flex items-center pr-2 lg:static lg:inset-auto lg:ml-6 lg:pr-0">
                   <Menu as="div" className=" ml-3">
                     <Disclosure.Button className="inline-flex items-center  justify-center rounded-md  ">
                       {open ? (
@@ -100,7 +100,7 @@ export default function HeroNavbar({ login }) {
               </div>
             </div>
 <div className=" ">
-            <Disclosure.Panel className="sm:hidden flex absolute top-12 right-7 justify-end items-center text-center">
+            <Disclosure.Panel className="lg:hidden flex absolute top-12 right-7 justify-end items-center text-center">
               <div className="space-y-1   pb-3 pt-2">
                 {navigation.map((item) =>
                   item.name == "Login" && Logged ? (
