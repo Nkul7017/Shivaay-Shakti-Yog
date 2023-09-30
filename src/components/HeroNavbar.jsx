@@ -17,6 +17,7 @@ function classNames(...classes) {
 }
 
 export default function HeroNavbar({ login }) {
+ 
   const [Logged, setLogged] = useState(false);
   const [id, setId] = useState(false);
 

@@ -4,6 +4,8 @@ import logo from "../../public/letter-head_CLR.png";
 import bgVideo from "../../public/hero.mp4";
 import bgVideo1 from "../../public/heroNew.mp4";
 import logovideo from '../../public/loutput.gif'
+import { useSelector, useDispatch } from 'react-redux'
+import { decrement, increment } from '../features/counter/counterSlice'
 import { HiChevronDown } from "react-icons/hi2";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -15,21 +17,26 @@ AOS.init({
 });
 
 const NewHero = () => {
+  const count = useSelector((state) => state.counter.value)
+  const dispatch = useDispatch()
   console.log(logovideo)
   const [show, setShow] = useState(false);
   const [shurveyPopup, setShurveyPopup] = useState(false);
   const [login, setLogin] = useState(false);
 
   useEffect(() => {
+    if(count==0){
     document.body.style.overflow = 'hidden';
     const timeout=setTimeout(() => {
       document.body.style.overflow = 'auto';
-      setShow(!show);
+      dispatch(increment());
+  setShow();
     }, 2000);
     return () => {
+     
       clearTimeout(timeout);
-    };
-  }, []);
+    };}
+  }, [show]);
 
   return (
     <>
@@ -80,7 +87,7 @@ const NewHero = () => {
                 Take a Free Health Survey
                 </button>
                 </div>
-                <div className={` hidden lg:flex justify-center     w-[100vw] h-[100vh]    absolute top-0 left-0 ${show?" w-[480px]    h-[480px]    relative       ":"bg-[#f6f8ef] "} `} style={{transition:"0.3s width,0.3s height"}}  >
+                <div className={` hidden lg:flex justify-center     w-[100vw] h-[100vh]    absolute top-0 left-0 ${count?" w-[480px]    h-[480px]    relative       ":"bg-[#f6f8ef] "} `} style={{transition:"0.3s width,0.3s height"}}  >
                 
                 <img src={logovideo} alt=""  className={` ${!show?"":"w-[480px]    h-[480px]"}   `} />
                 

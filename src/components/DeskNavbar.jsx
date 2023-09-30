@@ -37,7 +37,7 @@ const DeskNavbar = () => {
           <Link to="/about-us">
             <span>About Us</span>
           </Link>
-          <Link to="/contact-us">
+          <Link to="#">
             <span>Channels</span>
           </Link>
           {!Logged == false ? (

@@ -1,7 +1,7 @@
 import React from "react";
 import Filter from "../components/Filter";
 import Sidebar from "../components/Sidebar";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/HeroNavbar";
 import DeskNavbar from "../components/DeskNavbar";
 import Footer from "../components/Footer";
 
