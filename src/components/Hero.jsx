@@ -12,7 +12,7 @@ function Hero() {
               <h1 className="title-font sm:text-xl text-3xl mb-4 font-normal text-yellow-500">
                 Shivay Shakti
               </h1>
-              <h1 className="title-font sm:text-6xl text-3xl mb-4 font-bold text-black">
+              <h1 className="title-font sm:text-6xl text-xl mb-2 font-bold text-black">
                 Better Health
                 <br />
                 Better Lifestyle

@@ -19,7 +19,7 @@ function Footer() {
             </a>
           </div>
 
-          <div className="text-2xl flex heading justify-center items-center w-[80vw]  mx-auto flex-wrap gap-x-28 gap-y-4">
+          <div className="text-2xl flex sm:flex-row flex-col heading justify-center items-center w-[80vw]  mx-auto flex-wrap gap-x-28 gap-y-4">
               <Link>HOME</Link>
               <Link>PROGRAMS</Link>
               <Link>ABOUT</Link>

@@ -41,7 +41,7 @@ const arry = [
 export default function Testimonial() {
   return (
     <section className="py-32">
-        <p className="text-4xl pl-3 sm:pl-10 heading mb-8 ">Testimonials</p>
+        <p className="text-4xl pl-8 sm:pl-40 heading mb-2 ">Testimonials</p>
       <div className="container  text-justify w-[90vw] md:w-[85vw] lg:w-[90vw]   mx-auto   ">
 
         <Carousel
@@ -57,7 +57,7 @@ export default function Testimonial() {
      
         >
           {arry.map((testimonial, index) => (
-            <div className="mt-8  w-[88vw] mx-auto sm:w-full h-[600px]  sm:h-[550px]    lg:h-[500px]  flex items-center    " key={index}>
+            <div className="mt-8  w-[84vw] mx-auto sm:w-full h-[600px]  sm:h-[550px]    lg:h-[500px]  flex items-center    " key={index}>
               <TestimonialCard {...testimonial} />
             </div>
           ))}
@@ -94,7 +94,7 @@ const TestimonialCard = ({ img, name, ptag, designation }) => (
       </div>
     </div>
 
-    <div className=" md:hidden border rounded-lg flex flex-col justify-center items-center  bg-[#B7DFC7]  shadow-md   pt-5   ">
+    <div className=" md:hidden border rounded-lg flex flex-col justify-center items-center  bg-[#B7DFC7]  shadow-md   py-4   ">
       <div className=" h-[50%]     ">
         <img
           src={img}

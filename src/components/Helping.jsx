@@ -2,10 +2,10 @@ import React from "react";
 import helping from "../../public/helping.png";
 function Helping() {
   return (
-    <div className=" grid  lg:grid-cols-2 w-[80vw] h-[900px] sm:h-[700px] mx-auto   sm:mt-0  sm:space-y-0  ">
-      <div className={` row-start-2 sm:row-auto my-auto space-y-2  rounded-md  `} >
-        <div className=" space-y-2 sm:w-[70%] ">
-          <h1 className=" text-3xl sm:text-4xl heading    "> For The Betterment of Humanity</h1>
+    <div className=" grid  lg:grid-cols-2 w-[80vw] h-[900px] sm:h-[700px] mx-auto   sm:mt-0  sm:space-y-0 mb-8 ">
+      <div className={` row-start-2 sm:row-auto my-2 sm:my-auto space-y-2  rounded-xl  `} >
+        <div className=" space-y-2 sm:w-[70%] -ml-2 sm:-ml-0">
+          <h1 className=" text-4xl heading "> For The Betterment of Humanity</h1>
           {/* <h1 className=" text-md sm:text-2xl heading ">
           For The Betterment of Humanity
           </h1> */}
@@ -14,10 +14,10 @@ function Helping() {
           </p>
         </div>
       </div>
-      <div className=" row-start-1 sm:row-auto grid sm:place-content-center mt-10 sm:mt-0  ">
+      <div className=" row-start-1 -ml-2 sm:ml-0 w-[84vw] mx-auto sm:w-auto sm:row-auto grid sm:place-content-center mt-10 sm:mt-0  ">
         <img
           src={helping}
-          className=" h-[400px] sm:w-[694px] sm:h-[550px]  object-cover "
+          className=" h-[400px]  sm:w-[694px] sm:h-[550px]  object-cover "
           alt=""
           style={{
             borderRadius: "10px",

@@ -17,7 +17,7 @@ export default function Article() {
 
   return (
     <div className=" w-[100vw] sm:w-[93vw] mx-auto overflow-scroll   scrollbar-hide ">
-      <h1 className=" pl-4 sm:pl-28 heading text-4xl  sm:pt-8 pb-10  sm:pb-16  ">
+      <h1 className=" pl-8 sm:pl-28 heading text-4xl  sm:pt-8 pb-10  sm:pb-16  ">
         News and Articles
       </h1>
       <Flickity

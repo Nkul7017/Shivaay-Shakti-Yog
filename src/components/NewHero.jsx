@@ -48,22 +48,22 @@ const NewHero = () => {
             <div className="content     ">
               <HeroNavbar login={login}></HeroNavbar>
               <div className="flex   justify-between     pr-10   w-[83vw] ms-6 lg:ms-36 mx-auto h-auto    ">
-                <div className="  flex flex-col mt-7 pl-0 md:pl-12 lg:pl-16   lg:w-1/2    ">
+                <div className="  flex flex-col mt-16 sm:mt-10 pl-0 md:pl-12 lg:pl-16   lg:w-1/2    ">
                   <h1 className="heading mt-10 text-xl  sm:text-2xl ">
                     Start your journey towards a{" "}
                   </h1>
                   <h1
-                    className=" text-5xl  sm:text-6xl mt-4 sm:xl md:text-5xl heading"
+                    className=" text-4xl  sm:text-6xl mt-4 sm:xl md:text-5xl heading"
                     style={{ fontWeight: 700 }}
                   >
                     Better Health <br />
                     
                   </h1>
-                  <h1 className="text-5xl sm:text-6xl mt-4 sm:xl md:text-5xl heading"
+                  <h1 className="text-4xl sm:text-6xl mt-4 sm:xl md:text-5xl heading"
                     style={{ fontWeight: 700 }}>
                  Better Lifestyle
                   </h1>
-                  <h3 className={` heading mt-8 text-md  sm:text-md  `}>
+                  <h3 className={` heading mt-6 text-md  sm:text-md  `}>
                     Occupying a small chunk in the{" "}
                     <span className="text-md font-bold! ">
                      
