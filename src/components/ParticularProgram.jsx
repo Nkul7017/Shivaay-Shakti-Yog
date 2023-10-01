@@ -191,11 +191,11 @@ function ParticularArticle() {
   return (
   
     <>
-      <div className=" ">
-        <div className=" relative z-10 ">
+      <div className="  ">
+        <div className=" relative z-10 px-2  ">
           <HeroNavbar />
         </div>
-        <div className=" w-[98vw] mx-auto h-[530px] flex justify-between sm:gap-1 gap-1  -mt-40   ">
+        <div className=" w-[100vw] mx-auto h-[530px] flex justify-between sm:gap-1 gap-1  -mt-40   ">
           <div>
             <img
               src={P1}
@@ -226,7 +226,7 @@ function ParticularArticle() {
           </div>
         </div>
       </div>
-      <div className=" w-[70vw] mt-10 mx-auto ">
+      <div className="w-[80vw] sm:w-[70vw]  mt-10 mx-auto ">
         <div className=" flex justify-between items-center ">
           <p className=" heading text-6xl ">Hatha Yoga Course</p>
           <p className=" flex items-center gap-3"><img src={rstar} alt="" /> <span className="text-xl font-semibold para ">4.5</span></p>
@@ -265,7 +265,8 @@ function ParticularArticle() {
           >
             {!show ? "Read More" : "Read Less"}
           </button>
-          <div className="flex gap-2  mt-10 w-[80vw]  flex-wrap  ">
+          </div>
+          <div className="flex gap-2   mt-10 overflow-scroll scrollbar-hide   ">
             {days.slice(page * 6, (page + 1) * 6).map((days, index) => (
               <>
                 <Days {...days} index={index + page * 6} key={"days" + index} />
@@ -296,7 +297,7 @@ function ParticularArticle() {
               <img src={right} alt="" />{" "}
             </button>
           </div>
-        </div>
+        
         <div className=" mt-6  ">
          <p className=" heading text-4xl  ">FAQ'S</p>
          <div className=" space-y-4 mt-5  ">
