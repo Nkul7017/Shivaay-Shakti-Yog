@@ -7,7 +7,7 @@ function  Helping() {
         <div className=" space-y-2 sm:w-[70%] -ml-2 sm:-ml-0 flex flex-col gap-1.5 ">
           <div className=" "> 
           <p className=" text-2xl heading ">Why Choose</p>
-          <p className=" text-4xl heading mt-1 ">Shivay Shakti ?</p>
+          <p className=" text-4xl heading mt-1 ">Shivaay Shakti ?</p>
           </div>
           {/* <h1 className=" text-md sm:text-2xl heading ">
           For The Betterment of Humanity

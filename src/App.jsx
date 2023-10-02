@@ -64,15 +64,16 @@ function App() {
 
   useEffect(() => { 
     // document.body.style.overflow = 'hidden';
-    const timeout=setTimeout(() => {
+    if(window.X>959)
+   { const timeout=setTimeout(() => {
       // document.body.style.overflow = 'auto';
       // dispatch(increment());
-  setShow(true);
+      setShow(true);
     },3000);
     return () => {
-     
       clearTimeout(timeout);
-    };
+    };}
+    else setShow(true);
   }, []);
   return (
     <>
