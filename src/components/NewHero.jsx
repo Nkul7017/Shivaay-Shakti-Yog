@@ -31,7 +31,7 @@ const NewHero = () => {
       document.body.style.overflow = 'auto';
       dispatch(increment());
   setShow();
-    }, 2000);
+    },2000);
     return () => {
      
       clearTimeout(timeout);
@@ -54,21 +54,20 @@ const NewHero = () => {
 
             <div className="content     ">
               <HeroNavbar login={login}></HeroNavbar>
-              <div className="flex   justify-between     pr-10   w-[83vw] ms-6 lg:ms-36 mx-auto h-auto    ">
-                <div className="  flex flex-col mt-16 sm:mt-10 pl-0 md:pl-12 lg:pl-16   lg:w-1/2    ">
-                  <h1 className="heading mt-10 text-xl  sm:text-2xl ">
+              <div className="flex   justify-between items-center     pr-10   w-[83vw] ms-6 lg:ms-36 mx-auto h-auto    ">
+                <div className="  flex flex-col  mt-14 sm:mt-0 pl-0 md:pl-12 lg:pl-16   lg:w-1/2    ">
+                  {/* <h1 className="heading mt-10 text-xl  sm:text-2xl ">
                     Start your journey towards a{" "}
-                  </h1>
+                  </h1> */}
                   <h1
                     className=" text-4xl  sm:text-6xl mt-4 sm:xl md:text-5xl heading"
                     style={{ fontWeight: 700 }}
                   >
-                    Better Health <br />
-                    
+                    For the
                   </h1>
                   <h1 className="text-4xl sm:text-6xl mt-4 sm:xl md:text-5xl heading"
                     style={{ fontWeight: 700 }}>
-                 Better Lifestyle
+                 Betterment of Humanity
                   </h1>
                   <h3 className={` heading mt-6 text-md  sm:text-md  `}>
                     Occupying a small chunk in the{" "}
@@ -87,7 +86,7 @@ const NewHero = () => {
                 Take a Free Health Survey
                 </button>
                 </div>
-                <div className={` hidden lg:flex justify-center     w-[100vw] h-[100vh]    absolute top-0 left-0 ${count?" w-[480px]    h-[480px]    relative       ":"bg-[#f6f8ef] "} `} style={{transition:"0.3s width,0.3s height"}}  >
+                <div className={` hidden lg:flex justify-center     w-[100vw] h-[100vh]    absolute top-0 left-0 ${count?" w-[480px]    h-[480px]    relative       ":"bg-[#f6f8ef] "} `} style={{transition:"0.8s width,0.8s height"}}  >
                 
                 <img src={logovideo} alt=""  className={` ${!show?"":"w-[480px]    h-[480px]"}   `} />
                 

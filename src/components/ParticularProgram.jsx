@@ -26,34 +26,34 @@ function ParticularArticle() {
   const [view,setView]=useState(false);
   const data = [
     {
-      icon: img1,
+      icon: img4,
       icon_content: "60",
-      sub_heading: "Batch-size",
+      sub_heading: "More Strength",
     },
     {
       icon: img2,
       icon_content: "60 Days ",
-      sub_heading: "Duration",
+      sub_heading: "More Energy",
     },
-    {
+    // {
       
-      icon_content: "Beginner",
-      sub_heading: "Difficulty Level",
-    },
+    //   icon_content: "Beginner",
+    //   sub_heading: "Difficulty Level",
+    // },
     {
       icon: img3,
       icon_content: "Open",
-      sub_heading: "Gender",
+      sub_heading: "Balance",
     },
-    {
+    // {
       
-      icon_content: "18-40 Years",
-      sub_heading: "Age Group",
-    },
+    //   icon_content: "18-40 Years",
+    //   sub_heading: "Age Group",
+    // },
     {
-      icon:img4,
+      icon:img1,
       icon_content: "45",
-      sub_heading: "Live Classes",
+      sub_heading: "Low Stress",
     },
   ];
 
@@ -195,7 +195,7 @@ function ParticularArticle() {
         <div className=" relative z-10 px-2  ">
           <HeroNavbar />
         </div>
-        <div className=" w-[100vw] mx-auto h-[530px] flex justify-between sm:gap-1 gap-1  -mt-40   ">
+        <div className=" w-[98.90vw]  h-[530px] flex justify-between sm:gap-1 gap-1  -mt-40   ">
           <div>
             <img
               src={P1}
@@ -239,23 +239,19 @@ function ParticularArticle() {
             <span>Start a free trial</span>
           </Link>
         </div>
-        <div className=" mt-5 heading text-2xl">Starting - 02 October</div>
-        <div className=" mt-3 para text-3xl font-semibold">
+        {/* <div className=" mt-5 heading text-2xl">Starting - 02 October</div> */}
+        {/* <div className=" mt-3 para text-3xl font-semibold">
           ₹ 30,000 <span className="para text-sm  ">Per Head</span>
-        </div>
+        </div> */}
         <div className=" mt-10">
           <Details data={data} />
         </div>
         <div className=" mt-5">
-          <p className="text-4xl heading">Details</p>
-          <p className="text-md text-justify para">
-            Hatha yoga is a traditional style of yoga that focuses on physical
-            postures (asanas), breathing exercises (pranayama), and relaxation
-            techniques. It is a gentle form of yoga that is suitable for
-            beginners and experienced practitioners alike. Hatha yoga can help
-            improve flexibility, strength, balance, and mental clarity{" "}
+          <p className="text-4xl heading">Description</p>
+          <p className="text-md text-justify para mt-3 ">
+          Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. It is a gentle form of yoga that is suitable for beginners and experienced practitioners alike. Hatha yoga can help improve flexibility, strength, balance, and mental clarity. Online group classes are a convenient way to practice yoga from the comfort of your own home. 
             {show &&
-              " Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. It is a gentle form of yoga that is suitable for beginners and experienced practitioners alike. Hatha yoga can help improve flexibility"}
+              " They allow you to connect with a community of like-minded people and receive guidance from an experienced teacher. Online classes can be accessed through various platforms, such as Zoom, Skype, or Google Meet. Some instructors may offer live classes, while others may provide pre-recorded videos that you can access at your convenience."}
           </p>
           <button
             className=" text-md font-semibold mt-1 para "
@@ -266,7 +262,7 @@ function ParticularArticle() {
             {!show ? "Read More" : "Read Less"}
           </button>
           </div>
-          <div className="flex gap-2   mt-10 overflow-scroll scrollbar-hide   ">
+          {/* <div className="flex gap-2   mt-10 overflow-scroll scrollbar-hide   ">
             {days.slice(page * 6, (page + 1) * 6).map((days, index) => (
               <>
                 <Days {...days} index={index + page * 6} key={"days" + index} />
@@ -296,11 +292,11 @@ function ParticularArticle() {
               {" "}
               <img src={right} alt="" />{" "}
             </button>
-          </div>
+          </div> */}
         
-        <div className=" mt-6  ">
+        <div className=" mt-10  ">
          <p className=" heading text-4xl  ">FAQ'S</p>
-         <div className=" space-y-4 mt-5  ">
+         <div className=" space-y-4 mt-7  ">
          {
           data1.map((data,index)=>
           <Faq1 data={data?.content} key="Nakul+index" />

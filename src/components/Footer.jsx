@@ -7,27 +7,20 @@ import {BsTelephone } from "react-icons/bs";
 function Footer() {
   return (
     <div>
-      <div className="helpingbg h-[730px] sm:h-[650px] md:h-[470px]  lg:h-[420px] ">
-        <footer className=" space-y-4 body-font ">
-          <div className="">
-            <a className="title-font font-medium">
+      <div className="helpingbg  " >
+        <footer className=" space-y-4  flex flex-col w-[90vw] lg:w-[80vw] mx-auto   lg:gap-8   ">
+          <div className="  flex flex-col sm:flex-row  justify-around pt-10  md:gap-5  ">
+          <div className="   md:w-1/3 lg:-mt-7 mx-auto md:mx-0   ">
+            <a className="   ">
               <img
-                className="w-[430px]  mx-auto"
+                className="    lg:w-[430px] h-[120px] lg:h-[120px]  "
                 src={footerlogo}
                 alt=""
               />
             </a>
           </div>
-
-          <div className="text-2xl flex sm:flex-row flex-col heading justify-center items-center w-[80vw]  mx-auto flex-wrap gap-x-28 gap-y-4">
-              <Link>HOME</Link>
-              <Link>PROGRAMS</Link>
-              <Link>ABOUT</Link>
-              <Link>CHANNELS</Link>
-            </div>
-
-          <div className=" para lg:w-[46vw] sm:w-[60vw] flex flex-col items-center md:items-start  md:flex-row mx-auto ">
-            <div className=" w-1/2  text-left space-y-3    ">
+            <div className="  space-y-3   lg:pl-20 hidden md:block     para w-1/3  ">
+          
               <p className="text-2xl  heading">Contact</p>
               <div className="flex gap-3   ">
                 <BsTelephone size={20} clas />
@@ -37,19 +30,33 @@ function Footer() {
                 <GoMail size={24}/>
                 <p className="w-20">shivaayshaktiyog@gmail.com</p>
               </div>
-              
+             
             </div>
-            <div className=" w-1/2 text-left  space-y-3 mt-5 md:mt-0 ">
+            <div className=" w-1/3   para  hidden md:block  space-y-3    ">
             <p className=" text-2xl heading">Address</p>
             <div className="flex gap-3">
               <p><GoLocation size={24} /></p>
               <p className=" text-justify" >Shaheed Gireesh Bhadri Chowk, Mothrowala, Banjarawala Rd, Ajabpur Khurd, Dehradun, Uttarakhand 248001</p>
             </div>
             </div>
-          </div>
-
+          {/* </div> */}
+            <div>
+            </div>
+            
+            </div>
+            <div className="text-2xl flex sm:flex-row flex-col heading justify-center items-center w-full    flex-wrap gap-x-28 gap-y-4">
+              <Link>HOME</Link>
+              <Link>PROGRAMS</Link>
+              <Link>ABOUT</Link>
+              <Link>CHANNELS</Link>
+            </div>
+            <div className=" flex flex-row justify-center w-[50vw] para mx-auto gap-10 md:hidden">
+              <a><BsTelephone size={20} clas /></a>
+              <a><GoMail size={24}/></a>
+              <a><GoLocation size={24} /></a>
+            </div>
           <div className=" para">
-            <div className="">Copyright all right reserved</div>
+            <div className=" text-center">Copyright all right reserved</div>
           </div>
         </footer>
       </div>

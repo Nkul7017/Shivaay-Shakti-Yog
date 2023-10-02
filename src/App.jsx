@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-
+import React, { useEffect,useState } from "react";
+import logovideo from '../public/loutput.gif'
 import Home from "./pages/Home";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Category from "./pages/Category";
@@ -12,7 +12,6 @@ import Contact from "./pages/Contact";
 import { ProgramDetail } from "./pages/ProgramDetail";
 import { BrowserRouter as Router } from "react-router-dom";
 import { setUser } from "./features/counter/userSlice";
-import { useDispatch } from "react-redux";
 import axios from "axios";
 import Error from "./pages/Error";
 import Category2 from "./pages/Category2";
@@ -23,9 +22,13 @@ import ShurveyShivaay from "./components/Shurvey/ShurveyShivaay";
 import About from "./pages/About";
 import Test from "./components/Test/Test";
 import ParticularProgram from "./components/ParticularProgram";
-
+import { useSelector, useDispatch } from 'react-redux'
+import { decrement, increment } from '../src/features/counter/counterSlice'
 function App() {
   const dispatch = useDispatch();
+  const count = useSelector((state) => state.counter.value)
+  
+  const [show, setShow] = useState(false);
   const [userId, setUserId] = React.useState();
   const [userData, setUserData] = React.useState([]);
 
@@ -33,7 +36,7 @@ function App() {
     const local_ID = localStorage.getItem("ID");
 
     if (local_ID) {
-      setUserId(local_ID?.slice(1, 25));
+      // setUserId(local_ID?.slice(1, 25));
     }
     console.log("local storage id", local_ID);
   }, [userId]);
@@ -59,10 +62,26 @@ function App() {
     console.log("dispatched");
   }, [userData]);
 
+  useEffect(() => { 
+    // document.body.style.overflow = 'hidden';
+    const timeout=setTimeout(() => {
+      // document.body.style.overflow = 'auto';
+      // dispatch(increment());
+  setShow(true);
+    },3000);
+    return () => {
+     
+      clearTimeout(timeout);
+    };
+  }, []);
   return (
     <>
       <BrowserRouter>
-        <Routes>
+      {!show&&<div className={` hidden lg:flex justify-center bg-[#f6f8ef]     w-[100vw] h-[100vh]  `} style={{transition:"0.3s width,0.3s height"}}  >
+                <img src={logovideo} alt=""  className={`  `} />
+                </div>}
+       {show&& <Routes>
+      
           {/* Normal Routes         */}
           <Route path="test" element={<Test />} />
           <Route path="/ParticularProgram" element={<ParticularProgram/>} />
@@ -107,7 +126,7 @@ function App() {
 
           <Route path="Hero" element={<NewHero />} />
           <Route path="Shurvey" element={<ShurveyShivaay />} />
-        </Routes>
+        </Routes>}
       </BrowserRouter>
     </>
   );
