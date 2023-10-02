@@ -198,14 +198,14 @@ function ParticularArticle() {
         <div className=" w-[98.90vw]  h-[530px] flex justify-between sm:gap-1 gap-1  -mt-40   ">
           <div>
             <img
-              src={P1}
+              src={P2}
               className="   h-[530px] w-[375x] object-fill"
               alt=""
             />
           </div>
           <div>
             <img
-              src={P2}
+              src={P1}
               className="  hidden lg:inline-block object-fill h-[530px] w-[375px]"
               alt=""
             />

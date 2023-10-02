@@ -40,7 +40,7 @@ const DeskNavbar = () => {
           <Link to="#">
             <span>Channels</span>
           </Link>
-          {!Logged == false ? (
+          {Logged == false ? (
             <>
             <div className="flex gap-4">
               <Link to="/Login" className=" button3 ">
