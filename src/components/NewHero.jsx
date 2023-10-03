@@ -96,8 +96,8 @@ const NewHero = () => {
             </div>
           </div>
         </>
-      
-      <ShurveyShivaay data={shurveyPopup} setLogin={setLogin} ></ShurveyShivaay>
+
+      <ShurveyShivaay logovideo={logovideo} data={shurveyPopup}  setShurveyPopup={setShurveyPopup}  setLogin={setLogin} ></ShurveyShivaay>
     </>
   );
 };
