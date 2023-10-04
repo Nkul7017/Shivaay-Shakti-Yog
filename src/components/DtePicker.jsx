@@ -9,7 +9,7 @@ function DtePicker() {
     <>
      <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DemoContainer components={['DatePicker']}>
-        <DatePicker  className="time_box" disablePast     slotProps={{ textField: { size: 'small' } }}/>
+        <DatePicker  className="time_box w-72 md:w-[400px] " disablePast     slotProps={{ textField: { size: 'small' } }}/>
       </DemoContainer>
     </LocalizationProvider>
     </>

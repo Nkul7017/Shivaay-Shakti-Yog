@@ -486,6 +486,8 @@ function ParticularArticle() {
         </div>
         <button onClick={()=>setView(!view)} className="button3 mt-10"><span>{!view?"View More":"View Less"}</span></button>
         </div>
+
+        {/*----------------------------------- Footer------------------------------------------------ */}
         <div className="mt-20">
         <Footer/>
         </div>
