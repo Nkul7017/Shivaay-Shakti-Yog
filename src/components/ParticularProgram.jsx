@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import HeroNavbar from "./HeroNavbar";
 import P1 from "../../public/Program/P1.png";
+import Details1 from "./Details1";
+
 import img1 from "../../public/Program/Details/img1.png"
 import img2 from "../../public/Program/Details/img2.png"
 import img3 from "../../public/Program/Details/img3.png"
@@ -20,8 +22,18 @@ import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import Faq1 from "./Faq1";
 import Review from "./Review";
+import TymPicker from "./TymPicker";
+import DtePicker from "./DtePicker";
+import MulitpleDate from "./MulitpleDate";
+import Terms from "./Terms";
+import Confirmation from "./Confirmation";
 function ParticularArticle() {
+  const [toggle,setToggle]=useState(false);
+  const [toggle1,setToggle1]=useState(false);
   const [show, setshow] = useState(false);
+  const [book,setBook]=useState(false); 
+  const [personal,setPersonal]=useState(true); 
+  const [group,setGroup]=useState(false); 
   const [page, setPage] = useState(0);
   const [view,setView]=useState(false);
   const data = [
@@ -50,6 +62,38 @@ function ParticularArticle() {
     //   icon_content: "18-40 Years",
     //   sub_heading: "Age Group",
     // },
+    {
+      icon:img1,
+      icon_content: "45",
+      sub_heading: "Low Stress",
+    },
+  ];
+  const data2 = [
+    {
+      icon: img4,
+      icon_content: "60",
+      sub_heading: "More Strength",
+    },
+    {
+      icon: img2,
+      icon_content: "60 Days ",
+      sub_heading: "More Energy",
+    },
+    {
+      
+      icon_content: "Beginner",
+      sub_heading: "Difficulty Level",
+    },
+    {
+      icon: img3,
+      icon_content: "Open",
+      sub_heading: "Balance",
+    },
+    {
+      
+      icon_content: "18-40 Years",
+      sub_heading: "Age Group",
+    },
     {
       icon:img1,
       icon_content: "45",
@@ -231,21 +275,28 @@ function ParticularArticle() {
           <p className=" heading text-6xl ">Hatha Yoga Course</p>
           <p className=" flex items-center gap-3"><img src={rstar} alt="" /> <span className="text-xl font-semibold para ">4.5</span></p>
         </div>
-        <div className=" flex gap-6 items-center mt-8 ">
-          <Link className="button3 ">
+       
+        {!book&&<div className=" flex gap-6 items-center mt-8 ">
+          <button className="button3 " onClick={()=>setBook(!book)}>
             <span>Book Now</span>
-          </Link>
+          </button>
           <Link className=" heading  ">
             <span>Start a free trial</span>
           </Link>
-        </div>
+        </div>}
         {/* <div className=" mt-5 heading text-2xl">Starting - 02 October</div> */}
         {/* <div className=" mt-3 para text-3xl font-semibold">
           ₹ 30,000 <span className="para text-sm  ">Per Head</span>
         </div> */}
+
+        {/*-------------------------------------- Icons---------------------------------------------- */}
+        
         <div className=" mt-10">
           <Details data={data} />
         </div>
+
+        {/*----------------------------------Description----------------------------------------------*/}
+
         <div className=" mt-5">
           <p className="text-4xl heading">Description</p>
           <p className="text-md text-justify para mt-3 ">
@@ -262,6 +313,74 @@ function ParticularArticle() {
             {!show ? "Read More" : "Read Less"}
           </button>
           </div>
+
+          {/*--------------------------------- SESSIONS----------------------------------------------- */}
+          {book&&<>
+          <div id="jump" className=" flex mt-8  gap-4 sm:gap-7 ">
+            <button onClick={()=>{setPersonal(true);setGroup(false)}} className={`  heading_colorless  session_button w-80  text-sm sm:text-md  md:w-80 md:text-xl lg:w-80 h-10 lg:text-2xl  ${personal?" sess_shadow bg-[#2C3E50] text-white":"text-[#2C3E50]  "  } `} ><span>Personal Training Session</span></button>
+            <button onClick={()=>{setPersonal(false);setGroup(true)}} className={`  heading_colorless  session_button w-80  text-sm sm:text-md  md:w-80 md:text-xl lg:w-80 h-10 lg:text-2xl  ${group?" sess_shadow bg-[#2C3E50] text-white":"text-[#2C3E50]  "  } `} ><span>Group Training Session</span></button>
+          </div>
+          </>}
+
+          {/*------------------------------- Personal Training--------------------------------------- */}
+
+         {
+          (personal&&book)&&<>
+           <div  className=" mt-10">
+          <Details1 data={data2} />
+        </div>
+
+        <div>
+          <p className="text-2xl mt-5 heading">Preferred Time Slot:</p>
+         <TymPicker/>
+    <p className="text-2xl mt-5 heading">Starting Date:</p>
+    <DtePicker/>
+    <p className="text-2xl mt-16 heading">Select Available Dates</p>
+    <MulitpleDate/> 
+        </div>
+          <div className=" mt-6 heading text-6xl font-semibold">
+          ₹ 30,000 <span className="para text-sm  ">Per Person</span>
+        </div> 
+        <button className="button3 mt-5 " onClick={()=>setToggle1(true)} >
+            <span>Book Now</span>
+          </button>
+          <Confirmation toggle1={toggle1} setToggle={setToggle} setToggle1={setToggle1} />
+          <Terms toggle={toggle} setToggle={setToggle}  />
+          </>
+         }
+
+
+
+
+
+          {/*------------------------------- Group Training------------------------------------------- */}
+
+          {
+          (group&&book)&&<>
+           <div className=" mt-10">
+          <Details1 data={data2} />
+        </div>
+        <div>
+          <p className="text-2xl mt-5 heading">Time Slot - 06:00 AM - 08:00 AM </p>
+         {/* <TymPicker/> */}
+        </div>
+         <div className=" mt-8 heading text-2xl">Starting - 02 October</div> 
+         <div className=" mt-6 heading text-6xl font-semibold">
+          ₹ 30,000 <span className="para text-sm  ">Per Person</span>
+        </div>
+        <button className="button3 mt-5 " onClick={()=>setToggle1(true)} >
+            <span>Book Now</span>
+          </button>
+        <Confirmation toggle1={toggle1} setToggle={setToggle} setToggle1={setToggle1} />
+          <Terms toggle={toggle} setToggle={setToggle}  />
+          </>
+         }
+
+
+          
+
+          {/*------------------------------ DETAILS OF COURSE PER DAY-------------------------------- */}
+
           {/* <div className="flex gap-2   mt-10 overflow-scroll scrollbar-hide   ">
             {days.slice(page * 6, (page + 1) * 6).map((days, index) => (
               <>
@@ -294,6 +413,9 @@ function ParticularArticle() {
             </button>
           </div> */}
         
+
+        {/*------------------------------------ FAQ --------------------------------------------------*/}
+          
         <div className=" mt-10  ">
          <p className=" heading text-4xl  ">FAQ'S</p>
          <div className=" space-y-4 mt-7  ">
@@ -305,11 +427,14 @@ function ParticularArticle() {
          </div>
         </div>
       
-      <div className="flex flex-col items-center mt-20 gap-3   ">
+      {!book&&<div className="flex flex-col items-center mt-20 gap-3   ">
           <p className="para text-2xl text-[#444444] font-semibold">HURRY !!!&nbsp; Only 30 Seats Left</p>
-          <Link className="button3 mt-2 "><span>Book Now</span></Link>
+          <button className="button3 mt-2 " onClick={()=>setBook(!book)}><a href="#jump" >Book Now</a></button>
           <p className="para text-xl font-semibold ">Starting - 02 October</p>
-        </div>
+        </div>}
+
+
+        {/*----------------------------------- REVIEWS -----------------------------------------------*/}
 
         <div className=" mt-14 ">
           <p  className="heading text-4xl ">RATINGS & REVIEWS</p>

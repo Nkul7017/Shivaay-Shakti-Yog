@@ -64,7 +64,7 @@ function App() {
 
   useEffect(() => { 
     // document.body.style.overflow = 'hidden';
-    if(window.X>959)
+    if(window.innerWidth>959)
    { const timeout=setTimeout(() => {
       // document.body.style.overflow = 'auto';
       // dispatch(increment());

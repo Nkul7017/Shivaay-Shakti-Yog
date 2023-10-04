@@ -30,13 +30,14 @@ import CheckButton from "./CheckButton.jsx";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
+AOS.init({
+  duration: 1200,
+});
 import Goalbtn from "./Goalbtn.jsx";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-AOS.init({
-  duration: 1200,
-});
+
 
 const ShurveyShivaay = ({ data, setLogin,setShurveyPopup,logovideo }) => {
   
@@ -243,7 +244,7 @@ console.log(ShurveyData);
         <>
           <div
             className=" sm:hidden justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50  outline-none focus:outline-none "
-            // data-aos="zoom-in"
+            data-aos="zoom-in"
           >
             <div className="relative w-auto mx-auto max-w-3xl ">
               {/*content*/}
@@ -422,7 +423,7 @@ console.log(ShurveyData);
                                   placeholder="enter height"
                                 />
                                 {toggle1 && (
-                                  <div className="flex flex-col gap-2 self-start    ">
+                                  <div className="flex  gap-2 self-start    ">
                                     <div className=" flex items-center self-start ">
                                       <input
                                         type="radio"
@@ -453,7 +454,7 @@ console.log(ShurveyData);
                                         className="  shadow-2xl bg-white"
                                       />
                                       &nbsp;
-                                      <label htmlFor="heightin">in</label>
+                                      <label htmlFor="heightin">Inches</label>
                                     </div>
                                   </div>
                                 )}
@@ -479,7 +480,7 @@ console.log(ShurveyData);
                                   placeholder="enter weight"
                                 />
                                 {toggle2 && (
-                                  <div className="flex flex-col gap-2 self-start    ">
+                                  <div className="flex  gap-2 self-start    ">
                                     <div className=" flex items-center self-start ">
                                       <input
                                         type="radio"
@@ -510,7 +511,7 @@ console.log(ShurveyData);
                                         className="  shadow-2xl bg-white"
                                       />
                                       &nbsp;
-                                      <label htmlFor="weightpnd">pound</label>
+                                      <label htmlFor="weightpnd">Pound</label>
                                     </div>
                                   </div>
                                 )}
@@ -1791,7 +1792,7 @@ console.log(ShurveyData);
               </div>
             </div>
           
-          <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+          {/* <div className="opacity-25 fixed inset-0 z-40 bg-black"></div> */}
         </>
      
       
