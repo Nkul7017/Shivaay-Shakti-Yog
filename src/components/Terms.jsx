@@ -19,7 +19,7 @@ function Terms({toggle,setToggle}) {
            border:"none",
               display:"grid",
                placeContent:"center",
-            backgroundColor:"rgba(183, 223, 199, 0.80)",
+               backgroundImage:"url('https://cdn.discordapp.com/attachments/1111568797476868128/1113746626696204349/WhatsApp_Image_2023-06-01_at_11.16.50.jpg')",
               width:"90vw",
               height:"90vh",
               borderRadius:"10px"
