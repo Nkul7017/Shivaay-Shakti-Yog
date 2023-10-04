@@ -31,7 +31,7 @@ const NewHero = () => {
       document.body.style.overflow = 'auto';
       dispatch(increment());
   setShow();
-    },2000);
+    },7000);
     return () => {
      
       clearTimeout(timeout);

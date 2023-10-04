@@ -62,33 +62,36 @@ function App() {
     console.log("dispatched");
   }, [userData]);
 
-  useEffect(() => { 
-    // document.body.style.overflow = 'hidden';
-    if(window.innerWidth>959)
-   { const timeout=setTimeout(() => {
-      // document.body.style.overflow = 'auto';
-      // dispatch(increment());
-      setShow(true);
-    },5000);
-    return () => {
-      clearTimeout(timeout);
-    };}
-    else setShow(true);
-  }, []);
+  // useEffect(() => { 
+  //   // document.body.style.overflow = 'hidden';
+  //   if(window.innerWidth>959)
+  //  { const timeout=setTimeout(() => {
+  //     // document.body.style.overflow = 'auto';
+  //     // dispatch(increment());
+  //     setShow(true);
+  //   },5000);
+  //   return () => {
+  //     clearTimeout(timeout);
+  //   };}
+  //   else setShow(true);
+  // }, []);
   return (
     <>
       <BrowserRouter>
-      {!show&&<div className={` hidden lg:flex justify-center bg-[#f6f8ef]     w-[100vw] h-[100vh]  `} style={{transition:"0.3s width,0.3s height"}}  >
+      {/* {!show&&<div className={` hidden lg:flex justify-center bg-[#f6f8ef]     w-[100vw] h-[100vh]  `} style={{transition:"0.3s width,0.3s height"}}  >
                 <img src={logovideo} alt=""  className={`  `} />
                 </div>}
-       {show&& <Routes>
+       {show&& */}
+        <Routes>
       
           {/* Normal Routes         */}
           <Route path="test" element={<Test />} />
           <Route path="/ParticularProgram" element={<ParticularProgram/>} />
 
           <Route exact path="/" element={<Home />} />
+          <Route  path="/*" element={<Home />} />
           <Route path="Home" element={<Home />} />
+          <Route path="/Home" element={<Home />} />
           <Route path="*" element={<Error />} />
           {/* <Route path="contact" element={<Contact />} /> */}
 
@@ -127,7 +130,8 @@ function App() {
 
           <Route path="Hero" element={<NewHero />} />
           <Route path="Shurvey" element={<ShurveyShivaay />} />
-        </Routes>}
+        </Routes>
+        {/* } */}
       </BrowserRouter>
     </>
   );
