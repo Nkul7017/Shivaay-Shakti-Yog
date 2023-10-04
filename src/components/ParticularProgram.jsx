@@ -311,7 +311,7 @@ function ParticularArticle() {
         </div>
        
         {!book&&<div className=" flex gap-6 items-center mt-8 ">
-          <button className="button3 " onClick={()=>setBook(!book)}>
+          <button className="button3  " onClick={()=>setBook(!book)} style={{width:"150px"}}>
             <span>Book Now</span>
           </button>
           <Link className=" heading  ">
@@ -339,7 +339,7 @@ function ParticularArticle() {
               " They allow you to connect with a community of like-minded people and receive guidance from an experienced teacher. Online classes can be accessed through various platforms, such as Zoom, Skype, or Google Meet. Some instructors may offer live classes, while others may provide pre-recorded videos that you can access at your convenience."}
           </p>
           <button
-            className=" text-md font-semibold mt-1 para "
+            className=" text-md font-semibold mt-1 para   "
             onClick={() => {
               setshow(!show);
             }}
@@ -463,7 +463,7 @@ function ParticularArticle() {
       
       {!book&&<div className="flex flex-col items-center mt-20 gap-3   ">
           <p className="para text-2xl text-[#444444] font-semibold">HURRY !!!&nbsp; Only 30 Seats Left</p>
-          <button className="button3 mt-2 " onClick={()=>setBook(!book)}><a href="#jump" >Book Now</a></button>
+          <button className="button3 mt-2 " style={{width:"150px"}} onClick={()=>setBook(!book)}><a href="#jump"  >Book Now</a></button>
           <p className="para text-xl font-semibold ">Starting - 02 October</p>
         </div>}
 
@@ -472,7 +472,9 @@ function ParticularArticle() {
 
         <div className=" mt-14 ">
           <p  className="heading text-4xl ">RATINGS & REVIEWS</p>
-          <div className="mt-6"><img src={star} className="h-10 inline-block "  alt="" /><span className="text-4xl   heading">4.2/5</span></div>
+          <div className="mt-6  flex gap-10 items-center ">
+            <img src={rstar} className="h-7 = "  alt="" />
+            <span className="text-4xl   pb-3   heading">4.2/5</span></div>
         </div>
         <div className="mt-4">
           <span className="para text-md text-[#000000] font-semibold  ">26 ratings | 5 reviews</span>
