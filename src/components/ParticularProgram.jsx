@@ -5,10 +5,19 @@ import HeroNavbar from "./HeroNavbar";
 import P1 from "../../public/Program/P1.png";
 import Details1 from "./Details1";
 
-import img1 from "../../public/Program/Details/img1.png"
-import img2 from "../../public/Program/Details/img2.png"
-import img3 from "../../public/Program/Details/img3.png"
-import img4 from "../../public/Program/Details/img4.png"
+import img1 from "../../public/Program/Personal/img1.png"
+import img2 from "../../public/Program/Personal/img2.png"
+import img3 from "../../public/Program/Personal/img3.png"
+import img101 from "../../public/Program/Details/img1.png"
+import img201 from "../../public/Program/Details/img2.png"
+import img301 from "../../public/Program/Details/img3.png"
+import img401 from "../../public/Program/Details/img3.png"
+
+
+import img11 from "../../public/Program/Group/img1.png"
+import img22 from "../../public/Program/Group/img2.png"
+import img33 from "../../public/Program/Group/img3.png"
+import img44 from "../../public/Program/Group/img4.png"
 import P2 from "../../public/Program/P2.png";
 import P3 from "../../public/Program/P3.png";
 import P4 from "../../public/Program/P4.png";
@@ -38,46 +47,31 @@ function ParticularArticle() {
   const [view,setView]=useState(false);
   const data = [
     {
-      icon: img4,
+      icon: img201,
       icon_content: "60",
       sub_heading: "More Strength",
     },
     {
-      icon: img2,
+      icon: img301,
       icon_content: "60 Days ",
       sub_heading: "More Energy",
     },
-    // {
-      
-    //   icon_content: "Beginner",
-    //   sub_heading: "Difficulty Level",
-    // },
     {
-      icon: img3,
+      icon: img401,
       icon_content: "Open",
       sub_heading: "Balance",
     },
-    // {
-      
-    //   icon_content: "18-40 Years",
-    //   sub_heading: "Age Group",
-    // },
     {
-      icon:img1,
+      icon:img101,
       icon_content: "45",
       sub_heading: "Low Stress",
     },
   ];
   const data2 = [
     {
-      icon: img4,
-      icon_content: "60",
-      sub_heading: "More Strength",
-    },
-    {
-      icon: img2,
+      icon: img1,
       icon_content: "60 Days ",
-      sub_heading: "More Energy",
+      sub_heading: "Duration",
     },
     {
       
@@ -85,9 +79,8 @@ function ParticularArticle() {
       sub_heading: "Difficulty Level",
     },
     {
-      icon: img3,
       icon_content: "Open",
-      sub_heading: "Balance",
+      sub_heading: "Gender",
     },
     {
       
@@ -95,9 +88,50 @@ function ParticularArticle() {
       sub_heading: "Age Group",
     },
     {
-      icon:img1,
+      icon:img2,
+      icon_content: "",
+      sub_heading: "Diet Plan",
+    },
+    {
+      icon:img3,
       icon_content: "45",
-      sub_heading: "Low Stress",
+      sub_heading: "LIve Classes",
+    },
+  ];
+  const data3 = [
+    {
+      icon: img33,
+      icon_content: "60 ",
+      sub_heading: "Batch Size",
+    },
+    {
+      icon: img22,
+      icon_content: "60 Days ",
+      sub_heading: "Duration",
+    },
+    {
+      
+      icon_content: "Beginner",
+      sub_heading: "Difficulty Level",
+    },
+    {
+      icon_content: "Open",
+      sub_heading: "Gender",
+    },
+    {
+      
+      icon_content: "18-40 Years",
+      sub_heading: "Age Group",
+    },
+    {
+      icon:img44,
+      icon_content: "",
+      sub_heading: "Diet Plan",
+    },
+    {
+      icon:img11,
+      icon_content: "45",
+      sub_heading: "LIve Classes",
     },
   ];
 
@@ -358,7 +392,7 @@ function ParticularArticle() {
           {
           (group&&book)&&<>
            <div className=" mt-10">
-          <Details1 data={data2} />
+          <Details1 data={data3} />
         </div>
         <div>
           <p className="text-2xl mt-5 heading">Time Slot - 06:00 AM - 08:00 AM </p>

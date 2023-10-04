@@ -69,7 +69,7 @@ function App() {
       // document.body.style.overflow = 'auto';
       // dispatch(increment());
       setShow(true);
-    },3000);
+    },5000);
     return () => {
       clearTimeout(timeout);
     };}
