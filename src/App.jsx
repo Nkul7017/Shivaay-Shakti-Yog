@@ -89,7 +89,7 @@ function App() {
           <Route path="/ParticularProgram" element={<ParticularProgram/>} />
 
           <Route exact path="/" element={<Home />} />
-          <Route  path="/*" element={<Home />} />
+          <Route  path="/(.*)" element={<Home />} />
           <Route path="Home" element={<Home />} />
           <Route path="/Home" element={<Home />} />
           <Route path="*" element={<Error />} />
