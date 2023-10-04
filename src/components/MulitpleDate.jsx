@@ -18,6 +18,7 @@ const MulitpleDate = () => {
       onChange={setValues}
       minDate={addDays(new Date(), 1)}
       maxDate={addDays(new Date(), 90)}
+      numberOfMonths={4}
     //   mobileButtons={[
     //     {
     //       label: "RESET",

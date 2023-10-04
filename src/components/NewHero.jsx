@@ -25,18 +25,23 @@ const NewHero = () => {
   const [login, setLogin] = useState(false);
 
   useEffect(() => {
-    if(count==0){
+    if(window.innerWidth>959)
+    {if(count==0){
     document.body.style.overflow = 'hidden';
     const timeout=setTimeout(() => {
       document.body.style.overflow = 'auto';
       dispatch(increment());
   setShow();
-    },7000);
+    },6000);
     return () => {
      
       clearTimeout(timeout);
-    };}
-  }, [show]);
+    };}}
+    else
+    {
+      dispatch(increment());
+    }
+  }, []);
 
   return (
     <>
