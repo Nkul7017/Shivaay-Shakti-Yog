@@ -11,6 +11,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import HeroNavbar from "./HeroNavbar";
 import { Link } from "react-router-dom";
+import om from '../../public/Audio/om.mp3';
 import ShurveyShivaay from "./Shurvey/ShurveyShivaay";
 AOS.init({
   duration: 1200,
@@ -94,8 +95,10 @@ const NewHero = () => {
                 <div className={` hidden lg:flex justify-center     w-[100vw] h-[100vh]    absolute top-0 left-0 ${count?" w-[480px]    h-[480px]    relative       ":"bg-[#f6f8ef] "} `} style={{transition:"0.8s width,0.8s height"}}  >
                 
                 <img src={logovideo} alt=""  className={` ${!show?"":"w-[480px]    h-[480px]"}   `} />
+               
                 
                 </div>
+              
                
               </div>
             </div>
