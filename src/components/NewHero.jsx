@@ -11,7 +11,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import HeroNavbar from "./HeroNavbar";
 import { Link } from "react-router-dom";
-import om from '../../public/Audio/om.mp3';
 import ShurveyShivaay from "./Shurvey/ShurveyShivaay";
 AOS.init({
   duration: 1200,
