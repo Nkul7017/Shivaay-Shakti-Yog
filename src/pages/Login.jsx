@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import logo from "../../public/letter-head_CLR.png"
 import { useDispatch } from "react-redux";
 import { setUser } from "../features/counter/userSlice";
 
@@ -144,10 +145,10 @@ const Login = () => {
 
       <div className="bgCatmob lg:hidden  ">
         <div className="flex flex-col items-center justify-center justify-items-center  ">
-          <img className="w-36" src="img/image 3.png" />
-          <img className="-mt-2 w-64" src="img/image 4.png" />
+          <img className="w-48 h-48 -mt-6 " src={logo} />
+          <img className="-mt-24 w-64" src="img/image 4.png" />
         </div>
-        <h1 className="text-black  text-center text-3xl font-semibold -mt-6 pb-10">
+        <h1 className="text-black  text-center text-3xl font-semibold -mt-12 pb-10">
           Welcome!
         </h1>
         <div className=" flex flex-col gap-4 items-center">
@@ -226,7 +227,7 @@ const Login = () => {
           </div>
           <div className="bg-gray-100  w-[450px] h-[500px] mt-14 rounded-r-3xl -ml-20 ">
             <div className="flex flex-col items-start ml-6">
-              <img className="mt-10 w-40 " src="img/image 3.png" />
+              <img className=" -mt-4 w-48 h-48 ml-8" src={logo} />
               <h1 className="text-2xl text-black ml-10">Welcome!</h1>
             </div>
             <div className="flex flex-col gap-5">

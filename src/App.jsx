@@ -3,6 +3,7 @@ import logovideo from '../public/loutput.gif'
 import Home from "./pages/Home";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Category from "./pages/Category";
+import UserDashboard from "./pages/UserDashboard";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Account from "./pages/Account";
@@ -22,6 +23,7 @@ import ShurveyShivaay from "./components/Shurvey/ShurveyShivaay";
 import About from "./pages/About";
 import Test from "./components/Test/Test";
 import ParticularProgram from "./components/ParticularProgram";
+import AllCourse from "./pages/AllCourse";
 import { useSelector, useDispatch } from 'react-redux'
 import { decrement, increment } from '../src/features/counter/counterSlice'
 function App() {
@@ -101,12 +103,14 @@ function App() {
           />
           {/* <Route path="category/group-session" element={<Category />} /> */}
           <Route path="Login" element={<Login />} />
+          <Route path="/Courses" element={<AllCourse/>} />
+          <Route path="/UserDashboard" element={<UserDashboard/>} />
 
           <Route path="Program/Login" element={<Login />} />
           <Route path="SignUp" element={<Signup />} />
           <Route path="OneOnSession" element={<OneOnSess />} />
           <Route path="category/our-programs" element={<Category />} />
-
+            
 
           {/* <Route path="category/group-session/program-detail" element={<ProgramDetail />} /> */}
           <Route

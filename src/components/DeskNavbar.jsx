@@ -31,7 +31,7 @@ const DeskNavbar = () => {
           <Link to="/">
             <span>Home</span>
           </Link>
-          <Link to="/">
+          <Link to="/Courses">
             <span>Programs</span>
           </Link>
           <Link to="/about-us">

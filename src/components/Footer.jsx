@@ -6,7 +6,7 @@ import {BsTelephone } from "react-icons/bs";
 
 function Footer() {
   return (
-    <div>
+    <div className="">
       <div className="helpingbg  " >
         <footer className=" space-y-4  flex flex-col w-[90vw] lg:w-[80vw] mx-auto   lg:gap-8   ">
           <div className="  flex flex-col sm:flex-row  justify-around pt-10  md:gap-5  ">

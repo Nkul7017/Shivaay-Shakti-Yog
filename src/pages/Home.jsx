@@ -9,7 +9,7 @@ import Gallery from "../components/Gallery";
 
 function Home() {
   return (
-    <div>
+    <div  className=" = overflow-hidden " >
       <NewHero />
       <Article/>
       <Program/>

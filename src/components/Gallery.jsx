@@ -82,7 +82,7 @@ function Gallery() {
   console.log(data.img0)
   return (
     <>
-    <div className="  flex flex-col gap-8 ">
+    <div className="  flex flex-col gap-8  ">
     <div className="text-left heading text-4xl pt-28 pl-8 sm:pl-40 ">Shivaay Shakti Community</div>
       <div className="flex overflow-x-scroll scrollbar-hide   w-[87vw] sm:w-[96vw] mx-auto space-x-2 mt-8">
         <FourImg data1={data?.img0} />

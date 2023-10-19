@@ -2,7 +2,7 @@ import React from "react";
 import helping from "../../public/helping.png";
 function  Helping() {
   return (
-    <div className=" grid  lg:grid-cols-2 w-[80vw] h-[900px] sm:h-[700px] mx-auto    sm:mt-10  sm:space-y-0 mb-8 ">
+    <div className=" grid   lg:grid-cols-2 w-[80vw] h-[900px] sm:h-[700px] mx-auto    sm:mt-10  sm:space-y-0 mb-8 ">
       <div className={` row-start-2 sm:row-auto my-2 sm:my-auto space-y-2  rounded-xl  `} >
         <div className=" space-y-2 sm:w-[70%] -ml-2 sm:-ml-0 flex flex-col gap-1.5 ">
           <div className=" "> 

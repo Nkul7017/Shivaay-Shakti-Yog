@@ -49,7 +49,7 @@ export default function HeroNavbar({ login }) {
       <Disclosure as="nav" className="lg:hidden -mt-2 pt-[20px]">
         {({ open }) => (
           <>
-            <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 ">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
               <div className="relative flex flex-row-reverse h-16 items-center justify-between">
                 <div className="flex flex-1 items-start lg:items-stretch lg:justify-start">
                   <div className="flex items-center">

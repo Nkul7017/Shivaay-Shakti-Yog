@@ -8,7 +8,8 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 import { Link} from "react-router-dom";
 export default function Card1() {
   return (
-    <Card sx={{ maxWidth:320 ,minWidth:320 }}>
+    <div className="cardcontainer">
+    <Card sx={{ maxWidth:320 ,minWidth:320 }} >
       <CardActionArea>
         <CardMedia
           component="img"
@@ -16,21 +17,22 @@ export default function Card1() {
           image={Image1}
           alt="green iguana"
         />
-        <CardContent >
+        <CardContent className=' bg-[#E6F5FA] '>
           <Typography gutterBottom variant="h5" className="heading-class" component="div">
-          <span className='heading'>Yoga in the Modern World</span>
+          <span className='heading  text-xl '>Hath Yoga</span>
           </Typography>
           <Typography variant="body2" color="text.secondary">
-          <span className='para'>In an era defined by stress, anxiety, and chronic busyness, ancient practices like yoga offer a beacon of hope. </span>
+          <span className='para text-md text-black '>In an era defined by stress, anxiety, and chronic busyness, ancient practices like yoga offer a beacon of hope. </span>
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
+      <CardActions className='   bg-[#E6F5FA]  ' style={{paddingBottom:"18px"}} >
         <Button size="small" color="primary">
-          <Link to="/ParticularProgram" className='knowmorebtn' >Know More</Link>
+          <Link to="/ParticularProgram" className='knowmorebtn text-md  font-semibold  normal-case   ' style={{width:"140px"}} >Know more</Link>
         </Button>
       </CardActions>
     </Card>
+    </div>
   );
 }
 

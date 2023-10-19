@@ -40,7 +40,7 @@ const arry = [
 
 export default function Testimonial() {
   return (
-    <section className="py-18">
+    <section className="py-18 ">
         <p className="text-4xl pl-8 sm:pl-40 heading mb-2 ">Testimonials</p>
       <div className="container  text-justify w-[90vw] md:w-[85vw] lg:w-[90vw]   mx-auto   ">
 

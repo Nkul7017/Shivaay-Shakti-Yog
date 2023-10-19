@@ -51,7 +51,7 @@ body {
 
   background-position: center;
   background-size: cover;
-  color: #ffffff;
+  /* color: #ffffff; */
   padding: 1em;
   /* text-align: center; */
   opacity: 1;
@@ -553,4 +553,95 @@ font-weight: 300 !important;
 
 }
 
+.cardbg{
+  background-color: #E6F5FA;
+}
 
+.card2{
+  border-radius: 10px;
+background: #FFF;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+}
+.bluish{
+  color: #2C3E50;
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.price{
+  color: var(--nav, #2C3E50);
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.icon{
+  width: 23px;
+height: 23px;
+flex-shrink: 0;
+display: inline-block;
+}
+.faq{
+  color: #444;
+
+font-family: Source Sans 3;
+font-size: 12px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+.box{
+scroll-snap-type:x mandatory ;
+}
+.cardcontainer{
+scroll-snap-align:start;
+}
+.price1{
+  color: #283143;
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.about{
+border-radius: 10px;
+background:lightgray 50% / cover no-repeat, #D9D9D9;
+
+/* box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25); */
+}
+
+.about_box{
+  width: 310px;
+  height: 330px;
+
+  border-radius: 10px;
+background: var(--the, #E6F5FA);
+}
+
+.about_box1{
+  width: 320px;
+  border-radius: 10px;
+background: var(--the, #E6F5FA);
+}
+
+.stats{
+  border-radius: 10px;
+border: 1px solid var(--button, #E5C75E);
+
+background: #E6F5FA;
+}
+
+.image{
+  border-radius: 236px;
+border: 4px solid var(--button, #E5C75E);
+background:lightgray 0px 1.068px / 100% 149.942% no-repeat;
+box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.25);
+}
+
+.ongoing{
+  background: var(--the, #E6F5FA);
+}
