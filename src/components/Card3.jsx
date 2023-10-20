@@ -26,18 +26,22 @@ background: `linear-gradient(180deg, rgba(121, 217, 249, 0.00) 0.07%, #E6F5FA 99
       
       </> }
 
-    {type===2&&<>
-      <button ><div className={`w-[159px] h-[240px]  `  } style={{
-        borderRadius:"10px",
-background: `linear-gradient(180deg, rgba(121, 217, 249, 0.00) 0.07%, #E6F5FA 99.93%), url(${img}), lightgray 50% / cover no-repeat`
-    }} >   
-        <div className=' w-[100%]  gap-4 pb-5 h-[100%] flex flex-col justify-end   pl-4'>
-         <p className='text-xl bluish '>Hatha Yoga</p>
-       <button className='button3' style={{height:"26px",width:"120px"}}><span>Know More</span></button>
-        </div>
-        </div>
-        </button>
-       </>
+        {type===2&&<>
+          <button className={`w-[150px]  h-[240px]   `} style={{
+            borderRadius:"10px",
+    background: `linear-gradient(180deg, rgba(121, 217, 249, 0.00) 0.07%, #E6F5FA 99.93%)`,
+    backgroundImage:`url(${img})`,
+    backgroundRepeat:"no-repeat",
+    backgroundSize:"cover",
+    backgroundPosition:"center"
+        }}> 
+            <div className=' w-[100%]  gap-4 pb-5 h-[100%] flex flex-col justify-end   pl-4'>
+             <p className='text-xl bluish '>Hatha Yoga</p>
+           <button className='button3' style={{height:"26px",width:"120px"}}><span>Know More</span></button>
+            </div>
+       
+            </button>
+           </>
 
     }
     </> 

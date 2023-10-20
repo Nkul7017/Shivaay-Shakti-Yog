@@ -645,3 +645,11 @@ box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.25);
 .ongoing{
   background: var(--the, #E6F5FA);
 }
+
+.progres{
+
+height: 185px;
+border-radius: 10px;
+background: #FFF;
+box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.25);
+}
