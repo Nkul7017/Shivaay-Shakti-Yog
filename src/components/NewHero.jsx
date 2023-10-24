@@ -12,12 +12,11 @@ import "aos/dist/aos.css";
 import HeroNavbar from "./HeroNavbar";
 import { Link } from "react-router-dom";
 import ShurveyShivaay from "./Shurvey/ShurveyShivaay";
+import NewSurvey from "./NewSurvey";
 
 const NewHero = () => {
   const count = useSelector((state) => state.counter.value)
   const dispatch = useDispatch()
-  // console.log(count)
-  // const [show, setShow] = useState(false);
   const [shurveyPopup, setShurveyPopup] = useState(false);
   const [login, setLogin] = useState(false);
   AOS.init({
@@ -66,14 +65,15 @@ const NewHero = () => {
                 </div>
                 <button 
                   className="text-white text-sm button1  shadow-md py-2 px-8  mb-6   rounded-md md:rounded-lg w-[260px] "
-                  onClick={() => setShurveyPopup(!shurveyPopup)}>
+                  onClick={() => setShurveyPopup((prev=>!prev))}>
                 Take a Free Health Survey
                 </button>
                 </div>
           </div>
         </>
 
-      <ShurveyShivaay logovideo={logovideo} data={shurveyPopup}  setShurveyPopup={setShurveyPopup}  setLogin={setLogin} ></ShurveyShivaay>
+    <NewSurvey logovideo={logovideo} shurveyPopup={shurveyPopup}  setShurveyPopup={setShurveyPopup}  />
+      {/* <ShurveyShivaay logovideo={logovideo} data={shurveyPopup}  setShurveyPopup={setShurveyPopup}  setLogin={setLogin} ></ShurveyShivaay> */}
     </>
   );
 };
