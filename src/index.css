@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Nunito&family=Quicksand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Nunito&family=Quicksand&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Amita:wght@700&family=Cormorant+Garamond:wght@700&family=Nunito&family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amita:wght@700&family=Cormorant+Garamond:wght@700&family=Nunito&family=Quicksand&family=Source+Sans+3&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: "Cormorant Garamond","Source Sans 3";
+  font-family:"Source Sans 3";
 }
 
 .bghero {
@@ -481,29 +482,9 @@ html {
 .button1{
   background:linear-gradient(103deg, #E5C75E 24.85%, #c77c46 111.06%);
 }
-.button3{
-  width: 100px;
-height: 40px;
-display: grid;
-place-content: center;
-color:white;
-border-radius: 5px;
-background: var(--button, linear-gradient(103deg, #E5C75E 24.85%, #B96E38 111.06%));
-/* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
 
-}
 
-.button2{
-  border-radius: 5px;
-border: 1.6px solid var(--button, #db9562);
-/* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
-color:#db9562;
-display: grid;
-place-content: center;
-width: 100px;
-height: 40px;
-flex-shrink: 0;
-}
+
 
 .button2b{
   border-radius: 5px;
@@ -517,22 +498,12 @@ height: 36px;
 flex-shrink: 0;
 }
 
-.button2a{
-  border-radius: 5px;
-border: 1.6px solid var(--button, #db9562);
-/* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
-color:#db9562;
-display: grid;
-place-content: center;
-width: 80px;
-height: 40px;
-flex-shrink: 0;
-}
+
 
 .heading{
   color: var(--nav, #2C3E50);
 text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-font-family: Cormorant Garamond;
+font-family: Amita;
 font-weight: 700;
 line-height: normal;
 
@@ -550,7 +521,7 @@ place-content: center;
 .heading_colorless{
   /* color: var(--nav, #2C3E50); */
 text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-font-family: Cormorant Garamond;
+font-family: Amita;
 font-weight: 700;
 line-height: normal;
 }
@@ -589,7 +560,7 @@ box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .bluish{
   color: #2C3E50;
-  font-family: Quicksand;
+  font-family: "Source Sans 3";
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -597,7 +568,7 @@ box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
 .price{
   color: var(--nav, #2C3E50);
-  font-family: Quicksand;
+  font-family: "Source Sans 3";
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -625,7 +596,7 @@ scroll-snap-align:start;
 }
 .price1{
   color: #283143;
-  font-family: Quicksand;
+  font-family: Q"Source Sans 3";
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -677,3 +648,49 @@ border-radius: 10px;
 background: #FFF;
 box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.25);
 }
+.button2a{
+  border-radius: 5px;
+border: 1.6px solid var(--button, #db9562);
+/* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
+color:#db9562;
+display: grid;
+place-content: center;
+width: 80px;
+height: 40px;
+flex-shrink: 0;
+}
+
+
+.button2{
+  border-radius: 5px;
+border: 1.6px solid var(--button, #db9562);
+/* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
+color:#db9562;
+display: grid;
+place-content: center;
+width: auto;
+padding: 5px;
+min-width: 80px;
+max-width: 160px;
+height: 40px;
+flex-shrink: 0;
+}
+
+
+.button3{
+  padding: 5px;
+  min-width: 80px;
+  max-width:160px;
+  width:auto;
+height: 40px;
+display: grid;
+place-content: center;
+color:white;
+border-radius: 5px;
+background: var(--button, linear-gradient(103deg, #E5C75E 24.85%, #B96E38 111.06%));
+/* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
+
+}
+
+
+

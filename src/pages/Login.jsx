@@ -1,303 +1,69 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import "react-toastify/dist/ReactToastify.css";
-import { ToastContainer, toast } from "react-toastify";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import logo from "../../public/letter-head_CLR.png"
-import { useDispatch } from "react-redux";
-import { setUser } from "../features/counter/userSlice";
+import React,{useState} from 'react'
+import logovideo from '../../public/loutput.gif'
+import axios from 'axios';
+import { isPassword } from '../utils';
+import { useNavigate } from 'react-router-dom';
+function Login() {
+  const navigate=useNavigate();
+  const [message,setMessage]=useState("");
+  const [data,setData]=useState({
+    username:"",
+    password:""
+  })
+ async function handlesubmit(e)
+  {
+e.preventDefault();
+if( isPassword(data.password.trim()))
+{
+  setMessage("")
+  try{
+  const res=await axios.post("http://localhost:5000/api/auth/login",data);
+if(res.status===200)    
+{
+  console.log(res.data.user);
+  setMessage("Login Successful")
+  localStorage.setItem('user', JSON.stringify( res.data.user ));
+  navigate('/', {replace: true});
+}
+  }
+catch(e)
+{
+  setMessage(e.response.data.message);
+}
+}
+else{
+  setMessage("Invlaid Credentials");
+}
 
-// import {  user} from '../features/counter/userSlice'
-
-// async function getUser() {
-//   try {
-//     const response = await axios.get("/user?ID=12345");
-//     console.log(response);
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
-
-const Login = () => {
-  const [email, setEmail] = useState("");
-  const [pin, setPin] = useState(0);
-  const [load, setLoad] = useState(false);
-  const [responseData, setResponseData] = useState([]);
-
-  const dispatch = useDispatch();
-
-  const navigate = useNavigate();
-
-  const notify = () => {
-    setLoad(true);
-    if (email == "" || pin == 0) {
-      toast.error("Email & Pin Cannot be Empty", {
-        position: "bottom-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
-    } else {
-      var options = {
-        method: "GET",
-        url: "https://shivayshaktibackend.onrender.com/trainee/login",
-        headers: {
-          Accept: "application/json",
-          email: email,
-          pin: pin,
-        },
-      };
-
-      axios
-        .request(options)
-        .then(function (response) {
-          console.log(response.data);
-          console.log(response.data._id);
-          toast.success("Login Successfully Please Wait !", {
-            position: "bottom-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-          });
-
-          localStorage.setItem("ID", JSON.stringify(response.data._id));
-          setResponseData(response.data);
-
-       
-
-
-          setTimeout(() => {
-            const local_ID = localStorage.getItem("ID");
-            console.log("local storage id", local_ID);
-            navigate(-1);
-          }, 3500);
-
-
-          
-
-
-        })
-        .catch(function (error) {
-          if (error.response.data.message == "incorrect pin") {
-            toast.error("Passward incorrect", {
-              position: "bottom-right",
-              autoClose: 3000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "colored",
-            });
-          } else {
-            toast.error("Check Your Email & Passward", {
-              position: "bottom-right",
-              autoClose: 3000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "colored",
-            });
-          }
-          console.error(error);
-          console.error(error.response.data.message);
-        });
-    }
-  };
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoad(false);
-    }, 5000);
-    return () => clearTimeout(timer);
-  }, [load]);
-
-  console.log("use State Response =================> ", responseData);
-  // console.log("Email => ", email);
-  // console.log("Pin => ", pin);
+  }
   return (
-    <>
-      <ToastContainer
-        position="bottom-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="colored"
-      />
+    <div className=' w-screen h-screen bg-black grid place-content-center ' >
+       <div  className=' flex w-[80vw]  justify-center items-center  ' >
+       <div className='  hidden lg:block w-1/2 '  >
+       <img src={logovideo}  alt="" />
+       </div>
+       {/* style={{ background: "linear-gradient(90deg, #FFF -0.83%, #FFF1C1 99.93%)",}}  */}
+       <div className=' w-[90vw] sm:w-[80vw] md:w-[70vw] h-[500px]  text-white mx-auto  lg:w-1/2 rounded-2xl  sm:p-8 md:p-12 lg:p-16 ' >
+        <h1 className='text-5xl ' >Login</h1>
+        <form className=' flex flex-col mt-10 gap-5 ' onSubmit={handlesubmit} >
+          <div className=' flex flex-col gap-2 '>
+         <label className=' text-2xl  ' htmlFor="">Username or Email</label>
+         <input type="text" name="username" value={data.username} onChange={(e)=>setData({...data,[e.target.name]:e.target.value})} className=' font-semibold  px-3   text-red-900  rounded-lg py-1 '  />
+         </div>
+          <div className=' flex flex-col gap-2 '>
+         <label className=' text-2xl ' htmlFor="">Password</label>
+         <input type="password" name="password" value={data.password} onChange={(e)=>setData({...data,[e.target.name]:e.target.value})}  className=' text-red-900 rounded-lg px-3 py-1  '  />
+         </div>
+          <div className=' flex  items-center gap-5   mt-6  '>
+         <button type='submit' className=' text-2xl px-3 py-1  border-2 border-white '>Submit</button>
+         <p className=' text-[18px] font-bold text-red-900'>{message}</p>
+         </div>
+        
+        </form>
+       </div>
+       </div>
+    </div>
+  )
+}
 
-      {/* mob view */}
-
-      <div className="bgCatmob lg:hidden  ">
-        <div className="flex flex-col items-center justify-center justify-items-center  ">
-          <img className="w-48 h-48 -mt-6 " src={logo} />
-          <img className="-mt-24 w-64" src="img/image 4.png" />
-        </div>
-        <h1 className="text-black  text-center text-3xl font-semibold -mt-12 pb-10">
-          Welcome!
-        </h1>
-        <div className=" flex flex-col gap-4 items-center">
-          <input
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-[350px] h-[50px] rounded-xl pl-4 text-gray-700"
-            placeholder="User Name / Email*"
-          ></input>
-          <input
-            onChange={(e) => setPin(e.target.value)}
-            className="w-[350px] h-[50px] rounded-xl pl-4 text-gray-700"
-            placeholder="6 Digit Pin*"
-          ></input>
-        </div>
-        <div className="flex flex-row justify-between mt-5 ">
-          <Link to="/SignUp">
-            <button className="ml-5 bg-[#283143] text-white px-4 py-2 rounded-lg text-lg font-semibold hover:-translate-y-1 hover:scale-110  duration-300">
-              Sign Up
-            </button>
-          </Link>
-
-          {load == false ? (
-            <button
-              onClick={notify}
-              className="mr-5  bg-[#FAA200]   text-white px-4 py-2 rounded-lg text-lg font-semibold hover:-translate-y-1 hover:scale-110  duration-300"
-            >
-              Login
-            </button>
-          ) : (
-            <button
-              onClick={notify}
-              className="mr-5  bg-[#FAA200] text-white px-4 py-2 rounded-lg text-lg font-semibold hover:-translate-y-1 hover:scale-110  duration-300"
-            >
-              <div className="flex items-center justify-center">
-                <svg
-                  className="w-7"
-                  version="1.1"
-                  id="L9"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  x="0px"
-                  y="0px"
-                  viewBox="0 0 100 100"
-                  enable-background="new 0 0 0 0"
-                  xml:space="preserve"
-                >
-                  <path
-                    fill="#fff"
-                    d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"
-                  >
-                    <animateTransform
-                      attributeName="transform"
-                      attributeType="XML"
-                      type="rotate"
-                      dur="1s"
-                      from="0 50 50"
-                      to="360 50 50"
-                      repeatCount="indefinite"
-                    />
-                  </path>
-                </svg>
-                <span> Wait</span>
-              </div>
-            </button>
-          )}
-        </div>
-      </div>
-      {/* mob view end */}
-
-      {/* destop view */}
-
-      <div className="bgCatdes hidden sm:flex justify-center ">
-        <div className="flex justify-center mt-10">
-          <div className="">
-            <img className="" src="img/Rectangle 334.png" />
-          </div>
-          <div className="bg-gray-100  w-[450px] h-[500px] mt-14 rounded-r-3xl -ml-20 ">
-            <div className="flex flex-col items-start ml-6">
-              <img className=" -mt-4 w-48 h-48 ml-8" src={logo} />
-              <h1 className="text-2xl text-black ml-10">Welcome!</h1>
-            </div>
-            <div className="flex flex-col gap-5">
-              <input
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-[320px] h-[50px] rounded-xl p-4 shadow-2xl mt-12 ml-16 text-black"
-                placeholder="User Name / Email*"
-              ></input>
-              <input
-                onChange={(e) => setPin(e.target.value)}
-                className="w-[320px] h-[50px] rounded-xl p-4 shadow-2xl ml-16 text-black"
-                placeholder="6 Digit Pin*"
-              ></input>
-            </div>
-            <div className="flex flex-row gap-12 justify-center mt-10">
-              <Link to="/SignUp">
-                <button className="w-[135px] h-[45px] bg-[#283143] text-white rounded-xl hover:-translate-y-1 hover:scale-110  duration-300">
-                  Sign Up
-                </button>
-              </Link>
-              {load == false ? (
-                <button
-                  onClick={notify}
-                  className="w-[135px] h-[45px] bg-[#FAA200] text-white rounded-xl hover:-translate-y-1 hover:scale-110  duration-300"
-                >
-                  Log in
-                </button>
-              ) : (
-                <button
-                  onClick={notify}
-                  className="w-[135px] h-[45px] bg-[#FAA200] text-white rounded-xl hover:-translate-y-1 hover:scale-110  duration-300 "
-                >
-                  <div className="flex items-center justify-center">
-                    <svg
-                      className="w-7"
-                      version="1.1"
-                      id="L9"
-                      xmlns="http://www.w3.org/2000/svg"
-                      xmlns:xlink="http://www.w3.org/1999/xlink"
-                      x="0px"
-                      y="0px"
-                      viewBox="0 0 100 100"
-                      enable-background="new 0 0 0 0"
-                      xml:space="preserve"
-                    >
-                      <path
-                        fill="#fff"
-                        d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"
-                      >
-                        <animateTransform
-                          attributeName="transform"
-                          attributeType="XML"
-                          type="rotate"
-                          dur="1s"
-                          from="0 50 50"
-                          to="360 50 50"
-                          repeatCount="indefinite"
-                        />
-                      </path>
-                    </svg>
-                    <span> Wait</span>
-                  </div>
-                </button>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-};
-
-export default Login;
+export default Login

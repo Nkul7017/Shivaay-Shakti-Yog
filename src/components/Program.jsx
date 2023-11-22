@@ -1,7 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Card1 from './Card1'
 import {FaSearch } from "react-icons/fa";
+import axios from 'axios';
 export default function Program() {
+  const [data,setData]=useState([]);
+  async function getdata()
+  {
+    try{
+  const response=await axios.get("http://localhost:5000/api/course");
+  // console.log(response?.data?.data)
+   setData(response?.data?.data);
+    }
+    catch(e)
+    {
+console.log(e);
+    }
+  }
+  useEffect(()=>{
+    getdata();
+  },[])
   return (
    <>
    <div className='  flex flex-col gap-2 -mt-3 w-[90vw]  sm:w-[80vw] h-auto mx-[auto] '>
@@ -9,16 +26,14 @@ export default function Program() {
           <h1 className=' mb-10  '>Programs</h1>
           <div className='relative'>
           <input type="text" placeholder=' Search' className='  pl-10 placeholder-[#444444] w-[50vw] text-2xl h-[36px] rounded-[10px] text-[#444] bg-[#EEEEEE]' />
-          <FaSearch className='absolute w-[20px] top-2 left-3  text-[#444444]   z-50  '/>
+          <FaSearch className='absolute w-[20px] top-[30%] left-3  text-[#444444]   z-50  '/>
           </div>
         </div>
-        <section className=' box  p-1  flex gap-7 sm:gap-24 mt-6  overflow-scroll scrollbar-hide  '>
-            <Card1/>
-            <Card1/>
-            <Card1/>
-            <Card1/>
-            <Card1/>
-            <Card1/>
+       
+        <section className=' box  p-1   flex gap-9 sm:gap-24 mt-6  overflow-scroll scrollbar-hide  '>
+        {data.map((value,index)=>
+        <Card1 key={index} value={value} />
+        )} 
         </section>
         </div>
    </>

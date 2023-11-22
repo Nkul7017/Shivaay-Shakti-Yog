@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Image1 from '../../public/program.png'
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import { Link} from "react-router-dom";
-export default function Card1() {
+export default function Card1({value}) {
   return (
     <div className="cardcontainer">
     <Card sx={{ maxWidth:320 ,minWidth:320 }} >
@@ -14,21 +14,21 @@ export default function Card1() {
         <CardMedia
           component="img"
           height="140"
-          image={Image1}
+          image={value?.main_url}
           alt="green iguana"
         />
         <CardContent className=' bg-[#E6F5FA] '>
           <Typography gutterBottom variant="h5" className="heading-class" component="div">
-          <span className='heading  text-xl '>Hath Yoga</span>
+          <span className='heading  text-xl '>{value?.name}</span>
           </Typography>
           <Typography variant="body2" color="text.secondary">
-          <span className='para text-md text-black '>In an era defined by stress, anxiety, and chronic busyness, ancient practices like yoga offer a beacon of hope. </span>
+          <span className='para text-md text-black '>{value?.description}</span>
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions className='   bg-[#E6F5FA]  ' style={{paddingBottom:"18px"}} >
         <Button size="small" color="primary">
-          <Link to="/ParticularProgram" className='knowmorebtn text-md  font-semibold  normal-case   ' style={{width:"140px"}} >Know more</Link>
+          <Link to={`/ParticularProgram/${value?._id}`} className='knowmorebtn text-md  font-semibold  normal-case   ' style={{width:"140px"}} >Know more</Link>
         </Button>
       </CardActions>
     </Card>

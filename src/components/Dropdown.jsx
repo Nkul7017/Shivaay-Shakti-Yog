@@ -1,18 +1,17 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { RxAvatar } from "react-icons/rx";
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Dropdown() {
+export default function Dropdown({logged,setLogged}) {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <Menu.Button className="">
+        <Menu.Button className="  ">
           <RxAvatar
             className="-mr-1 h-8 w-8 text-black hover:text-yellow-400"
             aria-hidden="true"
@@ -33,9 +32,7 @@ export default function Dropdown() {
           <div className="py-1">
             <Menu.Item>
               {({ active }) => (
-                <Link to="/Profile">
-                  {" "}
-                  <button
+                <Link to="/UserDashboard"
                     className={classNames(
                       active
                         ? "bg-gray-100 text-gray-900 hover:text-yellow-400"
@@ -44,33 +41,17 @@ export default function Dropdown() {
                     )}
                   >
                     Profile
-                  </button>
                 </Link>
               )}
             </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
-                <Link to="/Account">
-                  <button
-                    className={classNames(
-                      active
-                        ? "bg-gray-100 text-gray-900 hover:text-yellow-400"
-                        : "text-gray-700",
-                      "block px-4 py-2 text-sm w-full text-left"
-                    )}
-                  >
-                    My Courses
-                  </button>
-                </Link>
-              )}
-            </Menu.Item>
-
-            <form method="POST" action="#">
               <Menu.Item>
                 {({ active }) => (
-                  <Link to="/login">
+                
                     <button
-                      type="submit"
+                    onClick={()=>{
+                      setLogged(localStorage.removeItem('user'));
+                     }}
+                     
                       className={classNames(
                         active
                           ? "bg-gray-100 text-gray-900 hover:text-yellow-400"
@@ -78,12 +59,12 @@ export default function Dropdown() {
                         "block w-full px-4 py-2 text-left text-sm"
                       )}
                     >
-                      Sign out
+                      Log Out
                     </button>
-                  </Link>
+                 
                 )}
               </Menu.Item>
-            </form>
+        
           </div>
         </Menu.Items>
       </Transition>

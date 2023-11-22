@@ -5,45 +5,19 @@ import { HiOutlineArrowDownTray, HiBars3CenterLeft } from "react-icons/hi2";
 import DeskNavbar from "./DeskNavbar";
 import Dropdown from "./Dropdown";
 import logo from "../../public/letter-head_CLR.png"
+import { Link } from "react-router-dom";
 
-const navigation = [
-  { name: "Home", href: "/", current: false },
+// import { is } from "immer/dist/internal";
 
-  { name: "Login", href: "/login", current: false },
-];
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function HeroNavbar({ login }) {
- 
-  const [Logged, setLogged] = useState(false);
-  const [id, setId] = useState(false);
 
-  useEffect(() => {
-    const local_ID = localStorage.getItem("ID");
-
-    setId(local_ID);
-  }, []);
-
-  
-
-  useEffect(() => {
-    console.log("id", id);
-    if (id !== undefined && id !== "" && id !== null && !id) {
-      console.log("if chala");
-      setLogged(true);
-    } else {
-      setLogged(false);
-      console.log("else runnn");
-    }
-  }, [id]);
-
-  console.log(Logged);
-
-
-
+ const [logged,setLogged]=useState(localStorage.getItem('user'));
   return (
     <>
       <Disclosure as="nav" className="lg:hidden -mt-2 pt-[20px]">
@@ -61,10 +35,10 @@ export default function HeroNavbar({ login }) {
                     />
                     
                   </div>
-                  <div className="hidden sm:ml-6 sm:block">
+                  {/* <div className="hidden sm:ml-6 sm:block">
                     <div className="flex space-x-4 text-black">
                       {navigation.map((item) => (
-                        <a
+                        <button
                           key={item.name}
                           href={item.href}
                           className={classNames(
@@ -76,10 +50,10 @@ export default function HeroNavbar({ login }) {
                           aria-current={item.current ? "page" : undefined}
                         >
                           {item.name}
-                        </a>
+                        </button>
                       ))}
                     </div>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="absolute inset-y-0 right-0 top-0 flex items-center pr-2 lg:static lg:inset-auto lg:ml-6 lg:pr-0">
                   <Menu as="div" className=" ml-3">
@@ -101,28 +75,66 @@ export default function HeroNavbar({ login }) {
               </div>
             </div>
 <div className=" ">
-            <Disclosure.Panel className="lg:hidden flex absolute top-12 right-7 justify-end items-center text-center">
-              <div className="space-y-1   pb-3 pt-2">
-                {navigation.map((item) =>
-                  item.name == "Login" && Logged ? (
-                    <Dropdown />
-                  ) : (
-                    <Disclosure.Button
-                      key={item.name}
+            <Disclosure.Panel className="lg:hidden flex  z-30 absolute top-6 right-9    ">
+              <div className="space-y-3  flex flex-col bg-white rounded-md  px-3   py-2">
+                
+                    <Link
                       as="a"
-                      href={item.href}
-                      className={classNames(
-                        item.current
-                          ? "bg-gray-900 text-black"
-                          : "text-black hover:bg-gray-700 hover:text-white",
-                        "block rounded-md px-3 py-2 text-base font-medium"
-                      )}
-                      aria-current={item.current ? "page" : undefined}
+                      to={"/"}
+                      className= " text-black"
                     >
-                      {item.name}
-                    </Disclosure.Button>
-                  )
-                )}
+                      Home
+                    </Link>
+                    <Link
+                      as="a"
+                      to={"/Courses"}
+                      className=" text-black"
+                    >
+                      Programs
+                    </Link>
+                    <Link
+                      as="a"
+                      to={"/about-us"}
+                      className=" text-black"
+                    >
+                      About Us
+                    </Link>
+                    <Link
+                      as="a"
+                      to={"/"}
+                      className=" text-black"
+                    >
+                      Channels
+                    </Link>
+           
+                    {logged&&<Link
+                      as="a"
+                      to={"/UserDashboard"}
+                      className=" text-black"
+                      >
+                      Profile
+                    </Link>}
+                  
+                    {!logged?<Link
+                      to='/Login'
+                      
+                      className=" text-black"
+                    >
+                      Login
+                    </Link>:
+                     <button onClick={()=>{
+                      setLogged(localStorage.removeItem('user'));
+                     }}
+                    className=" text-black"
+                  
+                  >
+                    Log Out
+                  </button> }
+                    
+                    
+                    
+                    
+              
               </div>
             </Disclosure.Panel>
             </div>

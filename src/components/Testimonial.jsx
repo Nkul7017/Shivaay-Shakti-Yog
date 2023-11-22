@@ -40,8 +40,8 @@ const arry = [
 
 export default function Testimonial() {
   return (
-    <section className="py-18 ">
-        <p className="text-4xl pl-8 sm:pl-40 heading mb-2 ">Testimonials</p>
+    <section className="py-16 sm:py-6 ">
+        <p className="text-4xl  pl-8 sm:pl-40 heading mb-2 ">Testimonials</p>
       <div className="container  text-justify w-[90vw] md:w-[85vw] lg:w-[90vw]   mx-auto   ">
 
         <Carousel
@@ -70,14 +70,14 @@ export default function Testimonial() {
 const TestimonialCard = ({ img, name, ptag, designation }) => (
   <>
     <div className="hidden md:flex rounded-lg  mb-4 h-[300px] md:h-[350px] lg:h-[400px] ">
-      <div className="flex-none  w-[230px] lg:w-[340px] relative z-10 self-center h-[50%] lg:h-[74%] rounded-lg shadow-md  bg-[#B7DFC7] ">
+      <div className=" bg-[#E6F5FA] flex-none  w-[230px] lg:w-[340px] relative z-10 self-center h-[50%] lg:h-[74%] rounded-lg shadow-md  ">
         <img
           src={img}
           alt={name}
           className="w-full -mt-16 lg:-mt-16 ml-4 h-[300px] lg:h-[400px] rounded-lg shadow-sm "
         />
       </div>
-      <div className="flex  flex-col px-12 lg:px-28  self-center h-[50%] lg:h-[74%]     bg-[#B7DFC7] rounded-lg   justify-center relative">
+      <div className=" bg-[#E6F5FA] flex  flex-col px-12 lg:px-28  self-center h-[50%] lg:h-[74%]     rounded-lg   justify-center relative">
         <p className=" text-left text-3xl heading mb-1  lg:mb-2 ">
           {name}
         </p>

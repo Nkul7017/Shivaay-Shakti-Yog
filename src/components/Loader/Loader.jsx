@@ -2,10 +2,6 @@ import React from "react";
 import { ThreeDots } from "react-loader-spinner";
 import { useState } from "react";
 const Loader = () => {
-
-
-
-
   return (
     <>
       <div className="flex justify-center items-centers h-96 w-screen items-center">

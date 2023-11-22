@@ -6,14 +6,17 @@ function  Helping() {
       <div className={` row-start-2 sm:row-auto my-2 sm:my-auto space-y-2  rounded-xl  `} >
         <div className=" space-y-2 sm:w-[70%] -ml-2 sm:-ml-0 flex flex-col gap-1.5 ">
           <div className=" "> 
-          <p className=" text-2xl heading ">Why Choose</p>
-          <p className=" text-4xl heading mt-1 ">Shivaay Shakti Yog ?</p>
+          <p className=" text-2xl heading mt-2 sm:mt-0 ">Why Choose</p>
+          <p className=" text-3xl sm:text-4xl heading sm:mt-1 ">Shivaay Shakti Yog ?</p>
           </div>
           {/* <h1 className=" text-md sm:text-2xl heading ">
           For The Betterment of Humanity
           </h1> */}
-          <p className="text-md leading-6 para   ">
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi! Molestiae voluptatum itaque, exercitationem voluptate vitae deserunt fugiat perspiciatis sequi maxime aperiam est voluptas sed blanditiis quam, nostrum officiis sint.  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis nobis eligendi officiis numquam. Fugit rerum nam labore dolores deserunt. Suscipit aut quas perferendis sapiente blanditiis, adipisci at dicta dolor necessitatibus?
+          <p className="text-md leading-6 para text-justify   ">
+          Nowadays everyone is following the awful lifestyle and the results are, our mind, body  and soul get stressed  out and have mental and physical problems.
+ We want “The betterment of humanity” through yog which includes eight limbs .This can  counter this damage and prevent problems from getting bigger .<br/> <br />
+We bring you highly qualified trainers and highly experienced who helps you to balance between your mind , body and soul    . Our trainers give unbiased personal attention to everyone depending upon their needs .
+Start your journey with Shivaay Shakti and make a right choice for life long to be healthier. 
           </p>
         </div>
       </div>

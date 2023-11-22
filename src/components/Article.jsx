@@ -1,6 +1,26 @@
+import { useEffect, useState } from "react";
 import helping from "../../public/newsart.png";
 import Flickity from "react-flickity-component";
+import axios from "axios";
 export default function Article() {
+  const [data,setData]=useState([]);
+ async function getdata()
+ {
+ try{
+ const response=await axios.get("http://localhost:5000/api/article");
+ if(response?.data?.success===true)
+ {
+  setData(response?.data?.dta);
+ }
+ }
+ catch(e)
+ {
+ console.log(e);
+ }
+ }
+  useEffect(()=>{
+    getdata();
+  },[])
   const flickityOptions = {
     initialIndex: 2,
     autoPlay: 3500,
@@ -26,80 +46,21 @@ export default function Article() {
         elementType={"div"}
         options={flickityOptions} 
       >
-        
-        <div className="carousel-cell h-[400px] w-[88vw] sm:w-[70vw] mx-12 relative overflow-hidden">
+       {data.map((value,index)=>
+        <div key={index} className="carousel-cell h-[400px] w-[88vw] sm:w-[70vw] mx-12 relative overflow-hidden">
           <div className="absolute w-[100%] md:w-[50%] rounded-2xl h-[99%] left-0 top-0 bg-[#4CAF7440] text-white grid place-content-center ">
             <div className=" w-[80%] sm:w-[70%] mx-auto space-y-2 sm:space-y-6">
-              <p className="text-4xl ">Sale ! Sale ! Sale !</p>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Corrupti aut cumque molestiae voluptatibus soluta consequatur
-                alias dolorem. Ex minima error voluptas explicabo provident,
-                tempore ipsam repudiandae molestias voluptate ipsa inventore.
-              </p>
+              <p className="text-4xl ">{value?.heading}</p>
+              <p>{value?.description}</p>
             </div>
           </div>
           <img
-            src={helping}
+            src={value?.articleimg}
             alt=""
             className="h-[400px] w-[70vw] object-cover   rounded-2xl "
           />
         </div>
-        <div className="carousel-cell h-[400px] w-[88vw] sm:w-[70vw] mx-12 relative overflow-hidden">
-          <div className="absolute w-[100%] md:w-[50%] rounded-2xl h-[99%] left-0 top-0 bg-[#2C3E5040]  text-white grid place-content-center ">
-            <div className=" w-[80%] sm:w-[70%] mx-auto space-y-2 sm:space-y-6">
-              <p className="text-4xl ">Sale ! Sale ! Sale !</p>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Corrupti aut cumque molestiae voluptatibus soluta consequatur
-                alias dolorem. Ex minima error voluptas explicabo provident,
-                tempore ipsam repudiandae molestias voluptate ipsa inventore.
-              </p>
-            </div>
-          </div>
-          <img
-            src={helping}
-            alt=""
-            className="h-[400px] w-[70vw] object-cover   rounded-2xl "
-          />
-        </div>
-        <div className="carousel-cell h-[400px] w-[88vw] sm:w-[70vw] mx-12 relative overflow-hidden">
-          <div className="absolute w-[100%] md:w-[50%] rounded-2xl h-[99%] left-0 top-0 bg-[#4CAF7440]  text-white grid place-content-center ">
-            <div className=" w-[80%] sm:w-[70%] mx-auto space-y-2 sm:space-y-6">
-              <p className="text-4xl ">Sale ! Sale ! Sale !</p>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Corrupti aut cumque molestiae voluptatibus soluta consequatur
-                alias dolorem. Ex minima error voluptas explicabo provident,
-                tempore ipsam repudiandae molestias voluptate ipsa inventore.
-              </p>
-            </div>
-          </div>
-          <img
-            src={helping}
-            alt=""
-            className="h-[400px] w-[70vw] object-cover   rounded-2xl "
-          />
-        </div>
-        <div className="carousel-cell h-[400px] w-[88vw] sm:w-[70vw] mx-12 relative overflow-hidden">
-          <div className="absolute w-[100%] md:w-[50%] rounded-2xl h-[99%] left-0 top-0 bg-[#2C3E5040]  text-white grid place-content-center ">
-            <div className=" w-[80%] sm:w-[70%] mx-auto space-y-2 sm:space-y-6">
-              <p className="text-4xl ">Sale ! Sale ! Sale !</p>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Corrupti aut cumque molestiae voluptatibus soluta consequatur
-                alias dolorem. Ex minima error voluptas explicabo provident,
-                tempore ipsam repudiandae molestias voluptate ipsa inventore.
-              </p>
-            </div>
-          </div>
-          <img
-            src={helping}
-            alt=""
-            className="h-[400px] w-[70vw] object-cover   rounded-2xl "
-          />
-        </div>
-      
+          )} 
       </Flickity>
     </div>
   );

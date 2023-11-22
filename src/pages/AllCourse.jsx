@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import course from '../../public/Course/course.png'
 import HeroNavbar from '../components/HeroNavbar'
 import Card1 from '../components/Card1';
@@ -8,7 +8,23 @@ import {FaFilter } from "react-icons/fa";
 import Card3 from '../components/Card3';
 import Card4 from '../components/Card4';
 import helping1 from "../../public/helping1.png";
+import axios from 'axios';
 function AllCourse() {
+  const [data,setData]=useState([]);
+  async function getdata()
+  {
+    try{
+  const response=await axios.get("http://localhost:5000/api/course");
+   setData(response?.data?.data);
+    }
+    catch(e)
+    {
+console.log(e);
+    }
+  }
+  useEffect(()=>{
+    getdata();
+  },[])
   return (
    <>
    
@@ -37,21 +53,19 @@ function AllCourse() {
         </div>
 
         {/*-------------------------------- Desktop------------------------------------------- */}
+
         <section className=' hidden sm:flex box  p-1   gap-7 sm:gap-10 mt-6  scrollbar-hide   overflow-scroll '>
-            <Card1/>
-            <Card1/>
-            <Card1/>
-            <Card1/>
-            <Card1/>
-            <Card1/>
+            {data.map((value)=>
+            
+            <Card1 value={value}/>
+            )}
         </section>
 
         {/*-------------------------------- MObile--------------------------------------------- */}
         <section className=' flex sm:hidden box  p-1  box  gap-7 sm:gap-10 mt-6  overflow-x-scroll scrollbar-hide '>
-            <Card4 img={helping1} />
-            <Card4 img={helping1} />
-            <Card4 img={helping1} />
-            <Card4 img={helping1} />
+        {data.map((value)=>
+            <Card4 value={value}  />
+          )}
         </section>
 
         <div className="  text-4xl pt-12     sm:pt-28 p sm:pl-2 heading  ">
@@ -60,22 +74,17 @@ function AllCourse() {
 
         {/*-------------------------------- Desktop------------------------------------------- */}
         <section className=' hidden box  p-1  sm:flex gap-7 sm:gap-10 mt-6   flex-wrap  '>
-            <Card1/>
-            <Card1/>
-            <Card1/>
-            <Card1/>
-            <Card1/>
-            <Card1/>
+        {data.map((value)=>
+            
+            <Card1 value={value}/>
+            )}
         </section>
 
         {/*-------------------------------- MObile--------------------------------------------- */}
         <section className=' sm:hidden box    flex gap-5 sm:gap-10 mt-6   flex-wrap  '>
-        
-     <Card3 img={""} type={2} />
-     <Card3 img={""} type={2} />    
-     <Card3 img={""} type={2} />
-     <Card3 img={""} type={2} />
- 
+        {data.map((value)=>
+     <Card3 img={value?.main_url} type={2} data={value} />
+     )}
         </section>
 
       </div>

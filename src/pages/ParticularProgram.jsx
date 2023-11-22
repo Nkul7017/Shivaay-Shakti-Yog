@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import HeroNavbar from "./HeroNavbar";
+import { useLocation, useParams } from "react-router-dom";
+import HeroNavbar from "../components/HeroNavbar";
 import P1 from "../../public/Program/P1.png";
-import Details1 from "./Details1";
+import Details1 from "../components/Details1";
 
 import img1 from "../../public/Program/Personal/img1.png"
 import img2 from "../../public/Program/Personal/img2.png"
@@ -29,15 +29,18 @@ import Days from "../components/Days";
 import Details from "../components/Details";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
-import Faq1 from "./Faq1";
-import Review from "./Review";
-import TymPicker from "./TymPicker";
-import DtePicker from "./DtePicker";
-import MulitpleDate from "./MulitpleDate";
-import Terms from "./Terms";
-import Confirmation from "./Confirmation";
-import Types from './Type';
+import Faq1 from "../components/Faq1";
+import Review from "../components/Review";
+import TymPicker from "../components/TymPicker";
+import DtePicker from "../components/DtePicker";
+import MulitpleDate from "../components/MulitpleDate";
+import Terms from "../components/Terms";
+import Confirmation from "../components/Confirmation";
+import Types from '../components/Type';
+import axios from "axios";
 function ParticularArticle() {
+  const {_id}=useParams();
+  const [courseData,setCourseData]=useState([]);
   const [toggle,setToggle]=useState(false);
   const [toggle1,setToggle1]=useState(false);
   const [show, setshow] = useState(false);
@@ -267,6 +270,21 @@ function ParticularArticle() {
     useEffect(() => {
       window.scrollTo(0, 0);
     }, [pathname]);
+     
+    async function getdata()
+    {
+      try{
+ const response=await axios.get(`http://localhost:5000/api/course/${_id}`);
+ console.log(response?.data?.data);
+ setCourseData(response?.data?.data);
+      }
+      catch(e){
+   console.log(e);
+      }
+    }
+    useEffect(()=>{
+   getdata();
+    },[])
   return (
   
     <>
@@ -310,7 +328,7 @@ function ParticularArticle() {
 
       <div className="w-[80vw] sm:w-[70vw] mt-12  sm:mt-20 mx-auto ">
         <div className=" flex justify-between items-center  ">
-          <p className=" heading text-2xl sm:text-6xl ">Hatha Yoga Course</p>
+          <p className=" heading text-2xl sm:text-6xl ">{courseData?.name} Course</p>
           <p className=" sm:flex items-center hidden  gap-3"><img src={rstar} alt="" /> <span className="text-xl font-semibold para ">4.5</span></p>
         </div>
        
@@ -338,7 +356,7 @@ function ParticularArticle() {
         <div className=" mt-5 sm:mt-10">
           <p className=" text-xl sm:text-4xl heading">Description</p>
           <p className=" text-sm text-justify para mt-3 ">
-          Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. It is a gentle form of yoga that is suitable for beginners and experienced practitioners alike. Hatha yoga can help improve flexibility, strength, balance, and mental clarity. Online group classes are a convenient way to practice yoga from the comfort of your own home. 
+          {courseData?.description} 
             {show &&
               " They allow you to connect with a community of like-minded people and receive guidance from an experienced teacher. Online classes can be accessed through various platforms, such as Zoom, Skype, or Google Meet. Some instructors may offer live classes, while others may provide pre-recorded videos that you can access at your convenience."}
           </p>
@@ -356,7 +374,7 @@ function ParticularArticle() {
         {/*----------------------------------Types----------------------------------------------*/}
         <section className=" mt-10 sm:mt-14">
         <p className=" text-xl sm:text-4xl heading">Select Course Type</p>
-          <Types/>
+          <Types data={courseData} />
         </section>
 
 
