@@ -45,10 +45,10 @@ function Footer() {
             
             </div>
             <div className="text-2xl flex sm:flex-row flex-col heading justify-center items-center w-full    flex-wrap gap-x-28 gap-y-4">
-              <Link>HOME</Link>
-              <Link>PROGRAMS</Link>
-              <Link>ABOUT</Link>
-              <Link>CHANNELS</Link>
+              <Link  tp="/" >HOME</Link>
+              <Link to='/Courses'>PROGRAMS</Link>
+              <Link to='/about-us' >ABOUT</Link>
+              <Link to='/' >CHANNELS</Link>
             </div>
             <div className=" flex flex-row justify-center w-[50vw] para mx-auto gap-10 md:hidden">
               <a><BsTelephone size={20} clas /></a>

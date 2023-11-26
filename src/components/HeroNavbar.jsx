@@ -5,7 +5,7 @@ import { HiOutlineArrowDownTray, HiBars3CenterLeft } from "react-icons/hi2";
 import DeskNavbar from "./DeskNavbar";
 import Dropdown from "./Dropdown";
 import logo from "../../public/letter-head_CLR.png"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // import { is } from "immer/dist/internal";
 
@@ -16,6 +16,7 @@ function classNames(...classes) {
 }
 
 export default function HeroNavbar({ login }) {
+  const navigate=useNavigate();
 
  const [logged,setLogged]=useState(localStorage.getItem('user'));
   return (
@@ -124,6 +125,7 @@ export default function HeroNavbar({ login }) {
                     </Link>:
                      <button onClick={()=>{
                       setLogged(localStorage.removeItem('user'));
+                      navigate('/', {replace: true});
                      }}
                     className=" text-black"
                   

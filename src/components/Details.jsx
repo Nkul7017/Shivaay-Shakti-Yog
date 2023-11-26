@@ -1,8 +1,6 @@
 import React from 'react'
 
 export default function Details({data}) {
-    console.log("hello")
-    // console.log(props);
   return (
    <>
    <div className='flex gap-10 overflow-auto scrollbar-hide '>

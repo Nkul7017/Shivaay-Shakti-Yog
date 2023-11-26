@@ -11,7 +11,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import HeroNavbar from "./HeroNavbar";
 import { Link } from "react-router-dom";
-import ShurveyShivaay from "./Shurvey/ShurveyShivaay";
 import NewSurvey from "./NewSurvey";
 
 const NewHero = () => {

@@ -21,8 +21,8 @@ background: `linear-gradient(180deg, rgba(121, 217, 249, 0.00) 0.07%, #E6F5FA 99
         </div>
       </div>
       </button> 
-        {types==="Personal"&&<PersonalForm toggle1={toggle1} setToggle1={setToggle1} />}
-        {types==="Group"&&<GroupForm toggle1={toggle1} setToggle1={setToggle1} />}
+        {types==="Personal"&&<PersonalForm data={data} toggle1={toggle1} setToggle1={setToggle1} />}
+        {types==="Group"&&<GroupForm data={data} toggle1={toggle1} setToggle1={setToggle1} />}
       
       </> }
 

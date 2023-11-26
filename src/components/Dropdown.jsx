@@ -8,6 +8,7 @@ function classNames(...classes) {
 }
 
 export default function Dropdown({logged,setLogged}) {
+  const navigate=useNavigate();
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
@@ -50,6 +51,7 @@ export default function Dropdown({logged,setLogged}) {
                     <button
                     onClick={()=>{
                       setLogged(localStorage.removeItem('user'));
+                       navigate('/', {replace: true});
                      }}
                      
                       className={classNames(

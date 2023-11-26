@@ -14,13 +14,13 @@ function Card2({img,heading,types,data}) {
     <div className=' w-[415px] h-auto card2 '>
     <div className=' relative '>
         <img src={img} className=' w-[559px] h-[150px] object-cover ' alt="" />
-        <p className='heading absolute bottom-1 left-6 text-2xl  ' style={{textShadow:"0px 4px 4px rgba(0, 0, 0, 0.25"}}>{data?.name}</p>
+        <p className='heading absolute bottom-1 left-6 text-2xl  ' style={{textShadow:"0px 4px 4px rgba(0, 0, 0, 0.25"}}>{heading}</p>
     </div>
     <div className=' flex flex-col gap-5 px-6 py-3  '>
-        <div className=' para text-sm  text-justify' style={{color:"#444"}}>
+        <div className=' min-h-[80px] para text-sm  text-justify' style={{color:"#444"}}>
             <p>{types==="personal"?data?.Personal_description1:data?.Group_description2}</p>
         </div>
-        {types==="personal"&&<div className=" bluish text-xs space-y-1.5 "> 
+        {types==="personal"&&<div  className=" min-h-[168px]    bluish text-xs space-y-1.5 "> 
            <p> <span><img src={img6} className='icon' alt="" /></span> <span>{data?.live_sessions1
 } live sessions</span> </p>
             <p> <span><img src={img2} className='icon' alt="" /></span> <span>{data?.recorded_sessions1} recorded sessions
@@ -30,7 +30,7 @@ function Card2({img,heading,types,data}) {
             {data?.beginner_friendly1&&<p> <span><img src={img3} className='icon'  alt="" /></span> <span>Female oriented</span> </p>}
             <p> <span><img src={img1} className='icon' alt="" /></span> <span>Suitable for {data?.age_range1} years</span> </p>
         </div>}
-        {types==="group"&&<div className=" bluish text-xs space-y-1.5 "> 
+        {types==="group"&&<div className=" min-h-[168px] bluish text-xs space-y-1.5 "> 
            <p> <span><img src={img6} className='icon' alt="" /></span> <span>{data?.live_sessions2
 } live sessions</span> </p>
             <p> <span><img src={img2} className='icon' alt="" /></span> <span>{data?.recorded_sessions2} recorded sessions</span> </p>
@@ -49,12 +49,12 @@ function Card2({img,heading,types,data}) {
             {types==="personal"&&
             <>
             <button onClick={()=>setToggle1(true)} className='button3' style={{width:"150px",height:"35px"}} ><span>Proceed</span></button>
-           <PersonalForm toggle1={toggle1} setToggle1={setToggle1} />
+           <PersonalForm data={data} toggle1={toggle1} setToggle1={setToggle1} />
             </>}
             {types==="group"&&
             <>
             <button onClick={()=>setToggle1(true)} className='button3' style={{width:"150px",height:"35px"}} ><span>Proceed</span></button>
-            <GroupForm  toggle1={toggle1} setToggle1={setToggle1} /> 
+            <GroupForm data={data} toggle1={toggle1} setToggle1={setToggle1} /> 
             </>}
         </div>
         </div>

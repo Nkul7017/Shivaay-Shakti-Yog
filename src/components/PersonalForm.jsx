@@ -5,9 +5,6 @@ import { HiXMark } from "react-icons/hi2";
 import { AiOutlineUser } from "react-icons/ai";
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
-import img1 from '../../public/Program/Group/group_form_icon/1.png'
-import img2 from '../../public/Program/Group/group_form_icon/2.png'
-import img3 from '../../public/Program/Group/group_form_icon/3.png'
 import "aos/dist/aos.css";
 import TymPicker from './TymPicker';
 import DtePicker from './DtePicker';
@@ -16,17 +13,7 @@ AOS.init({
   duration: 1200,
 });
 
-function PersonalForm({toggle1,setToggle1}) {
-    const data=[
-        {icon:img1,heading:"Group Sessions",content:"60 yogis"},
-        {icon:img2,heading:"6:00am to 7:30am",content:"Morning Sessions"},
-        {icon:img3,heading:"Starting",content:"20/03/2023"},
-    ]
-    const data1=[
-      {duration:"1Day",price:"₹ 1,000"},
-      {duration:"3 Months",price:"₹ 15,000"},
-      {duration:"9 Months",price:"₹ 25,000"},
-    ]
+function PersonalForm({toggle1,setToggle1,data}) {
   return (
     <>
     <Popup
@@ -48,7 +35,7 @@ function PersonalForm({toggle1,setToggle1}) {
     <div className='  w-[100%] h-[100%] p-3 sm:p-4 md:p-8 lg:py-16 lg:px-24   '>
         <div className=' relative w-[100%] h-[100%]'>
     <div className='  flex justify-between   '> 
-     <h1 className=' text-2xl  lg:text-4xl heading'>Hatha Yoga 60 Days Course</h1>
+     <h1 className=' text-2xl  lg:text-4xl heading'>{data?.name} {data?.course_duration_days1} Days Course</h1>
      <div className="cursor-pointer   " title="close" onClick={() => {setToggle1(false); }}>
                           <HiXMark size={40} />
                         </div> 
@@ -82,11 +69,11 @@ function PersonalForm({toggle1,setToggle1}) {
 <p className=' text-xl lg:text-2xl   heading ' style={{color:"#283143"}}>Select Duration</p>
 <div className=' mt-4 flex flex-wrap gap-2 lg:gap-10'>
 {
- data1.map(value=>
+ data&&data.personal_duration?.map(value=>
     <>
     <div>
-        <button className=' button2'>{value.duration}</button>
-        <p className=' text-center mt-2 para  font-semibold text-xl lg:text-2xl '  style={{color:"#283143"}}>{value.price}</p>
+        <button className=' button2'>{value?.timing}</button>
+        <p className=' text-center mt-2 para  font-semibold text-xl lg:text-2xl '  style={{color:"#283143"}}>₹ {value?.price}</p>
     </div>
     </>)
     }
