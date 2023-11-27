@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import logovideo from '../../public/loutput.gif'
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { isEmail,isPassword } from '../utils';
 function Signup() {
   const navigate=useNavigate();
@@ -69,8 +69,10 @@ else{
          </div>
          <div className=' flex  items-center gap-5   mt-6  '>
          <button  type='submit' className=' text-2xl px-3 py-1  border-2 border-white '>Submit</button>
+         <Link  to='/Login' className=' text-2xl px-3 py-1  border-2 border-white '>Login</Link>
          <p className=' text-[18px] font-bold text-red-900'>{message}</p>
          </div>
+         
         </form>
        </div>
        </div>

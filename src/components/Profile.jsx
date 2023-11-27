@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import heart from '../../public/dashboard/heart.png'
 import setting from '../../public/dashboard/setting.png'
 import { FaLocationDot} from "react-icons/fa6";
 const Stats = () => {
+   const [data,setData]=useState([]);
+  const user= JSON.parse(localStorage.getItem('user'));
+  console.log(user);
   return (
    
    <div className=' flex flex-1   px-4 lg:px-16 border flex-wrap g justify-between h-[160px]        '>
@@ -14,7 +17,7 @@ const Stats = () => {
          rounded-full image object-cover object-top  ' alt="" />
      </div>
      <div className=' flex flex-col gap-1  '>
-        <p className=' heading text-[18px]   lg:text-4xl '>Preeti_Insane</p>
+        <p className=' heading text-[18px]   lg:text-4xl '>{user?.username}</p>
         <p className=' bluish text-sm lg:text-2xl flex gap-2 items-center'>
         
             <span><FaLocationDot/></span>
