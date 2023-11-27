@@ -49,12 +49,12 @@ function Card2({img,heading,types,data}) {
             {types==="personal"&&
             <>
             <button onClick={()=>setToggle1(true)} className='button3' style={{width:"150px",height:"35px"}} ><span>Proceed</span></button>
-           <PersonalForm data={data} toggle1={toggle1} setToggle1={setToggle1} />
+           <PersonalForm type={"personal"} data={data} toggle1={toggle1} setToggle1={setToggle1} />
             </>}
             {types==="group"&&
             <>
             <button onClick={()=>setToggle1(true)} className='button3' style={{width:"150px",height:"35px"}} ><span>Proceed</span></button>
-            <GroupForm data={data} toggle1={toggle1} setToggle1={setToggle1} /> 
+            <GroupForm type={"group"} data={data} toggle1={toggle1} setToggle1={setToggle1} /> 
             </>}
         </div>
         </div>

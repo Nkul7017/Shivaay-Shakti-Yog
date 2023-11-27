@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Popup from 'reactjs-popup';
 import AOS from "aos";
 import { HiXMark } from "react-icons/hi2";
@@ -6,25 +6,82 @@ import { AiOutlineUser } from "react-icons/ai";
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
 import "aos/dist/aos.css";
-import TymPicker from './TymPicker';
-import DtePicker from './DtePicker';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 AOS.init({
   duration: 1200,
 });
 
-function PersonalForm({toggle1,setToggle1,data}) {
+function PersonalForm({toggle1,setToggle1,data,type}) {
+const navigate=useNavigate();
+  const [purchasedData,setPurchasedData]=useState({
+  user_id:JSON.parse(localStorage.getItem('user'))?._id,
+  status:"active",
+  preferred_timing:"",
+  duration:"",
+  price:"",
+  starting_date:"",
+  index:null,
+  message:""
+  })
+  const addDays = (date, days) => {
+    const result = new Date(date);
+    result.setDate(result.getDate() + days-1);
+    return result.toISOString().split('T')[0];
+  };
+  async function handlesubmit()
+  {
+   if(localStorage.getItem('user'))
+   {
+    setPurchasedData({...purchasedData,message:""})
+    if(purchasedData.preferred_timing!=="" &&purchasedData.duration!==""  &&purchasedData.price!==""&&purchasedData.starting_date!=="")
+    {
+      const b=purchasedData.duration.split(" ");
+      if(b[1]==="Month")
+      {
+       b[0]=parseInt(b[0])*30;
+      }
+      const expirationDate = addDays(purchasedData.starting_date,parseInt(b[0]));
+      delete purchasedData.index;
+      delete purchasedData.message;
+      purchasedData.expiration_date=expirationDate;
+      purchasedData.course_name=data?.name;
+      purchasedData.course_type=type;
+      try{
+       const response=await axios.post('http://localhost:5000/api/purchase',purchasedData,{
+        headers:{
+          Authorization:localStorage.getItem('jwt')
+        }
+       })
+       if(response?.data?.success===true)
+       {
+        setToggle1(false);
+        setTimeout(() => {
+          navigate('/UserDashboard',{replace:true})
+        },1);
+       }
+      }
+      catch(e)
+      {
+      setToggle1(false);
+      }
+    }
+    else{
+      setPurchasedData({...purchasedData,message:"* All Field Are Mandatory"})
+    }}
+    else{
+  navigate('/login',{replace:true});
+    }
+  }
   return (
     <>
     <Popup
           open={toggle1}
-            onClose={toggle1}
             position="center center"
             closeOnDocumentClick={false}
             lockScroll={true}
+            closeOnEscape={false}
             contentStyle={{
-        //    border:"none",
-            //   display:"grid",
                placeContent:"center",
             backgroundImage:"url('https://cdn.discordapp.com/attachments/1111568797476868128/1113746626696204349/WhatsApp_Image_2023-06-01_at_11.16.50.jpg')",
               width:"90vw",
@@ -59,25 +116,28 @@ function PersonalForm({toggle1,setToggle1,data}) {
 
         <div className=' flex flex-col mt-1 lg:mt-4  '>
         <p className=' bluish text-[16px]  lg:text-xl'>Preferred time Slot:</p>
-        <TymPicker/>
+        <input name="preferred_timing" type="time" value={purchasedData.preferred_timing} onChange={(e)=>setPurchasedData({...purchasedData,[e.target.name]:e.target.value})} className='h-10 mt-2' />
         </div>
         <div className=' flex flex-col '>
         <p className=' bluish  text-[16px]  lg:text-xl'>Starting Date:</p>
-        <DtePicker/>
+        <input name="starting_date" min={new Date().toISOString().split('T')[0]} type="date" value={purchasedData.starting_date} onChange={(e)=>{setPurchasedData({...purchasedData,[e.target.name]:e.target.value})}} className='h-10 mt-2' />
         </div>
         <div >
 <p className=' text-xl lg:text-2xl   heading ' style={{color:"#283143"}}>Select Duration</p>
 <div className=' mt-4 flex flex-wrap gap-2 lg:gap-10'>
 {
- data&&data.personal_duration?.map(value=>
+ data&&data.personal_duration?.map((value,i)=>
     <>
     <div>
-        <button className=' button2'>{value?.timing}</button>
+        <button onClick={()=>{
+          setPurchasedData({...purchasedData,duration:value?.timing,price:value?.price,index:i})
+        }} className={`${purchasedData.index===i?"button3":"button2"}`} >{value?.timing}</button>
         <p className=' text-center mt-2 para  font-semibold text-xl lg:text-2xl '  style={{color:"#283143"}}>₹ {value?.price}</p>
     </div>
     </>)
     }
 </div>
+    <p className=' font-semibold mt-2 text-sm text-red-500'>{purchasedData.message}</p>
      </div>
 
       </div>
@@ -94,7 +154,7 @@ function PersonalForm({toggle1,setToggle1,data}) {
      </div>
 
    
-     <Link to="/Login" className='absolute bottom-0 button3 right-4'>Proceed</Link>
+     <button  onClick={handlesubmit} className='absolute bottom-0 button3 right-4'>Proceed</button>
     </div>
     </div>
           </Popup>

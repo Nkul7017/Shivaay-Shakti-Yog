@@ -5,17 +5,21 @@ import Ongoing from '../components/Ongoing'
 import Stats from '../components/Stats'
 import Card1 from '../components/Card1'
 import Card3 from '../components/Card3'
-import helping from "../../public/helping1.png";
 import axios from 'axios'
+import { useLocation } from 'react-router-dom'
 
 const UserDashboard = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   const [data,setData]=useState([]);
    async function getdata()
    {
     try{
   const response=await axios.get('http://localhost:5000/api/course');
   setData(response?.data?.data);
-  console.log(response?.data?.data)
     }
     catch(e)
     {
