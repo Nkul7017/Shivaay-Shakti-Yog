@@ -18,7 +18,7 @@ e.preventDefault();
 
 if(data.username.trim().length>3 && isEmail(data.email.trim()) && isPassword(data.password.trim()) && data.cpassword.trim()!=="" && data.password===data.cpassword)
 { 
-  setMessage("");
+  setMessage("Loading...");
   console.log(data);
   try{
   const response=await axios.post('https://shivaay-shakti-backend-1.onrender.com/api/auth/signup',data);

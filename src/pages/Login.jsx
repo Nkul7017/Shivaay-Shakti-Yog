@@ -15,7 +15,7 @@ function Login() {
 e.preventDefault();
 if( isPassword(data.password.trim()))
 {
-  setMessage("")
+  setMessage("Loading...")
   try{
   const res=await axios.post("https://shivaay-shakti-backend-1.onrender.com/api/auth/login",data);
 if(res.status===200)    
