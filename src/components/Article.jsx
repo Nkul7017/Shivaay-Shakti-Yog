@@ -7,7 +7,7 @@ export default function Article() {
  async function getdata()
  {
  try{
- const response=await axios.get("http://localhost:5000/api/article");
+ const response=await axios.get("https://shivaay-shakti-backend-1.onrender.com/api/article");
  if(response?.data?.success===true)
  {
   setData(response?.data?.dta);

@@ -48,7 +48,7 @@ const navigate=useNavigate();
       purchasedData.course_name=data?.name;
       purchasedData.course_type=type;
       try{
-       const response=await axios.post('http://localhost:5000/api/purchase',purchasedData,{
+       const response=await axios.post('https://shivaay-shakti-backend-1.onrender.com/api/purchase',purchasedData,{
         headers:{
           Authorization:localStorage.getItem('jwt')
         }

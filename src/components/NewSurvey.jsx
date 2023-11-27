@@ -77,7 +77,7 @@ function NewSurvey({shurveyPopup,setShurveyPopup,logovideo}) {
       delete data.daily_life_looks;
   console.log(data);
   try{
-const response=await axios.post('http://localhost:5000/api/survey',data);
+const response=await axios.post('https://shivaay-shakti-backend-1.onrender.com/api/survey',data);
 if(response.data.success===true)
 {
   setShurveyPopup(false);

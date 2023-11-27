@@ -21,7 +21,7 @@ if(data.username.trim().length>3 && isEmail(data.email.trim()) && isPassword(dat
   setMessage("");
   console.log(data);
   try{
-  const response=await axios.post('http://localhost:5000/api/auth/signup',data);
+  const response=await axios.post('https://shivaay-shakti-backend-1.onrender.com/api/auth/signup',data);
 
   if(response.status===201)
   {

@@ -18,7 +18,7 @@ const UserDashboard = () => {
    async function getdata()
    {
     try{
-  const response=await axios.get('http://localhost:5000/api/course');
+  const response=await axios.get('https://shivaay-shakti-backend-1.onrender.com/api/course');
   setData(response?.data?.data);
     }
     catch(e)

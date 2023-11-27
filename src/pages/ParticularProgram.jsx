@@ -274,7 +274,7 @@ function ParticularArticle() {
     async function getdata()
     {
       try{
- const response=await axios.get(`http://localhost:5000/api/course/${_id}`);
+ const response=await axios.get(`https://shivaay-shakti-backend-1.onrender.com/api/course/${_id}`);
  console.log(response?.data?.data);
  setCourseData(response?.data?.data);
       }
