@@ -23,6 +23,7 @@ if(res.status===200)
   console.log(res.data.user);
   setMessage("Login Successful")
   localStorage.setItem('user', JSON.stringify( res.data.user ));
+  localStorage.setItem('jwt', JSON.stringify( res.data.token ));
   navigate('/', {replace: true});
 }
   }
