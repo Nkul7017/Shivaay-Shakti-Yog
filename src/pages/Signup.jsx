@@ -38,14 +38,15 @@ else{
   setMessage("*All Fields Are Mandatory")
 }
   }
+  // bg-[url("https://cdn.discordapp.com/attachments/1111568797476868128/1113746626696204349/WhatsApp_Image_2023-06-01_at_11.16.50.jpg")]
   return (
-    <div className=' w-screen h-screen bg-black grid place-content-center ' >
+    <div className=' w-screen h-screen  bg-gray-200 grid place-content-center ' >
        <div  className=' flex w-[80vw]  justify-center items-center  ' >
        <div className='  hidden lg:block w-1/2 '  >
        <img src={logovideo}  alt="" />
        </div>
        {/* style={{ background: "linear-gradient(90deg, #FFF -0.83%, #FFF1C1 99.93%)",}}  */}
-       <div className=' w-[90vw] sm:w-[80vw] md:w-[70vw] h-[500px]  text-white mx-auto  lg:w-1/2 rounded-2xl  px-8' >
+       <div className=' w-[90vw] sm:w-[80vw] md:w-[70vw] h-[500px]  text-black mx-auto  lg:w-1/2 rounded-2xl  px-8' >
         <h1 className='text-5xl ' >Sign Up</h1>
         <form className=' flex flex-col mt-10 gap-5 ' onSubmit={handlesubmit} >
           <div className=' flex flex-col gap-2 '>
@@ -64,12 +65,12 @@ else{
          
           <div className=' flex  flex-col gap-2 w-full sm:w-2/3  '>
          <label className=' text-2xl ' htmlFor="">Confirm Password</label>
-         <input type="password" name="cpassword" value={data.cpassword} onChange={(e)=>setData({...data,[e.target.name]:e.target.value})}  className=' text-red-900 rounded-lg px-3 py-1   '  />
+         <input type="password" name="cpassword" value={data.cpassword} onChange={(e)=>setData({...data,[e.target.name]:e.target.value})}  className=' text-red-900 rounded-lg px-3 py-1    '  />
          </div>
          </div>
          <div className=' flex  items-center gap-5   mt-6  '>
-         <button  type='submit' className=' text-2xl px-3 py-1  border-2 border-white '>Submit</button>
-         <Link  to='/Login' className=' text-2xl px-3 py-1  border-2 border-white '>Login</Link>
+         <button  type='submit' className=' text-2xl px-3 py-1  border border-black '>Sign Up</button>
+         {/* <Link  to='/Login' className=' text-2xl px-3 py-1  border border-black '>Login</Link> */}
          <p className=' text-[18px] font-bold text-red-900'>{message}</p>
          </div>
          
