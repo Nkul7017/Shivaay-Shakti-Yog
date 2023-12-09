@@ -3,7 +3,7 @@ import footerlogo from "../assets/Images/footerlogo.png"
 import { Link } from "react-router-dom";
 import {GoLocation,GoMail} from "react-icons/go";
 import {BsTelephone } from "react-icons/bs";
-
+import yt from '../../public/yt.svg'
 function Footer() {
   return (
     <div className="">
@@ -48,7 +48,7 @@ function Footer() {
               <Link  tp="/" >HOME</Link>
               <Link to='/Courses'>PROGRAMS</Link>
               <Link to='/about-us' >ABOUT</Link>
-              <Link to='/' >CHANNELS</Link>
+              <Link to='/' ><img src={yt} className=" w-[50px] h-[50px] " alt="" /></Link>
             </div>
             <div className=" flex flex-row justify-center w-[50vw] para mx-auto gap-10 md:hidden">
               <a><BsTelephone size={20} clas /></a>

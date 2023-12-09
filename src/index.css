@@ -632,7 +632,7 @@ background: #E6F5FA;
 
 .image{
   border-radius: 236px;
-border: 4px solid var(--button, #E5C75E);
+border: 1px solid var(--button, #E5C75E);
 background:lightgray 0px 1.068px / 100% 149.942% no-repeat;
 box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.25);
 }
@@ -691,6 +691,8 @@ background: var(--button, linear-gradient(103deg, #E5C75E 24.85%, #B96E38 111.06
 /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
 
 }
-
+.hi{
+  height:max-content;
+}
 
 

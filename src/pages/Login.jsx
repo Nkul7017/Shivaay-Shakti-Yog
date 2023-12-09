@@ -38,26 +38,27 @@ else{
 
   }
   return (
-    <div className=' w-screen h-screen bg-gray-100 grid place-content-center ' >
+    <div className=' w-screen h-screen bg-[#FFF1C1] grid place-content-center ' >
        <div  className=' flex w-[80vw]  justify-center items-center  ' >
        <div className='  hidden lg:block w-1/2 '  >
        <img src={logovideo}  alt="" />
        </div>
        {/* style={{ background: "linear-gradient(90deg, #FFF -0.83%, #FFF1C1 99.93%)",}}  */}
        <div className=' w-[90vw] sm:w-[80vw] md:w-[70vw] h-[500px]  text-black mx-auto  lg:w-1/2 rounded-2xl  sm:p-8 md:p-12 lg:p-16 ' >
-        <h1 className='text-5xl ' >Login</h1>
+        <h1 className='text-5xl heading ' >Login</h1>
         <form className=' flex flex-col mt-10 gap-5 ' onSubmit={handlesubmit} >
           <div className=' flex flex-col gap-2 '>
-         <label className=' text-2xl  ' htmlFor="">Username or Email</label>
+         <label className=' text-2xl bluish  ' htmlFor="">Email</label>
          <input type="text" name="username"  value={data.username} onChange={(e)=>setData({...data,[e.target.name]:e.target.value})} className=' font-semibold  px-3   text-red-900  rounded-lg py-1 '  />
          </div>
-          <div className=' flex flex-col gap-2 '>
+          <div className=' flex flex-col bluish gap-2 '>
          <label className=' text-2xl ' htmlFor="">Password</label>
          <input type="password" name="password" value={data.password} onChange={(e)=>setData({...data,[e.target.name]:e.target.value})}  className='  text-red-900 rounded-lg px-3 py-1  '  />
          </div>
           <div className=' flex  items-center gap-5   mt-6  '>
-         <button type='submit' className=' text-2xl px-3 py-1  border border-black'>Login</button>
-         <Link to='/Signup' className=' text-2xl px-3 py-1  border border-black'>Signup</Link>
+         <button type='submit' className=' text-2xl px-3 py-1 button3  '><span>Login</span></button>
+         <Link to='/Signup' className=' button3 text-2xl px-3 py-1  '>
+          <span>Signup</span></Link>
          <p className=' text-[18px] font-bold text-red-900'>{message}</p>
          </div>
         

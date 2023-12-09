@@ -15,7 +15,7 @@ function Home() {
       <Program/>
       <Gallery />
       <Helping />
-      <Testimonial/>
+      {/* <Testimonial/> */}
       <Footer />
     </div>
   );

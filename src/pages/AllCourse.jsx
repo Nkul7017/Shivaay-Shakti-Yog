@@ -29,24 +29,28 @@ console.log(e);
    <>
    
     <div className="  ">
-        <div className=" relative z-10 px-2  ">
+        <div className=" relative z-10   ">
           <HeroNavbar />
         </div>
 
         {/*------------------------------- Hero Section-------------------------------------------- */}
+            
+            <div className=' w-screen relative h-[170px] sm:h-[470px]  '>
             <img
-            className=" -mt-20 sm:-mt-40 w-screen h-[170px] sm:h-[470px]   "
+            className="  w-screen h-[170px] sm:h-[470px]   "
               src={course}
               alt=""
             />
+            <p className=' text-[24px] left-8 bottom-4 sm:text-[48px]  absolute sm:bottom-10 sm:left-16 md:left-20 lg:left-24 heading  ' style={{color:"white"}}>Explore our Courses</p>
+            </div>
   
       </div>
       <div className='w-[88vw] sm:w-[70vw] mt-12  sm:mt-20 mx-auto '>
-      <div className='relative flex justify-between w-[100%] items-center '>
+      {/* <div className='relative flex justify-between w-[100%] items-center '>
           <input type="text" placeholder=' Search' className='  pl-10 placeholder-[#444444] w-[60vw] text-2xl h-[36px] rounded-[10px] text-[#444] bg-[#EEEEEE]' />
           <FaSearch className='absolute w-[20px] top-2 left-3  text-[#444444]   z-50  '/>
           <FaFilter className='w-[25px] h-[25px]  mr-10 text-[#2C3E50] '/>
-          </div>
+          </div> */}
 
           <div className="  text-4xl pt-20 p sm:pl-2 heading  ">
           <h1 className=' mb-10  '>Most Popular</h1>

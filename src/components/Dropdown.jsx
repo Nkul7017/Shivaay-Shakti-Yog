@@ -2,21 +2,24 @@ import { Fragment, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { RxAvatar } from "react-icons/rx";
+import imageprofile from '../../public/userprofile.png'
 import { Link, useNavigate } from "react-router-dom";
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Dropdown({logged,setLogged}) {
+  const user= JSON.parse(localStorage.getItem('user'));
   const navigate=useNavigate();
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
         <Menu.Button className="  ">
-          <RxAvatar
+          <img src={user.profile_img?user.profile_img:imageprofile} className=" h-8 w-8 rounded-full mt-2 mr-2 hover:scale-110 duration-300 " alt="" />
+          {/* <RxAvatar
             className="-mr-1 h-8 w-8 text-black hover:text-yellow-400"
             aria-hidden="true"
-          />
+          /> */}
         </Menu.Button>
       </div>
 

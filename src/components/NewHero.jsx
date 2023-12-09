@@ -42,11 +42,11 @@ const NewHero = () => {
   return (
     <>
         <>
-          <div  className=" -mt-4 bg-[url('https://cdn.discordapp.com/attachments/1078905801017659432/1113750711801499669/Rectangle_645.png')] bg-cover bg-center w-[100vw]  lg:h-[750px] md:h-[650px] h-[600px]    " 
+          <div  className="  bg-[url('https://cdn.discordapp.com/attachments/1078905801017659432/1113750711801499669/Rectangle_645.png')] bg-cover bg-center w-[100vw]  lg:h-[750px] md:h-[650px] h-[600px]    " 
           >
             
-              <HeroNavbar login={login}></HeroNavbar>
-              <div className="flex  flex-col    items-center      ">
+            {count!==0&&<HeroNavbar login={login}></HeroNavbar>}
+              <div className="flex  flex-col lg:pt-32    items-center      ">
                      
                 <div className={` flex flex-col items-center    justify-center     ${count>0?"  opacity-100    lg:h-[580px] h-[400px]  sm:h-[430px] md:h-[500px]  justify-center    relative  lg:-mt-20  md:-mt-6 mt-10  ":"w-[100vw] h-[100vh]   top-0 left-0  bg-[#f6f8ef]  absolute"} ` }
                

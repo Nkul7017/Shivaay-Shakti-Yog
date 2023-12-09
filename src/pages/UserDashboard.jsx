@@ -32,11 +32,11 @@ console.log(e);
   return (
     <>
     <div className="  ">
-        <div className=" relative z-10 px-1 lg:px-10  ">
+        <div className=" relative z-10   ">
           <HeroNavbar/>
         </div>
 
-        <section className='w-[90vw] mx-auto mt-10 md:mt-6 lg:mt-0 stats'>
+        <section className='w-[90vw] mt-2 md:mt-16 lg:mt-20   sm:mt-14  hi mx-auto  stats' >
         <Profile/>
         </section>
   

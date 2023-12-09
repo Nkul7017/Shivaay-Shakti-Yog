@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
-import logo from "../../public/letter-head_CLR.png";
-import { Link } from "react-router-dom";
+import logo from "../../public/shi_logo.png";
+import { Link, useLocation } from "react-router-dom";
 import Dropdown from "./Dropdown";
 const DeskNavbar = () => {
-
+const {pathname}=useLocation();
+console.log(pathname)
   const [logged, setLogged] = useState(localStorage.getItem('user'));
   return (
     <>
-      <div className="hidden lg:flex justify-between md:px-8 sm:px-4 text-center items-center">
+      <div className={`hidden ${pathname.includes("/ParticularProgram")?"bg-transparent":"bg-[#faf7e6]"}  ${pathname=="/UserDashboard"?"normal":"fixed"} w-[100vw] h-[70px]  z-50 lg:flex  ${pathname=="/"?"bg-transparent":"bg-[#faf7e6]"}  justify-between md:px-8 sm:px-4 text-center items-center`}>
         <div>
-          <img className="h-[200px] -mt-10 w-[200px] " src={logo} alt="" />
+          <img className="  w-[200px] " src={logo} alt="" />
         </div>
-        <div className="flex sm:gap-x-4 -mt-12 md:gap-x-12 items-center">
+        <div className="flex sm:gap-x-4  md:gap-x-12 items-center">
           <Link to="/">
             <span>Home</span>
           </Link>
@@ -20,11 +21,7 @@ const DeskNavbar = () => {
           </Link>
           <Link to="/about-us">
             <span>About Us</span>
-          </Link>
-          <Link to="/">
-            <span>Channels</span>
-          </Link>
-          
+          </Link>          
             
             {!logged?<div className="flex gap-4">
               <Link to='/login'  className=" button3 ">

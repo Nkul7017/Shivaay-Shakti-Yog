@@ -100,13 +100,13 @@ export default function HeroNavbar({ login }) {
                     >
                       About Us
                     </Link>
-                    <Link
+                    {/* <Link
                       as="a"
                       to={"/"}
                       className=" text-black"
                     >
                       Channels
-                    </Link>
+                    </Link> */}
            
                     {logged&&<Link
                       as="a"
@@ -123,11 +123,11 @@ export default function HeroNavbar({ login }) {
                     >
                       Login
                     </Link>:
-                     <button onClick={()=>{
+                     <button  onClick={()=>{
                       setLogged(localStorage.removeItem('user'));
                       navigate('/', {replace: true});
                      }}
-                    className=" text-black"
+                    className=" text-black text-left "
                   
                   >
                     Log Out

@@ -289,12 +289,12 @@ function ParticularArticle() {
   
     <>
       <div className="  ">
-        <div className=" relative z-10 px-2  ">
+        <div className=" relative z-10   ">
           <HeroNavbar />
         </div>
 
         {/*------------------------------- Hero Section-------------------------------------------- */}
-        <div className=" sm:w-[98.90vw] w-[100vw] flex justify-between gap-1 -mt-20 sm:-mt-40   ">
+        <div className=" sm:w-[98.90vw] w-[100vw] flex justify-between gap-1 -mt-20 sm:mt-0  ">
           <div className="object-fill">
             <img
               src={P2}

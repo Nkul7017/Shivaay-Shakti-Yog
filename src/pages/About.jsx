@@ -17,19 +17,21 @@ const [toggle,setToggle]=useState(undefined);
   return (
     <>
     <div className="  ">
-        <div className=" relative z-10 px-2  ">
+        <div className=" relative z-10  ">
           <HeroNavbar />
         </div>
 
         {/*------------------------------- Hero Section-------------------------------------------- */}
-        <div className=' relative'>
+        <div className=' relative sm:pt-20 '>
+          <div className='px-8'>
             <img
-            className="  hidden sm:block -mt-20 sm:-mt-40 w-screen object-cover   h-[170px] sm:h-[500px]   "
+            className="  hidden sm:block rounded-2xl   w-screen object-cover   h-[170px] sm:h-[500px]   "
               src={about}
               alt=""
             />
+            </div>
             <img
-            className=" block sm:hidden  -mt-20 sm:-mt-40 w-screen   h-[309px] sm:h-[500px]   "
+            className=" block sm:hidden   w-screen   h-[309px] sm:h-[500px]   "
               src={Shivji1}
               alt=""
             />
@@ -46,15 +48,18 @@ const [toggle,setToggle]=useState(undefined);
         </p>
       
 
-      <div className=' hidden  sm:flex   flex-col lg:flex-row md:px-20  lg:px-28 gap-10 mt-10 justify-between  '>
-      <div className=' flex items-center justify-center lg:w-1/2  text-justify  '>
-        <div className=' space-y-5    text-black text-sm para '>
+      <div className=' hidden  sm:flex   flex-col lg:flex-row md:px-2  lg:px-28 gap-10 mt-14 justify-between  '>
+      <div className=' flex flex-col lg:flex-row items-center justify-center lg:w-1/2  text-justify  '>
+      <div className='  lg:w-1/2'>
+        <img src={Shivji} alt="" className='about  lg:w-[570px] lg:h-[500px] hidden sm:block lg:hidden  md:w-[500px] md:h-[500px] ' />
+        </div>
+        <div className=' space-y-5 mt-0 sm:mt-10 lg:mt-0    text-black text-[18px] para '>
           <p>Our mission is to provide a convenient and accessible platform for individuals of all levels to practice yoga from the comfort of their own homes. Whether you're a beginner looking to explore the benefits of yoga or an experienced yogi seeking to deepen your practice, we have something for everyone.</p>
           <p>What sets us apart is our commitment to delivering live yoga classes led by experienced and certified instructors. We believe that real-time instruction fosters a sense of community, accountability, and personalized guidance. Through our interactive platform, you'll have the opportunity to connect with expert teachers and fellow practitioners from around the globe, creating a supportive and uplifting environment.</p>
         </div>
       </div>
-      <div className=' lg:w-1/2'>
-        <img src={Shivji} alt="" className='about  lg:w-[570px] lg:h-[520px] hidden lg:block md:w-[500px] md:h-[450px] ' />
+      <div className='  lg:w-1/2'>
+        <img src={Shivji} alt="" className='about  lg:w-[570px] lg:h-[500px] hidden  lg:block md:w-[500px] md:h-[500px] ' />
         </div>
       </div>
 
