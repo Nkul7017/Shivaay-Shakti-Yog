@@ -69,9 +69,9 @@ const [toggle,setToggle]=useState(undefined);
       </div>
 
       <div className=' hidden sm:flex  flex-wrap gap-5 lg:gap-8    mt-8 '>
-        {data.map((value)=>
+        {data.map((value,index)=>
           <>
-          <div className=' flex  justify-center items-center   text-justify about_box '  >
+          <div key={index} className=' flex  justify-center items-center   text-justify about_box '  >
             <div className=' h-[166px] w-[220px] space-y-3 '>
               <p className='text-xl  heading ' >{value.heading}</p>
              <p className=' text-sm para '>{value.content}</p>
@@ -83,7 +83,7 @@ const [toggle,setToggle]=useState(undefined);
       <div className=' sm:hidden block transition-all duration-300  flex-wrap  mt-8 '>
         {data.map((value,i)=>
           <>
-          <div className={`about_box1 mt-3 p-4  `}  onClick={()=>setToggle(i)}   >
+          <div key={i} className={`about_box1 mt-3 p-4  `}  onClick={()=>setToggle(i)}   >
             <div className={` space-y-2   ${toggle===i?"h-auto":"h-[30px]" }  `} style={{transition:"all 1s"}}>
               <p className='heading text-[18px]'>{value.heading}</p>
               {toggle===i && <p className='para text-sm' >{value.content}</p>}

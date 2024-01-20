@@ -156,8 +156,8 @@ console.log(e);
       <div className=' flex flex-col gap-1'>
    <label htmlFor=""  className=' text-sm lg:text-[18px]'>Your Country</label>
       <select name="country"  value={data.country} onChange={handle} id="" className='  pl-3 button3 w-[150px]  lg:w-[228px] h-8' >
-        {options?.map((value)=>
-         <option className=' bg-white  text-black ' >{value.label}</option>
+        {options?.map((value,index)=>
+         <option key={index} className=' bg-white  text-black ' >{value.label}</option>
         )}
       </select>
       </div>
