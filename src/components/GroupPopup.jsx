@@ -7,7 +7,7 @@ function GroupPopup({toggle,setToggle,data}) {
         <>
           <Popup
           open={toggle}
-            onClose={toggle}
+            // onClose={toggle}
             position="center center"
             closeOnDocumentClick={false}
             lockScroll={true}

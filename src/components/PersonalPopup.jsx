@@ -8,7 +8,7 @@ function PersonalPopup({toggle1,setToggle1,data}) {
         <>
           <Popup
           open={toggle1}
-            onClose={toggle1}
+            // onClose={toggle1}
             position="center center"
             closeOnDocumentClick={false}
             lockScroll={true}

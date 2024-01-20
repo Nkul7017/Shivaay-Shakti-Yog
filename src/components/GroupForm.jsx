@@ -215,7 +215,7 @@ const navigate=useNavigate();
           </Popup>
           <Popup
           open={purchasedData.toggle2}
-            onClose={purchasedData.toggle2}
+            // onClose={purchasedData.toggle2}
             position="center center"
             closeOnDocumentClick={false}
             lockScroll={true}
@@ -268,7 +268,7 @@ const navigate=useNavigate();
           </Popup>
           <Popup
           open={purchasedData.toggle3}
-            onClose={purchasedData.toggle3}
+            // onClose={purchasedData.toggle3}
             position="center center"
             closeOnDocumentClick={false}
             lockScroll={true}
