@@ -3,7 +3,6 @@ import Card1 from './Card1'
 import {FaSearch } from "react-icons/fa";
 import axios from 'axios';
 export default function Program() {
-  console.log(data1)
   const [data,setData]=useState([]);
   async function getdata()
   {
