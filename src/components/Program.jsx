@@ -7,7 +7,7 @@ export default function Program() {
   async function getdata()
   {
     try{
-  const response=await axios.get("./data.json");
+  const response=await axios.get("/data.json");
   console.log(response?.data)
    setData(response?.data);
     }
