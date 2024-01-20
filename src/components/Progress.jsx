@@ -13,7 +13,7 @@ const Progress = ({data}) => {
    { data?.course_type==="group" &&
    <>
     <button onClick={()=>setToggle(true)} className=' cursor-pointer progres px-2 py-4  sm:py-6 md:px-6 md:py-8  lg:px-8 lg:py-10 lg:w-[377px] md:w-[350px] sm:w-[300px] min-h-[150px] sm:min-h-[220px] md:min-h-[220px]  lg:min-h-[250px]   w-[145px] '>
-      <img src={`../src/assets/Programs/${data?.course_id}/Group.png`} className=' min-h-[100px] rounded-md object-fill' alt="" />
+      <img src={`/assets/Programs/${data?.course_id}/Group.png`} className=' min-h-[100px] rounded-md object-fill' alt="" />
       <p className=' text-[16px] lg:w-2xl bluish mt-1 sm:mt-3 '>{data?.course_name}</p>
       <ProgressBar completed={58} bgColor='#2C3E50' className=' mt-1  sm:mt-3   lg:mt-5 ' />
       <GroupPopup data={data} toggle={toggle} setToggle={setToggle} />
@@ -22,7 +22,7 @@ const Progress = ({data}) => {
     { data?.course_type==="personal" &&
     <>
     <button onClick={()=>setToggle1(true)} className='  cursor-pointer progres px-2 py-4  sm:py-6 md:px-6 md:py-8  lg:px-8 lg:py-10 lg:w-[377px] md:w-[350px] sm:w-[300px] min-h-[150px] sm:min-h-[220px] md:min-h-[220px]  lg:min-h-[250px]   w-[145px] '>
-      <img src={`../src/assets/Programs/${data?.course_id}/Personal.png`} className=' min-h-[100px] rounded-md object-cover sm:object-fill' alt="" />
+      <img src={`/assets/Programs/${data?.course_id}/Personal.png`} className=' min-h-[100px] rounded-md object-cover sm:object-fill' alt="" />
       <p className=' text-[16px] lg:w-2xl bluish mt-1 sm:mt-3 '>{data?.course_name}</p>
       <ProgressBar completed={58} bgColor='#2C3E50' className=' mt-1  sm:mt-3   lg:mt-5 ' />
     </button>
