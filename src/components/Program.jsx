@@ -3,11 +3,12 @@ import Card1 from './Card1'
 import {FaSearch } from "react-icons/fa";
 import axios from 'axios';
 export default function Program() {
+  console.log(data1)
   const [data,setData]=useState([]);
   async function getdata()
   {
     try{
-  const response=await axios.get("/data.json");
+  const response=await axios.get("../../data.json");
   console.log(response?.data)
   if(Array.isArray(response?.data))
    setData(response?.data);
