@@ -31,9 +31,9 @@ console.log(e);
         </div>
        
         <section className=' box  p-1   flex gap-9 sm:gap-24 mt-6  overflow-scroll scrollbar-hide  '>
-        {data?.map((value,index)=>
-        <Card1 key={index} value={value} />
-        )} 
+        {Array.isArray(data) && data.map((value, index) =>
+          <Card1 key={index} value={value} />
+        )}
         </section>
         </div>
    </>
