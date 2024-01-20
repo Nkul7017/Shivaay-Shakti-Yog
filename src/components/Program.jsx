@@ -9,6 +9,7 @@ export default function Program() {
     try{
   const response=await axios.get("/data.json");
   console.log(response?.data)
+  if(Array.isArray(response?.data))
    setData(response?.data);
     }
     catch(e)
