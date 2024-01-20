@@ -14,8 +14,8 @@ function AllCourse() {
   async function getdata()
   {
     try{
-  const response=await axios.get("https://shivaay-shakti-backend-1.onrender.com/api/course");
-   setData(response?.data?.data);
+  const response=await axios.get("/data.json");
+   setData(response?.data);
     }
     catch(e)
     {

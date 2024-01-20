@@ -3,7 +3,7 @@
         "_id": 1,
         "name": "Hath Yoga",
         "description": "In an era defined by stress, anxiety, and chronic business, ancient practices like yoga offer a beacon of hope.",
-        "main_url": "src/assets/Programs/1/mainurl.png",
+        "main_url": "../src/assets/Programs/1/mainurl.png",
         "course_type1": "Personal Training Course",
         "Personal_description1": "Occupying a small chunk in the our organisation strives to make yoga accessible and convenient to every citizen of the world. Get on board with us to start your journey towards a healthier life.",
         "live_sessions1": 60,
