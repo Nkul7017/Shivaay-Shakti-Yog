@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import Progress from './Progress'
 
-const Ongoing = () => {
+const Ongoing = ({data}) => {
+  console.log(data);
   const [toggle,setToggle]=useState(true);
   return (
     <div>
@@ -10,18 +11,20 @@ const Ongoing = () => {
           <button className={`    px-4 py-3 lg:px-6 lg:py-4   bluish text-[16px] sm:text-xl ${!toggle&& "bg-[#E6F5FA]"} `} onClick={()=>setToggle(false)}>Completed</button>
          </div>
        
-         <div className=' ongoing flex  flex-wrap  gap-4 sm:gap-6 md:gap-8 lg:gap-10 p-2 sm:p-5  lg:p-10    w-[100%] mx-auto '>
-         {toggle&&<><Progress labelAlignment="outside"  bgColor="#2C3E50" />
-           <Progress/>
-           <Progress/>
-           <Progress/>  
-           <Progress/>
-           <Progress/></> }
+         <div className=' ongoing flex  flex-wrap  gap-4 sm:gap-6 md:gap-8 lg:gap-10 p-3 sm:p-5  lg:p-10  h-max   w-[100%] mx-auto '>
+         {toggle&&data?.map((value)=>{
+         if(value?.status==="active")
+         return <>
+         <Progress data={value} />
+         </>}
+         )}
 
-           {!toggle &&
-           <>
-           <Progress/>
-           </>}
+        {!toggle&&data?.map((value)=>{
+         if(value?.status==="expired")
+         return <>
+         <Progress data={value} />
+         </>}
+         )}
          </div>
 
        

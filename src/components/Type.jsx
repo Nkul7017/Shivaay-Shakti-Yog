@@ -1,10 +1,5 @@
  import React from 'react'
 import Card2 from './Card2'
-import Group from '../../public/Program/types/Group.png';
-import Personal from '../../public/Program/types/Personal.png';
-import Group1 from '../../public/Program/types/Group1.png';
-import Personal1 from '../../public/Program/types/Personal1.png';
-
 import Card3 from './Card3';
  function Type({data}) {
    return (

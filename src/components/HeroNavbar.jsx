@@ -7,10 +7,6 @@ import Dropdown from "./Dropdown";
 import logo from "../../public/letter-head_CLR.png"
 import { Link, useNavigate } from "react-router-dom";
 
-// import { is } from "immer/dist/internal";
-
-
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -28,12 +24,12 @@ export default function HeroNavbar({ login }) {
               <div className="relative flex flex-row-reverse h-16 items-center justify-between">
                 <div className="flex flex-1 items-start lg:items-stretch lg:justify-start">
                   <div className="flex items-center">
-                    <img
+                   <Link to="/"> <img
                       className="block lg:hidden"
                       src={logo}
                       width={180}
                       alt="logo"
-                    />
+                    /></Link>
                     
                   </div>
                   {/* <div className="hidden sm:ml-6 sm:block">

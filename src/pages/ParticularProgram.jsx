@@ -274,9 +274,10 @@ function ParticularArticle() {
     async function getdata()
     {
       try{
- const response=await axios.get(`https://shivaay-shakti-backend-1.onrender.com/api/course/${_id}`);
- console.log(response?.data?.data);
- setCourseData(response?.data?.data);
+        const response=await axios.get("/data.json");
+      const filtered=response?.data.filter((value)=>value._id==_id);
+      console.log(filtered[0])
+ setCourseData(filtered[0]);
       }
       catch(e){
    console.log(e);

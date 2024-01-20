@@ -2,7 +2,7 @@ import React from 'react'
 
 const Stats = () => {
   return (
-    <div className='flex flex-col lg:flex-row lg:h-[440px] stats w-[100%] py-10  px-12  lg:px-20  gap-10 ' style={{border:"none" ,borderRadius:"0"}} >
+    <div className='flex flex-col lg:flex-row lg:h-[440px] stats w-[100%] py-2 sm:py-6 md:py-10   gap-10 ' style={{border:"none" ,borderRadius:"0"}} >
       <div className=' h-[200px]  lg:h-auto lg:w-[65vw]  rounded-md  bg-white '>
         <p className=' text-sm lg:text-xl bluish p-10 '>Progrees Stats</p>
       </div>

@@ -10,8 +10,8 @@ function Terms({toggle,setToggle}) {
   return (
     <>
  <Popup
-          open={toggle}
-            onClose={toggle}
+          open={toggle.toggle3}
+            onClose={toggle.toggle3}
             position="center center"
             closeOnDocumentClick={false}
             lockScroll={true}
@@ -33,7 +33,7 @@ function Terms({toggle,setToggle}) {
                           className="cursor-pointer text-3xl"
                           title="close"
                           onClick={() => {
-                            setToggle(false);
+                            setToggle({...toggle,toggle3:false});
                           }}
                         >
                           <HiXMark />
@@ -53,11 +53,11 @@ function Terms({toggle,setToggle}) {
             </div>
             <div className=' hidden sm:flex '>
                 <button className=' button3 para text-xl font-semibold  ' onClick={()=>{
-                    setToggle(true)}} style={{width:"260px",height:"40px",color:"white"}}><span>Proceed To Checkout</span></button>
+                    setToggle({...toggle,toggle2:true})}} style={{width:"260px",height:"40px",color:"white"}}><span>Proceed To Checkout</span></button>
             </div>
             <div className='sm:hidden flex '>
                 <button onClick={()=>{
-                    setToggle(true)}} className=' button3 para text-md font-semibold  ' style={{width:"160px",height:"40px",color:"white"}}><span>Proceed To Checkout</span></button>
+                    setToggle({...toggle,toggle2:true})}} className=' button3 para text-md font-semibold  ' style={{width:"160px",height:"40px",color:"white"}}><span>Proceed To Checkout</span></button>
             </div>
            </div>
             </div>

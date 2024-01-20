@@ -7,6 +7,8 @@ import Image1 from '../../public/program.png'
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import { Link} from "react-router-dom";
 export default function Card1({value}) {
+  // console.log("hello")
+  // console.log(value)
   return (
     <div className="cardcontainer">
     <Card sx={{ maxWidth:320 ,minWidth:320 }} >

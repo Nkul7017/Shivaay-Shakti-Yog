@@ -21,19 +21,56 @@ const navigate=useNavigate();
     duration:"",
     price:"",
     index:null,
-    message:""
+    message:"",
+    toggle2:false,
+    toggle3:false,
+    agree:false
     })
     const addDays = (date, days) => {
       const result = new Date(date);
       result.setDate(result.getDate() + days-1);
       return result.toISOString().split('T')[0];
     };
+    function handle1()
+    {
+      if(localStorage.getItem('user'))
+      {
+       setPurchasedData({...purchasedData,message:""})
+       if(purchasedData.duration!==""  &&purchasedData.price!=="")
+       {
+            setPurchasedData({...purchasedData,toggle2:true,message:""});
+       }
+       else{
+        setPurchasedData({...purchasedData,message:"* All Field Are Mandatory"})
+      }}
+      else{
+        navigate('/login',{replace:true});
+          }
+      }
+      function handle2()
+      {
+        if(localStorage.getItem('user'))
+        {
+         setPurchasedData({...purchasedData,message:""})
+         if(purchasedData.agree===true &&purchasedData.duration!==""  &&purchasedData.price!=="")
+         {
+              setPurchasedData({...purchasedData,toggle3:true,message:""});
+         }
+         else{
+          setPurchasedData({...purchasedData,message:"* All Field Are Mandatory"})
+        }}
+        else{
+          navigate('/login',{replace:true});
+            }
+        }
+      
+    
     async function handlesubmit()
   {
+    setPurchasedData({...purchasedData,message:"loading"})
    if(localStorage.getItem('user'))
    {
-    setPurchasedData({...purchasedData,message:""})
-    if(purchasedData.duration!==""  &&purchasedData.price!=="")
+    if(purchasedData?.transaction_id?.trim().length===6 &&purchasedData.agree===true &&purchasedData.duration!==""  &&purchasedData.price!=="")
     {
       const b=purchasedData.duration.split(" ");
       if(b[1]==="Month")
@@ -41,17 +78,22 @@ const navigate=useNavigate();
        b[0]=parseInt(b[0])*30;
       }
       const expirationDate = addDays(data?.group_starting_date,parseInt(b[0]));
-      delete purchasedData.index;
-      delete purchasedData.message;
-      purchasedData.expiration_date=expirationDate;
-      purchasedData.course_name=data?.name;
-      purchasedData.course_type=type;
-      purchasedData.preferred_timing=data?.group_timing
-      purchasedData.starting_date=data?.
-      group_starting_date
       console.log(purchasedData);
       try{
-       const response=await axios.post('https://shivaay-shakti-backend-1.onrender.com/api/purchase',purchasedData,{
+       const response=await axios.post('https://shivaay-shakti-backend-1.onrender.com/api/purchase',{
+        user_id:purchasedData?.user_id,
+        course_id:data?._id,
+        status:purchasedData?.status,
+        starting_date:data?.group_starting_date,
+        preferred_timing:data?.group_timing,
+        duration:purchasedData?.duration,
+        expiration_date:expirationDate,
+        price:purchasedData?.price,
+        course_name:data?.name,
+        course_type:type,
+        transaction_id:purchasedData?.transaction_id,
+        transaction_status:"pending"
+       },{
         headers:{
           Authorization:localStorage.getItem('jwt')
         }
@@ -66,6 +108,7 @@ const navigate=useNavigate();
       }
       catch(e)
       {
+        console.log(e);
       setToggle1(false);
       }
     }
@@ -166,11 +209,115 @@ const navigate=useNavigate();
 </div>
 <p className=' font-semibold mt-2 text-sm text-red-500'>{purchasedData.message}</p>
      </div>
-     <button  onClick={handlesubmit} className='absolute bottom-0 button3 right-4'>Proceed</button>
+     <button  onClick={handle1} className='absolute bottom-0 button3 right-4'>Proceed</button>
     </div>
     </div>
           </Popup>
-
+          <Popup
+          open={purchasedData.toggle2}
+            onClose={purchasedData.toggle2}
+            position="center center"
+            closeOnDocumentClick={false}
+            lockScroll={true}
+            contentStyle={{
+           border:"none",
+              display:"grid",
+               placeContent:"center",
+               backgroundImage:"url('https://cdn.discordapp.com/attachments/1111568797476868128/1113746626696204349/WhatsApp_Image_2023-06-01_at_11.16.50.jpg')",
+              width:"90vw",
+              height:"90vh",
+              borderRadius:"10px"
+            }}
+          >
+            <div className='w-[90vw] h-[90vh]    '  data-aos="zoom-in"> 
+            <div className=' w-[80vw] mx-auto h-[80vh] mt-10 overflow-y-auto scrollbar-hide '>
+           <div className=' flex justify-between items-center '>
+            <p className=' heading text-2xl sm:text-3xl md:text-6xl'>Terms & Conditions</p>
+            <div
+                          className="cursor-pointer text-3xl"
+                          title="close"
+                          onClick={() => {
+                            setPurchasedData({...purchasedData,toggle2:false});
+                          }}
+                        >
+                          <HiXMark />
+                        </div>
+           </div>
+           <div className=' mt-8 flex flex-col  gap-8 text-justify text-[12px] sm:text-[14px]  md:text-[18px]  para ' style={{color:"#000"}}>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure </p>
+           </div>
+           <div className='  mt-8 flex flex-col gap-y-7 sm:gap-0 sm:flex-row justify-between sm:items-center
+            '>
+            <div className=' flex gap-3 items-center '>
+                 <input type="checkbox" checked={purchasedData.agree} onClick={()=>setPurchasedData({...purchasedData,agree:!purchasedData.agree})}  name="agree"  id="agree" className=' focus:accent-[#2C3E50] w-6 h-6 ' />
+                 <label className='para text-sm md:text-[18px]   font-semibold' htmlFor="agree" style={{color:"black"}}>I agree to the terms above</label>
+                 <p className='text-red-500'>{purchasedData.message}</p>
+               
+            </div>
+            <div className=' hidden md:flex '>
+                <button  className=' button3 para text-xl font-semibold  ' onClick={handle2} style={{minWidth:"260px",height:"40px",color:"white"}}><span>Proceed To Checkout</span></button>
+            </div>
+            <div className='md:hidden flex  self-end '>
+                <button  onClick={handle2} className=' button3 para text-[18px] font-semibold  ' style={{minWidth:"260px",height:"40px",color:"white"}}><span>Proceed To Checkout</span></button>
+            </div>
+           </div>
+            </div>
+            </div>
+          </Popup>
+          <Popup
+          open={purchasedData.toggle3}
+            onClose={purchasedData.toggle3}
+            position="center center"
+            closeOnDocumentClick={false}
+            lockScroll={true}
+            contentStyle={{
+           border:"none",
+              display:"grid",
+               placeContent:"center",
+               backgroundImage:"url('https://cdn.discordapp.com/attachments/1111568797476868128/1113746626696204349/WhatsApp_Image_2023-06-01_at_11.16.50.jpg')",
+              width:"90vw",
+              height:"90vh",
+              borderRadius:"10px"
+            }}
+          >
+            <div className='w-[90vw] h-[90vh]    '  data-aos="zoom-in"> 
+            <div className=' w-[80vw] mx-auto h-[80vh] mt-10 overflow-y-auto scrollbar-hide '>
+           <div className=' flex justify-between items-center '>
+            <p className=' heading text-2xl sm:text-3xl md:text-6xl'>Payment</p>
+            <div
+                          className="cursor-pointer text-3xl"
+                          title="close"
+                          onClick={() => {
+                            setPurchasedData({...purchasedData,toggle3:false});
+                          }}
+                        >
+                          <HiXMark />
+                        </div>
+           </div>
+           <div className=' mt-8 flex flex-col h-[300px] w-[300px] bg-blue-gray-300  gap-8 text-justify text-[12px] sm:text-[14px]  md:text-[18px]  para ' style={{color:"#000"}}>
+            
+           </div>
+           <div className='  mt-8 flex flex-col gap-y-7 sm:gap-0 lg:flex-row justify-between lg:items-center
+            '>
+            <div className=' flex flex-col gap-3'>
+            <label className='para text-sm md:text-[18px]   font-semibold' htmlFor="transaction_id" style={{color:"black"}}>Enter Transaction Id</label>
+                 <input placeholder='enter last 6 digit....' type="text" value={purchasedData.transaction_id} onChange={(e)=>setPurchasedData({...purchasedData,transaction_id:e.target.value})} maxLength={6}  name="transaction_id"  id="transaction_id" className=' p-2 text-black border border-gray-400 rounded-md w-full sm:w-[400px] h-[40px] ' />
+                 
+                 <p className='text-red-500'>{purchasedData.message}</p>
+               
+            </div>
+            <div className=' hidden lg:flex '>
+                <button  className=' button3 para text-xl font-semibold  ' onClick={handlesubmit} style={{minWidth:"260px",height:"40px",color:"white"}}><span>Submit</span></button>
+            </div>
+            <div className='lg:hidden flex  self-end '>
+                <button  onClick={handlesubmit} className=' button3 para text-[18px] font-semibold  ' style={{minWidth:"260px",height:"40px",color:"white"}}><span>Submit</span></button>
+            </div>
+           </div>
+            </div>
+            </div>
+          </Popup>
 
     </>
   )

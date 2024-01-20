@@ -11,7 +11,7 @@ function Home() {
   return (
     <div  className=" = overflow-hidden " >
       <NewHero />
-      <Article/>
+      {/* <Article/> */}
       <Program/>
       <Gallery />
       <Helping />

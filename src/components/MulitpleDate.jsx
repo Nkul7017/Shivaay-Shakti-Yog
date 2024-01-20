@@ -1,7 +1,7 @@
 
 import style from 'react-day-picker/dist/style.css';
-import React from 'react';
-import { addMonths, isSameMonth ,addDays } from 'date-fns';
+import React, { useEffect } from 'react';
+import { addMonths, isSameMonth ,addDays,parseISO,format } from 'date-fns';
 import { DayPicker } from 'react-day-picker';
 
 const css = `
@@ -33,26 +33,31 @@ background: var(--the, #B7DFC7);
   }
   
 `;
-export default function App() {
-  
-  const [days, setDays] = React.useState([]);
-  console.log(days);
+export default function MultipleDate({purchasedData,setPurchasedData}) {
+ console.log(purchasedData);
+ const handleDayClick = (selectedDays) => {
+
+  setPurchasedData({
+    ...purchasedData,
+    days: selectedDays,
+  });
+};
   return (
     <>
     <style>{css}</style>
     <DayPicker
       mode="multiple"
-      min={60}
-      max={60}
-      selected={days}
-      onSelect={setDays}
+      min={purchasedData?.duration==="9 Month"?270:purchasedData?.duration==="3 Month"?90:purchasedData?.duration==="1 Month"?30:0}
+      max={purchasedData?.duration==="9 Month"?270:purchasedData?.duration==="3 Month"?90:purchasedData?.duration==="1 Month"?30:0}
+      selected={purchasedData?.days}
+      onSelect={handleDayClick}
       pagedNavigation
       fixedWeeks
-      numberOfMonths={3}
+      numberOfMonths={purchasedData?.duration==="9 Month"?15:purchasedData?.duration==="3 Month"?6:purchasedData?.duration==="1 Month"?3:0}
       defaultMonth={addDays(new Date(),1)}
-      fromDate={addDays(new Date(),1)}
-      toDate={addDays(new Date(),90)}
-      className='   overflow-x-auto scrollbar-hide   mt-10   '
+      fromDate={parseISO(purchasedData.starting_date)}
+      toDate={addDays(parseISO(purchasedData.starting_date),purchasedData?.duration==="9 Month"?404:purchasedData?.duration==="3 Month"?144:purchasedData?.duration==="1 Month"?44:0)}
+      className='   overflow-x-auto max-w-[80vw] sm:max-w-[65vw]   scrollbar-default   mt-10   '
       modifiersClassNames={{
         selected: 'my-selected',
       }}

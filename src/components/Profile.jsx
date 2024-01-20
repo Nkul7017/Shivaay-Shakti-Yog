@@ -9,12 +9,12 @@ import countryList from 'react-select-country-list'
 import imageprofile from '../../public/userprofile.png'
 import CloudinaryUploadWidget from "../components/CloudinaryUploadWidget";
 import { useNavigate } from 'react-router-dom';
-const Stats = () => {
+const Stats = ({completed,active}) => {
    const [toggle,setToggle]=useState(false)
    const [toggle2,setToggle2]=useState(false)
    const [toggle1,setToggle1]=useState(false)
   const user= JSON.parse(localStorage.getItem('user'));
-  console.log(user);
+//   console.log(user);
   const options1 =[
    {value:"waiting for options...",label:"waiting for options..."},
   ];
@@ -103,16 +103,16 @@ else{
 
   return (
    
-   <div className=' flex flex-1   px-4 lg:px-16 border flex-wrap g justify-between h-[160px]        '>
+   <div className=' flex flex-1     px-4 lg:px-16 border flex-wrap g justify-between h-[160px]        '>
 
-        <div className=' flex gap-3  lg:gap-10 justify-center items-center     '>
+        <div className=' flex gap-3   lg:gap-10 justify-center items-center     '>
      <div onMouseOver={()=>setToggle2(true)} onMouseOut={()=>setToggle2(false)} className=' relative w-[80px] h-[80px] md:w-[150px] md:h-[150px] lg:w-[236px] lg:h-[236px]
        mt-0     lg:-mt-14 '>
-        <img   src={user.profile_img?user.profile_img:imageprofile} className='  w-[100%] h-[100%]
+        <img   src={imageprofile} className='  w-[100%] h-[100%]
          rounded-full image object-cover object-top  ' alt="" />
-        {toggle2&&<div   className='   absolute top-4 left-2 sm:top-[21%] sm:left-[9%] md:top-[35%] md:left-[28%] lg:top-[40%] lg:left-[35%] '>
+        {/* {toggle2&&<div   className='   absolute top-4 left-2 sm:top-[21%] sm:left-[9%] md:top-[35%] md:left-[28%] lg:top-[40%] lg:left-[35%] '>
          <CloudinaryUploadWidget  onImageUpload={handleUploadedImage} />
-         </div>}
+         </div>} */}
      </div>
      <div className=' flex flex-col gap-1  '>
         <p className=' heading text-[18px]   lg:text-4xl capitalize '>{user?.name}</p>
@@ -124,30 +124,30 @@ else{
      </div>
      </div>
 
-     <div className=' flex -mt-8 md:-mt-0  gap-4 sm:gap-6  lg:gap-10 items-center justify-center order-3 md:order-2 '>
-     <div className='  items-center flex gap-1  md:flex-col  '>
-        <p className='w-[36px] lg:w-[45px]  aspect-square  grid place-content-center  rounded-xl bg-[#2C3E50] text-white text-[18px] md:text-2xl ' >02</p>
+     <div className=' flex -mt-8 md:-mt-0  gap-8 sm:gap-6  lg:gap-10 items-center justify-center order-3 md:order-2 '>
+     <div className='  items-center flex gap-2  md:flex-col  '>
+        <p className='w-[36px] lg:w-[45px]  aspect-square  grid place-content-center  rounded-xl bg-[#2C3E50] text-white text-[18px] md:text-2xl ' >{String(completed).padStart(2, '0')}</p>
         <div className=' mt-3 md:mt-0 text-[9px] lg:text-sm flex flex-col md:flex-row'>
         <p>Completed</p>
         <p>Courses</p>
         </div>
      </div>
-     <div className='  items-center gap-1  flex md:flex-col '>
-        <p className=' w-[36px] lg:w-[45px] aspect-square  grid place-content-center  rounded-xl bg-[#2C3E50] text-white text-[18px] md:text-2xl ' >02</p>
+     <div className='  items-center gap-2  flex md:flex-col '>
+        <p className=' w-[36px] lg:w-[45px] aspect-square  grid place-content-center  rounded-xl bg-[#2C3E50] text-white text-[18px] md:text-2xl ' >{String(active).padStart(2, '0')}</p>
         <div className=' mt-3 md:mt-0  text-[9px] lg:text-sm flex flex-col md:flex-row'>
         <p >Active</p>
         <p>Courses</p>
         </div>
      </div>
-     <div className='  items-center gap-1  flex md:flex-col  '>
+     {/* <div className='  items-center gap-1  flex md:flex-col  '>
         <p className='w-[72px] h-[36px] lg:w-[82px] lg:h-[45px]  grid place-content-center  rounded-xl bg-[#2C3E50] text-white text-[18px] md:text-2xl ' >7.8/10</p>
         <div className=' mt-3 md:mt-0  text-[9px] lg:text-sm flex flex-col md:flex-row'>
         <p>Performance</p>
         <p>Score</p></div>
-     </div>
+     </div> */}
      </div>
 
-     <div className='flex gap-5 sm:gap-4 md:gap-8  lg:gap-12 items-center justify-center order2  md:order-3    '>
+     <div className='flex gap-5 sm:gap-4 md:gap-8 lg:gap-12 items-center justify-center order2  md:order-3    '>
      <div className=' flex flex-col items-center justify-center  gap-2 '>
         <button onClick={()=>setToggle3(true)} ><img src={heart} className=' hover:scale-110  w-[20px] h-[20px] lg:w-[30px] lg:h-[30px] ' alt="" /></button>
         <p className=' text-xs lg-text-sm'>Health Stats</p>

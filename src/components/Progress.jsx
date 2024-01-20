@@ -1,21 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ProgressBar from "@ramonak/react-progress-bar";
 import {LuCalendarDays} from 'react-icons/lu'
 import upcoming  from '../../public/dashboard/upcoming.png'
+import PersonalPopup from './PersonalPopup';
+import GroupPopup from './GroupPopup';
 
-const Progress = () => {
+const Progress = ({data}) => {
+  const [toggle,setToggle]=useState(false)
+  const [toggle1,setToggle1]=useState(false)
   return (
-    <div className=' progres px-2 py-8 md:px-6 md:py-8  lg:px-8 lg:py-10 lg:w-[377px] md:w-[350px] sm:w-[300px]   w-[145px] '>
-      <p className=' text-[16px] lg:w-2xl bluish  '> Yoga Beginner</p>
-      <ProgressBar completed={58} bgColor='#2C3E50' className='  mt-3   lg:mt-5 ' />
-      <div className=' flex justify-between  mt-4 lg:mt-6 '>
-        <button className=' hidden sm:block button1 text-white lg:p-2 rounded-md  text-sm lg:text-[18px]  sm:w-[120px] md:w-[140px] lg:w-[170px]   ' >Upcoming Classes</button>
-        <button className=' flex items-center  justify-center sm:hidden button1 text-white   rounded-md text-sm lg:text-[18px] h-[40px] w-[74px]    ' > 
-        <img src={upcoming} alt="" />
-         Class</button>
-        <button  className=' button1 text-white  rounded-md  w-[37px] sm:w-auto p-1  '><LuCalendarDays   size={30} /></button>
-      </div>
-    </div>
+    <>
+   { data?.course_type==="group" &&
+   <>
+    <button onClick={()=>setToggle(true)} className=' cursor-pointer progres px-2 py-4  sm:py-6 md:px-6 md:py-8  lg:px-8 lg:py-10 lg:w-[377px] md:w-[350px] sm:w-[300px] min-h-[150px] sm:min-h-[220px] md:min-h-[220px]  lg:min-h-[250px]   w-[145px] '>
+      <img src={`../src/assets/Programs/${data?.course_id}/Group.png`} className=' min-h-[100px] rounded-md object-fill' alt="" />
+      <p className=' text-[16px] lg:w-2xl bluish mt-1 sm:mt-3 '>{data?.course_name}</p>
+      <ProgressBar completed={58} bgColor='#2C3E50' className=' mt-1  sm:mt-3   lg:mt-5 ' />
+      <GroupPopup data={data} toggle={toggle} setToggle={setToggle} />
+    </button>
+    </>}
+    { data?.course_type==="personal" &&
+    <>
+    <button onClick={()=>setToggle1(true)} className='  cursor-pointer progres px-2 py-4  sm:py-6 md:px-6 md:py-8  lg:px-8 lg:py-10 lg:w-[377px] md:w-[350px] sm:w-[300px] min-h-[150px] sm:min-h-[220px] md:min-h-[220px]  lg:min-h-[250px]   w-[145px] '>
+      <img src={`../src/assets/Programs/${data?.course_id}/Personal.png`} className=' min-h-[100px] rounded-md object-cover sm:object-fill' alt="" />
+      <p className=' text-[16px] lg:w-2xl bluish mt-1 sm:mt-3 '>{data?.course_name}</p>
+      <ProgressBar completed={58} bgColor='#2C3E50' className=' mt-1  sm:mt-3   lg:mt-5 ' />
+    </button>
+    <PersonalPopup data={data} toggle1={toggle1} setToggle1={setToggle1}  />
+    </>
+    }
+    </>
   )
 }
 

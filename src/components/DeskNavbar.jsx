@@ -4,13 +4,13 @@ import { Link, useLocation } from "react-router-dom";
 import Dropdown from "./Dropdown";
 const DeskNavbar = () => {
 const {pathname}=useLocation();
-console.log(pathname)
+// console.log(pathname)
   const [logged, setLogged] = useState(localStorage.getItem('user'));
   return (
     <>
-      <div className={`hidden ${pathname.includes("/ParticularProgram")?"bg-transparent":"bg-[#faf7e6]"}  ${pathname=="/UserDashboard"?"normal":"fixed"} w-[100vw] h-[70px]  z-50 lg:flex  ${pathname=="/"?"bg-transparent":"bg-[#faf7e6]"}  justify-between md:px-8 sm:px-4 text-center items-center`}>
+      <div className={`hidden ${pathname.includes("/ParticularProgram") ?"bg-transparent":"bg-[#faf7e6]"}  ${pathname=="/UserDashboard"?"normal":"fixed"} w-[100vw] h-[70px]  z-50 lg:flex   justify-between md:px-8 sm:px-4 text-center items-center`}>
         <div>
-          <img className="  w-[200px] " src={logo} alt="" />
+          <Link to="/"><img className="  w-[200px] " src={logo} alt="" /></Link>
         </div>
         <div className="flex sm:gap-x-4  md:gap-x-12 items-center">
           <Link to="/">
