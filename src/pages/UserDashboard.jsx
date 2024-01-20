@@ -28,9 +28,11 @@ try {
       Authorization:localStorage.getItem('jwt')
     }
    })
+   if (Array.isArray(response?.data?.data)) {
     var a=response?.data?.data.filter((v)=>v?.status==="active" && v?.transaction_status==="completed").length;
    var b=response?.data?.data.filter((v)=>v?.status==="expired" && v?.transaction_status==="completed").length;
   //  console.log(a,b)
+   }
    setData(prevData => ({ ...prevData, PurchasedCourse: response?.data?.data,completed:a,active:b }));
 } catch (e) {
   console.log(e);
