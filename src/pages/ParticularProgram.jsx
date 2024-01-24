@@ -232,11 +232,18 @@ function ParticularArticle() {
     { heading: "Restorative yoga and relaxation", time: "6:30-8:00 (hrs)" },
   ];
   const data1=[
-    {content:"Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. It is a gentle form of yoga that is suitable for beginners and experienced practitioners alike. Hatha yoga can help improve flexibility, strength, balance, and mental clarity."},
-    {content:"Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. It is a gentle form of yoga that is suitable for beginners and experienced practitioners alike. Hatha yoga can help improve flexibility, strength, balance, and mental clarity."},
-    {content:"Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. It is a gentle form of yoga that is suitable for beginners and experienced practitioners alike. Hatha yoga can help improve flexibility, strength, balance, and mental clarity."},
-    {content:"Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. It is a gentle form of yoga that is suitable for beginners and experienced practitioners alike. Hatha yoga can help improve flexibility, strength, balance, and mental clarity."},
-    {content:"Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. It is a gentle form of yoga that is suitable for beginners and experienced practitioners alike. Hatha yoga can help improve flexibility, strength, balance, and mental clarity."},
+    {question:"Before I pay ,can I take a trial ? ",answer:"Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. "},
+    {question:"What do I need bring to class ? ",answer:"Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. "},
+    {question:"Can I eat before the yoga session?",answer:"Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. "},
+    {question:"Can I change my coach after payment?",answer:"Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. "},
+    {question:"What is the refund policy ?",answer:"Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. "},
+    {question:"How group session and private  session works? ",answer:"Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. "},
+    {question:"If I have an emergency during the period of my membership then how my sessions will cover ? ",answer:"Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. "},
+    {question:"Which package  is more beneficial? ",answer:"Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. "},
+    {question:"Is it possible  to take second trial session ?",answer:"Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. "},
+    {question:"What should I eat just after the class?",answer:"Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. "},
+    {question:"If I am a  beginner which program is good for me?",answer:"Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. "},
+   
   ]
   const reviews=[
     {
@@ -296,31 +303,31 @@ function ParticularArticle() {
 
         {/*------------------------------- Hero Section-------------------------------------------- */}
         <div className=" sm:w-[98.90vw] w-[100vw] flex justify-between gap-1 -mt-20 sm:mt-0  ">
-          <div className="object-fill">
+          <div className="">
             <img
-              src={P2}
-              className="  w-[185px] sm:w-[375px]  h-[268px]   sm:h-[530px]  object-fill"
+              src={courseData?.banner1}
+              className="  w-[185px] sm:w-[375px]  h-[268px]   sm:h-[530px]  object-cover"
               alt=""
             />
           </div>
           <div>
             <img
-              src={P1}
-              className="  hidden lg:inline-block object-fill w-[185px] sm:w-[375px]  h-[268px]   sm:h-[530px] "
+              src={courseData?.banner2}
+              className="  hidden lg:inline-block object-cover w-[185px] sm:w-[375px]  h-[268px]   sm:h-[530px] "
               alt=""
             />
           </div>
           <div>
             <img
-              src={P3}
-              className="  hidden md:inline-block object-fill w-[185px] sm:w-[375px]  h-[268px]   sm:h-[530px]"
+              src={courseData?.banner3}
+              className="  hidden md:inline-block object-cover w-[185px] sm:w-[375px]  h-[268px]   sm:h-[530px]"
               alt=""
             />
           </div>
           <div>
             <img
-              src={P4}
-              className=" w-[185px] sm:w-[375px]  h-[268px]   sm:h-[530px] object-fill "
+              src={courseData?.banner4}
+              className=" w-[185px] sm:w-[375px]  h-[268px]   sm:h-[530px] object-cover "
               alt=""
             />
           </div>
@@ -357,9 +364,7 @@ function ParticularArticle() {
         <div className=" mt-5 sm:mt-10">
           <p className=" text-xl sm:text-4xl heading">Description</p>
           <p className=" text-sm text-justify para mt-3 ">
-          {courseData?.description} 
-            {show &&
-              " They allow you to connect with a community of like-minded people and receive guidance from an experienced teacher. Online classes can be accessed through various platforms, such as Zoom, Skype, or Google Meet. Some instructors may offer live classes, while others may provide pre-recorded videos that you can access at your convenience."}
+          {show?courseData?.description1:courseData?.description} 
           </p>
           <button
             className=" text-md font-semibold mt-1 para   "
@@ -486,7 +491,7 @@ function ParticularArticle() {
          <div className=" space-y-4 mt-7  ">
          {
           data1.map((data,index)=>
-          <Faq1 data={data?.content} key={"Nakul"+index} />
+          <Faq1 data={data} key={"Nakul"+index} />
           )
          }
          </div>

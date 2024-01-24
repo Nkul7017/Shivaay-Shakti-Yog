@@ -694,5 +694,13 @@ background: var(--button, linear-gradient(103deg, #E5C75E 24.85%, #B96E38 111.06
 .hi{
   height:max-content;
 }
+.sh::after{
+  content:"";
+  position:absolute;
+ inset:0;
+ height: 100%;
+ width: 100%;
+ background-color: rgba(255, 255, 255, 0.445);
+ z-index:99;
 
-
+}

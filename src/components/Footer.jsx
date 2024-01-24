@@ -45,7 +45,7 @@ function Footer() {
             
             </div>
             <div className="text-2xl flex sm:flex-row flex-col heading justify-center items-center w-full    flex-wrap gap-x-28 gap-y-4">
-              <Link  tp="/" >HOME</Link>
+              <Link  to="/" >HOME</Link>
               <Link to='/Courses'>PROGRAMS</Link>
               <Link to='/about-us' >ABOUT</Link>
               <Link to='/' ><img src={yt} className=" w-[50px] h-[50px] " alt="" /></Link>

@@ -23,15 +23,17 @@ const UserDashboard = () => {
   async function prof()
   {
 try {
+  console.log(JSON.parse(localStorage.getItem('user'))?._id);
    const response=await axios.get(`https://shivaay-shakti-backend-1.onrender.com/api/purchase/${JSON.parse(localStorage.getItem('user'))?._id}/c`,{
+  //  const response=await axios.get(`http://localhost:5000/api/purchase/${JSON.parse(localStorage.getItem('user'))?._id}/c`,{
     headers:{
       Authorization:localStorage.getItem('jwt')
     }
    })
+   console.log(response?.data?.data);
    if (Array.isArray(response?.data?.data)) {
     var a=response?.data?.data.filter((v)=>v?.status==="active" && v?.transaction_status==="completed").length;
    var b=response?.data?.data.filter((v)=>v?.status==="expired" && v?.transaction_status==="completed").length;
-  //  console.log(a,b)
    }
    setData(prevData => ({ ...prevData, PurchasedCourse: response?.data?.data,completed:a,active:b }));
 } catch (e) {

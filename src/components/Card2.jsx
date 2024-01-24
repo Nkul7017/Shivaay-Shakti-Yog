@@ -12,9 +12,9 @@ function Card2({img,heading,types,data}) {
   return (
     <>
     <div className=' w-[415px] h-auto card2 '>
-    <div className=' relative '>
+    <div className=' relative sh '>
         <img src={img} className=' w-[559px] h-[150px] object-cover ' alt="" />
-        <p className='heading absolute bottom-1 left-6 text-2xl  ' style={{textShadow:"0px 4px 4px rgba(0, 0, 0, 0.25"}}>{heading}</p>
+        <p className='heading absolute  bottom-1 left-6 text-2xl  ' style={{textShadow:"0px 4px 4px rgba(0, 0, 0, 0.25)",zIndex:"999"}}>{heading}</p>
     </div>
     <div className=' flex flex-col gap-5 px-6 py-3  '>
         <div className=' min-h-[80px] para text-sm  text-justify' style={{color:"#444"}}>

@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import course from '../../public/Course/course.png'
+import course from '../../public/Course/course.jpg'
 import HeroNavbar from '../components/HeroNavbar'
 import Card1 from '../components/Card1';
 import {FaSearch } from "react-icons/fa";
@@ -37,7 +37,7 @@ console.log(e);
             
             <div className=' w-screen relative h-[170px] sm:h-[470px]  '>
             <img
-            className="  w-screen h-[170px] sm:h-[470px]   "
+            className="  w-screen h-[170px]  object-fill sm:h-[470px]   "
               src={course}
               alt=""
             />
@@ -60,7 +60,7 @@ console.log(e);
 
         <section className=' hidden sm:flex box  p-1   gap-7 sm:gap-10 mt-6  scrollbar-hide   overflow-scroll '>
             {data.map((value)=>
-            
+           
             <Card1 value={value}/>
             )}
         </section>

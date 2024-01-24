@@ -34,7 +34,7 @@ background: var(--the, #B7DFC7);
   
 `;
 export default function MultipleDate({purchasedData,setPurchasedData}) {
- console.log(purchasedData);
+//  console.log(purchasedData);
  const handleDayClick = (selectedDays) => {
 
   setPurchasedData({
@@ -55,8 +55,8 @@ export default function MultipleDate({purchasedData,setPurchasedData}) {
       fixedWeeks
       numberOfMonths={purchasedData?.duration==="9 Month"?15:purchasedData?.duration==="3 Month"?6:purchasedData?.duration==="1 Month"?3:0}
       defaultMonth={addDays(new Date(),1)}
-      fromDate={parseISO(purchasedData.starting_date)}
-      toDate={addDays(parseISO(purchasedData.starting_date),purchasedData?.duration==="9 Month"?404:purchasedData?.duration==="3 Month"?144:purchasedData?.duration==="1 Month"?44:0)}
+      fromDate={parseISO(purchasedData?.starting_date)}
+      toDate={addDays(parseISO(purchasedData?.starting_date),purchasedData?.duration==="9 Month"?404:purchasedData?.duration==="3 Month"?144:purchasedData?.duration==="1 Month"?44:0)}
       className='   overflow-x-auto max-w-[80vw] sm:max-w-[65vw]   scrollbar-default   mt-10   '
       modifiersClassNames={{
         selected: 'my-selected',

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Progress from './Progress'
 
 const Ongoing = ({data}) => {
-  console.log(data);
+  // console.log(data);
   const [toggle,setToggle]=useState(true);
   return (
     <div>

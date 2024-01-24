@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import HeroNavbar from '../components/HeroNavbar'
-import about from '../../public/About/about.png'
+import about from '../../public/About/about.jpg'
 import Shivji from '../../public/About/Shivji.png'
 import Shivji1 from '../../public/About/Shivji1.png'
 import Namaste from '../../public/About/Namaste.png'

@@ -48,7 +48,9 @@ export default function Dropdown({logged,setLogged}) {
                 
                     <button
                     onClick={()=>{
+                      
                       setLogged(localStorage.removeItem('user'));
+                      localStorage.removeItem('jwt')
                        navigate('/', {replace: true});
                      }}
                      

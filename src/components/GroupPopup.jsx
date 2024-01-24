@@ -26,7 +26,7 @@ function GroupPopup({toggle,setToggle,data}) {
            <div className=' flex flex-col lg:flex-row justify-between items-start gap-y-6 lg:items-center '>
             <p className=' heading text-2xl sm:text-3xl md:text-6xl'>{data?.course_name} Course</p>
             <div className=" pr-6 sm:pr-20 md:pr-32 ">
-            <button className="button3  " style={{"minWidth":"120px"}}><span>Join class</span></button>
+            {data?.status==="active"&&<button className="button3  " style={{"minWidth":"120px"}}><span>Join class</span></button>}
             </div>
             <div
                           className="cursor-pointer absolute  top-5 right-5 sm:right-10 md:block text-3xl"

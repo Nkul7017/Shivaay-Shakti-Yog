@@ -14,6 +14,7 @@ AOS.init({
   duration: 1200,
 });
 function GroupForm({toggle1,setToggle1,data,type}) {
+  console.log(data?.group_timing)
 const navigate=useNavigate();
   const [purchasedData,setPurchasedData]=useState({
     user_id:JSON.parse(localStorage.getItem('user'))?._id,
@@ -24,7 +25,9 @@ const navigate=useNavigate();
     message:"",
     toggle2:false,
     toggle3:false,
-    agree:false
+    agree:false,
+    preferred_timing:"",
+    index1:null
     })
     const addDays = (date, days) => {
       const result = new Date(date);
@@ -36,7 +39,7 @@ const navigate=useNavigate();
       if(localStorage.getItem('user'))
       {
        setPurchasedData({...purchasedData,message:""})
-       if(purchasedData.duration!==""  &&purchasedData.price!=="")
+       if(purchasedData.duration!==""  &&purchasedData.price!=="" && purchasedData.preferred_timing!=="")
        {
             setPurchasedData({...purchasedData,toggle2:true,message:""});
        }
@@ -52,7 +55,7 @@ const navigate=useNavigate();
         if(localStorage.getItem('user'))
         {
          setPurchasedData({...purchasedData,message:""})
-         if(purchasedData.agree===true &&purchasedData.duration!==""  &&purchasedData.price!=="")
+         if(purchasedData.agree===true &&purchasedData.duration!==""  &&purchasedData.price!=="" && purchasedData.preferred_timing!=="")
          {
               setPurchasedData({...purchasedData,toggle3:true,message:""});
          }
@@ -70,7 +73,7 @@ const navigate=useNavigate();
     setPurchasedData({...purchasedData,message:"loading"})
    if(localStorage.getItem('user'))
    {
-    if(purchasedData?.transaction_id?.trim().length===6 &&purchasedData.agree===true &&purchasedData.duration!==""  &&purchasedData.price!=="")
+    if(purchasedData?.transaction_id?.trim().length===6 &&purchasedData.agree===true &&purchasedData.duration!==""  &&purchasedData.price!==""  && purchasedData.preferred_timing!=="")
     {
       const b=purchasedData.duration.split(" ");
       if(b[1]==="Month")
@@ -78,6 +81,7 @@ const navigate=useNavigate();
        b[0]=parseInt(b[0])*30;
       }
       const expirationDate = addDays(data?.group_starting_date,parseInt(b[0]));
+      console.log(expirationDate);
       console.log(purchasedData);
       try{
        const response=await axios.post('https://shivaay-shakti-backend-1.onrender.com/api/purchase',{
@@ -85,7 +89,7 @@ const navigate=useNavigate();
         course_id:data?._id,
         status:purchasedData?.status,
         starting_date:data?.group_starting_date,
-        preferred_timing:data?.group_timing,
+        preferred_timing:purchasedData?.preferred_timing,
         duration:purchasedData?.duration,
         expiration_date:expirationDate,
         price:purchasedData?.price,
@@ -129,8 +133,8 @@ const navigate=useNavigate();
             contentStyle={{
                placeContent:"center",
             backgroundImage:"url('https://cdn.discordapp.com/attachments/1111568797476868128/1113746626696204349/WhatsApp_Image_2023-06-01_at_11.16.50.jpg')",
-              width:"90vw",
-              height:"90vh",
+              width:"95vw",
+              height:"95vh",
               borderRadius:"10px"
             }}
           >
@@ -155,23 +159,22 @@ const navigate=useNavigate();
      
             
              <div className=' flex gap-3 '>
-                {/* <img src="" alt="" /> */}
                 <p><img src={img3} className='mt-1'  alt="" /></p>
                 <div>
                     <p className=' text-[#283143] text-[16px] para  font-extrabold ' >Group Sessions</p>
                     <p className=' heading text-xl lg:text-2xl  '>{data&&data.group_batch_size} yogis</p>
                 </div>
              </div>
-             <div className=' flex gap-3 '>
-                {/* <img src="" alt="" /> */}
+             {/* <div className=' flex gap-3 '>
+            
                 <p><img src={img2} className='mt-1'  alt="" /></p>
                 <div>
                     <p className=' text-[#283143] text-[16px] para  font-extrabold ' >{data?.group_timing}</p>
                     <p className=' heading text-xl lg:text-2xl  '>{data?.group_session}</p>
                 </div>
-             </div>
+             </div> */}
              <div className=' flex gap-3 '>
-                {/* <img src="" alt="" /> */}
+                
                 <p><img src={img1} className='mt-1'  alt="" /></p>
                 <div>
                     <p className=' text-[#283143] text-[16px] para  font-extrabold ' >Starting</p>
@@ -189,6 +192,24 @@ const navigate=useNavigate();
         </div>
         <p className='  float-right para font-bold'>based on 78 reviews</p>
         </div>
+     </div>
+
+     <div className='mt-14'>
+<p className=' text-xl lg:text-2xl   heading ' style={{color:"#283143"}}>Select Time</p>
+<div className=' mt-4 flex flex-wrap gap-3 lg:gap-10'>
+{
+  data&&data.group_timing&& data.group_timing?.map((value,i)=>
+    <>
+    <div>
+        <button onClick={()=>{
+          setPurchasedData({...purchasedData,preferred_timing:value?.times,index1:i})
+        }} className={`${purchasedData.index1===i?"button3":"button2"}`} >{String(value?.times)}</button>
+        <p className=' text-center mt-2 para  font-semibold text-xl lg:text-2xl '  style={{color:"#283143"}}> {String(value?.session)}</p>
+    </div>
+    </>)
+    }
+</div>
+{/* <p className=' font-semibold mt-2 text-sm text-red-500'>{purchasedData.message}</p> */}
      </div>
 
      <div className='mt-14'>

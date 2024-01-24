@@ -34,6 +34,8 @@ function Signup() {
   const[message,setMessage]=useState("");
   async function handlesubmit(e)
   {
+    setData({...data,message:"Loading..."});
+    console.log("hello");
 e.preventDefault();
 if(data.hunit==="cm")
 { data.height=parseFloat(data.height)*0.393701;}
@@ -45,14 +47,17 @@ if(data.wunit==="pound")
 else{
   data.weight=parseFloat(data.height);
 }
+console.log(data)
 if(data.name.trim().length>3 && isEmail(data.email.trim()) && isPassword(data.password.trim()) && data.cpassword.trim()!=="" && data.password===data.cpassword && data.country!=="" &&data.gender!==""&&data.height>0&&data.weight>0&&data.country!==""&&data.city!==""&&data.contact!=="")
 { 
+  console.log("naame")
   if(data.gender=="specify" ) {
     if(data.specify!=="" ) {
-  setData({...data,message:"Loading..."});
+  
   console.log(data);
   try{
     console.log(data);
+    console.log("bhai")
   const response=await axios.post('https://shivaay-shakti-backend-1.onrender.com/api/auth/signup',
   // const response=await axios.post('http://localhost:5000/api/auth/signup',
   {
@@ -70,7 +75,7 @@ if(data.name.trim().length>3 && isEmail(data.email.trim()) && isPassword(data.pa
     contact:data.contact
   }
   );
-
+  console.log("hi");
   if(response.status===201)
   {
     console.log(response);
@@ -116,10 +121,12 @@ else
   }
 }
 catch(e){
+  console.log(e);
   setData({...data,message:e.response.data.message});
 }}
 } 
 else{
+  console.log("name")
   setData({...data,message:"*All Fields Are Mandatory"});
 }
   }
@@ -245,7 +252,7 @@ else{
          <div className=' flex  items-center gap-5   mt-3  '>
          <button  type='submit' className='  button3 text-2xl  py-1   '><span className=' text-[18px]'>Sign Up</span></button>
          <button  type='button' onClick={()=>setData({...data,next:data.next-1})} className='  button3 text-2xl  py-1   '><span className=' text-[18px]'>Back</span></button> 
-         <p className=' text-[18px] font-bold text-red-900'>{message}</p> 
+         <p className=' text-[18px] font-bold text-red-900'>{data.message}</p> 
          </div>
          </div>}
 

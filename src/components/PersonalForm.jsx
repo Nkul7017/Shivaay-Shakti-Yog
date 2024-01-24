@@ -105,10 +105,18 @@ const navigate=useNavigate();
         const dateObject = new Date(dateString);
         return format(dateObject, 'yyyy-MM-dd');
       });
+      
+      const formattedDates = data?.days.map(dateString => {
+        return parse(dateString, 'yyyy-MM-dd', new Date());
+    });
+    
+
       const expirationDate = purchasedData.days[purchasedData.days.length-1];
       console.log(expirationDate)
       purchasedData.course_id=data?.name;
       purchasedData.course_type=type;
+
+
       try{
        const response=await axios.post('https://shivaay-shakti-backend-1.onrender.com/api/purchase',{
         user_id:purchasedData?.user_id,
