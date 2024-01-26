@@ -85,6 +85,7 @@ const navigate=useNavigate();
       console.log(purchasedData);
       try{
        const response=await axios.post('https://shivaay-shakti-backend-1.onrender.com/api/purchase',{
+        name:JSON.parse(localStorage.getItem('user'))?.name,
         user_id:purchasedData?.user_id,
         course_id:data?._id,
         status:purchasedData?.status,

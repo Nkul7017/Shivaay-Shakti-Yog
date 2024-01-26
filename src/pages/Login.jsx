@@ -7,7 +7,7 @@ function Login() {
   const navigate=useNavigate();
   const [message,setMessage]=useState("");
   const [data,setData]=useState({
-    username:"",
+    email:"",
     password:""
   })
  async function handlesubmit(e)
@@ -18,6 +18,7 @@ if( isPassword(data.password.trim()))
   setMessage("Loading...")
   try{
   const res=await axios.post("https://shivaay-shakti-backend-1.onrender.com/api/auth/login",data);
+  // const res=await axios.post("http://localhost:5000/api/auth/login",data);
 if(res.status===200)    
 {
   console.log(res.data.user);
@@ -49,7 +50,7 @@ else{
         <form className=' flex flex-col mt-10 gap-5 ' onSubmit={handlesubmit} >
           <div className=' flex flex-col gap-2 '>
          <label className=' text-2xl bluish  ' htmlFor="">Email</label>
-         <input type="text" name="username"  value={data.username} onChange={(e)=>setData({...data,[e.target.name]:e.target.value})} className=' font-semibold  px-3   text-red-900  rounded-lg py-1 '  />
+         <input type="text" name="email"  value={data.email} onChange={(e)=>setData({...data,[e.target.name]:e.target.value})} className=' font-semibold  px-3   text-red-900  rounded-lg py-1 '  />
          </div>
           <div className=' flex flex-col bluish gap-2 '>
          <label className=' text-2xl ' htmlFor="">Password</label>

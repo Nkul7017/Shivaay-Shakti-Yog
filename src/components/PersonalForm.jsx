@@ -131,7 +131,8 @@ const navigate=useNavigate();
         course_type:type,
         days:purchasedData?.days,
         transaction_id:purchasedData?.transaction_id,
-        transaction_status:"pending"
+        transaction_status:"pending",
+        name:JSON.parse(localStorage.getItem('user'))?.name,
        },{
         headers:{
           Authorization:localStorage.getItem('jwt')
