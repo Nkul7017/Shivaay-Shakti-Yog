@@ -12,17 +12,17 @@ const Ongoing = ({data}) => {
          </div>
        
          <div className=' ongoing flex  flex-wrap  gap-4 sm:gap-6 md:gap-8 lg:gap-10 p-3 sm:p-5  lg:p-10  h-max   w-[100%] mx-auto '>
-         {toggle&&data?.map((value)=>{
+         {toggle&&data?.map((value,i)=>{
          if(value?.status==="active")
          return <>
-         <Progress data={value} />
+         <Progress data={value}/>
          </>}
          )}
 
         {!toggle&&data?.map((value)=>{
          if(value?.status==="expired")
          return <>
-         <Progress data={value} />
+         <Progress data={value}  />
          </>}
          )}
          </div>

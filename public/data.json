@@ -27,11 +27,11 @@
     "group_url2": "/assets/Programs/1/Group.jpg",
     "group_timing": [
       {
-         "times": "6:00am to 7:00am",
+         "times": "6:00am to 7:00am IST",
        "session": "Morning"
        },
       { 
-        "times": "6:00pm to 7:00pm",
+        "times": "6:00pm to 7:00pm IST",
          "session": "Evening" 
         }
     ],
@@ -72,7 +72,24 @@
     "banner1":"/assets/Programs/1/banner1.jpg",
     "banner2":"/assets/Programs/1/banner2.jpg",
     "banner3":"/assets/Programs/1/banner3.jpg",
-    "banner4":"/assets/Programs/1/banner4.jpg"
+    "banner4":"/assets/Programs/1/banner4.jpg",
+    "group_benefits":[
+      { "icon":"","heading":"Yoga session" },
+      { "icon":"","heading":"Free workshops" },
+      { "icon":"","heading":"Consultancy" },
+      { "icon":"","heading":"6 days classes/week " },
+      { "icon":"","heading":"Twenty four yoga sessions/month" },
+      { "icon":"","heading":"Every age group" }
+    ],
+    "personal_benefits":[
+      { "icon":"","heading":"Live sessions" },
+      { "icon":"","heading":"Recorded sessions" },
+      { "icon":"","heading":" Workshops " },
+      { "icon":"","heading":"Diet " },
+      { "icon":"","heading":"Counselling " }
+    ],
+    "group_card_description":"This program  helps you to expands the capacity to cope with stress and nervousness, works on interactive abilities , profound prosperity, tactile ,mental and actual wellbeing , improve concentration.",
+    "personal_card_description":"In personal training  we customized the session according to the person needs . First we will examine your specific necessities and objectives, capacity ,limits  and then we will make a program for you . "
   },
   {
     "_id": 2,
@@ -81,7 +98,6 @@
     "description":"Many of us are incapable to require out any time for regular gyming or walking.  If you’re  one of them then this program  is for you . This program will incorporate yoga styles like Ashtanga ,vinyasa , Power yoga and also restorative yoga .",
     "main_url": "/assets/Programs/2/mainurl.jpg",
     "course_type1": "Personal Training Course",
-    "Personal_description1": "Occupying a small chunk in the our organisation strives to make yoga accessible and convenient to every citizen of the world. Get on board with us to start your journey towards a healthier life.",
     "live_sessions1": 60,
     "recorded_sessions1": 80,
     "course_duration_days1": 78,
@@ -91,7 +107,6 @@
     "price1": 30000,
     "personal_url1": "/assets/Programs/2/Personal.jpg",
     "course_type2": "Group Training Course",
-    "Group_description2": "Occupying a small chunk in the our organisation strives to make yoga accessible and convenient to every citizen of the world. Get on board with us to start your journey towards a healthier life.",
     "live_sessions2": 60,
     "recorded_sessions2": 80,
     "course_duration_days2": 78,
@@ -102,19 +117,19 @@
     "group_url2": "/assets/Programs/2/Group.jpg",
     "group_timing": [
       {
-         "times": "6:00am to 7:00am",
+         "times": "6:00am to 7:00am IST",
        "session": "Morning"
        },
       { 
-        "times": "8:00am to 9:00am",
+        "times": "8:00am to 9:00am IST",
          "session": "Morning" 
         },
       { 
-        "times": "4:00pm to 5:00pm",
+        "times": "4:00pm to 5:00pm IST",
          "session": "Evening" 
         },
         { 
-        "times": "7:00pm to 8:00pm",
+        "times": "7:00pm to 8:00pm IST",
          "session": "Evening" 
         }
     ],
@@ -155,7 +170,24 @@
   "banner1":"/assets/Programs/1/banner1.jpg",
       "banner2":"/assets/Programs/2/banner2.jpg",
       "banner3":"/assets/Programs/2/banner3.jpg",
-      "banner4":"/assets/Programs/2/banner4.jpeg"
+      "banner4":"/assets/Programs/2/banner4.jpeg",
+      "group_benefits":[
+        { "icon":"","heading":"Yoga session" },
+        { "icon":"","heading":"Free workshops" },
+        { "icon":"","heading":"Consultancy" },
+        { "icon":"","heading":"6 days classes/week " },
+        { "icon":"","heading":"Twenty four yoga sessions/month" }
+      ],
+      "personal_benefits":[
+        { "icon":"","heading":"Live sessions" },
+        { "icon":"","heading":"Recorded sessions" },
+        { "icon":"","heading":" Workshops " },
+        { "icon":"","heading":"Diet " },
+        { "icon":"","heading":"Counselling " }
+      ],
+      "group_card_description":"This program  helps you to expands the capacity to cope with stress and nervousness, works on interactive abilities , profound prosperity, tactile ,mental and actual wellbeing ,improve concentration. ",
+      "personal_card_description":"In personal training  we customized the session according to the person needs . First we will examine your specific necessities and objectives, capacity ,limits  and then we will make a program for you . "
      
   }
+  
 ]

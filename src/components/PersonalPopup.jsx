@@ -59,7 +59,7 @@ background: var(--the, #B7DFC7);
            <div className=' flex flex-col lg:flex-row justify-between items-start gap-y-6 lg:items-center '>
             <p className=' heading text-2xl sm:text-3xl md:text-6xl'>{data?.course_name} Course</p>
             <div className=" flex  flex-wrap gap-2  sm:gap-4">
-            {data?.status==="active"&&<button className="button3  " style={{"minWidth":"120px"}}><span>Join class</span></button>}
+            {data?.status==="active"&&<a href={data?.link} className="button3  " style={{"minWidth":"120px"}}><span>Join class</span></a>}
             <button className="button3" onClick={()=>setToggle(true)} style={{"minWidth":"160px"}}><span className=" flex gap-2 items-center">Scheduled classes <FaCalendarDays/> </span></button>
             </div>
             <div
@@ -75,7 +75,7 @@ background: var(--the, #B7DFC7);
            </div>
            <p className=" para text-2xl mt-5 pl-3 ">Personal Course <span className=" heading  ml-6 sm:ml-16 ">{data?.preferred_timing}</span></p>
         
-           <Stats/>
+           <Stats data={data} />
             </div>
             </div>
           </Popup>

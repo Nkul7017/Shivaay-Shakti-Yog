@@ -4,7 +4,7 @@ import AOS from "aos";
 import { HiXMark } from "react-icons/hi2";
 import { AiOutlineUser } from "react-icons/ai";
 import Rating from '@mui/material/Rating';
-import { format } from 'date-fns';
+import { format, parse } from 'date-fns';
 import Stack from '@mui/material/Stack';
 import "aos/dist/aos.css";
 import { Link, useNavigate } from 'react-router-dom';
@@ -17,7 +17,7 @@ AOS.init({
 });
 
 function PersonalForm({toggle1,setToggle1,data,type}) {
-  console.log(data);
+  // console.log(data);
 const navigate=useNavigate();
   const [purchasedData,setPurchasedData]=useState({
   user_id:JSON.parse(localStorage.getItem('user'))?._id,
@@ -106,7 +106,7 @@ const navigate=useNavigate();
         return format(dateObject, 'yyyy-MM-dd');
       });
       
-      const formattedDates = data?.days.map(dateString => {
+      const formattedDates = data?.days?.map(dateString => {
         return parse(dateString, 'yyyy-MM-dd', new Date());
     });
     
@@ -115,15 +115,19 @@ const navigate=useNavigate();
       console.log(expirationDate)
       purchasedData.course_id=data?.name;
       purchasedData.course_type=type;
-
-
+    console.log(purchasedData?.preferred_timing)
+    const timeString = purchasedData?.preferred_timing;
+    if (timeString) {
+      const parsedTime = parse(timeString, 'HH:mm', new Date());
+      var formattedTime = format(parsedTime, "hh:mm a", { timeZone: 'Asia/Kolkata' });
+    } 
       try{
        const response=await axios.post('https://shivaay-shakti-backend-1.onrender.com/api/purchase',{
         user_id:purchasedData?.user_id,
         course_id:data?._id,
         status:purchasedData?.status,
         starting_date:purchasedData?.days[0],
-        preferred_timing:purchasedData?.preferred_timing,
+        preferred_timing:formattedTime+" IST",
         duration:purchasedData?.duration,
         expiration_date:expirationDate,
         price:purchasedData?.price,

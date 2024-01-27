@@ -18,28 +18,33 @@ function Card2({img,heading,types,data}) {
     </div>
     <div className=' flex flex-col gap-5 px-6 py-3  '>
         <div className=' min-h-[80px] para text-sm  text-justify' style={{color:"#444"}}>
-            <p>{types==="personal"?data?.Personal_description1:data?.Group_description2}</p>
+            <p>{types==="personal"?data?.personal_card_description:data?.group_card_description}</p>
         </div>
-        {types==="personal"&&<div  className=" min-h-[168px]    bluish text-xs space-y-1.5 "> 
-           <p> <span><img src={img6} className='icon' alt="" /></span> <span>{data?.live_sessions1
-} live sessions</span> </p>
-            <p> <span><img src={img2} className='icon' alt="" /></span> <span>{data?.recorded_sessions1} recorded sessions
-</span></p>
-            <p> <span><img src={img5} className='icon' alt="" /></span> <span>{data?.course_duration_days1} Days Course</span> </p>
-            {data?.beginner_friendly1&&<p> <span><img src={img4} className='icon' alt="" /></span> <span>Beginner friendly</span> </p>}
-            {data?.beginner_friendly1&&<p> <span><img src={img3} className='icon'  alt="" /></span> <span>Female oriented</span> </p>}
-            <p> <span><img src={img1} className='icon' alt="" /></span> <span>Suitable for {data?.age_range1} years</span> </p>
-        </div>}
-        {types==="group"&&<div className=" min-h-[168px] bluish text-xs space-y-1.5 "> 
-           <p> <span><img src={img6} className='icon' alt="" /></span> <span>{data?.live_sessions2
-} live sessions</span> </p>
-            <p> <span><img src={img2} className='icon' alt="" /></span> <span>{data?.recorded_sessions2} recorded sessions</span> </p>
-            <p> <span><img src={img5} className='icon' alt="" /></span> <span>{data?.course_duration_days2} Days Course</span> </p>
-            {data?.beginner_friendly1&&<p> <span><img src={img4} className='icon' alt="" /></span> <span>Beginner friendly</span> </p>}
-            {data?.female_oriented2
-&&<p> <span><img src={img3} className='icon'  alt="" /></span> <span>Female oriented</span> </p>}
-            <p> <span><img src={img1} className='icon' alt="" /></span> <span>Suitable for {data?.age_range2}  years</span> </p>
-        </div>}
+        {types === "personal" && (
+  <div className="min-h-[168px] bluish text-xs space-y-1.5">
+    {data?.personal_benefits?.map((v, index) => (
+      <p key={index}>
+        <span>
+          <img src={v?.icon} className='icon' alt="" />
+        </span>
+        <span>{v?.heading}</span>
+      </p>
+    ))}
+  </div>
+)}
+
+{types === "group" && (
+  <div className="min-h-[168px] bluish text-xs space-y-1.5">
+    {data?.group_benefits?.map((v, index) => (
+      <p key={index}>
+        <span>
+          <img src={v?.icon} className='icon' alt="" />
+        </span>
+        <span>{v?.heading}</span>
+      </p>
+    ))}
+  </div>
+)}
         <div className=' flex justify-between items-center '> 
         <div className=' -space-y-4 '>
             <p className='para text-xs '>Starting</p>

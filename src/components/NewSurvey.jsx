@@ -34,7 +34,9 @@ function NewSurvey({shurveyPopup,setShurveyPopup,logovideo}) {
      daily_life:[],
       morning:[],
       evening:[],
-     next:false,
+      email:"",
+      contact:null,
+     next:0,
      message:""
     }
   );
@@ -91,11 +93,12 @@ console.log(e);
   }
     }
       function handlesubmit(){
+        setData({...data,message:"loading"});
       if(data.hunit==="cm")
       { data.height=parseFloat(data.height)*0.393701;}
       if(data.wunit==="pound")
       { data.weight=parseFloat(data.weight)*0.453592;}
-      if(data.name!==""&&data.born!==""&&data.gender!==""&&data.height>0&&data.weight>0&&data.level!==""&&data.country!=="") {
+      if(data.name!==""&&data.born!==""&&data.gender!==""&&data.height>0&&data.weight>0&&data.level!==""&&data.country!=="" && data.email!=="" && data?.contact!==null) {
         if(data.gender=="specify" ) {
           if(data.specify!=="" ) {
          if(data.goals.includes("Specify")){
@@ -131,14 +134,14 @@ console.log(e);
      }}
      
     >
-   <div  className='   grid lg:grid-cols-2 relative  place-content-center w-screen h-screen '>
+   <div  className='  grid lg:grid-cols-2 relative  place-content-center w-screen h-screen '>
 
     <div className=' hidden lg:grid place-content-center  ' >
     <img src={logovideo} alt="" />
     </div>
 
  {/*----------------------------- Page1------------------------------------ */}
-    {!data.next?
+    {data?.next===0&&
     <>
     <div className=' py-14 lg:py-32   px-11 flex  flex-col gap-3 lg:gap-5 '>
 
@@ -213,14 +216,15 @@ console.log(e);
       </div>
 
       <div className=' mt-3 lg:mt-5'>
-        <button className=' button3  text-xl  ' onClick={()=>{setData({...data,next:!data.next})}} style={{width:"140px",height:"40px"}} >Next</button>
+        <button className=' button3  text-xl  ' onClick={()=>{setData({...data,next:data.next+1})}} style={{width:"140px",height:"40px"}} >Next</button>
       </div>
     </div>
 
  
- </>:
+ </>}
 
-// ------------------------------ Page2 ---------------------------------------
+{/* // ------------------------------ Page2 --------------------------------------- */}
+{data?.next===1&&
 <div className=' py-12 lg:py-32 lg:px-14   px-11 flex  flex-col gap-3 lg:gap-5 '>
 
     
@@ -279,15 +283,35 @@ console.log(e);
       </div>
 
       <div className=' mt-3  flex gap-3 lg:mt-5'>
+        {/* <button className=' button3  text-xl  ' onClick={handlesubmit} style={{width:"140px",height:"40px"}} >Submit</button> */}
+        <button className=' button3  text-xl  ' onClick={()=>{
+        setData({...data,next:data?.next-1})}
+        } style={{width:"140px",height:"40px"}} >Back</button>
+        <button className=' button3  text-xl  ' onClick={()=>{
+        setData({...data,next:data?.next+1})}
+        } style={{width:"140px",height:"40px"}} >Next</button>
+      </div>
+      <p className=' text-red-500'>{data.message}</p>
+ </div>}
+ {data?.next===2&&
+<div className=' py-12 lg:py-32 lg:px-14   px-11 flex  flex-col gap-3 lg:gap-5 '>
+<div className=' flex flex-col gap-1 '>
+   <label className=' bluish text-sm lg:text-[18px] ' htmlFor="">Email?</label> 
+      <input type="email" name="email" value={data?.email} onChange={handle} className=' w-[220px] lg:w-[400px] h-7 lg:h-8 ' />
+      </div>
+      <div className=' flex flex-col gap-1 '>
+   <label className=' bluish text-sm lg:text-[18px] ' htmlFor="">Contact?</label> 
+      <input type="number" placeholder='' name="contact" value={data.contact} onChange={handle} className=' w-[220px] lg:w-[400px] h-7 lg:h-8 ' />
+      </div>
+      <div className=' mt-3  flex gap-3 lg:mt-5'>
         <button className=' button3  text-xl  ' onClick={handlesubmit} style={{width:"140px",height:"40px"}} >Submit</button>
         <button className=' button3  text-xl  ' onClick={()=>{
-        setData({...data,next:!data.next})}
+        setData({...data,next:data?.next-1})}
         } style={{width:"140px",height:"40px"}} >Back</button>
       </div>
       <p className=' text-red-500'>{data.message}</p>
- </div>
+ </div>}
  
- }
  <div className=' absolute top-5 right-5  '>
       <button onClick={()=>setShurveyPopup(!shurveyPopup)}><HiXMark  className='  text-3xl lg:text-4xl ' /></button>
  </div>
