@@ -41,6 +41,7 @@ function Progress1({ data }) {
     if (data?.course_type === "personal") {
       let days1 = data?.days.map((dateString) => startOfDay(parse(dateString, 'yyyy-MM-dd', new Date())));
       let index = days1.findIndex((element) => new Date() > element);
+      index>=0?++index:0;
       if(Math.ceil((index/data?.days?.length)*100)>=100 && data?.status==="active")
       {
         changestatus(data_id);
