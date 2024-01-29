@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from 'axios'
-
+import { isPassword } from '../utils/passwordvalidation';
 
 function ResetPassword() {
     const [data, setData] = useState({
@@ -16,7 +16,7 @@ function ResetPassword() {
     const handleSubmit = async(e) => {
         setData({...data,message:"loading"})
         e.preventDefault()
-    if(data.password!=="")
+    if(isPassword(data.password.trim()))
     {
   
      try {
