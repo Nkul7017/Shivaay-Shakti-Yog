@@ -39,15 +39,21 @@ function Progress1({ data }) {
       setProgress(Math.min((Math.ceil((current / total) * 100)), 100));
     }
     if (data?.course_type === "personal") {
+      console.log(data?.course_name)
       let days1 = data?.days.map((dateString) => startOfDay(parse(dateString, 'yyyy-MM-dd', new Date())));
-      let index = days1.findIndex((element) => new Date() > element);
-      index>=0?++index:0;
+      console.log(days1)
+      console.log(new Date())
+      let index = days1.findIndex((element) => new Date() < element);
+      console.log(index);
+      index>=0?index:0;
       if(Math.ceil((index/data?.days?.length)*100)>=100 && data?.status==="active")
       {
         changestatus(data_id);
       }
-      else
-      setProgress(Math.min((Math.ceil((index/data?.days?.length)*100)), 100));
+      else{
+console.log(Math.min((Math.ceil((index/data?.days?.length)*100)), 100))
+        setProgress(Math.min((Math.ceil((index/data?.days?.length)*100)), 100));
+      }
   }},[data]);
 
   return (
