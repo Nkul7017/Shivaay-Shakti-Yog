@@ -39,7 +39,6 @@ function Footer() {
               <p className=" text-justify" >Shaheed Gireesh Bhadri Chowk, Mothrowala, Banjarawala Rd, Ajabpur Khurd, Dehradun, Uttarakhand 248001</p>
             </div>
             </div>
-          {/* </div> */}
             <div>
             </div>
             
@@ -48,6 +47,7 @@ function Footer() {
               <Link  to="/" >HOME</Link>
               <Link to='/Courses'>PROGRAMS</Link>
               <Link to='/about-us' >ABOUT</Link>
+              <a href={'/tandc.pdf'} target="_blank" rel="noopener noreferrer">Terms And Condition</a>
               <Link to='/' ><img src={yt} className=" w-[50px] h-[50px] " alt="" /></Link>
             </div>
             <div className=" flex flex-row justify-center w-[50vw] para mx-auto gap-10 md:hidden">
