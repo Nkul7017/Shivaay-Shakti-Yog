@@ -62,6 +62,10 @@ else{
           <span>Signup</span></Link>
          <p className=' text-[18px] font-bold text-red-900'>{message}</p>
          </div>
+         <div>
+         <Link to='/forgot-password' className='  '>
+          <span>Forget Password?</span></Link>
+         </div>
         
         </form>
        </div>

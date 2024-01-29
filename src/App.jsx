@@ -9,6 +9,8 @@ import Error from "./pages/Error";
 import About from "./pages/About";
 import ParticularProgram from "./pages/ParticularProgram";
 import AllCourse from "./pages/AllCourse";
+import ForgotPassword from "./pages/ForgetPassword";
+import ResetPassword from "./pages/ResetPassword";
 function App() {
 
   return (
@@ -26,6 +28,8 @@ function App() {
           <Route path="/UserDashboard" element={<UserDashboard/>} />
           <Route path="Contact-us" element={<Contact />} />
           <Route path="about-us" element={<About />} />
+          <Route path="/forgot-password" element={<ForgotPassword />}></Route>
+          <Route path="/reset_password/:id/:token" element={<ResetPassword />}></Route>
         </Routes>
       </BrowserRouter>
     </>
