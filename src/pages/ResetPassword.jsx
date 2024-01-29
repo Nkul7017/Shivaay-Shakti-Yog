@@ -16,8 +16,11 @@ function ResetPassword() {
     const handleSubmit = async(e) => {
         setData({...data,message:"loading"})
         e.preventDefault()
+    if(data.password!=="")
+    {
+  
      try {
-        let response=await axios.post(`https://shivaay-shakti-backend-1.onrender.com/api/auth/reset-password/${id}/${token}`, {password});
+        let response=await axios.post(`https://shivaay-shakti-backend-1.onrender.com/api/auth/reset-password/${id}/${token}`, {password:data.password});
         // let response=await axios.post(`http://localhost:5000/api/auth/reset-password/${id}/${token}`, {password});
         console.log(response);
         if(response.status===200)
@@ -27,6 +30,9 @@ function ResetPassword() {
      } catch (e) {
         console.log(e);
          setData({...data,message:e?.response?.data?.message})
+     }}
+     else{
+        setData({...data,message:"Enter Password"})
      }
     }
 
