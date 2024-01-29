@@ -17,7 +17,7 @@ function ResetPassword() {
         setData({...data,message:"loading"})
         e.preventDefault()
      try {
-        let response=await axios.post(`https://shivaay-shakti-yog.vercel.app/api/auth/reset-password/${id}/${token}`, {password});
+        let response=await axios.post(`https://shivaay-shakti-backend-1.onrender.com/api/auth/reset-password/${id}/${token}`, {password});
         // let response=await axios.post(`http://localhost:5000/api/auth/reset-password/${id}/${token}`, {password});
         if(response.status===200)
         {
