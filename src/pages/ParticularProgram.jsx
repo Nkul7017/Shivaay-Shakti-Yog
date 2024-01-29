@@ -232,18 +232,19 @@ function ParticularArticle() {
     { heading: "Restorative yoga and relaxation", time: "6:30-8:00 (hrs)" },
   ];
   const data1=[
-    {question:"Before I pay ,can I take a trial ? ",answer:"Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. "},
-    {question:"What do I need bring to class ? ",answer:"Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. "},
-    {question:"Can I eat before the yoga session?",answer:"Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. "},
-    {question:"Can I change my coach after payment?",answer:"Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. "},
-    {question:"What is the refund policy ?",answer:"Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. "},
-    {question:"How group session and private  session works? ",answer:"Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. "},
-    {question:"If I have an emergency during the period of my membership then how my sessions will cover ? ",answer:"Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. "},
+    {question:"Before I pay ,can I take a trial ? ",
+    answer:"A trial class can be provided to the first-time user. You will have to request a trial class by emailing our contact and support team."},
+    {question:"What do I need bring to class ? ",
+    answer:"There are a few necessary elements for an online yoga session that you may want to have on hand to guarantee a relaxing and productive practice. Here is a list of potential  necessities. "},
+    {question:"Can I eat before the yoga session?",answer:"It is generally advised to avoid having a large meal right before practising yoga. When you practise yoga while you are full, it might be difficult to move and stretch without feeling uncomfortable. If you have recently consumed a substantial meal, your body may be diverting energy and blood flow from your practice in favour of helping you digest."},
+    {question:"Can I change my coach after payment?",answer:"Changing coaches and timings are subject to the availability of the trainers. You can request a change and connect with the contact and support team. While it may be possible to change the coach, you need to understand that the coaches have a predefined schedule asper the bookings, hence changing the coach can lead to many changes across various schedules. It is hence advised to thoroughly go through a programme and select the trainer/ programme. "},
+    {question:"What is the refund policy ?",answer:"If cancellation is processed at least 72 hours before the commencement of the programme, a full refund will be provided. A 20% deduction would apply if cancellation is done within 48 to 72 hours. 50% amount would be deducted if a refund is processed within 24 hours of the commencement of the programme. No refund would be provided once the programme starts"},
+    {question:" How do group sessions and private sessions work?? ",answer:" In a group session there will be a predefined schedule and classes that would be conducted on a designated time duration regularly. A full programme schedule would be available to you before booking the session. You can go through the details and select a programme that best matches your daily routine and your health concerns. You can also contact our consultation team to guide you in selecting the most suitable sessions.  In a private session, you will have the freedom to select the trainer and timings at your discretion. You can go through the profile of the various trainers available for the particular programme and select the one that best suits your interests. You can even selec the timings as per your availability. You will be provided extra days to compensate for any missed sessions."},
+    {question:"If I have an emergency during the period of my membership then how my sessions will cover ? ",answer:"Group Sessions: Missed classes in the group sessions would be hard to recover. It is advised that you try your best to attend all the group sessions. In case of an emergency, you can connect with the support staff and request a recorded session of the class. You may inform the respective coach and request them to record the session for you.Private Sessions: Missed classes or consultations can easily be recovered in private sessions. You can simply inform your coach about your emergency and reschedule the class."},
     {question:"Which package  is more beneficial? ",answer:"Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. "},
-    {question:"Is it possible  to take second trial session ?",answer:"Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. "},
-    {question:"What should I eat just after the class?",answer:"Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. "},
-    {question:"If I am a  beginner which program is good for me?",answer:"Hatha yoga is a traditional style of yoga that focuses on physical postures (asanas), breathing exercises (pranayama), and relaxation techniques. "},
-   
+    {question:"Is it possible  to take second trial session ?",answer:"Every package is customised to suit the individual needs of a customer or target an individual ailment. You can go through the details provided in every package to find the one that is most beneficial for you."},
+    {question:"What should I eat just after the class?",answer:"It is crucial to refuel your body with nutritional foods that promote recuperation and offer necessary nutrients after a yoga session. The following recommendations on what to eat following a yoga session. Drink water or other hydrating liquids to rehydrate yourself and replace the fluids you lost while practising. In addition to water, other healthy options include herbal tea, coconut water, and homemade electrolyte drinks.: Aim for a meal that is well-balanced and has a variety of carbohydrates, proteins, and healthy fats. This combination will aid in energy restoration, muscle healing, and general recuperation. Think about the following choices.* Include whole grains in your diet, such as brown rice, quinoa, or whole wheat bread, to refill your glycogen reserves and provide you with long-lasting energy."},
+    {question:" As a beginner, which class/ classes are best for me?",answer:"In the programme details section, the difficulty level of a particular package is mentioned. All packages with difficulty level beginner are good for people just starting with yoga"},
   ]
   const reviews=[
     {
@@ -352,13 +353,6 @@ function ParticularArticle() {
         {/* <div className=" mt-3 para text-3xl font-semibold">
           ₹ 30,000 <span className="para text-sm  ">Per Head</span>
         </div> */}
-
-        {/*-------------------------------------- Icons---------------------------------------------- */}
-        
-        <div className=" mt-4">
-          <Details data={data} />
-        </div>
-
         {/*----------------------------------Description----------------------------------------------*/}
 
         <div className=" mt-5 sm:mt-10">
@@ -376,6 +370,14 @@ function ParticularArticle() {
           </button>
           </div>
        
+
+        {/*-------------------------------------- Icons---------------------------------------------- */}
+        
+        <div className=" mt-8">
+          <Details data={courseData} />
+        </div>
+
+        
           
         {/*----------------------------------Types----------------------------------------------*/}
         <section className=" mt-10 sm:mt-14">

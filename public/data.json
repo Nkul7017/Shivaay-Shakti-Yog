@@ -89,8 +89,18 @@
       { "icon":"","heading":"Counselling " }
     ],
     "group_card_description":"This program  helps you to expands the capacity to cope with stress and nervousness, works on interactive abilities , profound prosperity, tactile ,mental and actual wellbeing , improve concentration.",
-    "personal_card_description":"In personal training  we customized the session according to the person needs . First we will examine your specific necessities and objectives, capacity ,limits  and then we will make a program for you . "
+    "personal_card_description":"In personal training  we customized the session according to the person needs . First we will examine your specific necessities and objectives, capacity ,limits  and then we will make a program for you . ",
+    "benefits":[
+      {"heading":"Stress Management","icon":"/assets/Programs/1/benefits/stress_management.svg"},
+      {"heading":"Self Awareness","icon":"/assets/Programs/1/benefits/Self_Awareness.svg"},
+      {"heading":"Increase Positivity","icon":"/assets/Programs/1/benefits/happiness.svg"},
+      {"heading":"Imagination & Creativity","icon":"/assets/Programs/1/benefits/Imagination.svg"},
+      {"heading":"Patience & Tolerance","icon":"/assets/Programs/1/benefits/patience.svg"},
+      {"heading":"Improve Sleep Quality","icon":"/assets/Programs/1/benefits/sleep.svg"},
+      {"heading":"Lower Heart Rate","icon":"/assets/Programs/1/benefits/heartrate.svg"}
+    ]
   },
+ 
   {
     "_id": 2,
     "name": "Weight Loss ",
@@ -186,7 +196,15 @@
         { "icon":"","heading":"Counselling " }
       ],
       "group_card_description":"This program  helps you to expands the capacity to cope with stress and nervousness, works on interactive abilities , profound prosperity, tactile ,mental and actual wellbeing ,improve concentration. ",
-      "personal_card_description":"In personal training  we customized the session according to the person needs . First we will examine your specific necessities and objectives, capacity ,limits  and then we will make a program for you . "
+      "personal_card_description":"In personal training  we customized the session according to the person needs . First we will examine your specific necessities and objectives, capacity ,limits  and then we will make a program for you . ",
+      "benefits":[
+        {"heading":"Flexible Body","icon":"/assets/Programs/2/benefits/flexible.svg"},
+        {"heading":"Energize the body","icon":"/assets/Programs/2/benefits/energy.svg"},
+        {"heading":"Reduce Stress","icon":"/assets/Programs/2/benefits/stressmanagement.svg"},
+        {"heading":"Burn Fat","icon":"/assets/Programs/2/benefits/burn_fat.svg"},
+        {"heading":"Boost your Willpower","icon":"/assets/Programs/2/benefits/willpower.svg"},
+        {"heading":"Calm your Mind","icon":"/assets/Programs/2/benefits/calm.svg"}
+      ]
      
   }
   

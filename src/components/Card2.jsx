@@ -7,6 +7,7 @@ import img5 from '../assets/Icons/img5.png'
 import img6 from '../assets/Icons/img6.png'
 import GroupForm from './GroupForm'
 import PersonalForm from './PersonalForm'
+import { GoDotFill } from 'react-icons/go'
 function Card2({img,heading,types,data}) {
     const [toggle1,setToggle1]=useState(false);
   return (
@@ -24,10 +25,10 @@ function Card2({img,heading,types,data}) {
   <div className="min-h-[168px] bluish text-xs space-y-1.5">
     {data?.personal_benefits?.map((v, index) => (
       <p key={index}>
-        <span>
+        {/* <span>
           <img src={v?.icon} className='icon' alt="" />
-        </span>
-        <span>{v?.heading}</span>
+        </span> */}
+        <span className='flex items-center gap-2'><GoDotFill />{v?.heading}</span>
       </p>
     ))}
   </div>
@@ -37,10 +38,10 @@ function Card2({img,heading,types,data}) {
   <div className="min-h-[168px] bluish text-xs space-y-1.5">
     {data?.group_benefits?.map((v, index) => (
       <p key={index}>
-        <span>
+        {/* <span>
           <img src={v?.icon} className='icon' alt="" />
-        </span>
-        <span>{v?.heading}</span>
+        </span> */}
+        <span className='flex items-center gap-2'><GoDotFill />{v?.heading}</span>
       </p>
     ))}
   </div>
