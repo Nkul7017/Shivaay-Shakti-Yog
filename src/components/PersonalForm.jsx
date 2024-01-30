@@ -122,7 +122,8 @@ const navigate=useNavigate();
       var formattedTime = format(parsedTime, "hh:mm a", { timeZone: 'Asia/Kolkata' });
     } 
       try{
-       const response=await axios.post('https://shivaay-shakti-backend-1.onrender.com/api/purchase',{
+      //  const response=await axios.post('https://shivaay-shakti-backend-1.onrender.com/api/purchase',{
+       const response=await axios.post('http://localhost:5000/api/purchase',{
         user_id:purchasedData?.user_id,
         course_id:data?._id,
         status:purchasedData?.status,
@@ -144,10 +145,10 @@ const navigate=useNavigate();
        })
        if(response?.data?.success===true)
        {
-         setPurchasedData({...purchasedData,message:"",toggle2:false,toggle3:false,toggle4:false})
-        setToggle1(false);
+        //  setPurchasedData({...purchasedData,message:"",toggle2:false,toggle3:false,toggle4:false})
+        // setToggle1(false);
         setTimeout(() => {
-          navigate('/UserDashboard',{replace:true})
+          // navigate('/UserDashboard',{replace:true})
         },1);
        }
       }
@@ -171,7 +172,7 @@ const navigate=useNavigate();
             closeOnEscape={false}
             contentStyle={{
                placeContent:"center",
-            backgroundImage:"url('https://cdn.discordapp.com/attachments/1111568797476868128/1113746626696204349/WhatsApp_Image_2023-06-01_at_11.16.50.jpg')",
+            backgroundColor:"#FFF1C1",
               width:"90vw",
               height:"90vh",
               borderRadius:"10px"
@@ -262,8 +263,9 @@ const navigate=useNavigate();
             closeOnEscape={false}
             contentStyle={{
                placeContent:"center",
-            backgroundImage:"url('https://cdn.discordapp.com/attachments/1111568797476868128/1113746626696204349/WhatsApp_Image_2023-06-01_at_11.16.50.jpg')",
-              width:"90vw",
+            // backgroundImage:"url('https://cdn.discordapp.com/attachments/1111568797476868128/1113746626696204349/WhatsApp_Image_2023-06-01_at_11.16.50.jpg')",
+            backgroundColor:"#FFF1C1",  
+            width:"90vw",
               height:"90vh",
               borderRadius:"10px"
             }}
@@ -307,7 +309,8 @@ const navigate=useNavigate();
            border:"none",
               display:"grid",
                placeContent:"center",
-               backgroundImage:"url('https://cdn.discordapp.com/attachments/1111568797476868128/1113746626696204349/WhatsApp_Image_2023-06-01_at_11.16.50.jpg')",
+               backgroundColor:"#FFF1C1", 
+              //  backgroundImage:"url('https://cdn.discordapp.com/attachments/1111568797476868128/1113746626696204349/WhatsApp_Image_2023-06-01_at_11.16.50.jpg')",
               width:"90vw",
               height:"90vh",
               borderRadius:"10px"
@@ -327,7 +330,7 @@ const navigate=useNavigate();
                           <HiXMark />
                         </div>
            </div>
-           <div className=' mt-8 flex flex-col  gap-8 text-justify text-[12px] sm:text-[14px]  md:text-[18px]  para ' style={{color:"#000"}}>
+           <div className=' mt-8 flex flex-col  gap-8 text-justify text-[12px]  scrollbar-hide  sm:text-[14px] max-h-[400px] overflow-auto  md:text-[18px]  para ' style={{color:"#000"}}>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure </p>
@@ -360,8 +363,9 @@ const navigate=useNavigate();
            border:"none",
               display:"grid",
                placeContent:"center",
-               backgroundImage:"url('https://cdn.discordapp.com/attachments/1111568797476868128/1113746626696204349/WhatsApp_Image_2023-06-01_at_11.16.50.jpg')",
+              //  backgroundImage:"url('https://cdn.discordapp.com/attachments/1111568797476868128/1113746626696204349/WhatsApp_Image_2023-06-01_at_11.16.50.jpg')",
               width:"90vw",
+              backgroundColor:"#FFF1C1", 
               height:"90vh",
               borderRadius:"10px"
             }}

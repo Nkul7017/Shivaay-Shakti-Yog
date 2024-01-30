@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import GroupForm from './GroupForm'
 import PersonalForm from './PersonalForm'
+import { Link } from 'react-router-dom';
 
 function Card3({img,type,types,data}) {
   const [toggle1,setToggle1]=useState(false);
@@ -27,16 +28,16 @@ background: `linear-gradient(180deg, rgba(121, 217, 249, 0.00) 0.07%, #E6F5FA 99
       </> }
 
         {type===2&&<>
-          <button className={`w-[150px]  h-[240px]   `} style={{
+          <Link to={`/ParticularProgram/${data?._id}`} className={`w-[150px]  h-[240px]   `} style={{
             borderRadius:"10px",
     background: `linear-gradient(180deg, rgba(121, 217, 249, 0.00) 0.07%, #E6F5FA 99.93%),url(${img}) center/cover no-repeat `
         }}> 
             <div className=' w-[100%]  gap-2 pb-5 h-[100%] flex flex-col justify-end items-start   pl-4'>
-             <p className='text-xl bluish '>Hatha Yoga</p>
+             <p className='text-xl bluish text-left '>{data?.name}</p>
            <button className='button3 text-xs ' style={{height:"26px",width:"80px"}}><span>Know More</span></button>
             </div>
        
-            </button>
+            </Link>
            </>
 
     }

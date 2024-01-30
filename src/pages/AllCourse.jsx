@@ -35,7 +35,7 @@ console.log(e);
 
         {/*------------------------------- Hero Section-------------------------------------------- */}
             
-            <div className=' w-screen relative h-[170px] sm:h-[470px]  '>
+            <div className='  w-screen relative h-[170px] sm:h-[470px]  '>
             <img
             className="  w-screen h-[170px]  object-fill sm:h-[470px]   "
               src={course}
@@ -45,7 +45,7 @@ console.log(e);
             </div>
   
       </div>
-      <div className='w-[88vw] sm:w-[70vw] mt-12  sm:mt-20 mx-auto '>
+      <div className='w-[88vw] sm:w-[70vw]  -mt-10  sm:mt-20 mx-auto '>
       {/* <div className='relative flex justify-between w-[100%] items-center '>
           <input type="text" placeholder=' Search' className='  pl-10 placeholder-[#444444] w-[60vw] text-2xl h-[36px] rounded-[10px] text-[#444] bg-[#EEEEEE]' />
           <FaSearch className='absolute w-[20px] top-2 left-3  text-[#444444]   z-50  '/>
@@ -85,7 +85,7 @@ console.log(e);
         </section>
 
         {/*-------------------------------- MObile--------------------------------------------- */}
-        <section className=' sm:hidden box    flex gap-5 sm:gap-10 mt-6   flex-wrap  '>
+        <section className=' sm:hidden box    flex gap-4 sm:gap-10 mt-6   flex-wrap  '>
         {data.map((value)=>
      <Card3 img={value?.main_url} type={2} data={value} />
      )}

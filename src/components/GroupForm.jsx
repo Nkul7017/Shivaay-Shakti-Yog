@@ -133,13 +133,14 @@ const navigate=useNavigate();
             lockScroll={true}
             contentStyle={{
                placeContent:"center",
-            backgroundImage:"url('https://cdn.discordapp.com/attachments/1111568797476868128/1113746626696204349/WhatsApp_Image_2023-06-01_at_11.16.50.jpg')",
+            // backgroundImage:"url('https://cdn.discordapp.com/attachments/1111568797476868128/1113746626696204349/WhatsApp_Image_2023-06-01_at_11.16.50.jpg')",
               width:"95vw",
+              backgroundColor:"#FFF1C1", 
               height:"95vh",
               borderRadius:"10px"
             }}
           >
-    <div className='  w-[100%] h-[100%] p-6 sm:p-6 md:p-10 lg:p-24   '>
+    <div className='  w-[100%] h-[100%] p-4 sm:p-6 md:p-10 lg:p-24   '>
         <div className=' relative w-[100%] h-[100%]'>
     <div className='  flex justify-between   '> 
      <h1 className=' text-2xl  lg:text-4xl heading'>{data?.name} {data?.course_duration_days2} Days Course</h1>
@@ -156,10 +157,10 @@ const navigate=useNavigate();
         </div>
         <p className=' text-xs  para font-bold'>based on 78 reviews</p>
         </div>
-     <div className=' flex mt-6 lg:mt-8 gap-x-10 sm:gap-x-14 md:gap-x-20  lg:gap-x-36 gap-y-4 flex-wrap '>
+     <div className=' flex mt-6 lg:mt-8 gap-x-3 sm:gap-x-14 md:gap-x-20  lg:gap-x-36 gap-y-4 flex-wrap '>
      
             
-             <div className=' flex gap-3 '>
+             <div className=' flex gap-2 sm:gap-3 '>
                 <p><img src={img3} className='mt-1'  alt="" /></p>
                 <div>
                     <p className=' text-[#283143] text-[16px] para  font-extrabold ' >Group Sessions</p>
@@ -174,7 +175,7 @@ const navigate=useNavigate();
                     <p className=' heading text-xl lg:text-2xl  '>{data?.group_session}</p>
                 </div>
              </div> */}
-             <div className=' flex gap-3 '>
+             <div className=' flex gap-2 sm:gap-3 '>
                 
                 <p><img src={img1} className='mt-1'  alt="" /></p>
                 <div>
@@ -195,7 +196,7 @@ const navigate=useNavigate();
         </div>
      </div>
 
-     <div className='mt-14'>
+     <div className=' mt-6 sm:mt-14'>
 <p className=' text-xl lg:text-2xl   heading ' style={{color:"#283143"}}>Select Time</p>
 <div className=' mt-4 flex flex-wrap gap-3 lg:gap-10'>
 {
@@ -204,7 +205,7 @@ const navigate=useNavigate();
     <div>
         <button onClick={()=>{
           setPurchasedData({...purchasedData,preferred_timing:value?.times,index1:i})
-        }} className={`${purchasedData.index1===i?"button3":"button2"}`} >{String(value?.times)}</button>
+        }} className={` text-xs sm:text-[16px] ${purchasedData.index1===i?"button3":"button2"}`} >{String(value?.times)}</button>
         <p className=' text-center mt-2 para  font-semibold text-xl lg:text-2xl '  style={{color:"#283143"}}> {String(value?.session)}</p>
     </div>
     </>)
@@ -213,7 +214,7 @@ const navigate=useNavigate();
 {/* <p className=' font-semibold mt-2 text-sm text-red-500'>{purchasedData.message}</p> */}
      </div>
 
-     <div className='mt-14'>
+     <div className=' mt-6 sm:mt-14'>
 <p className=' text-xl lg:text-2xl   heading ' style={{color:"#283143"}}>Select Duration</p>
 <div className=' mt-4 flex flex-wrap gap-3 lg:gap-10'>
 {
@@ -223,7 +224,7 @@ const navigate=useNavigate();
     <div>
         <button onClick={()=>{
           setPurchasedData({...purchasedData,duration:value?.timing1,price:value?.price3,index:i})
-        }} className={`${purchasedData.index===i?"button3":"button2"}`} >{value?.timing1}</button>
+        }} className={` text-xs sm:text-[16px] ${purchasedData.index===i?"button3":"button2"}`} >{value?.timing1}</button>
         <p className=' text-center mt-2 para  font-semibold text-xl lg:text-2xl '  style={{color:"#283143"}}>₹ {value?.price3}</p>
     </div>
     </>)
@@ -231,7 +232,7 @@ const navigate=useNavigate();
 </div>
 <p className=' font-semibold mt-2 text-sm text-red-500'>{purchasedData.message}</p>
      </div>
-     <button  onClick={handle1} className='absolute bottom-0 button3 right-4'>Proceed</button>
+     <button  onClick={handle1} className='absolute bottom-10 sm:bottom-0 button3 right-4'>Proceed</button>
     </div>
     </div>
           </Popup>
@@ -245,8 +246,9 @@ const navigate=useNavigate();
            border:"none",
               display:"grid",
                placeContent:"center",
-               backgroundImage:"url('https://cdn.discordapp.com/attachments/1111568797476868128/1113746626696204349/WhatsApp_Image_2023-06-01_at_11.16.50.jpg')",
+              //  backgroundImage:"url('https://cdn.discordapp.com/attachments/1111568797476868128/1113746626696204349/WhatsApp_Image_2023-06-01_at_11.16.50.jpg')",
               width:"90vw",
+              backgroundColor:"#FFF1C1", 
               height:"90vh",
               borderRadius:"10px"
             }}
@@ -265,7 +267,7 @@ const navigate=useNavigate();
                           <HiXMark />
                         </div>
            </div>
-           <div className=' mt-8 flex flex-col  gap-8 text-justify text-[12px] sm:text-[14px]  md:text-[18px]  para ' style={{color:"#000"}}>
+           <div className=' mt-8 flex flex-col  gap-8 text-justify text-[12px]  scrollbar-hide  sm:text-[14px] max-h-[400px] overflow-auto  md:text-[18px]  para ' style={{color:"#000"}}>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure </p>
@@ -298,8 +300,9 @@ const navigate=useNavigate();
            border:"none",
               display:"grid",
                placeContent:"center",
-               backgroundImage:"url('https://cdn.discordapp.com/attachments/1111568797476868128/1113746626696204349/WhatsApp_Image_2023-06-01_at_11.16.50.jpg')",
+              //  backgroundImage:"url('https://cdn.discordapp.com/attachments/1111568797476868128/1113746626696204349/WhatsApp_Image_2023-06-01_at_11.16.50.jpg')",
               width:"90vw",
+              backgroundColor:"#FFF1C1", 
               height:"90vh",
               borderRadius:"10px"
             }}
