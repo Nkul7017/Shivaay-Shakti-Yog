@@ -3,6 +3,7 @@ import logovideo from '../../public/loutput.gif'
 import axios from 'axios';
 import { isPassword } from '../utils';
 import { Link, useNavigate } from 'react-router-dom';
+import { HiXMark } from 'react-icons/hi2';
 function Login() {
   const navigate=useNavigate();
   const [message,setMessage]=useState("");
@@ -40,6 +41,9 @@ else{
   }
   return (
     <div className=' w-screen h-screen bg-[#FFF1C1] grid place-content-center ' >
+      <div className=' absolute top-5 right-5  '>
+      <Link to="/" ><HiXMark  className='  text-3xl lg:text-4xl ' /></Link>
+ </div>
        <div  className=' flex w-[80vw]  justify-center items-center  ' >
        <div className='  hidden lg:block w-1/2 '  >
        <img src={logovideo}  alt="" />

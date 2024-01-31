@@ -204,7 +204,7 @@ const navigate=useNavigate();
         </div>
 
         <div className=' flex flex-col mt-1 lg:mt-4  '>
-        <p className=' bluish text-[16px]  lg:text-xl'>Preferred time Slot:</p>
+        <p className=' bluish text-[16px]  lg:text-xl'>Preferred time Slot: IST</p>
         <input name="preferred_timing" type="time" value={purchasedData.preferred_timing} onChange={(e) => {
     const [hours] = e.target.value.split(':');
     const newValue = `${hours}:00`;

@@ -4,6 +4,7 @@ import axios from 'axios';
 import countryList from 'react-select-country-list'
 import { Link, useNavigate } from 'react-router-dom';
 import { isEmail,isPassword } from '../utils';
+import { HiXMark } from 'react-icons/hi2';
 function Signup() {
   const options1 =[
     {value:"waiting for options...",label:"waiting for options..."},
@@ -142,6 +143,9 @@ else{
   
   return (
     <div className=' w-screen h-screen  bg-[#FFF1C1] flex justify-center sm:grid   sm:place-content-center ' >
+      <div className=' absolute top-5 right-5  '>
+      <Link to="/" ><HiXMark  className='  text-3xl lg:text-4xl ' /></Link>
+ </div>
        <div  className=' flex w-[80vw]  justify-center  ' >
        <div className='  hidden lg:block w-1/2 '  >
        <img src={logovideo}  alt="" />
