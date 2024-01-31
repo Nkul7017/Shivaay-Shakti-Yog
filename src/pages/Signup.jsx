@@ -96,8 +96,8 @@ else
   try{
 
     console.log(data);
-  // const response=await axios.post('https://shivaay-shakti-backend-1.onrender.com/api/auth/signup',
-  const response=await axios.post('http://localhost:5000/api/auth/signup',
+  const response=await axios.post('https://shivaay-shakti-backend-1.onrender.com/api/auth/signup',
+  // const response=await axios.post('http://localhost:5000/api/auth/signup',
   {
     name:data.name,
     country:data.country,
@@ -122,7 +122,7 @@ else
 }
 catch(e){
   console.log(e);
-  setData({...data,message:e.response.data.message});
+  setData({...data,message:e.response?.data?.message});
 }}
 } 
 else{

@@ -28,7 +28,7 @@ console.log(e);
   return (
    <>
    
-    <div className="  ">
+    <div className=" overflow-x-hidden  ">
         <div className=" relative z-10   ">
           <HeroNavbar />
         </div>

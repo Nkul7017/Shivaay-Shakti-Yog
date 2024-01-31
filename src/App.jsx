@@ -11,6 +11,8 @@ import ParticularProgram from "./pages/ParticularProgram";
 import AllCourse from "./pages/AllCourse";
 import ForgotPassword from "./pages/ForgetPassword";
 import ResetPassword from "./pages/ResetPassword";
+import Articel1 from "./pages/Articel1";
+import Article2 from "./pages/Article2";
 function App() {
 
   return (
@@ -30,6 +32,8 @@ function App() {
           <Route path="about-us" element={<About />} />
           <Route path="/forgot-password" element={<ForgotPassword />}></Route>
           <Route path="/reset_password/:id/:token" element={<ResetPassword />}></Route>
+          <Route path="/article1" element={<Articel1 />}></Route>
+          <Route path="/article2" element={<Article2 />}></Route>
         </Routes>
       </BrowserRouter>
     </>

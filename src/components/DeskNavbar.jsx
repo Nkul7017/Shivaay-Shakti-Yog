@@ -17,7 +17,7 @@ const {pathname}=useLocation();
             <span>Home</span>
           </Link>
           <Link to="/Courses">
-            <span>Programs</span>
+            <span>Courses</span>
           </Link>
           <Link to="/about-us">
             <span>About Us</span>

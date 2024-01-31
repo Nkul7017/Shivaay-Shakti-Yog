@@ -2,8 +2,8 @@
   {
     "_id": 1,
     "name": "Stress Management ",
-    "description1": "In Stress management program we are focusing on  mental illness specially  on anxiety and depression. Yoga proceeds to develop in ubiquity as individuals experience  its physical  and mental advantages.  Fostering an individual  yoga practice can help forestall and decrease stress which is a shared objective among individuals  who needs to make positive  development  and spotlight  on personal growth . Yoga targets stress by elevating mood , considering  expanded care   and expanding  self -empathy .This program  helps you to expands the capacity to cope with stress and nervousness, works on interactive abilities , profound prosperity, tactile ,mental and actual wellbeing , improve concentration  so you can handle circumstances  with a calm intellect . ",
-    "description":"In Stress management program we are focusing on  mental illness specially  on anxiety and depression. Yoga proceeds to develop in ubiquity as individuals experience  its physical  and mental advantages.",
+    "description1": "In Stress management program we are focusing on  mental illness specially  on anxiety and depression. Yoga proceeds to develop in ubiquity as individuals experience  its physical  and mental advantages.  Fostering an individual  yoga practice can help forestall and decrease stress which is a shared objective among individuals  who needs to make positive  development  and spotlight  on personal growth . Yoga targets stress by elevating mood , considering  expanded care   and expanding  self -empathy .This program  helps you to expands the capacity to cope with stress and nervousness, works on interactive abilities , profound prosperity, tactile ,mental and actual wellbeing , improve concentration  so you can handle circumstances  with a calm intellect .",
+    "description":"In Stress management program we are focusing on  mental illness specially  on anxiety and depression.Yoga proceeds to develop in ubiquity as individuals experience  its physical  and mental advantages.  ",
     "main_url": "/assets/Programs/1/mainurl.jpg",
     "course_type1": "Personal Training Course",
     "Personal_description1": "Occupying a small chunk in the our organisation strives to make yoga accessible and convenient to every citizen of the world. Get on board with us to start your journey towards a healthier life.",
@@ -82,11 +82,13 @@
       { "icon":"","heading":"Every age group" }
     ],
     "personal_benefits":[
-      { "icon":"","heading":"Live sessions" },
+      { "icon":"","heading":"Online Live sessions" },
       { "icon":"","heading":"Recorded sessions" },
-      { "icon":"","heading":" Workshops " },
-      { "icon":"","heading":"Diet " },
-      { "icon":"","heading":"Counselling " }
+      { "icon":"","heading":"Free Workshops " },
+      { "icon":"","heading":"Free personal consultation " },
+      { "icon":"","heading":"Diet and health tips " },
+      { "icon":"","heading":"Weekly encouraging tasks  " },
+      { "icon":"","heading":"Yogaasana,  pranayama and meditation " }
     ],
     "group_card_description":"This program  helps you to expands the capacity to cope with stress and nervousness, works on interactive abilities , profound prosperity, tactile ,mental and actual wellbeing , improve concentration.",
     "personal_card_description":"In personal training  we customized the session according to the person needs . First we will examine your specific necessities and objectives, capacity ,limits  and then we will make a program for you . ",
@@ -189,11 +191,13 @@
         { "icon":"","heading":"Twenty four yoga sessions/month" }
       ],
       "personal_benefits":[
-        { "icon":"","heading":"Live sessions" },
+        { "icon":"","heading":"Online Live sessions" },
         { "icon":"","heading":"Recorded sessions" },
-        { "icon":"","heading":" Workshops " },
-        { "icon":"","heading":"Diet " },
-        { "icon":"","heading":"Counselling " }
+        { "icon":"","heading":"Free Workshops " },
+        { "icon":"","heading":"Free personal consultation " },
+        { "icon":"","heading":"Diet and health tips " },
+        { "icon":"","heading":"Weekly encouraging tasks  " },
+        { "icon":"","heading":"Yogaasana,  pranayama and meditation " }
       ],
       "group_card_description":"This program  helps you to expands the capacity to cope with stress and nervousness, works on interactive abilities , profound prosperity, tactile ,mental and actual wellbeing ,improve concentration. ",
       "personal_card_description":"In personal training  we customized the session according to the person needs . First we will examine your specific necessities and objectives, capacity ,limits  and then we will make a program for you . ",

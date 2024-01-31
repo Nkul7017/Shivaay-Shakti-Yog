@@ -2,25 +2,12 @@ import { useEffect, useState } from "react";
 import helping from "../../public/newsart.png";
 import Flickity from "react-flickity-component";
 import axios from "axios";
+import { Link } from "react-router-dom";
 export default function Article() {
-  const [data,setData]=useState([]);
- async function getdata()
- {
- try{
- const response=await axios.get("https://shivaay-shakti-backend-1.onrender.com/api/article");
- if(response?.data?.success===true)
- {
-  setData(response?.data?.dta);
- }
- }
- catch(e)
- {
- console.log(e);
- }
- }
-  useEffect(()=>{
-    getdata();
-  },[])
+  const [data,setData]=useState([
+    {heading:"Traditional yoga vs Modern yoga",description:"From Yogash chittahvritti nirodhah, to Snake Yoga ; the technique has been improvised many times. ",articleimg:"/article/traditional.png",src:"/article1"},
+    {heading:"Finding the origin of Sūryanamaskāra",description:"The asana sequence known as Sūryanamaskāra literally means “salute to the sun” (surya = sun, namaskara= salute). ",articleimg:"https://www.healthifyme.com/blog/wp-content/uploads/2020/10/Surya-Namaskar-1.jpg",src:"/article2"}
+  ]);
   const flickityOptions = {
     initialIndex: 2,
     autoPlay: 3500,
@@ -47,8 +34,8 @@ export default function Article() {
         options={flickityOptions} 
       >
        {data.map((value,index)=>
-        <div key={index} className="carousel-cell h-[400px] w-[88vw] sm:w-[70vw] mx-12 relative overflow-hidden">
-          <div className="absolute w-[100%] md:w-[50%] rounded-2xl h-[99%] left-0 top-0 bg-[#4CAF7440] text-white grid place-content-center ">
+        <Link  to={value?.src} key={index} className="carousel-cell h-[400px] w-[88vw] sm:w-[70vw] mx-12 relative overflow-hidden">
+          <div className="absolute w-[100%] md:w-[50%] rounded-2xl h-[100%] left-0 top-0 bg-[#4CAF7440] text-white grid place-content-center ">
             <div className=" w-[80%] sm:w-[70%] mx-auto space-y-2 sm:space-y-6">
               <p className="text-4xl ">{value?.heading}</p>
               <p>{value?.description}</p>
@@ -59,7 +46,7 @@ export default function Article() {
             alt=""
             className="h-[400px] w-[70vw] object-cover   rounded-2xl "
           />
-        </div>
+        </Link>
           )} 
       </Flickity>
     </div>

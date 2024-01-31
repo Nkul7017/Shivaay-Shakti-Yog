@@ -87,7 +87,7 @@ export default function HeroNavbar({ login }) {
                       to={"/Courses"}
                       className=" text-black"
                     >
-                      Programs
+                      Courses
                     </Link>
                     <Link
                       as="a"
