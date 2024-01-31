@@ -71,13 +71,13 @@ function Gallery() {
     img1:"https://images.pexels.com/photos/3618721/pexels-photo-3618721.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     img2:"https://images.pexels.com/photos/348489/pexels-photo-348489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     img3:"https://images.pexels.com/photos/2121068/pexels-photo-2121068.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    img4:"https://i.ytimg.com/vi/1-vwMJme5dM/maxresdefault.jpg"
+    img4:"/assets/Programs/1/banner3.jpg"
    }
   }
   const data1 ={
-   img0:"https://api.time.com/wp-content/uploads/2015/06/international-yoga-day-1.jpg",
-   img1:"https://cdn.zeebiz.com/sites/default/files/2023/03/02/230060-giorgia-meloni-pti-1.jpg",
-   img2:"https://images.pexels.com/photos/8613312/pexels-photo-8613312.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+   img0:"/assets/Programs/1/banner1.jpg",
+   img1:"/assets/Programs/2/banner1.jpg",
+   img2:"/assets/Programs/1/banner4.jpg",
   }
   console.log(data.img0)
   return (

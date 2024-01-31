@@ -52,27 +52,27 @@ console.log(e);
           <FaFilter className='w-[25px] h-[25px]  mr-10 text-[#2C3E50] '/>
           </div> */}
 
-          <div className="  text-4xl pt-20 p sm:pl-2 heading  ">
+          {/* <div className="  text-4xl pt-20 p sm:pl-2 heading  ">
           <h1 className=' mb-10  '>Most Popular</h1>
-        </div>
+        </div> */}
 
         {/*-------------------------------- Desktop------------------------------------------- */}
 
-        <section className=' hidden sm:flex box  p-1   gap-7 sm:gap-10 mt-6  scrollbar-hide   overflow-scroll '>
+        {/* <section className=' hidden sm:flex box  p-1   gap-7 sm:gap-10 mt-6  scrollbar-hide   overflow-scroll '>
             {data.map((value)=>
            
             <Card1 value={value}/>
             )}
-        </section>
+        </section> */}
 
         {/*-------------------------------- MObile--------------------------------------------- */}
-        <section className=' flex sm:hidden box  p-1  box  gap-7 sm:gap-10 mt-6  overflow-x-scroll scrollbar-hide '>
+        {/* <section className=' flex sm:hidden box  p-1  box  gap-7 sm:gap-10 mt-6  overflow-x-scroll scrollbar-hide '>
         {data.map((value)=>
             <Card4 value={value}  />
           )}
-        </section>
+        </section> */}
 
-        <div className="  text-4xl pt-12     sm:pt-28 p sm:pl-2 heading  ">
+        <div className="  text-4xl pt-12 p sm:pl-2 heading  ">
           <h1 className=' mb-10  '>All Courses</h1>
         </div>
 
