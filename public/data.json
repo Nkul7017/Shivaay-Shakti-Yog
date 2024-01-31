@@ -1,107 +1,5 @@
 [
-  {
-    "_id": 1,
-    "name": "Stress Management ",
-    "description1": "In Stress management program we are focusing on  mental illness specially  on anxiety and depression. Yoga proceeds to develop in ubiquity as individuals experience  its physical  and mental advantages.  Fostering an individual  yoga practice can help forestall and decrease stress which is a shared objective among individuals  who needs to make positive  development  and spotlight  on personal growth . Yoga targets stress by elevating mood , considering  expanded care   and expanding  self -empathy .This program  helps you to expands the capacity to cope with stress and nervousness, works on interactive abilities , profound prosperity, tactile ,mental and actual wellbeing , improve concentration  so you can handle circumstances  with a calm intellect .",
-    "description":"In Stress management program we are focusing on  mental illness specially  on anxiety and depression.Yoga proceeds to develop in ubiquity as individuals experience  its physical  and mental advantages.  ",
-    "main_url": "/assets/Programs/1/mainurl.jpg",
-    "course_type1": "Personal Training Course",
-    "Personal_description1": "Occupying a small chunk in the our organisation strives to make yoga accessible and convenient to every citizen of the world. Get on board with us to start your journey towards a healthier life.",
-    "live_sessions1": 60,
-    "recorded_sessions1": 80,
-    "course_duration_days1": 78,
-    "beginner_friendly1": true,
-    "female_oriented1": true,
-    "age_range1": "25-40",
-    "price1": 30000,
-    "personal_url1": "/assets/Programs/1/Personal.jpg",
-    "course_type2": "Group Training Course",
-    "Group_description2": "Occupying a small chunk in the our organisation strives to make yoga accessible and convenient to every citizen of the world. Get on board with us to start your journey towards a healthier life.",
-    "live_sessions2": 60,
-    "recorded_sessions2": 80,
-    "course_duration_days2": 78,
-    "beginner_friendly2": true,
-    "female_oriented2": true,
-    "age_range2": "25-40",
-    "price2": 2400,
-    "group_url2": "/assets/Programs/1/Group.jpg",
-    "group_timing": [
-      {
-         "times": "6:00am to 7:00am IST",
-       "session": "Morning"
-       },
-      { 
-        "times": "6:00pm to 7:00pm IST",
-         "session": "Evening" 
-        }
-    ],
-    "group_starting_date": "2024-01-10",
-    "group_batch_size": "60",
-    "personal_duration": [
-      {
-        "timing": "1 Month",
-        "price": 5000
-      },
-      {
-        "timing": "3 Month",
-        "price": 15000
-      },
-      {
-        "timing": "9 Month",
-        "price": 25000
-      }
-    ],
-    "group_duration": [
-      {
-        "timing1": "1 Month",
-        "price3": 2400
-      },
-      {
-        "timing1": "4 Month",
-        "price3": 9400
-      },
-      {
-        "timing1": "6 Month",
-        "price3": 14000
-      },
-      {
-        "timing1": "12 Month",
-        "price3": 28000
-      }
-    ],
-    "banner1":"/assets/Programs/1/banner1.jpg",
-    "banner2":"/assets/Programs/1/banner2.jpg",
-    "banner3":"/assets/Programs/1/banner3.jpg",
-    "banner4":"/assets/Programs/1/banner4.jpg",
-    "group_benefits":[
-      { "icon":"","heading":"Yoga session" },
-      { "icon":"","heading":"Free workshops" },
-      { "icon":"","heading":"Consultancy" },
-      { "icon":"","heading":"6 days classes/week " },
-      { "icon":"","heading":"Twenty four yoga sessions/month" },
-      { "icon":"","heading":"Every age group" }
-    ],
-    "personal_benefits":[
-      { "icon":"","heading":"Online Live sessions" },
-      { "icon":"","heading":"Recorded sessions" },
-      { "icon":"","heading":"Free Workshops " },
-      { "icon":"","heading":"Free personal consultation " },
-      { "icon":"","heading":"Diet and health tips " },
-      { "icon":"","heading":"Weekly encouraging tasks  " },
-      { "icon":"","heading":"Yogaasana,  pranayama and meditation " }
-    ],
-    "group_card_description":"This program  helps you to expands the capacity to cope with stress and nervousness, works on interactive abilities , profound prosperity, tactile ,mental and actual wellbeing , improve concentration.",
-    "personal_card_description":"In personal training  we customized the session according to the person needs . First we will examine your specific necessities and objectives, capacity ,limits  and then we will make a program for you . ",
-    "benefits":[
-      {"heading":"Stress Management","icon":"/assets/Programs/1/benefits/stress_management.svg"},
-      {"heading":"Self Awareness","icon":"/assets/Programs/1/benefits/Self_Awareness.svg"},
-      {"heading":"Increase Positivity","icon":"/assets/Programs/1/benefits/happiness.svg"},
-      {"heading":"Imagination & Creativity","icon":"/assets/Programs/1/benefits/Imagination.svg"},
-      {"heading":"Patience & Tolerance","icon":"/assets/Programs/1/benefits/patience.svg"},
-      {"heading":"Improve Sleep Quality","icon":"/assets/Programs/1/benefits/sleep.svg"},
-      {"heading":"Lower Heart Rate","icon":"/assets/Programs/1/benefits/heartrate.svg"}
-    ]
-  },
+  
  
   {
     "_id": 2,
@@ -210,6 +108,108 @@
         {"heading":"Calm your Mind","icon":"/assets/Programs/2/benefits/calm.svg"}
       ]
      
+  },{
+    "_id": 1,
+    "name": "Stress Management ",
+    "description1": "In Stress management program we are focusing on  mental illness specially  on anxiety and depression. Yoga proceeds to develop in ubiquity as individuals experience  its physical  and mental advantages.  Fostering an individual  yoga practice can help forestall and decrease stress which is a shared objective among individuals  who needs to make positive  development  and spotlight  on personal growth . Yoga targets stress by elevating mood , considering  expanded care   and expanding  self -empathy .This program  helps you to expands the capacity to cope with stress and nervousness, works on interactive abilities , profound prosperity, tactile ,mental and actual wellbeing , improve concentration  so you can handle circumstances  with a calm intellect .",
+    "description":"In Stress management program we are focusing on  mental illness specially  on anxiety and depression.Yoga proceeds to develop in ubiquity as individuals experience  its physical  and mental advantages.  ",
+    "main_url": "/assets/Programs/1/mainurl.jpg",
+    "course_type1": "Personal Training Course",
+    "Personal_description1": "Occupying a small chunk in the our organisation strives to make yoga accessible and convenient to every citizen of the world. Get on board with us to start your journey towards a healthier life.",
+    "live_sessions1": 60,
+    "recorded_sessions1": 80,
+    "course_duration_days1": 78,
+    "beginner_friendly1": true,
+    "female_oriented1": true,
+    "age_range1": "25-40",
+    "price1": 30000,
+    "personal_url1": "/assets/Programs/1/Personal.jpg",
+    "course_type2": "Group Training Course",
+    "Group_description2": "Occupying a small chunk in the our organisation strives to make yoga accessible and convenient to every citizen of the world. Get on board with us to start your journey towards a healthier life.",
+    "live_sessions2": 60,
+    "recorded_sessions2": 80,
+    "course_duration_days2": 78,
+    "beginner_friendly2": true,
+    "female_oriented2": true,
+    "age_range2": "25-40",
+    "price2": 2400,
+    "group_url2": "/assets/Programs/1/Group.jpg",
+    "group_timing": [
+      {
+         "times": "6:00am to 7:00am IST",
+       "session": "Morning"
+       },
+      { 
+        "times": "6:00pm to 7:00pm IST",
+         "session": "Evening" 
+        }
+    ],
+    "group_starting_date": "2024-01-10",
+    "group_batch_size": "60",
+    "personal_duration": [
+      {
+        "timing": "1 Month",
+        "price": 5000
+      },
+      {
+        "timing": "3 Month",
+        "price": 15000
+      },
+      {
+        "timing": "9 Month",
+        "price": 25000
+      }
+    ],
+    "group_duration": [
+      {
+        "timing1": "1 Month",
+        "price3": 2400
+      },
+      {
+        "timing1": "4 Month",
+        "price3": 9400
+      },
+      {
+        "timing1": "6 Month",
+        "price3": 14000
+      },
+      {
+        "timing1": "12 Month",
+        "price3": 28000
+      }
+    ],
+    "banner1":"/assets/Programs/1/banner1.jpg",
+    "banner2":"/assets/Programs/1/banner2.jpg",
+    "banner3":"/assets/Programs/1/banner3.jpg",
+    "banner4":"/assets/Programs/1/banner4.jpg",
+    "group_benefits":[
+      { "icon":"","heading":"Yoga session" },
+      { "icon":"","heading":"Free workshops" },
+      { "icon":"","heading":"Consultancy" },
+      { "icon":"","heading":"6 days classes/week " },
+      { "icon":"","heading":"Twenty four yoga sessions/month" },
+      { "icon":"","heading":"Every age group" }
+    ],
+    "personal_benefits":[
+      { "icon":"","heading":"Online Live sessions" },
+      { "icon":"","heading":"Recorded sessions" },
+      { "icon":"","heading":"Free Workshops " },
+      { "icon":"","heading":"Free personal consultation " },
+      { "icon":"","heading":"Diet and health tips " },
+      { "icon":"","heading":"Weekly encouraging tasks  " },
+      { "icon":"","heading":"Yogaasana,  pranayama and meditation " }
+    ],
+    "group_card_description":"This program  helps you to expands the capacity to cope with stress and nervousness, works on interactive abilities , profound prosperity, tactile ,mental and actual wellbeing , improve concentration.",
+    "personal_card_description":"In personal training  we customized the session according to the person needs . First we will examine your specific necessities and objectives, capacity ,limits  and then we will make a program for you . ",
+    "benefits":[
+      {"heading":"Stress Management","icon":"/assets/Programs/1/benefits/stress_management.svg"},
+      {"heading":"Self Awareness","icon":"/assets/Programs/1/benefits/Self_Awareness.svg"},
+      {"heading":"Increase Positivity","icon":"/assets/Programs/1/benefits/happiness.svg"},
+      {"heading":"Imagination & Creativity","icon":"/assets/Programs/1/benefits/Imagination.svg"},
+      {"heading":"Patience & Tolerance","icon":"/assets/Programs/1/benefits/patience.svg"},
+      {"heading":"Improve Sleep Quality","icon":"/assets/Programs/1/benefits/sleep.svg"},
+      {"heading":"Lower Heart Rate","icon":"/assets/Programs/1/benefits/heartrate.svg"}
+    ]
   }
   
 ]
