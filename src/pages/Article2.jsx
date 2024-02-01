@@ -12,7 +12,7 @@ import { useLocation } from 'react-router-dom';
    return (
     <>
     <HeroNavbar/>
-    <div className=' relative sm:pt-20 '>
+    <div className=' relative sm:pt-20  '>
           <div className='px-8'>
             <img
             className="  hidden sm:block rounded-2xl   w-screen object-cover   h-[170px] sm:h-[500px]   "

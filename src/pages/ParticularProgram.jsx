@@ -358,8 +358,11 @@ function ParticularArticle() {
         <div className=" mt-5 sm:mt-10">
           <p className=" text-xl sm:text-4xl heading">Description</p>
           <p className=" text-sm text-justify para mt-3 ">
-          {show?courseData?.description1:courseData?.description} 
+          {!show&&courseData?.description1} 
           </p>
+          {show&&<><p className=" text-sm text-justify para mt-3 ">{courseData?.description1}</p><div className=" text-sm text-justify para mt-3 " dangerouslySetInnerHTML={{ __html: courseData?.questions }}>
+         {/* { courseData?.questions} */}
+          </div></>}
           <button
             className=" text-md font-semibold mt-1 para   "
             onClick={() => {
