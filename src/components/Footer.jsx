@@ -43,12 +43,12 @@ function Footer() {
             </div>
             
             </div>
-            <div className="text-2xl flex sm:flex-row flex-col heading justify-center items-center w-full    flex-wrap gap-x-28 gap-y-4">
-              <Link  to="/" >HOME</Link>
-              <Link to='/Courses'>PROGRAMS</Link>
-              <Link to='/about-us' >ABOUT</Link>
+            <div className="text-2xl  flex sm:flex-row flex-col heading justify-center items-center w-full    flex-wrap gap-x-28 gap-y-4">
+              <Link  to="/" >Home</Link>
+              <Link to='/Courses'>Courses</Link>
+              <Link to='/about-us' >About</Link>
               <a href={'/tandc.pdf'} target="_blank" rel="noopener noreferrer">Terms And Condition</a>
-              <Link to='/' ><img src={yt} className=" w-[50px] h-[50px] " alt="" /></Link>
+              {/* <Link to='/' ><img src={yt} className=" w-[50px] h-[50px] " alt="" /></Link> */}
             </div>
             <div className=" flex flex-row justify-center w-[50vw] para mx-auto gap-10 md:hidden">
               <a><BsTelephone size={20} clas /></a>

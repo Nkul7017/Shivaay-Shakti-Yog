@@ -23,15 +23,15 @@ console.log(e);
   return (
    <>
    <div className='  flex flex-col gap-2 -mt-3 w-[90vw]  sm:w-[80vw] h-auto mx-[auto] '>
-   <div className="  text-4xl pt-28  pl-3 sm:pl-2 heading  ">
-          <h1 className=' mb-10  '>Programs</h1>
+   <div className="  text-4xl pt-14 sm:pt-28  pl-3 sm:pl-2 heading  ">
+          <h1 className=' mb-6 sm:mb-4 text-3xl sm:text-4xl  '>Programs</h1>
           {/* <div className='relative'>
           <input type="text" placeholder=' Search' className='  pl-10 placeholder-[#444444] w-[50vw] text-2xl h-[36px] rounded-[10px] text-[#444] bg-[#EEEEEE]' />
           <FaSearch className='absolute w-[20px] top-[30%] left-3  text-[#444444]   z-50  '/>
           </div> */}
         </div>
        
-        <section className=' box  p-1   flex gap-9 sm:gap-24 mt-6  overflow-scroll scrollbar-hide  '>
+        <section className=' box  p-1   flex flex-col sm:flex-row gap-9 sm:gap-10 sm:mt-6  overflow-scroll scrollbar-hide  '>
         {data.map((value, index) =>
           <Card1 key={index} value={value} />
         )}

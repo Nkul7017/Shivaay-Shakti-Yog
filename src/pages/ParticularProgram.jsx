@@ -303,7 +303,7 @@ function ParticularArticle() {
         </div>
 
         {/*------------------------------- Hero Section-------------------------------------------- */}
-        <div className=" sm:w-[98.90vw] w-[100vw] flex justify-between gap-1 -mt-20 sm:mt-0  ">
+        <div className=" sm:w-[98.90vw] w-[100vw] flex justify-between gap-1 pt-[12vh] sm:pt-[9vh] -mt-20 sm:mt-0  ">
           <div className="">
             <img
               src={courseData?.banner1}

@@ -61,8 +61,8 @@ else{
          <input type="password" name="password" value={data.password} onChange={(e)=>setData({...data,[e.target.name]:e.target.value})}  className='  text-red-900 rounded-lg px-3 py-1  '  />
          </div>
           <div className=' flex  items-center gap-5   mt-6  '>
-         <button type='submit' className=' text-2xl px-3 py-1 button3  '><span>Login</span></button>
-         <Link to='/Signup' className=' button3 text-2xl px-3 py-1  '>
+         <button type='submit' className=' text-2xl   button3  ' style={{padding:"0px 14px"}}><span>Login</span></button>
+         <Link to='/Signup' className=' button3 text-2xl px-3 py-1  ' style={{padding:"0px 14px"}}>
           <span>Signup</span></Link>
          <p className=' text-[18px] font-bold text-red-900'>{message}</p>
          </div>

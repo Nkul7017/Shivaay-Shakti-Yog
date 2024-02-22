@@ -10,7 +10,7 @@ export default function Card1({value}) {
   // console.log("hello")
   // console.log(value)
   return (
-    <div className="cardcontainer">
+    <div className="cardcontainer  ">
     <Card sx={{ maxWidth:320 ,minWidth:320 }} >
       <CardActionArea>
         <CardMedia

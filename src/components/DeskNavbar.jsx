@@ -8,7 +8,7 @@ const {pathname}=useLocation();
   const [logged, setLogged] = useState(localStorage.getItem('user'));
   return (
     <>
-      <div className={`hidden ${pathname.includes("/ParticularProgram") ?"bg-transparent":"bg-[#faf7e6]"}  ${pathname=="/UserDashboard"?"normal":"fixed"} w-[100vw] h-[70px]  z-50 lg:flex   justify-between md:px-8 sm:px-4 text-center items-center`}>
+      <div className={`hidden  bg-[#faf7e6]  ${pathname=="/UserDashboard"?"normal":"fixed"} w-[100vw] h-[70px]  z-50 lg:flex   justify-between md:px-12 sm:px-4 text-center items-center`}>
         <div>
           <Link to="/"><img className="  w-[200px] " src={logo} alt="" /></Link>
         </div>

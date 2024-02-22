@@ -20,10 +20,10 @@ export default function HeroNavbar({ login }) {
       <Disclosure as="nav" className="lg:hidden -mt-2 pt-[20px]">
         {({ open }) => (
           <>
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
+            <div  className="mx-auto   max-w-7xl px-8 sm:px-6 lg:px-8 ">
               <div className="relative flex flex-row-reverse h-16 items-center justify-between">
                 <div className="flex flex-1 items-start lg:items-stretch lg:justify-start">
-                  <div className="flex items-center">
+                  <div className="flex -ml-4 items-center">
                    <Link to="/"> <img
                       className="block lg:hidden"
                       src={logo}
@@ -72,8 +72,8 @@ export default function HeroNavbar({ login }) {
               </div>
             </div>
 <div className=" ">
-            <Disclosure.Panel className="lg:hidden flex  z-30 absolute top-6 right-9    ">
-              <div className="space-y-3  flex flex-col bg-white rounded-md  px-3   py-2">
+            <Disclosure.Panel className="lg:hidden flex  z-30 absolute top-6 right-14    ">
+              <div className="space-y-3  flex flex-col bg-white rounded-md  px-4    py-2">
                 
                     <Link
                       as="a"

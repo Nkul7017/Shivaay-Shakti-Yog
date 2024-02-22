@@ -77,18 +77,18 @@ console.log(e);
 
  <section className=' mt-20 w-[90vw]  mb-10 mx-auto lg:px-20 '>
  <p className=' para text-xl lg:text-3xl'>Add Courses</p>
- <section className=' hidden sm:flex box  p-1   gap-7 sm:gap-24 mt-6  scrollbar-hide   overflow-scroll '>
+ <section className=' flex box  p-1   gap-7 sm:gap-24 mt-6 flex-wrap   '>
   {data?.datas.map((value)=>
   
             <Card1 value={value} />
   )}
         </section>
-        <section className=' sm:hidden box    flex gap-3 sm:gap-10 mt-6   flex-wrap  '>
+        {/* <section className=' sm:hidden box    flex gap-3 sm:gap-10 mt-6   flex-wrap  '>
         {data?.datas.map((value)=>
         <Card3 img={value?.main_url} data={value} type={2} />
         )}
         
-           </section>
+           </section> */}
  </section>
 
       </div>

@@ -103,9 +103,9 @@ else{
 
   return (
    
-   <div className=' flex flex-1      px-2 lg:px-16 border flex-wrap g justify-between h-[160px]        '>
+   <div className=' flex     px-2 lg:px-16 border flex-wrap g justify-between h-[160px]        '>
 
-        <div className=' flex gap-3   lg:gap-10 justify-center items-center order-1    '>
+        <div className=' flex gap-5 sm:gap-3   lg:gap-10 justify-center items-center   '>
      <div onMouseOver={()=>setToggle2(true)} onMouseOut={()=>setToggle2(false)} className=' relative w-[80px] h-[80px] md:w-[150px] md:h-[150px] lg:w-[236px] lg:h-[236px]
        mt-0     lg:-mt-14 '>
         <img   src={imageprofile} className='  w-[100%] h-[100%]
@@ -123,8 +123,9 @@ else{
         </p>
      </div>
      </div>
+     <div className=' flex  gap-14  sm:gap-10 '>
 
-     <div className=' flex  md:-mt-0  gap-2 sm:gap-6  lg:gap-10 items-center justify-center order-2 '>
+     <div className=' flex  md:-mt-0  gap-2 sm:gap-6  lg:gap-10 items-center justify-center  '>
      <div className='  items-center flex gap-1  md:flex-col  '>
         <p className='w-[36px] lg:w-[45px]  aspect-square  grid place-content-center  rounded-xl bg-[#2C3E50] text-white text-[18px] md:text-2xl ' >{String(completed).padStart(2, '0')}</p>
         <div className=' mt-3 md:mt-0 text-[9px] lg:text-sm flex flex-col md:flex-row'>
@@ -147,7 +148,7 @@ else{
      </div> */}
      </div>
 
-     <div className='flex gap-5 sm:gap-4 md:gap-8 lg:gap-12 items-center justify-center order-3    '>
+     <div className='flex gap-5 sm:gap-4 md:gap-8 lg:gap-12 items-center justify-center    '>
      <div className=' flex flex-col items-center justify-center  gap-2 '>
         <button onClick={()=>setToggle3(true)} ><img src={heart} className=' hover:scale-110  w-[20px] h-[20px] lg:w-[30px] lg:h-[30px] ' alt="" /></button>
         <p className=' text-xs lg-text-sm'>Health Stats</p>
@@ -259,6 +260,7 @@ else{
   </div>
 
      </Popup>
+     </div>
      </div>
      </div>
      <Popup

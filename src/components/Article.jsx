@@ -24,7 +24,7 @@ export default function Article() {
 
   return (
     <div className=" w-[100vw] sm:w-[93vw] mx-auto overflow-scroll pt-12   scrollbar-hide  ">
-      <h1 className=" pl-8 sm:pl-28 heading text-4xl  sm:pt-8 pb-10  sm:pb-16  ">
+      <h1 className=" pl-8 sm:pl-28 heading text-3xl sm:text-4xl  sm:pt-8 pb-10  sm:pb-16  ">
         News and Articles
       </h1>
       <Flickity
@@ -37,8 +37,8 @@ export default function Article() {
         <Link  to={value?.src} key={index} className="carousel-cell h-[400px] w-[88vw] sm:w-[70vw] mx-12 relative overflow-hidden">
           <div className="absolute w-[100%] md:w-[50%] rounded-2xl h-[100%] left-0 top-0 bg-[#4CAF7440] text-white grid place-content-center ">
             <div className=" w-[80%] sm:w-[70%] mx-auto space-y-2 sm:space-y-6">
-              <p className="text-4xl ">{value?.heading}</p>
-              <p>{value?.description}</p>
+              <p className=" text-2xl  font-bold sm:text-4xl ">{value?.heading}</p>
+              <p className="">{value?.description}</p>
             </div>
           </div>
           <img
