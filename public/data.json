@@ -24,27 +24,21 @@
     "beginner_friendly2": true,
     "female_oriented2": true,
     "age_range2": "25-40",
-    "price2": 2400,
+    "price2": 2500,
     "group_url2": "/assets/Programs/2/Group.jpg",
     "group_timing": [
       {
-         "times": "6:00am to 7:00am IST",
+         "times": "7:00am to 8:00am IST",
+        "link":"https://us06web.zoom.us/j/6425164108?pwd=XnWXyXgt5skd2z5wSHu7nfp0hRSkXL.1&omn=73581845534",
        "session": "Morning"
        },
       { 
-        "times": "8:00am to 9:00am IST",
-         "session": "Morning" 
-        },
-      { 
-        "times": "4:00pm to 5:00pm IST",
-         "session": "Evening" 
-        },
-        { 
-        "times": "7:00pm to 8:00pm IST",
+        "times": "6:30pm to 7:30pm IST",
+        "link":"https://us06web.zoom.us/j/6425164108?pwd=XnWXyXgt5skd2z5wSHu7nfp0hRSkXL.1&omn=81840038796",
          "session": "Evening" 
         }
     ],
-    "group_starting_date": "2024-01-10",
+    "group_starting_date": "2024-03-04",
     "group_batch_size": "60",
     "personal_duration": [
       {
@@ -63,19 +57,7 @@
     "group_duration": [
       {
         "timing1": "1 Month",
-        "price3": 2400
-      },
-      {
-        "timing1": "4 Month",
-        "price3": 9400
-      },
-      {
-        "timing1": "6 Month",
-        "price3": 14000
-      },
-      {
-        "timing1": "12 Month",
-        "price3": 28000
+        "price3": 2500
       }
     ],
   "banner1":"/assets/Programs/1/banner1.jpg",
@@ -134,19 +116,21 @@
     "beginner_friendly2": true,
     "female_oriented2": true,
     "age_range2": "25-40",
-    "price2": 2400,
+    "price2": 2500,
     "group_url2": "/assets/Programs/1/Group.jpg",
     "group_timing": [
       {
-         "times": "6:00am to 7:00am IST",
-       "session": "Morning"
-       },
-      { 
-        "times": "6:00pm to 7:00pm IST",
-         "session": "Evening" 
-        }
+        "times": "7:00am to 8:00am IST",
+       "link":"https://us06web.zoom.us/j/6425164108?pwd=XnWXyXgt5skd2z5wSHu7nfp0hRSkXL.1&omn=73581845534",
+      "session": "Morning"
+      },
+     { 
+       "times": "6:30pm to 7:30pm IST",
+       "link":"https://us06web.zoom.us/j/6425164108?pwd=XnWXyXgt5skd2z5wSHu7nfp0hRSkXL.1&omn=81840038796",
+        "session": "Evening" 
+       }
     ],
-    "group_starting_date": "2024-01-10",
+    "group_starting_date": "2024-03-04",
     "group_batch_size": "60",
     "personal_duration": [
       {
@@ -165,19 +149,7 @@
     "group_duration": [
       {
         "timing1": "1 Month",
-        "price3": 2400
-      },
-      {
-        "timing1": "4 Month",
-        "price3": 9400
-      },
-      {
-        "timing1": "6 Month",
-        "price3": 14000
-      },
-      {
-        "timing1": "12 Month",
-        "price3": 28000
+        "price3": 2500
       }
     ],
     "banner1":"/assets/Programs/1/banner1.jpg",

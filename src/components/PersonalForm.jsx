@@ -17,7 +17,7 @@ AOS.init({
 });
 
 function PersonalForm({toggle1,setToggle1,data,type}) {
-  // console.log(data);
+ 
 const navigate=useNavigate();
   const [purchasedData,setPurchasedData]=useState({
   user_id:JSON.parse(localStorage.getItem('user'))?._id,
@@ -384,8 +384,10 @@ const navigate=useNavigate();
                           <HiXMark />
                         </div>
            </div>
-           <div className=' mt-8 flex flex-col h-[300px] w-[300px] bg-blue-gray-300  gap-8 text-justify text-[12px] sm:text-[14px]  md:text-[18px]  para ' style={{color:"#000"}}>
-            
+
+          {/* qr code */}
+          <div className=' mt-8 flex flex-col h-[300px]  w-[300px]  gap-8 text-justify text-[12px] sm:text-[14px]  md:text-[18px]  para ' >
+             <img src="/public/payment.jpeg"  className='w-[100%] h-[100%]'  alt="" />
            </div>
            <div className='  mt-8 flex flex-col gap-y-7 sm:gap-0 lg:flex-row justify-between lg:items-center
             '>

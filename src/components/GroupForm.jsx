@@ -14,6 +14,7 @@ AOS.init({
   duration: 1200,
 });
 function GroupForm({toggle1,setToggle1,data,type}) {
+  console.log(data);
   console.log(data?.group_timing)
 const navigate=useNavigate();
   const [purchasedData,setPurchasedData]=useState({
@@ -27,7 +28,8 @@ const navigate=useNavigate();
     toggle3:false,
     agree:false,
     preferred_timing:"",
-    index1:null
+    index1:null,
+    link:""
     })
     const addDays = (date, days) => {
       const result = new Date(date);
@@ -97,7 +99,8 @@ const navigate=useNavigate();
         course_name:data?.name,
         course_type:type,
         transaction_id:purchasedData?.transaction_id,
-        transaction_status:"pending"
+        transaction_status:"pending",
+        link:purchasedData?.link
        },{
         headers:{
           Authorization:localStorage.getItem('jwt')
@@ -204,7 +207,7 @@ const navigate=useNavigate();
     <>
     <div>
         <button onClick={()=>{
-          setPurchasedData({...purchasedData,preferred_timing:value?.times,index1:i})
+          setPurchasedData({...purchasedData,preferred_timing:value?.times,link:value?.link,index1:i})
         }} className={` text-xs sm:text-[16px] ${purchasedData.index1===i?"button3":"button2"}`} >{String(value?.times)}</button>
         <p className=' text-center mt-2 para  font-semibold text-xl lg:text-2xl '  style={{color:"#283143"}}> {String(value?.session)}</p>
     </div>
@@ -321,8 +324,10 @@ const navigate=useNavigate();
                           <HiXMark />
                         </div>
            </div>
-           <div className=' mt-8 flex flex-col h-[300px] w-[300px] bg-blue-gray-300  gap-8 text-justify text-[12px] sm:text-[14px]  md:text-[18px]  para ' style={{color:"#000"}}>
-            
+
+           {/* Qr code */}
+           <div className=' mt-8 flex flex-col h-[300px]  w-[300px]  gap-8 text-justify text-[12px] sm:text-[14px]  md:text-[18px]  para ' >
+             <img src="/public/payment.jpeg"  className='w-[100%] h-[100%]'  alt="" />
            </div>
            <div className='  mt-8 flex flex-col gap-y-7 sm:gap-0 lg:flex-row justify-between lg:items-center
             '>
