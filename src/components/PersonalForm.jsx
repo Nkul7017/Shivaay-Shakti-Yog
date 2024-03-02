@@ -9,6 +9,7 @@ import Stack from '@mui/material/Stack';
 import "aos/dist/aos.css";
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import img4 from '../../public/Course/payment.jpeg'
 import MultipleDate from './MulitpleDate'
 import Terms from './Terms';
 import { ControlPointDuplicate } from '@mui/icons-material';
@@ -387,7 +388,7 @@ const navigate=useNavigate();
 
           {/* qr code */}
           <div className=' mt-8 flex flex-col h-[300px]  w-[300px]  gap-8 text-justify text-[12px] sm:text-[14px]  md:text-[18px]  para ' >
-             <img src="/public/payment.jpeg"  className='w-[100%] h-[100%]'  alt="" />
+             <img src={img4}  className='w-[100%] h-[100%]'  alt="" />
            </div>
            <div className='  mt-8 flex flex-col gap-y-7 sm:gap-0 lg:flex-row justify-between lg:items-center
             '>

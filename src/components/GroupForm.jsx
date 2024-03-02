@@ -7,6 +7,7 @@ import Stack from '@mui/material/Stack';
 import img1 from '../../public/Program/Group/group_form_icon/1.png'
 import img2 from '../../public/Program/Group/group_form_icon/2.png'
 import img3 from '../../public/Program/Group/group_form_icon/3.png'
+import img4 from '../../public/Course/payment.jpeg'
 import "aos/dist/aos.css";
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -327,7 +328,7 @@ const navigate=useNavigate();
 
            {/* Qr code */}
            <div className=' mt-8 flex flex-col h-[300px]  w-[300px]  gap-8 text-justify text-[12px] sm:text-[14px]  md:text-[18px]  para ' >
-             <img src="/public/payment.jpeg"  className='w-[100%] h-[100%]'  alt="" />
+             <img src={img4}  className='w-[100%] h-[100%]'  alt="" />
            </div>
            <div className='  mt-8 flex flex-col gap-y-7 sm:gap-0 lg:flex-row justify-between lg:items-center
             '>
