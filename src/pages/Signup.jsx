@@ -59,7 +59,7 @@ if(data.name.trim().length>3 && isEmail(data.email.trim()) && isPassword(data.pa
   try{
     console.log(data);
     console.log("bhai")
-  const response=await axios.post('https://shivaay-shakti-backend-1.onrender.com/api/auth/signup',
+  const response=await axios.post('http://localhost:5000/api/auth/signup',
   // const response=await axios.post('http://localhost:5000/api/auth/signup',
   {
    name:data.name,
@@ -97,7 +97,7 @@ else
   try{
 
     console.log(data);
-  const response=await axios.post('https://shivaay-shakti-backend-1.onrender.com/api/auth/signup',
+  const response=await axios.post('http://localhost:5000/api/auth/signup',
   // const response=await axios.post('http://localhost:5000/api/auth/signup',
   {
     name:data.name,

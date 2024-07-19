@@ -20,7 +20,7 @@ function ResetPassword() {
     {
   
      try {
-        let response=await axios.post(`https://shivaay-shakti-backend-1.onrender.com/api/auth/reset-password/${id}/${token}`, {password:data.password});
+        let response=await axios.post(`http://localhost:5000/api/auth/reset-password/${id}/${token}`, {password:data.password});
         // let response=await axios.post(`http://localhost:5000/api/auth/reset-password/${id}/${token}`, {password});
         console.log(response);
         if(response.status===200)

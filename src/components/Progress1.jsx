@@ -10,7 +10,7 @@ function Progress1({ data }) {
    async function changestatus(_id)
    {
     try {
-      const response=await axios.put(`https://shivaay-shakti-backend-1.onrender.com/api/purchase/status/${_id}`,{
+      const response=await axios.put(`http://localhost:5000/api/purchase/status/${_id}`,{
         status:"expired",
       },
       {headers:{

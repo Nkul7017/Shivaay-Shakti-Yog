@@ -123,7 +123,7 @@ const navigate=useNavigate();
       var formattedTime = format(parsedTime, "hh:mm a", { timeZone: 'Asia/Kolkata' });
     } 
       try{
-      //  const response=await axios.post('https://shivaay-shakti-backend-1.onrender.com/api/purchase',{
+      //  const response=await axios.post('http://localhost:5000/api/purchase',{
        const response=await axios.post('http://localhost:5000/api/purchase',{
         user_id:purchasedData?.user_id,
         course_id:data?._id,

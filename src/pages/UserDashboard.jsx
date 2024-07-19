@@ -23,7 +23,7 @@ const UserDashboard = () => {
   {
 try {
   console.log(JSON.parse(localStorage.getItem('user'))?._id);
-   const response=await axios.get(`https://shivaay-shakti-backend-1.onrender.com/api/purchase/${JSON.parse(localStorage.getItem('user'))?._id}/c`,{
+   const response=await axios.get(`http://localhost:5000/api/purchase/${JSON.parse(localStorage.getItem('user'))?._id}/c`,{
   //  const response=await axios.get(`http://localhost:5000/api/purchase/${JSON.parse(localStorage.getItem('user'))?._id}/c`,{
     headers:{
       Authorization:localStorage.getItem('jwt')
