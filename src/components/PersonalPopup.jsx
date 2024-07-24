@@ -75,7 +75,7 @@ background: var(--the, #B7DFC7);
            </div>
            <p className=" para text-sm sm:text-2xl mt-5 pl-3 ">Personal Course <span className=" heading  ml-6 sm:ml-16 ">{data?.preferred_timing}</span></p>
         
-           <Stats data={data} />
+           {/* <Stats data={data} /> */}
             </div>
             </div>
           </Popup>
