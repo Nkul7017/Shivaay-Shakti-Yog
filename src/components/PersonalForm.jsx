@@ -40,7 +40,6 @@ function PersonalForm({ toggle1, setToggle1, staticData, courseData, type }) {
     return result.toISOString().split("T")[0];
   };
   async function handle1() {
-    // console.log(purchasedData)
     setPurchasedData({ ...purchasedData, message: "" });
     if (localStorage.getItem("user")) {
       if (
@@ -198,7 +197,7 @@ function PersonalForm({ toggle1, setToggle1, staticData, courseData, type }) {
             toggle4: false,
           });
           setTimeout(() => {
-            // navigate('/UserDashboard',{replace:true})
+            navigate('/home',{replace:true})
           }, 1);
         }
       } catch (e) {

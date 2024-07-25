@@ -331,7 +331,7 @@ function ParticularArticle() {
       const filteredStaticData = response.data.filter(
         (value) => value.name === courseName
       );
-      console.log("Static Data:", filteredStaticData[0]);
+      // console.log("Static Data:", filteredStaticData[0]);
       setStaticData(filteredStaticData[0]);
     } catch (e) {
       console.log("Error fetching static data:", e);

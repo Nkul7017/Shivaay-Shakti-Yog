@@ -77,11 +77,9 @@ function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
   }
 
   async function handlesubmit() {
-    console.log("inside handle submit");
-    setPurchasedData({ ...purchasedData, message: "loading" });
+    setPurchasedData({ ...purchasedData, message: "Loading" });
 
     if (localStorage.getItem("user")) {
-      console.log("ind=side local");
       console.log(purchasedData.duration);
       if (
         purchasedData?.transaction_id?.trim().length === 6 &&
@@ -90,9 +88,7 @@ function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
         purchasedData.price !== "" &&
         purchasedData.preferred_timing !== ""
       ) {
-        console.log(courseData?.group_starting_date);
         if (typeof purchasedData.duration === "string") {
-          console.log("duration");
           const b = purchasedData.duration.split(" ");
 
           if (b[1] === "Month") {
@@ -102,60 +98,50 @@ function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
             courseData?.group_starting_date,
             parseInt(b[0])
           );
-
           try {
-            console.log("inside try");
-
-            if (courseData && purchasedData) {
-              const response = await axios.post(
-                "http://localhost:5000/api/purchase",
-                {
-                  name: JSON.parse(localStorage.getItem("user"))?.name,
-                  user_id: purchasedData?.user_id,
-                  preferred_timing: purchasedData?.preferred_timing,
-                  duration: purchasedData?.duration,
-                  status: purchasedData?.status,
-                  price: purchasedData?.price,
-                  transaction_id: purchasedData?.transaction_id,
-                  transaction_status: "pending",
-                  link: purchasedData?.link,
-                  starting_date: courseData?.group_starting_date,
-                  course_id: courseData?._id,
-                  course_name: courseData?.name,
-                  expiration_date: expirationDate,
-                  course_type: type,
+            const response = await axios.post(
+              "http://localhost:5000/api/purchase/",
+              {
+                name: JSON.parse(localStorage.getItem("user"))?.name,
+                user_id: purchasedData?.user_id,
+                preferred_timing: purchasedData?.preferred_timing,
+                duration: purchasedData?.duration,
+                status: purchasedData?.status,
+                price: purchasedData?.price,
+                transaction_id: purchasedData?.transaction_id,
+                transaction_status: "pending",
+                link: purchasedData?.link,
+                starting_date: courseData?.group_starting_date,
+                course_id: courseData?._id,
+                course_name: courseData?.name,
+                expiration_date: expirationDate,
+                course_type: type,
+              },
+              {
+                headers: {
+                  Authorization: localStorage.getItem("jwt"),
                 },
-                {
-                  headers: {
-                    Authorization: localStorage.getItem("jwt"),
-                  },
-                }
-              );
-              console.log("Response:", response);
-
-              console.log("hello");
-
-              if (response?.data?.success === true) {
-                setToggle1(false);
-                // setTimeout(() => {
-                //   navigate("/UserDashboard", { replace: true });
-                // }, 1);
               }
-            } else {
-              console.log("data is missing");
-            }
-          } catch (e) {
-            console.log("Error:", e.response ? e.response.data : e.message);
-            setToggle1(false);
+            );
+            // console.log("Response:", response);
+            setPurchasedData({ ...purchasedData, message: "" });
+            alert("Form submitted successfully!");
+            navigate("/home", { replace: true });
+          } catch (error) {
+            console.error("Error:", error);
+            setPurchasedData({ ...purchasedData, message: "" });
+            alert("Submission failed. Please try again.");
           }
         } else {
-          console.log("Duration is not a string or is missing");
+          setPurchasedData({ ...purchasedData, message: "" });
+          alert("Duration is missing");
         }
       } else {
         setPurchasedData({
           ...purchasedData,
           message: "* All Fields Are Mandatory",
         });
+        alert("All fields are mandatory. Please check again.");
       }
     } else {
       navigate("/login", { replace: true });

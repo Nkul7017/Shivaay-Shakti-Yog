@@ -11,19 +11,21 @@ import helping1 from "../../public/helping1.png";
 import axios from 'axios';
 function AllCourse() {
   const [data,setData]=useState([]);
-  async function getdata()
-  {
-    try{
-  const response=await axios.get("/data.json");
-   setData(response?.data);
-    }
-    catch(e)
-    {
-console.log(e);
+  async function getData() {
+    try {
+      const response = await axios.get("http://localhost:5000/api/course/");
+      // console.log(response.data);
+      if (Array.isArray(response.data.data)) {
+        setData(response.data.data);
+      } else {
+        console.error("Expected an array in response.data.data");
+      }
+    } catch (e) {
+      console.log(e);
     }
   }
   useEffect(()=>{
-    getdata();
+    getData();
   },[])
   return (
    <>

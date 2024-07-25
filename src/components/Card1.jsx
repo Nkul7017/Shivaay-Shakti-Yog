@@ -7,7 +7,7 @@ import Image1 from "../../public/program.png";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import { Link } from "react-router-dom";
 export default function Card1({ value }) {
-  console.log(value);
+  // console.log(value);
   const maxLength = 240;
 
   const trimDescription = (description) => {

@@ -8,7 +8,7 @@ export default function Program() {
   async function getData() {
     try {
       const response = await axios.get("http://localhost:5000/api/course/");
-      console.log(response.data);
+      // console.log(response.data);
       if (Array.isArray(response.data.data)) {
         setData(response.data.data);
       } else {
@@ -23,7 +23,7 @@ export default function Program() {
     getData();
   }, []);
 
-  console.log(data)
+  // console.log(data)
 
   return (
     <div className="flex flex-col gap-2 -mt-3 w-[90vw] sm:w-[80vw] h-auto mx-auto">

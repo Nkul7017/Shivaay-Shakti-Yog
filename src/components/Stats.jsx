@@ -1,7 +1,7 @@
 import React from 'react'
 import { Bar } from 'react-chartjs-2';
 import 'chart.js/auto'; // This includes the necessary components for Chart.js
-import 'moment'; // If needed
+import 'moment'; 
 const Stats = ({data}) => {
     const chartData = {
       labels: data?.points?.map(entry => entry.date1),
