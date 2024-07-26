@@ -85,7 +85,7 @@ const TimeSlot = () => {
     } else {
       var options = {
         method: "POST",
-        url: "http://localhost:5000/trainer/dnt",
+        url: "https://shivaay-shakti-backend-vm3k.onrender.com/trainer/dnt",
         headers: {
           Accept: "application/json",
          
@@ -114,7 +114,7 @@ const TimeSlot = () => {
 
   // async function postJSON() {
   //   try {
-  //     const response = await fetch("http://localhost:5000/trainer/dnt", {
+  //     const response = await fetch("https://shivaay-shakti-backend-vm3k.onrender.com/trainer/dnt", {
   //       method: "POST", // or 'PUT'
   //       headers: {
   //         "Content-Type": "application/json",

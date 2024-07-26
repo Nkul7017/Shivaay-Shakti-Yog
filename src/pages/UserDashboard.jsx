@@ -22,7 +22,7 @@ const UserDashboard = () => {
   async function prof() {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/purchase/${
+        `https://shivaay-shakti-backend-vm3k.onrender.com/api/purchase/${
           JSON.parse(localStorage.getItem("user"))?._id
         }/c`,
         {
@@ -54,7 +54,7 @@ const UserDashboard = () => {
 
   async function getdata() {
     try {
-      const response = await axios.get("http://localhost:5000/api/course/");
+      const response = await axios.get("https://shivaay-shakti-backend-vm3k.onrender.com/api/course/");
       // console.log(response?.data)
       if (Array.isArray(response.data.data)) {
         setData((prevData) => ({ ...prevData, datas: response.data.data }));

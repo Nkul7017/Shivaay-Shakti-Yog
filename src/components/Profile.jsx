@@ -20,7 +20,7 @@ const Stats = ({completed,active}) => {
   ];
    const handleUploadedImage = async(imageUrl, thnl) => {
    try{
-    const response=await axios.put(`http://localhost:5000/api/auth/update/${user?._id}`,
+    const response=await axios.put(`https://shivaay-shakti-backend-vm3k.onrender.com/api/auth/update/${user?._id}`,
     {
       profile_img:imageUrl
     }
@@ -67,8 +67,8 @@ if(data.name.trim().length>3  &&  data.country!=="" &&data.gender!==""&&data.hei
  console.log(data);
  try{
    console.log(data);
- const response=await axios.put(`http://localhost:5000/api/auth/update/${user?._id}`,
-//  const response=await axios.put(`http://localhost:5000/api/auth/update/${user?._id}`,
+ const response=await axios.put(`https://shivaay-shakti-backend-vm3k.onrender.com/api/auth/update/${user?._id}`,
+//  const response=await axios.put(`https://shivaay-shakti-backend-vm3k.onrender.com/api/auth/update/${user?._id}`,
 
  {
   name:data.name,

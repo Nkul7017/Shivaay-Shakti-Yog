@@ -100,7 +100,7 @@ function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
           );
           try {
             const response = await axios.post(
-              "http://localhost:5000/api/purchase/",
+              "https://shivaay-shakti-backend-vm3k.onrender.com/api/purchase/",
               {
                 name: JSON.parse(localStorage.getItem("user"))?.name,
                 user_id: purchasedData?.user_id,

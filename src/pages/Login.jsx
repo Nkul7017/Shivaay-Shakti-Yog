@@ -18,8 +18,8 @@ if( isPassword(data.password.trim()))
 {
   setMessage("Loading...")
   try{
-  const res=await axios.post("http://localhost:5000/api/auth/login",data);
-  // const res=await axios.post("http://localhost:5000/api/auth/login",data);
+  const res=await axios.post("https://shivaay-shakti-backend-vm3k.onrender.com/api/auth/login",data);
+  // const res=await axios.post("https://shivaay-shakti-backend-vm3k.onrender.com/api/auth/login",data);
 if(res.status===200)    
 {
   console.log(res.data.user);

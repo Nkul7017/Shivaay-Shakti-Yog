@@ -13,7 +13,7 @@ function AllCourse() {
   const [data,setData]=useState([]);
   async function getData() {
     try {
-      const response = await axios.get("http://localhost:5000/api/course/");
+      const response = await axios.get("https://shivaay-shakti-backend-vm3k.onrender.com/api/course/");
       // console.log(response.data);
       if (Array.isArray(response.data.data)) {
         setData(response.data.data);

@@ -16,8 +16,8 @@ function ForgotPassword() {
         setData({...data,message:"* loading"})
         e.preventDefault()
         try {
-            const response=await axios.post('http://localhost:5000/api/auth/forgot-password', {email:data?.email})
-            // const response=await axios.post('http://localhost:5000/api/auth/forgot-password', {email:data?.email})
+            const response=await axios.post('https://shivaay-shakti-backend-vm3k.onrender.com/api/auth/forgot-password', {email:data?.email})
+            // const response=await axios.post('https://shivaay-shakti-backend-vm3k.onrender.com/api/auth/forgot-password', {email:data?.email})
           if(response.status===200)
           {
             setData({...data,message:""})

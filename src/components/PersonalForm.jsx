@@ -165,7 +165,7 @@ function PersonalForm({ toggle1, setToggle1, staticData, courseData, type }) {
       try {
         console.log(purchasedData);
         const response = await axios.post(
-          "http://localhost:5000/api/purchase",
+          "https://shivaay-shakti-backend-vm3k.onrender.com/api/purchase",
           {
             user_id: purchasedData?.user_id,
             course_id: courseData?._id,
