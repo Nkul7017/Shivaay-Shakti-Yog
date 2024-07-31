@@ -13,6 +13,7 @@ import ForgotPassword from "./pages/ForgetPassword";
 import ResetPassword from "./pages/ResetPassword";
 import Articel1 from "./pages/Articel1";
 import Article2 from "./pages/Article2";
+import TermsAndConditions from "./pages/TermAndCondition";
 function App() {
 
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/Login" element={<Login />} />
           <Route path="/Signup" element={<Signup />} />
           <Route path="/Courses" element={<AllCourse/>} />
+          <Route path="/terms&conditions" element={<TermsAndConditions/>} />
           <Route path="/UserDashboard" element={<UserDashboard/>} />
           <Route path="Contact-us" element={<Contact />} />
           <Route path="about-us" element={<About />} />

@@ -483,28 +483,28 @@ function PersonalForm({ toggle1, setToggle1, staticData, courseData, type }) {
               style={{ color: "#000" }}
             >
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Service Availability: and Use Shivaay Shakti provides access to
+                various yoga and wellness services, including live classes,
+                meditation sessions, and personalized training. By using our
+                services, you agree to follow our guidelines and use the
+                platform responsibly. We reserve the right to modify or
+                discontinue services without prior notice.
               </p>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Health and Safety: By participating in our programs, you
+                acknowledge the importance of consulting with a healthcare
+                provider before starting any new fitness regimen. Shivaay Shakti
+                is not liable for any injuries or health issues that may arise
+                during using our services. Users are responsible for their
+                well-being and should practice within their limits.
               </p>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure{" "}
+                Data Privacy: We are committed to protecting your personal
+                information. By using our services, you consent to the
+                collection and use of your data as outlined in our privacy
+                policy. Your health information may be used to tailor and
+                enhance your experience, ensuring personalized and effective
+                guidance throughout your journey with us.
               </p>
             </div>
             <div

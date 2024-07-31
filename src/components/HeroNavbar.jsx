@@ -4,7 +4,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { HiOutlineArrowDownTray, HiBars3CenterLeft } from "react-icons/hi2";
 import DeskNavbar from "./DeskNavbar";
 import Dropdown from "./Dropdown";
-import logo from "../../public/letter-head_CLR.png"
+import logo from "../../public/letter-head_CLR.png";
 import { Link, useNavigate } from "react-router-dom";
 
 function classNames(...classes) {
@@ -12,25 +12,27 @@ function classNames(...classes) {
 }
 
 export default function HeroNavbar({ login }) {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
- const [logged,setLogged]=useState(localStorage.getItem('user'));
+  const [logged, setLogged] = useState(localStorage.getItem("user"));
   return (
     <>
       <Disclosure as="nav" className="lg:hidden -mt-2 pt-[20px]">
         {({ open }) => (
           <>
-            <div  className="mx-auto   max-w-7xl px-8 sm:px-6 lg:px-8 ">
+            <div className="mx-auto   max-w-7xl px-8 sm:px-6 lg:px-8 ">
               <div className="relative flex flex-row-reverse h-16 items-center justify-between">
                 <div className="flex flex-1 items-start lg:items-stretch lg:justify-start">
                   <div className="flex -ml-4 items-center">
-                   <Link to="/"> <img
-                      className="block lg:hidden"
-                      src={logo}
-                      width={180}
-                      alt="logo"
-                    /></Link>
-                    
+                    <Link to="/">
+                      {" "}
+                      <img
+                        className="block lg:hidden"
+                        src={logo}
+                        width={180}
+                        alt="logo"
+                      />
+                    </Link>
                   </div>
                   {/* <div className="hidden sm:ml-6 sm:block">
                     <div className="flex space-x-4 text-black">
@@ -71,70 +73,54 @@ export default function HeroNavbar({ login }) {
                 </div>
               </div>
             </div>
-<div className=" ">
-            <Disclosure.Panel className="lg:hidden flex  z-30 absolute top-6 right-14    ">
-              <div className="space-y-3  flex flex-col bg-white rounded-md  px-4    py-2">
-                
-                    <Link
-                      as="a"
-                      to={"/"}
-                      className= " text-black"
-                    >
-                      Home
-                    </Link>
-                    <Link
-                      as="a"
-                      to={"/Courses"}
-                      className=" text-black"
-                    >
-                      Courses
-                    </Link>
-                    <Link
-                      as="a"
-                      to={"/about-us"}
-                      className=" text-black"
-                    >
-                      About Us
-                    </Link>
-                    {/* <Link
+            <div className=" ">
+              <Disclosure.Panel className="lg:hidden flex  z-30 absolute top-6 right-14    ">
+                <div className="space-y-3  flex flex-col bg-white rounded-md  px-4    py-2">
+                  <Link as="a" to={"/"} className=" text-black">
+                    Home
+                  </Link>
+                  <Link as="a" to={"/Courses"} className=" text-black">
+                    Courses
+                  </Link>
+                  <Link as="a" to={"/about-us"} className=" text-black">
+                    About Us
+                  </Link>
+                  {/* <Link
                       as="a"
                       to={"/"}
                       className=" text-black"
                     >
                       Channels
                     </Link> */}
-           
-                    {logged&&<Link
-                      as="a"
-                      to={"/UserDashboard"}
-                      className=" text-black"
-                      >
+
+                  {logged && (
+                    <Link as="a" to={"/UserDashboard"} className=" text-black">
                       Profile
-                    </Link>}
-                  
-                    {!logged?<Link
-                      to='/Login'
-                      
-                      className=" text-black"
+                    </Link>
+                  )}
+
+                  {!logged ? (
+                    <div className="flex flex-col gap-3">
+                      <Link to="/Login" className=" text-black">
+                        Login
+                      </Link>
+                      <Link to="/Signup" className=" text-black ">
+                        Sign Up
+                      </Link>{" "}
+                    </div>
+                  ) : (
+                    <button
+                      onClick={() => {
+                        setLogged(localStorage.removeItem("user"));
+                        navigate("/", { replace: true });
+                      }}
+                      className=" text-black text-left "
                     >
-                      Login
-                    </Link>:
-                     <button  onClick={()=>{
-                      setLogged(localStorage.removeItem('user'));
-                      navigate('/', {replace: true});
-                     }}
-                    className=" text-black text-left "
-                  
-                  >
-                    Log Out
-                  </button> }
-                    
-                    
-                    
-                    
-              
-              </div>
-            </Disclosure.Panel>
+                      Log Out
+                    </button>
+                  )}
+                </div>
+              </Disclosure.Panel>
             </div>
           </>
         )}
