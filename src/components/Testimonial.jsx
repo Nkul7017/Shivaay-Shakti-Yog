@@ -7,7 +7,7 @@ import comma2 from "../assets/Images/comma2.png";
 
 const arry = [
   {
-    img: '../testimonial/priyangni.jpg',
+    img: "../testimonial/priyangni.jpg",
     name: "Priyangini Sharma ",
     designation: "Stress Management",
     ptag: "Using stress management techniques has changed my life. Daily meditation and exercise have made me feel better and more focused. Now, I handle challenges more easily. I highly recommend it to anyone feeling stressed.",
@@ -25,8 +25,8 @@ const arry = [
     ptag: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus magna sit amet urna molestie venenatis. Aenean suscipit semper nisl, et luctus diam euismod ut. Mauris ac maximus sem, vitae aliquam tortor. Integer urna nisi, convallis sit amet ante rutrum, consectetur gravida lorem. ",
   },
   {
-    img: img1,
-    name: "Vaibhav Negi",
+    img: "../testimonial/vaibhav.jpg",
+    name: "Shivam Singh Panwar",
     designation: "Weight Loss",
     ptag: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus magna sit amet urna molestie venenatis. Aenean suscipit semper nisl, et luctus diam euismod ut. Mauris ac maximus sem, vitae aliquam tortor. Integer urna nisi, convallis sit amet ante rutrum, consectetur gravida lorem. ",
   },
@@ -42,7 +42,7 @@ export default function Testimonial() {
           showStatus={false}
           showIndicators={false}
           showThumbs={true}
-          emulateTouch={false}
+          emulateTouch={true}
           swipeable={true}
           autoPlay={true}
           infiniteLoop={true}

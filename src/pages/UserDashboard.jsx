@@ -31,7 +31,7 @@ const UserDashboard = () => {
           },
         }
       );
-      // console.log(response?.data?.data);
+      console.log(response?.data?.data);
       if (Array.isArray(response?.data?.data)) {
         var a = response?.data?.data.filter(
           (v) => v?.status === "active" && v?.transaction_status === "completed"
@@ -44,8 +44,8 @@ const UserDashboard = () => {
       setData((prevData) => ({
         ...prevData,
         PurchasedCourse: response?.data?.data,
-        completed: a,
-        active: b,
+        completed: b,
+        active: a,
       }));
     } catch (e) {
       console.log(e);
