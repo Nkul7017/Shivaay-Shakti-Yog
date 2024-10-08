@@ -6,6 +6,7 @@ import DeskNavbar from "./DeskNavbar";
 import Dropdown from "./Dropdown";
 import logo from "../../public/letter-head_CLR.png";
 import { Link, useNavigate } from "react-router-dom";
+import Consultation from "./Consultation";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -13,6 +14,17 @@ function classNames(...classes) {
 
 export default function HeroNavbar({ login }) {
   const navigate = useNavigate();
+
+
+  const [isConsultationOpen, setIsConsultationOpen] = useState(false);
+
+  const handleOpen = () => {
+    setIsConsultationOpen(true);
+  };
+
+  const handleClose = () => {
+    setIsConsultationOpen(false);
+  };
 
   const [logged, setLogged] = useState(localStorage.getItem("user"));
   return (
@@ -85,6 +97,9 @@ export default function HeroNavbar({ login }) {
                   <Link as="a" to={"/about-us"} className=" text-black">
                     About Us
                   </Link>
+                  <button className="text-black" onClick={handleOpen}>
+            Book a Demo Class
+          </button>
                   {/* <Link
                       as="a"
                       to={"/"}
@@ -127,6 +142,9 @@ export default function HeroNavbar({ login }) {
       </Disclosure>
 
       <DeskNavbar />
+
+      {isConsultationOpen && <Consultation setClose={handleClose} />}
+
     </>
   );
 }

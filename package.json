@@ -27,6 +27,7 @@
     "chart.js": "^4.4.1",
     "date-fns": "^2.30.0",
     "dayjs": "^1.11.10",
+    "emailjs-com": "^3.2.0",
     "flatpickr": "^4.6.13",
     "flickity": "^2.3.0",
     "flickity-fullscreen": "^2.0.0",
@@ -44,6 +45,7 @@
     "react-icons": "^4.11.0",
     "react-loader-spinner": "^5.3.4",
     "react-loading-overlay": "^1.0.1",
+    "react-multi-carousel": "^2.8.5",
     "react-multi-date-picker": "^4.3.3",
     "react-multi-select-component": "^4.3.4",
     "react-paginate": "^8.2.0",
@@ -56,10 +58,9 @@
     "react-toastify": "^9.1.1",
     "reactjs-popup": "^2.0.5",
     "slick-carousel": "^1.8.1",
-    "swiper": "^10.3.1",
+    "swiper": "^11.1.14",
     "tailwind-scrollbar-hide": "^1.1.7",
-    "use-react-countries": "^1.1.0",
-    "emailjs-com": "^3.2.0"
+    "use-react-countries": "^1.1.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",

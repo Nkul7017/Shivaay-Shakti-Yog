@@ -4,8 +4,9 @@ import Helping from "../components/Helping";
 import Article from "../components/Article";
 import NewHero from "../components/NewHero";
 import Program from  "../components/Program";
-import Testimonial from "../components/Testimonial";
+// import Testimonial from "../components/Testimonial";
 import Gallery from "../components/Gallery";
+import Mobilegallery from "../components/Mobilegallery";
 
 function Home() {
   return (
@@ -13,9 +14,15 @@ function Home() {
       <NewHero />
       <Article/>
       <Program/>
+      <div className="hidden md:block">
+
       <Gallery />
+      </div>
+      <div className="md:hidden">
+        <Mobilegallery />
+      </div>
       <Helping />
-      <Testimonial/>
+      {/* <Testimonial/> */}
       <Footer />
     </div>
   );

@@ -38,7 +38,7 @@ export default function Article() {
           <div className="absolute w-[100%] md:w-[50%] rounded-2xl h-[100%] left-0 top-0 bg-[#4CAF7440] text-white grid place-content-center ">
             <div className=" w-[80%] sm:w-[70%] mx-auto space-y-2 sm:space-y-6">
               <p className=" text-2xl  font-bold sm:text-4xl ">{value?.heading}</p>
-              <p className="">{value?.description}</p>
+              <p className="text-[18px] w-[230px]">{value?.description}</p>
             </div>
           </div>
           <img
