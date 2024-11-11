@@ -66,14 +66,14 @@ function Card2({ img, heading, types, staticData, courseData }) {
             </div>
           )}
           <div className=" flex justify-between items-center ">
-            <div className=" -space-y-4 ">
+            {/* <div className=" -space-y-4 ">
               <p className="para text-xs ">Starting</p>
               <p className="heading text-4xl  ">
                 {types === "group"
                   ? "₹" + courseData?.price2
                   : "₹" + courseData?.price1}
               </p>
-            </div>
+            </div> */}
             <div>
               {types === "personal" && (
                 <>

@@ -27,7 +27,14 @@ function Footer() {
               </div>
               <div className="flex gap-3">
                 <GoMail size={24} />
-                <p className="w-20">shivaayshaktiyog@gmail.com</p>
+                <p className="w-20">
+                  <a
+                    href="mailto:shivaayshaktiyog@gmail.com"
+                    className="text-blue-500 hover:underline"
+                  >
+                    shivaayshaktiyog@gmail.com
+                  </a>
+                </p>
               </div>
             </div>
             <div className=" w-1/3   para  hidden md:block  space-y-3    ">
@@ -48,7 +55,11 @@ function Footer() {
             <Link to="/">Home</Link>
             <Link to="/Courses">Courses</Link>
             <Link to="/about-us">About</Link>
-            <a href={"/terms&conditions"} target="_blank" rel="noopener noreferrer">
+            <a
+              href={"/terms&conditions"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Terms And Condition
             </a>
             {/* <Link to='/' ><img src={yt} className=" w-[50px] h-[50px] " alt="" /></Link> */}
