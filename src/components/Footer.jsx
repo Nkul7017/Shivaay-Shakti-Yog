@@ -43,10 +43,10 @@ function Footer() {
                 <p>
                   <GoLocation size={24} />
                 </p>
-                <p className=" text-justify">
+                <a target="_blank" href="https://maps.app.goo.gl/ECf6xCU2eRYGUe9x6" className=" text-justify">
                   Shaheed Gireesh Bhadri Chowk, Mothrowala, Banjarawala Rd,
                   Ajabpur Khurd, Dehradun, Uttarakhand 248001
-                </p>
+                </a>
               </div>
             </div>
             <div></div>
