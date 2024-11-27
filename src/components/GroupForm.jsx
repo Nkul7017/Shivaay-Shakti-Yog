@@ -76,77 +76,94 @@ function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
     }
   }
 
-  async function handlesubmit() {
+  async function handleSubmit() {
+    // Set initial loading message
     setPurchasedData({ ...purchasedData, message: "Loading" });
-
-    if (localStorage.getItem("user")) {
-      console.log(purchasedData.duration);
-      if (
-        purchasedData?.transaction_id?.trim().length === 6 &&
-        purchasedData.agree === true &&
-        purchasedData.duration &&
-        purchasedData.price !== "" &&
-        purchasedData.preferred_timing !== ""
-      ) {
-        if (typeof purchasedData.duration === "string") {
-          const b = purchasedData.duration.split(" ");
-
-          if (b[1] === "Month") {
-            b[0] = parseInt(b[0]) * 30;
-          }
-          const expirationDate = addDays(
-            courseData?.group_starting_date,
-            parseInt(b[0])
-          );
-          try {
-            const response = await axios.post(
-              "https://shivaay-shakti-backend-vm3k.onrender.com/api/purchase/",
-              {
-                name: JSON.parse(localStorage.getItem("user"))?.name,
-                user_id: purchasedData?.user_id,
-                preferred_timing: purchasedData?.preferred_timing,
-                duration: purchasedData?.duration,
-                status: purchasedData?.status,
-                price: purchasedData?.price,
-                transaction_id: purchasedData?.transaction_id,
-                transaction_status: "pending",
-                link: purchasedData?.link,
-                starting_date: courseData?.group_starting_date,
-                course_id: courseData?._id,
-                course_name: courseData?.name,
-                expiration_date: expirationDate,
-                course_type: type,
-              },
-              {
-                headers: {
-                  Authorization: localStorage.getItem("jwt"),
-                },
-              }
-            );
-            // console.log("Response:", response);
-            setPurchasedData({ ...purchasedData, message: "" });
-            alert("Form submitted successfully!");
-            navigate("/home", { replace: true });
-          } catch (error) {
-            console.error("Error:", error);
-            setPurchasedData({ ...purchasedData, message: "" });
-            alert("Submission failed. Please try again.");
-          }
-        } else {
-          setPurchasedData({ ...purchasedData, message: "" });
-          alert("Duration is missing");
-        }
-      } else {
-        setPurchasedData({
-          ...purchasedData,
-          message: "* All Fields Are Mandatory",
-        });
-        alert("All fields are mandatory. Please check again.");
+  
+    if (!localStorage.getItem("user")) {
+      navigate("/login", { replace: true });
+      return;
+    }
+  
+    console.log(purchasedData.duration);
+  
+    // Validate fields
+    const isTransactionIdValid =
+      purchasedData?.transaction_id?.trim().length === 6;
+    const isAgreeChecked = purchasedData?.agree === true;
+    const isDurationValid = Boolean(purchasedData?.duration);
+    const isPriceValid = purchasedData?.price !== "";
+    const isTimingValid = purchasedData?.preferred_timing !== "";
+  
+    if (!isTransactionIdValid || !isAgreeChecked || !isDurationValid || !isPriceValid || !isTimingValid) {
+      setPurchasedData({
+        ...purchasedData,
+        message: "* All Fields Are Mandatory",
+      });
+      alert("All fields are mandatory. Please check again.");
+      return;
+    }
+  
+    // Process duration and calculate expiration date
+    let calculatedDuration = 0;
+    if (typeof purchasedData.duration === "string") {
+      const durationParts = purchasedData.duration.split(" ");
+      if (durationParts[1] === "Month") {
+        calculatedDuration = parseInt(durationParts[0], 10) * 30;
       }
     } else {
-      navigate("/login", { replace: true });
+      setPurchasedData({ ...purchasedData, message: "" });
+      alert("Duration is missing or invalid.");
+      return;
+    }
+  
+    const expirationDate = addDays(
+      courseData?.group_starting_date,
+      calculatedDuration
+    );
+  
+    // Prepare data for submission
+    const purchasePayload = {
+      name: JSON.parse(localStorage.getItem("user"))?.name,
+      user_id: purchasedData?.user_id,
+      preferred_timing: purchasedData?.preferred_timing,
+      duration: purchasedData?.duration,
+      status: purchasedData?.status,
+      price: purchasedData?.price,
+      transaction_id: purchasedData?.transaction_id,
+      transaction_status: "pending",
+      link: purchasedData?.link,
+      starting_date: courseData?.group_starting_date,
+      course_id: courseData?._id,
+      course_name: courseData?.name,
+      expiration_date: expirationDate,
+      course_type: type,
+    };
+  
+    console.log("Data being sent:", purchasePayload);
+  
+    try {
+      const response = await axios.post(
+        "https://shivaay-shakti-backend-vm3k.onrender.com/api/purchase",
+        purchasePayload,
+        {
+          headers: {
+            Authorization: localStorage.getItem("jwt"),
+          },
+        }
+      );
+  
+      console.log("Response:", response);
+      setPurchasedData({ ...purchasedData, message: "" });
+      alert("Form submitted successfully!");
+      navigate("/home", { replace: true });
+    } catch (error) {
+      console.error("Error:", error);
+      setPurchasedData({ ...purchasedData, message: "" });
+      alert("Submission failed. Please try again.");
     }
   }
+  
 
   return (
     <>
@@ -526,7 +543,7 @@ function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
               <div className=" hidden lg:flex ">
                 <button
                   className=" button3 para text-xl font-semibold  "
-                  onClick={handlesubmit}
+                  onClick={handleSubmit}
                   style={{ minWidth: "260px", height: "40px", color: "white" }}
                 >
                   <span>Submit</span>
@@ -534,7 +551,7 @@ function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
               </div>
               <div className="lg:hidden flex  self-end ">
                 <button
-                  onClick={handlesubmit}
+                  onClick={handleSubmit}
                   className=" button3 para text-[18px] font-semibold  "
                   style={{ minWidth: "260px", height: "40px", color: "white" }}
                 >
