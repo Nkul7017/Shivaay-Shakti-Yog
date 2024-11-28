@@ -1,18 +1,21 @@
 import React, { useState } from "react";
-import img1 from "../assets/Icons/img1.png";
-import img2 from "../assets/Icons/img2.png";
-import img3 from "../assets/Icons/img3.png";
-import img4 from "../assets/Icons/img4.png";
-import img5 from "../assets/Icons/img5.png";
-import img6 from "../assets/Icons/img6.png";
+
 import GroupForm from "./GroupForm";
 import PersonalForm from "./PersonalForm";
 import { GoDotFill } from "react-icons/go";
 function Card2({ img, heading, types, staticData, courseData }) {
   const [toggle1, setToggle1] = useState(false);
+
+  const [showFullText, setShowFullText] = useState(false); // State for toggling full text
+
+  // Function to toggle "Read More" and "Read Less"
+  const handleReadMoreToggle = () => {
+    setShowFullText(!showFullText);
+  };
+
   return (
     <>
-      <div className=" w-[415px] h-auto card2 ">
+      <div className=" w-[415px] h-auto md:h-[50%] card2 ">
         <div className=" relative sh ">
           <img
             src={img}
@@ -43,28 +46,53 @@ function Card2({ img, heading, types, staticData, courseData }) {
           {types === "personal" && (
             <div className="min-h-[168px] bluish text-xs space-y-1.5">
               {staticData?.personal_benefits?.map((v, index) => (
-                <p key={index}>
-                  <span className="flex items-center gap-2">
+                <p key={index} className="">
+                  <p className="flex  gap-2">
                     <GoDotFill />
-                    {v?.heading}
-                  </span>
+                    <p>
+                      {v?.heading}{" "}
+                      <span className="font-normal">
+                        {showFullText
+                          ? v?.description
+                          : `${v?.description.substring(0, 80)}...`}
+                      </span>
+                    </p>
+                  </p>
                 </p>
               ))}
             </div>
           )}
 
           {types === "group" && (
-            <div className="min-h-[168px] bluish text-xs space-y-1.5">
+            <div className="min-h-[168px] bluish text-xs space-y-2">
               {staticData?.group_benefits?.map((v, index) => (
-                <p key={index}>
-                  <span className="flex items-center gap-2">
+                <p key={index} className="">
+                  <p className="flex gap-2">
                     <GoDotFill />
-                    {v?.heading}
-                  </span>
+                    <p>
+                      {v?.heading}
+                      <span className="font-normal">
+                        {showFullText
+                          ? v?.description
+                          : `${v?.description.substring(0, 45)}...`}
+                      </span>
+                    </p>
+                  </p>
                 </p>
               ))}
             </div>
           )}
+
+          {/* Read More / Read Less Button */}
+          <div className="flex justify-start">
+            <button
+              onClick={handleReadMoreToggle}
+              className="text-blue-500 text-sm mt-2"
+            >
+              {showFullText ? "Read Less" : "Read More"}
+            </button>
+          </div>
+
           <div className=" flex justify-between items-center ">
             {/* <div className=" -space-y-4 ">
               <p className="para text-xs ">Starting</p>
@@ -73,7 +101,7 @@ function Card2({ img, heading, types, staticData, courseData }) {
                   ? "₹" + courseData?.price2
                   : "₹" + courseData?.price1}
               </p>
-            </div> */}
+            </div> */} 
             <div>
               {types === "personal" && (
                 <>
@@ -84,13 +112,15 @@ function Card2({ img, heading, types, staticData, courseData }) {
                   >
                     <span>Proceed</span>
                   </button>
-                  <PersonalForm
+                  <div className="">
+                  <PersonalForm 
                     type={"personal"}
                     staticData={staticData}
                     courseData={courseData}
                     toggle1={toggle1}
                     setToggle1={setToggle1}
                   />
+                  </div>
                 </>
               )}
               {types === "group" && (

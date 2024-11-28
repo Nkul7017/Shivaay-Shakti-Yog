@@ -17,6 +17,30 @@ AOS.init({
   duration: 1200,
 });
 
+const packages = [
+  {
+    title: "Single Session",
+    description:
+      "A one-time personalized session to address your specific needs or focus areas.",
+    price: 1100,
+    currency: "Rs",
+  },
+  {
+    title: "Package Session",
+    description:
+      "A series of 20 personalized sessions designed for consistent progress and flexibility in scheduling.",
+    price: 16000,
+    currency: "Rs",
+  },
+  {
+    title: "Subscription Plan",
+    description:
+      "A comprehensive package with 60 sessions for a structured long-term approach to your practice.",
+    price: 45000,
+    currency: "Rs",
+  },
+];
+
 function PersonalForm({ toggle1, setToggle1, staticData, courseData, type }) {
   const navigate = useNavigate();
   const [purchasedData, setPurchasedData] = useState({
@@ -39,13 +63,25 @@ function PersonalForm({ toggle1, setToggle1, staticData, courseData, type }) {
     result.setDate(result.getDate() + days - 1);
     return result.toISOString().split("T")[0];
   };
+
+  const [selectedPackageIndex, setSelectedPackageIndex] = useState(null);
+
+  const handlePackageClick = (index, pkg) => {
+    setSelectedPackageIndex(index); // Mark the clicked package as selected
+    console.log("Selected package:", pkg); // You can handle the selected package data here
+
+    setPurchasedData({
+      ...purchasedData, // Preserve existing data
+      price: pkg.price,
+      duration: pkg.duration,
+    });
+  };
+
   async function handle1() {
     setPurchasedData({ ...purchasedData, message: "" });
     if (localStorage.getItem("user")) {
       if (
         purchasedData.preferred_timing !== "" &&
-        purchasedData.duration !== "" &&
-        purchasedData.price !== "" &&
         purchasedData.starting_date != ""
       ) {
         setPurchasedData({ ...purchasedData, toggle2: true, message: "" });
@@ -197,7 +233,7 @@ function PersonalForm({ toggle1, setToggle1, staticData, courseData, type }) {
             toggle4: false,
           });
           setTimeout(() => {
-            navigate('/home',{replace:true})
+            navigate("/home", { replace: true });
           }, 1);
         }
       } catch (e) {
@@ -222,12 +258,12 @@ function PersonalForm({ toggle1, setToggle1, staticData, courseData, type }) {
           placeContent: "center",
           backgroundColor: "#FFF1C1",
           width: "90vw",
-          height: "90vh",
+          height: "80vh",
           borderRadius: "10px",
         }}
       >
-        <div className="  w-[100%] h-[100%] p-3 sm:p-4 md:p-8 lg:py-16 lg:px-24   ">
-          <div className=" relative w-[100%] h-[100%]">
+      <div className="h-[75vh] md:w-[100%] md:h-[100%] p-3 sm:p-6 md:p-10 lg:p-24 overflow-y-scroll z-[9999] ">
+      <div className="h-fit relative md:w-[100%] md:min-h-[100%] sm:max-h-screen ">
             <div className="  flex justify-between   ">
               <h1 className=" text-2xl  lg:text-4xl heading">
                 {courseData?.name} {courseData?.course_duration_days1} Days
@@ -313,7 +349,8 @@ function PersonalForm({ toggle1, setToggle1, staticData, courseData, type }) {
                   >
                     Select Duration
                   </p>
-                  <div className=" mt-4 flex flex-wrap gap-2 lg:gap-10">
+
+                  {/* <div className=" mt-4 flex flex-wrap gap-2 lg:gap-10">
                     {courseData &&
                       courseData.personal_duration?.map((value, i) => (
                         <>
@@ -344,7 +381,40 @@ function PersonalForm({ toggle1, setToggle1, staticData, courseData, type }) {
                           </div>
                         </>
                       ))}
+                  </div> */}
+
+                  <div className="p-6 ">
+                    <div className="flex flex-wrap  gap-6 pt-2">
+                      {packages.map((pkg, index) => (
+                        <div    key={index}>
+                        <div
+                       
+                          className={`w-72 p-3 border shadow-lg rounded-lg cursor-pointer ${
+                            selectedPackageIndex === index
+                              ? "text-white"
+                              : "border-[#db9562] text-[#db9562]"
+                          }`}
+                          style={
+                            selectedPackageIndex === index
+                              ? {
+                                  background:
+                                    "linear-gradient(103deg, #E5C75E 24.85%, #B96E38 111.06%)",
+                                }
+                              : { background: "" }
+                          }
+                          onClick={() => handlePackageClick(index, pkg)}
+                        >
+                          <h2 className="text-lg font-semibold">{pkg.title}</h2>
+                          <p className="mt-1">{pkg.description}</p>
+                        </div>
+                          <p className="heading text-[#283143] font-bold mt-2">
+                            {pkg.currency} {pkg.price}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
+
                   <p className=" font-semibold mt-2 text-sm text-red-500">
                     {purchasedData.message}
                   </p>
@@ -371,7 +441,7 @@ function PersonalForm({ toggle1, setToggle1, staticData, courseData, type }) {
 
             <button
               onClick={handle1}
-              className="absolute bottom-0 button3 right-4"
+              className="mt-8 m-5 xl:mt-0 xl:absolute xl:bottom-10  button3 xl:right-4"
             >
               Proceed
             </button>

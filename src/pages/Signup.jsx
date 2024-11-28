@@ -51,20 +51,12 @@ function Signup() {
     if (
       data.name.trim().length > 3 &&
       isEmail(data.email.trim()) &&
-      isPassword(data.password.trim()) &&
-      data.cpassword.trim() !== "" &&
-      data.password === data.cpassword &&
-      data.country !== "" &&
-      data.gender !== "" &&
-      data.height > 0 &&
-      data.weight > 0 &&
-      data.country !== "" &&
-      data.city !== "" &&
-      data.contact !== ""
+      isPassword(data.password.trim())
+
     ) {
       console.log("naame");
-      if (data.gender == "specify") {
-        if (data.specify !== "") {
+      if (data) {
+        if (data) {
           console.log(data);
           try {
             console.log(data);
@@ -95,9 +87,7 @@ function Signup() {
           } catch (e) {
             setData({ ...data, message: e.response.data.message });
           }
-        } else {
-          setData({ ...data, message: "*All Fields Are Mandatory" });
-        }
+        } 
       } else {
         setData({ ...data, message: "Loading..." });
         console.log(data);
@@ -315,6 +305,7 @@ function Signup() {
                       >
                         <option value="inches">inches</option>
                         <option value="cm">cm</option>
+                        <option value="ft">ft</option>
                       </select>
                     </div>
                   </div>
