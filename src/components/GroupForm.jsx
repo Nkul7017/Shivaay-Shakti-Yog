@@ -212,6 +212,7 @@ function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
       navigate("/login", { replace: true });
     }
   }
+  
 
   return (
     <>
@@ -634,7 +635,7 @@ function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
               <div className=" hidden lg:flex ">
                 <button
                   className=" button3 para text-xl font-semibold  "
-                  onClick={handlesubmit}
+                  onClick={handleSubmit}
                   style={{ minWidth: "260px", height: "40px", color: "white" }}
                 >
                   <span>Submit</span>
@@ -642,7 +643,7 @@ function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
               </div>
               <div className="lg:hidden flex  self-end ">
                 <button
-                  onClick={handlesubmit}
+                  onClick={handleSubmit}
                   className=" button3 para text-[18px] font-semibold  "
                   style={{ minWidth: "260px", height: "40px", color: "white" }}
                 >
