@@ -132,7 +132,7 @@ function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
     });
   };
 
-  async function handlesubmit() {
+  async function handleSubmit() {
     setPurchasedData({ ...purchasedData, message: "Loading" });
     console.log(purchasedData, price);
 
@@ -212,7 +212,6 @@ function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
       navigate("/login", { replace: true });
     }
   }
-  
 
   return (
     <>
@@ -230,8 +229,8 @@ function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
           borderRadius: "10px",
         }}
       >
-         <div className="h-[75vh] md:w-[100%] md:h-[100%] p-3 sm:p-6 md:p-10 lg:p-24 overflow-y-scroll z-[9999] ">
-         <div className="h-fit relative md:w-[100%] md:min-h-[100%] sm:max-h-screen ">
+        <div className="h-[75vh] md:w-[100%] md:h-[90%] lg:h-[95%] p-3 sm:p-6 md:p-10 lg:p-24 overflow-y-scroll z-[9999] ">
+          <div className="h-fit relative md:w-[100%] md:min-h-[100%] sm:max-h-screen ">
             <div className="  flex justify-between   ">
               <h1 className=" text-2xl  lg:text-4xl heading">
                 {courseData?.name} {courseData?.course_duration_days2} Days
@@ -406,33 +405,32 @@ function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
                   const isSelected = selectedPackageIndex === index;
 
                   return (
-                    <div  key={index}>
-                    <div
-                     
-                      className={`w-72 p-3  border  shadow-lg rounded-lg  cursor-pointer ${
-                        selectedPackageIndex === index
-                          ? " text-white "
-                          : "border-[#db9562] text-[#db9562]"
-                      }`}
-                      style={
-                        selectedPackageIndex === index
-                          ? {
-                              background:
-                                "linear-gradient(103deg, #E5C75E 24.85%, #B96E38 111.06%)",
-                            }
-                          : { background: "" }
-                      }
-                      onClick={() => handlePackageClick(index, pkg)}
-                    >
-                      <h2 className="text-lg font-semibold ">{pkg.title}</h2>
-                      <p className="mt-1 ">{pkg.description}</p>
+                    <div key={index}>
+                      <div
+                        className={`w-72 p-3  border  shadow-lg rounded-lg  cursor-pointer ${
+                          selectedPackageIndex === index
+                            ? " text-white "
+                            : "border-[#db9562] text-[#db9562]"
+                        }`}
+                        style={
+                          selectedPackageIndex === index
+                            ? {
+                                background:
+                                  "linear-gradient(103deg, #E5C75E 24.85%, #B96E38 111.06%)",
+                              }
+                            : { background: "" }
+                        }
+                        onClick={() => handlePackageClick(index, pkg)}
+                      >
+                        <h2 className="text-lg font-semibold ">{pkg.title}</h2>
+                        <p className="mt-1 ">{pkg.description}</p>
 
-                      {pkg.recommendation && (
-                        <p className="mt-2 bg-green-600 p-2 rounded-lg text-white text-sm text-primary02 font-semibold">
-                          {pkg.recommendation}
-                        </p>
-                      )}
-                    </div>
+                        {pkg.recommendation && (
+                          <p className="mt-2 bg-green-600 p-2 rounded-lg text-white text-sm text-primary02 font-semibold">
+                            {pkg.recommendation}
+                          </p>
+                        )}
+                      </div>
                       <p className="heading text-[#283143] font-bold mt-2">
                         {pkg.currency} {pkg.price}
                       </p>

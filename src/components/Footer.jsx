@@ -8,7 +8,7 @@ function Footer() {
   return (
     <div className="">
       <div className="helpingbg  ">
-        <footer className=" space-y-4  flex flex-col w-[90vw] lg:w-[80vw] mx-auto   lg:gap-8   ">
+        <footer className=" space-y-4  flex flex-col w-[90vw] lg:w-[95vw] xl:w-[90vw] mx-auto   lg:gap-8   ">
           <div className="  flex flex-col sm:flex-row  justify-around pt-10  md:gap-5  ">
             <div className="   md:w-1/3 lg:-mt-7 mx-auto md:mx-0   ">
               <a className="   ">

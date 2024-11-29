@@ -24,6 +24,7 @@ const packages = [
       "A one-time personalized session to address your specific needs or focus areas.",
     price: 1100,
     currency: "Rs",
+    duration: "1 Day",
   },
   {
     title: "Package Session",
@@ -31,6 +32,7 @@ const packages = [
       "A series of 20 personalized sessions designed for consistent progress and flexibility in scheduling.",
     price: 16000,
     currency: "Rs",
+    duration: "1 Month",
   },
   {
     title: "Subscription Plan",
@@ -38,6 +40,7 @@ const packages = [
       "A comprehensive package with 60 sessions for a structured long-term approach to your practice.",
     price: 45000,
     currency: "Rs",
+    duration: "3 Month",
   },
 ];
 
@@ -101,16 +104,7 @@ function PersonalForm({ toggle1, setToggle1, staticData, courseData, type }) {
     if (localStorage.getItem("user")) {
       if (
         purchasedData.agree === true &&
-        purchasedData.preferred_timing !== "" &&
-        purchasedData.duration !== "" &&
-        purchasedData.price !== "" &&
-        purchasedData.duration === "1 Month"
-          ? purchasedData.days.length === 30
-          : purchasedData.duration === "3 Month"
-          ? purchasedData.days.length === 90
-          : purchasedData.duration === "9 Month"
-          ? purchasedData.days.length === 270
-          : null
+        purchasedData.preferred_timing !== ""
       ) {
         console.log(purchasedData.days.length);
         setPurchasedData({ ...purchasedData, toggle4: true, message: "" });
@@ -130,29 +124,21 @@ function PersonalForm({ toggle1, setToggle1, staticData, courseData, type }) {
     if (localStorage.getItem("user")) {
       if (
         purchasedData.preferred_timing !== "" &&
-        purchasedData.duration !== "" &&
-        purchasedData.price !== "" &&
-        purchasedData.duration === "1 Month"
+        purchasedData.duration === "1 Day"
+          ? purchasedData.days.length === 1
+          : purchasedData.duration === "1 Month"
           ? purchasedData.days.length === 30
           : purchasedData.duration === "3 Month"
           ? purchasedData.days.length === 90
-          : purchasedData.duration === "9 Month"
-          ? purchasedData.days.length === 270
           : null
       ) {
         setPurchasedData({ ...purchasedData, toggle3: true, message: "" });
       } else {
+        console.log(purchasedData);
         setPurchasedData({
           ...purchasedData,
-          message: `* selecting  ${
-            purchasedData.duration === "1 Month"
-              ? "30"
-              : purchasedData.duration === "3 Month"
-              ? "90"
-              : purchasedData.duration === "3 Month"
-              ? "90"
-              : null
-          } dates is mandatory  `,
+          toggle3: true,
+          message: "",
         });
       }
     } else {
@@ -162,35 +148,36 @@ function PersonalForm({ toggle1, setToggle1, staticData, courseData, type }) {
   async function handlesubmit() {
     console.log(purchasedData);
     setPurchasedData({ ...purchasedData, message: "loading" });
+
     if (
       purchasedData?.transaction_id?.trim().length === 6 &&
-      purchasedData.agree === true &&
-      purchasedData.preferred_timing !== "" &&
-      purchasedData.duration !== "" &&
-      purchasedData.price !== "" &&
-      purchasedData.duration === "1 Month"
-        ? purchasedData.days.length === 30
-        : purchasedData.duration === "3 Month"
-        ? purchasedData.days.length === 90
-        : purchasedData.duration === "9 Month"
-        ? purchasedData.days.length === 270
-        : null
+      purchasedData.agree === true
     ) {
-      purchasedData.days = purchasedData.days.sort((a, b) => a - b);
-      purchasedData.days = purchasedData.days.map((dateString) => {
+      console.log(purchasedData.days);
+
+      // Ensure days is always an array
+      let days = Array.isArray(purchasedData.days)
+        ? purchasedData.days
+        : [purchasedData.days];
+
+      // Handle sorting and formatting of days for 1 Month and 3 Months
+      if (purchasedData.duration !== "1 Day") {
+        days = days.sort((a, b) => new Date(a) - new Date(b));
+      }
+
+      // Format dates
+      purchasedData.days = days.map((dateString) => {
         const dateObject = new Date(dateString);
         return format(dateObject, "yyyy-MM-dd");
       });
 
-      const formattedDates = courseData?.days?.map((dateString) => {
-        return parse(dateString, "yyyy-MM-dd", new Date());
-      });
-
       const expirationDate = purchasedData.days[purchasedData.days.length - 1];
       console.log(expirationDate);
+
       purchasedData.course_id = courseData?.name;
       purchasedData.course_type = type;
       console.log(purchasedData?.preferred_timing);
+
       const timeString = purchasedData?.preferred_timing;
       if (timeString) {
         const parsedTime = parse(timeString, "HH:mm", new Date());
@@ -198,6 +185,7 @@ function PersonalForm({ toggle1, setToggle1, staticData, courseData, type }) {
           timeZone: "Asia/Kolkata",
         });
       }
+
       try {
         console.log(purchasedData);
         const response = await axios.post(
@@ -224,6 +212,7 @@ function PersonalForm({ toggle1, setToggle1, staticData, courseData, type }) {
             },
           }
         );
+
         if (response?.data?.success === true) {
           setPurchasedData({
             ...purchasedData,
@@ -232,6 +221,10 @@ function PersonalForm({ toggle1, setToggle1, staticData, courseData, type }) {
             toggle3: false,
             toggle4: false,
           });
+
+          // Alert user about successful submission
+          alert("Purchase submitted successfully!");
+
           setTimeout(() => {
             navigate("/home", { replace: true });
           }, 1);
@@ -246,6 +239,9 @@ function PersonalForm({ toggle1, setToggle1, staticData, courseData, type }) {
       });
     }
   }
+
+  console.log(courseData);
+
   return (
     <>
       <Popup
@@ -262,8 +258,8 @@ function PersonalForm({ toggle1, setToggle1, staticData, courseData, type }) {
           borderRadius: "10px",
         }}
       >
-      <div className="h-[75vh] md:w-[100%] md:h-[100%] p-3 sm:p-6 md:p-10 lg:p-24 overflow-y-scroll z-[9999] ">
-      <div className="h-fit relative md:w-[100%] md:min-h-[100%] sm:max-h-screen ">
+        <div className="h-[75vh] md:w-[100%] lg:h-[95%] md:h-[90%] p-3 sm:p-6 md:p-10 lg:p-24 overflow-y-scroll z-[9999] ">
+          <div className="h-fit relative md:w-[100%] md:min-h-[100%] sm:max-h-screen ">
             <div className="  flex justify-between   ">
               <h1 className=" text-2xl  lg:text-4xl heading">
                 {courseData?.name} {courseData?.course_duration_days1} Days
@@ -293,7 +289,7 @@ function PersonalForm({ toggle1, setToggle1, staticData, courseData, type }) {
               </div>
               <p className=" text-xs   para font-bold">based on 78 reviews</p>
             </div>
-            <div className=" flex justify-between mt-5  lg:mt-8 ga-x-10 sm:gap-x-14 md:gap-x-20  lg:gap-x-36 gap-y-4 flex-wrap ">
+            <div className=" flex justify-between mt-5  lg:mt-8  sm:gap-x-14 md:gap-x-20  lg:gap-x-36 gap-y-4    ">
               <div className=" flex flex-col gap-5  ">
                 <div
                   className=" flex gap-2 font-extrabold items-center"
@@ -350,40 +346,59 @@ function PersonalForm({ toggle1, setToggle1, staticData, courseData, type }) {
                     Select Duration
                   </p>
 
-                  {/* <div className=" mt-4 flex flex-wrap gap-2 lg:gap-10">
-                    {courseData &&
-                      courseData.personal_duration?.map((value, i) => (
-                        <>
-                          <div>
-                            <button
-                              onClick={() => {
-                                setPurchasedData({
-                                  ...purchasedData,
-                                  duration: value?.timing,
-                                  price: value?.price,
-                                  index: i,
-                                });
-                              }}
-                              className={`${
-                                purchasedData.index === i
-                                  ? "button3"
-                                  : "button2"
-                              }`}
-                            >
-                              {value?.timing}
-                            </button>
-                            <p
-                              className=" text-center mt-2 para  font-semibold text-xl lg:text-2xl "
-                              style={{ color: "#283143" }}
-                            >
-                              ₹ {value?.price}
-                            </p>
-                          </div>
-                        </>
-                      ))}
-                  </div> */}
+                  <div className="mt-4 flex flex-wrap gap-2 lg:gap-10">
+                    {courseData?.personal_duration?.map((value, i) => (
+                      <div key={i} className="w-72">
+                        <div
+                          onClick={() =>
+                            setPurchasedData({
+                              ...purchasedData,
+                              duration: value?.timing,
+                              price: value?.price,
+                              index: i,
+                            })
+                          }
+                          className={`p-3 border rounded-lg cursor-pointer 
+          ${
+            purchasedData.index === i
+              ? "bg-gradient-to-r from-[#E5C75E] to-[#B96E38] text-white"
+              : "border border-[#db9562] text-[#db9562]"
+          }`}
+                        >
+                          <h2 className="text-lg font-semibold">
+                            {value?.title}
+                          </h2>
+                          <p className="mt-1">{value?.des}</p>
 
-                  <div className="p-6 ">
+                          <button
+                            onClick={() =>
+                              setPurchasedData({
+                                ...purchasedData,
+                                duration: value?.timing,
+                                price: value?.price,
+                                index: i,
+                              })
+                            }
+                            className={`${
+                              purchasedData.index === i
+                                ? "bg-gradient-to-r from-[#E5C75E] to-[#B96E38] text-white"
+                                : "border border-[#db9562] text-[#db9562]"
+                            } rounded-md w-auto px-4 py-2 mt-3`}
+                          >
+                            {value?.timing}
+                          </button>
+                        </div>
+                        <p
+                          className="text-center heading mt-2 font-semibold text-xl lg:text-2xl"
+                          style={{ color: "#283143" }}
+                        >
+                          ₹ {value?.price}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* <div className="p-6 ">
                     <div className="flex flex-wrap  gap-6 pt-2">
                       {packages.map((pkg, index) => (
                         <div    key={index}>
@@ -413,7 +428,7 @@ function PersonalForm({ toggle1, setToggle1, staticData, courseData, type }) {
                         </div>
                       ))}
                     </div>
-                  </div>
+                  </div> */}
 
                   <p className=" font-semibold mt-2 text-sm text-red-500">
                     {purchasedData.message}
@@ -433,7 +448,7 @@ function PersonalForm({ toggle1, setToggle1, staticData, courseData, type }) {
                   </Stack>
                   <p className="text-xl para font-extrabold ">4.5</p>
                 </div>
-                <p className="  float-right para font-bold">
+                <p className="  float-right para font-bold ">
                   based on 80 reviews
                 </p>
               </div>
@@ -441,7 +456,7 @@ function PersonalForm({ toggle1, setToggle1, staticData, courseData, type }) {
 
             <button
               onClick={handle1}
-              className="mt-8 m-5 xl:mt-0 xl:absolute xl:bottom-10  button3 xl:right-4"
+              className="mt-8 m-5 md:m-0 xl:mt-0 xl:absolute xl:bottom-10  button3 xl:right-4"
             >
               Proceed
             </button>

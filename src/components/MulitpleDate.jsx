@@ -1,8 +1,7 @@
-
-import style from 'react-day-picker/dist/style.css';
-import React, { useEffect } from 'react';
-import { addMonths, isSameMonth ,addDays,parseISO,format } from 'date-fns';
-import { DayPicker } from 'react-day-picker';
+import style from "react-day-picker/dist/style.css";
+import React, { useEffect } from "react";
+import { addMonths, isSameMonth, addDays, parseISO, format } from "date-fns";
+import { DayPicker } from "react-day-picker";
 
 const css = `
   .my-selected:not([disabled]) { 
@@ -33,35 +32,46 @@ background: var(--the, #B7DFC7);
   }
   
 `;
-export default function MultipleDate({purchasedData,setPurchasedData}) {
-//  console.log(purchasedData);
- const handleDayClick = (selectedDays) => {
+export default function MultipleDate({ purchasedData, setPurchasedData }) {
+  //  console.log(purchasedData);
+  const handleDayClick = (selectedDays) => {
+    setPurchasedData({
+      ...purchasedData,
+      days: selectedDays,
+    });
+  };
+  console.log(purchasedData)
+ 
 
-  setPurchasedData({
-    ...purchasedData,
-    days: selectedDays,
-  });
-};
   return (
     <>
-    <style>{css}</style>
-    <DayPicker
-      mode="multiple"
-      min={purchasedData?.duration==="9 Month"?270:purchasedData?.duration==="3 Month"?90:purchasedData?.duration==="1 Month"?30:0}
-      max={purchasedData?.duration==="9 Month"?270:purchasedData?.duration==="3 Month"?90:purchasedData?.duration==="1 Month"?30:0}
-      selected={purchasedData?.days}
-      onSelect={handleDayClick}
-      pagedNavigation
-      fixedWeeks
-      numberOfMonths={purchasedData?.duration==="9 Month"?15:purchasedData?.duration==="3 Month"?6:purchasedData?.duration==="1 Month"?3:0}
-      defaultMonth={addDays(new Date(),1)}
-      fromDate={parseISO(purchasedData?.starting_date)}
-      toDate={addDays(parseISO(purchasedData?.starting_date),purchasedData?.duration==="9 Month"?404:purchasedData?.duration==="3 Month"?144:purchasedData?.duration==="1 Month"?44:0)}
-      className='   overflow-x-auto max-w-[80vw] sm:max-w-[65vw]   scrollbar-default   mt-10   '
-      modifiersClassNames={{
-        selected: 'my-selected',
-      }}
-    />
+      <style>{css}</style>
+      <DayPicker
+        mode={purchasedData?.duration === "1 Day" ? "single" : "multiple"}
+        min={purchasedData?.duration === "1 Day" ? 1 : undefined} // No minimum for multiple days
+        max={
+          purchasedData?.duration === "1 Day"
+            ? 1
+            : purchasedData?.duration === "1 Month"
+            ? 30
+            : purchasedData?.duration === "3 Month"
+            ? 90
+            : undefined
+        }
+        selected={purchasedData?.days} // Pre-select dates if provided
+        onSelect={handleDayClick} // Callback for date selection
+        pagedNavigation
+        fixedWeeks
+        numberOfMonths={3} // Show 3 months at a time
+        defaultMonth={parseISO(purchasedData?.starting_date)} // Set the calendar's initial view to the starting date
+        fromDate={parseISO(purchasedData?.starting_date)} // Allow dates starting from the selected starting date
+        toDate={addDays(parseISO(purchasedData?.starting_date), 365)} // Allow selection up to 365 days from the starting date
+        className="overflow-x-auto max-w-[80vw] sm:max-w-[65vw] scrollbar-default mt-10"
+        modifiersClassNames={{
+          selected: "my-selected",
+        }}
+      />
     </>
   );
+  
 }
