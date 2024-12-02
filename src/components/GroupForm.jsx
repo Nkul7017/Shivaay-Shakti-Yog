@@ -407,7 +407,7 @@ function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
                   return (
                     <div key={index}>
                       <div
-                        className={`w-72 p-3  border  shadow-lg rounded-lg  cursor-pointer ${
+                        className={`w-72 p-3 h-[240px]  border  shadow-lg rounded-lg  cursor-pointer ${
                           selectedPackageIndex === index
                             ? " text-white "
                             : "border-[#db9562] text-[#db9562]"
