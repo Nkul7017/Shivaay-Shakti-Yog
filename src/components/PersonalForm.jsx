@@ -147,7 +147,7 @@ function PersonalForm({ toggle1, setToggle1, staticData, courseData, type }) {
   }
   async function handlesubmit() {
     console.log(purchasedData);
-    setPurchasedData({ ...purchasedData, message: "loading" });
+    setPurchasedData({ ...purchasedData, message: "loading..." });
 
     if (
       purchasedData?.transaction_id?.trim().length === 6 &&
