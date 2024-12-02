@@ -53,11 +53,11 @@ export default function Article() {
             className="carousel-cell h-[400px] w-[88vw] sm:w-[70vw] mx-12  relative overflow-hidden"
           >
             <div className="absolute w-[100%] md:w-[50%] rounded-2xl h-[100%] left-0 top-0 bg-[#4CAF7440] text-white grid place-content-center ">
-              <div className=" w-[80%] sm:w-[70%] mx-auto space-y-2 sm:space-y-6">
-                <p className=" text-2xl  font-bold sm:text-4xl ">
+              <div className=" w-[100%]  md:w-[80%] lg:w-[70%] mx-auto space-y-2 sm:space-y-6">
+                <p className=" text-[16px]  font-bold md:text-2xl lg:text-4xl ">
                   {value?.heading}
                 </p>
-                <p className="text-[18px] w-[490px]">{value?.description}</p>
+                <p className="text-[12px] xl:text-[18px] w-[210px] md:w-auto  xl:w-[435px]">{value?.description}</p>
               </div>
             </div>
             <img
