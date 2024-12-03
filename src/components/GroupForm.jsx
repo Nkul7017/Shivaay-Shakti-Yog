@@ -190,7 +190,7 @@ function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
             );
             // console.log("Response:", response);
             setPurchasedData({ ...purchasedData, message: "" });
-            alert("Form submitted successfully!");
+            alert("Purchase submitted successfully!");
             navigate("/home", { replace: true });
           } catch (error) {
             console.error("Error:", error);

@@ -110,7 +110,7 @@ function Card2({ img, heading, types, staticData, courseData }) {
                     className="button3"
                     style={{ width: "150px", height: "35px" }}
                   >
-                    <span>Proceed</span>
+                    <span>Next</span>
                   </button>
                   <div className="">
                   <PersonalForm 
@@ -130,7 +130,7 @@ function Card2({ img, heading, types, staticData, courseData }) {
                     className="button3"
                     style={{ width: "150px", height: "35px" }}
                   >
-                    <span>Proceed</span>
+                    <span>Next</span>
                   </button>
                   <GroupForm
                     type={"group"}
