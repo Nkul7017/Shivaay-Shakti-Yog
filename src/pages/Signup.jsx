@@ -202,6 +202,9 @@ function Signup() {
                       className="  pl-3 button3  w-[150px]  lg:w-[228px] "
                       style={{ height: "35px" }}
                     >
+                      <option className="  bg-white  text-black ">
+                        Select Options
+                      </option>
                       {options?.map((value, i) => (
                         <option key={i} className="  bg-white  text-black ">
                           {value.label}
