@@ -11,6 +11,17 @@ function Login() {
     email: "",
     password: "",
   });
+
+  const [showPassword, setShowPassword] = useState(false); // To control the visibility of password
+
+  const handlePasswordChange = (e) => {
+    setData({ ...data, [e.target.name]: e.target.value });
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword); // Toggle the showPassword state
+  };
+
   async function handlesubmit(e) {
     e.preventDefault();
     if (isPassword(data.password.trim())) {
@@ -20,7 +31,6 @@ function Login() {
           "https://shivaay-shakti-backend-vm3k.onrender.com/api/auth/login",
           data
         );
-        // const res=await axios.post("https://shivaay-shakti-backend-vm3k.onrender.com/api/auth/login",data);
         if (res.status === 200) {
           console.log(res.data.user);
           setMessage("Login Successful");
@@ -32,7 +42,7 @@ function Login() {
         setMessage(e.response.data.message);
       }
     } else {
-      setMessage("Invlaid Credentials");
+      setMessage("*Invlaid Credentials");
     }
   }
   return (
@@ -42,12 +52,11 @@ function Login() {
           <HiXMark className="  text-3xl lg:text-4xl " />
         </Link>
       </div>
-      <div className=" flex w-[80vw]  justify-center items-center  ">
-        <div className="  hidden lg:block w-1/2 ">
+      <div className=" flex flex-col lg:flex-row w-[80vw]  justify-center items-center  ">
+        <div className=" md:w-1/2 ">
           <img src={logovideo} alt="" />
         </div>
-        {/* style={{ background: "linear-gradient(90deg, #FFF -0.83%, #FFF1C1 99.93%)",}}  */}
-        <div className=" w-[90vw] sm:w-[80vw] md:w-[70vw] h-[500px]  text-black mx-auto  lg:w-1/2 rounded-2xl  sm:p-8 md:p-12 lg:p-16 ">
+        <div className=" w-[80vw] sm:w-[80vw] md:w-[70vw] h-[500px]  text-black mx-auto  lg:w-1/2 rounded-2xl sm:p-8 md:p-12 lg:p-16 ">
           <h1 className="text-5xl heading ">Login</h1>
           <form className=" flex flex-col mt-10 gap-5 " onSubmit={handlesubmit}>
             <div className=" flex flex-col gap-2 ">
@@ -61,24 +70,32 @@ function Login() {
                 onChange={(e) =>
                   setData({ ...data, [e.target.name]: e.target.value })
                 }
-                className=" font-semibold  px-3   rounded-lg py-1 "
+                className=" font-semibold  px-3 h-10  rounded-md "
               />
             </div>
-            <div className=" flex flex-col bluish gap-2 ">
-              <label className=" text-2xl " htmlFor="">
+            <div className="flex flex-col bluish gap-2">
+              <label className="text-2xl" htmlFor="password">
                 Password
               </label>
-              <input
-                type="password"
-                name="password"
-                value={data.password}
-                onChange={(e) =>
-                  setData({ ...data, [e.target.name]: e.target.value })
-                }
-                className="  rounded-lg px-3 py-1  "
-              />
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"} // Toggle between password and text
+                  name="password"
+                  value={data.password}
+                  onChange={handlePasswordChange}
+                  className="rounded-md px-3 h-10 w-full outline-none"
+                />
+                <button
+                  type="button"
+                  onClick={togglePasswordVisibility}
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 text-sm bluish"
+                >
+                  {showPassword ? "Hide" : "Show"}
+                </button>
+              </div>
             </div>
-            <div className=" flex  items-center gap-5   mt-6  ">
+            <p className=" text-[16px] text-red-400 ">{message}</p>
+            <div className=" flex  items-center gap-5  ">
               <button
                 type="submit"
                 className=" text-2xl   button3  "
@@ -93,7 +110,7 @@ function Login() {
               >
                 <span>Signup</span>
               </Link>
-              <p className=" text-[18px] font-bold ">{message}</p>
+              
             </div>
             <div>
               <Link to="/forgot-password" className="  ">

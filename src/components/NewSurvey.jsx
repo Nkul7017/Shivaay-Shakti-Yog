@@ -4,9 +4,24 @@ import { HiXMark } from "react-icons/hi2";
 import countryList from "react-select-country-list";
 import Select from "react-select";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { IoArrowBack } from "react-icons/io5";
 function NewSurvey({ shurveyPopup, setShurveyPopup, logovideo }) {
+  const navigate = useNavigate();
   const options1 = [
-    { value: "waiting for options...", label: "waiting for options..." },
+    { value: "work_office", label: "Work at the office" },
+    { value: "work_remote", label: "Work remotely from home" },
+    { value: "exercise_regularly", label: "Exercise regularly" },
+    { value: "spend_time_family", label: "Spend time with family" },
+    { value: "socialize_friends", label: "Socialize with friends" },
+    {
+      value: "leisure_activities",
+      label: "Engage in leisure activities (e.g., reading, hobbies)",
+    },
+    { value: "outdoor_activities", label: "Participate in outdoor activities" },
+    { value: "relaxation", label: "Relax and unwind" },
+    { value: "travel_commute", label: "Commute or travel regularly" },
+    { value: "other", label: "Other" },
   ];
 
   const options = useMemo(() => countryList().getData(), []);
@@ -68,15 +83,6 @@ function NewSurvey({ shurveyPopup, setShurveyPopup, logovideo }) {
   }
 
   async function submit1() {
-    setData({ ...data, message: "" });
-    console.log(data);
-    delete data.message;
-    delete data.next;
-    delete data.hunit;
-    delete data.wunit;
-    data.daily_life_looks?.map((v) => data.daily_life.push(v.value));
-    delete data.daily_life_looks;
-    console.log(data);
     try {
       const response = await axios.post(
         "https://shivaay-shakti-backend-vm3k.onrender.com/api/survey",
@@ -87,6 +93,28 @@ function NewSurvey({ shurveyPopup, setShurveyPopup, logovideo }) {
         setCongrats(true);
       }
       console.log(response);
+      setData({
+        name: "",
+        born: "",
+        country: "",
+        gender: "",
+        specify: "",
+        height: 0,
+        hunit: "",
+        weight: 0,
+        wunit: "",
+        level: "",
+        goals: [],
+        gspecify: "",
+        daily_life_looks: [],
+        daily_life: [],
+        morning: [],
+        evening: [],
+        email: "",
+        contact: null,
+        next: 0,
+        message: "",
+      });
     } catch (e) {
       setData({ ...data, message: "Server Error" });
       console.log(e);
@@ -145,15 +173,15 @@ function NewSurvey({ shurveyPopup, setShurveyPopup, logovideo }) {
           alignItems: "center",
         }}
       >
-        <div className="  grid lg:grid-cols-2 relative  place-content-center w-screen h-screen ">
-          <div className=" hidden lg:grid place-content-center  ">
+        <div className=" relative flex flex-col md:flex-row items-center justify-center w-screen h-screen ">
+          <div className="w-1/3 md:w-1/2">
             <img src={logovideo} alt="" />
           </div>
 
           {/*----------------------------- Page1------------------------------------ */}
           {data?.next === 0 && (
             <>
-              <div className=" py-14 lg:py-32   px-11 flex  flex-col gap-3 lg:gap-5 ">
+              <div className=" w-[80vw] md:w-[60vw] lg:w-[500px]  lg:py-32 overflow-y-scroll  md:px-10 flex  flex-col gap-3 lg:gap-5 ">
                 <div className=" flex flex-col gap-1 ">
                   <label className=" bluish text-sm lg:text-[18px] " htmlFor="">
                     Name
@@ -163,11 +191,11 @@ function NewSurvey({ shurveyPopup, setShurveyPopup, logovideo }) {
                     name="name"
                     value={data.name}
                     onChange={handle}
-                    className=" w-[220px] lg:w-[400px] h-7 lg:h-8 rounded p-1"
+                    className=" w-full h-8 rounded p-1"
                   />
                 </div>
 
-                <div className=" flex flex-col  lg:flex-row gap-2 lg:gap-5 ">
+                <div className=" flex flex-row justify-between ">
                   <div className=" flex flex-col gap-1">
                     <label htmlFor="" className="bluish text-sm lg:text-[18px]">
                       Date of Birth
@@ -177,23 +205,29 @@ function NewSurvey({ shurveyPopup, setShurveyPopup, logovideo }) {
                       value={data.born}
                       name="born"
                       onChange={handle}
-                      className="p-1 rounded
-      w-[180px]  lg:w-[228px] h-8 "
+                      className="w-[160px] p-3 h-8  rounded "
                     />
                   </div>
                   <div className=" flex flex-col gap-1">
-                    <label htmlFor="" className=" text-sm lg:text-[18px]">
-                      Country
+                    <label
+                      htmlFor=""
+                      className="  bluish text-sm lg:text-[18px]"
+                    >
+                      Your Country
                     </label>
                     <select
                       name="country"
                       value={data.country}
                       onChange={handle}
                       id=""
-                      className="  pl-3 button3 w-[150px]  lg:w-[228px] h-8"
+                      className="  pl-3 button3 w-[160px]"
+                      style={{ height: "35px" }}
                     >
-                      {options?.map((value, index) => (
-                        <option key={index} className=" bg-white  text-black ">
+                      <option className="  bg-white  text-black ">
+                        Select Options
+                      </option>
+                      {options?.map((value, i) => (
+                        <option key={i} className="  bg-white  text-black ">
                           {value.label}
                         </option>
                       ))}
@@ -206,7 +240,7 @@ function NewSurvey({ shurveyPopup, setShurveyPopup, logovideo }) {
                     <label htmlFor="" className="bluish text-sm lg:text-[18px]">
                       Gender
                     </label>
-                    <div className=" flex flex-wrap gap-3 lg:gap-5 ">
+                    <div className=" flex flex-wrap gap-3 md:justify-between">
                       <button
                         onClick={handle1}
                         value="male"
@@ -265,52 +299,62 @@ function NewSurvey({ shurveyPopup, setShurveyPopup, logovideo }) {
                     </div>
                   </div>
                 </div>
-                <div className=" flex    gap-3 lg:gap-5 ">
-                  <div className=" flex flex-col gap-1">
-                    <label htmlFor="" className="bluish text-sm lg:text-[18px]">
+                <div className="flex justify-between">
+                  <div className="flex flex-col gap-1">
+                    <label
+                      htmlFor="height"
+                      className="bluish text-sm lg:text-[18px]"
+                    >
                       Height
                     </label>
-                    <div className=" flex gap-2  ">
-                      <input
-                        type="number"
-                        name="height"
-                        value={data.height}
-                        onChange={handle}
-                        className=" w-[50px] lg:w-[140px] h-8 px-2 rounded"
-                      />
-                      <select
-                        onChange={handle}
-                        name="hunit"
-                        className=" border border-[#2C3E50] rounded-md p-1 h-8  "
-                      >
-                        <option value="inches">inches</option>
-                        <option value="cm">cm</option>
-                        <option value="ft">ft</option>
-
-                      </select>
+                    <div className="relative flex items-center gap-2">
+                      <div className="relative">
+                        <input
+                          type="text"
+                          name="height"
+                          value={data.height}
+                          onChange={handle}
+                          className="w-[125px] lg:w-[160px] h-8 p-2 pr-12 rounded border border-gray-300"
+                        />
+                        <select
+                          onChange={handle}
+                          name="hunit"
+                          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-transparent outline-none text-gray-500 text-sm"
+                        >
+                          <option value="inches">in</option>
+                          <option value="cm">cm</option>
+                          <option value="ft">ft</option>
+                        </select>
+                      </div>
                     </div>
                   </div>
-                  <div className=" flex flex-col gap-1">
-                    <label htmlFor="" className="bluish text-sm lg:text-[18px]">
+
+                  {/* Weight Section */}
+                  <div className="flex flex-col gap-1">
+                    <label
+                      htmlFor="weight"
+                      className="bluish text-sm lg:text-[18px]"
+                    >
                       Weight
                     </label>
-                    <div className=" flex gap-2 ">
-                      <input
-                        type="number"
-                        name="weight"
-                        value={data.weight}
-                        onChange={handle}
-                        className=" w-[50px] lg:w-[140px] h-8  px-2 rounded  "
-                      />
-                      <select
-                        id="weight"
-                        onChange={handle}
-                        name="wunit"
-                        className=" border border-[#2C3E50] rounded-md p-1 h-8  "
-                      >
-                        <option value="kg">kg</option>
-                        <option value="pound">pound</option>
-                      </select>
+                    <div className="relative flex items-center gap-2">
+                      <div className="relative">
+                        <input
+                          type="text"
+                          name="weight"
+                          value={data.weight}
+                          onChange={handle}
+                          className="w-[125px] lg:w-[160px] h-8 p-2 pr-14 rounded border border-gray-300"
+                        />
+                        <select
+                          onChange={handle}
+                          name="wunit"
+                          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-transparent outline-none text-gray-500 text-sm"
+                        >
+                          <option value="kg">kg</option>
+                          <option value="pound">pnd</option>
+                        </select>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -375,7 +419,7 @@ function NewSurvey({ shurveyPopup, setShurveyPopup, logovideo }) {
 
           {/* // ------------------------------ Page2 --------------------------------------- */}
           {data?.next === 1 && (
-            <div className=" py-12 lg:py-32 lg:px-14   px-11 flex  flex-col gap-3 lg:gap-5 ">
+            <div className=" w-[80vw] lg:w-[60vw] lg:py-32 lg:px-14 flex overflow-y-scroll  flex-col gap-5 ">
               <div className=" flex flex-col gap-2 lg:gap-3">
                 <label htmlFor="" className="bluish text-sm lg:text-[18px]">
                   Select the goal/ goals and diseases that you wish to treat
@@ -514,6 +558,7 @@ function NewSurvey({ shurveyPopup, setShurveyPopup, logovideo }) {
                     onChange={handleChange}
                     isMulti={true}
                     placeholder={options1[0].label}
+                    className="w-[80vw] md:w-full"
                   />
                 </div>
               </div>
@@ -619,15 +664,17 @@ function NewSurvey({ shurveyPopup, setShurveyPopup, logovideo }) {
               </div>
 
               <div className=" mt-3  flex gap-3 lg:mt-5">
-                {/* <button className=' button3  text-xl  ' onClick={handlesubmit} style={{width:"140px",height:"40px"}} >Submit</button> */}
                 <button
-                  className=" button3  text-xl  "
+                  className=" button2  text-xl  "
                   onClick={() => {
                     setData({ ...data, next: data?.next - 1 });
                   }}
                   style={{ width: "140px", height: "40px" }}
                 >
-                  Back
+                  <div className="flex items-center gap-1  ">
+                    <IoArrowBack size={16} />
+                    <span className=" text-[16px]">Back</span>
+                  </div>
                 </button>
                 <button
                   className=" button3  text-xl  "
@@ -643,7 +690,7 @@ function NewSurvey({ shurveyPopup, setShurveyPopup, logovideo }) {
             </div>
           )}
           {data?.next === 2 && (
-            <div className=" py-12 lg:py-32 lg:px-14   px-11 flex  flex-col gap-3 lg:gap-5 ">
+            <div className=" w-[80vw] lg:w-[60vw] md:px-10  lg:py-32 lg:px-14 flex  flex-col gap-3 lg:gap-5 ">
               <div className=" flex flex-col gap-1 ">
                 <label className=" bluish text-sm lg:text-[18px] " htmlFor="">
                   Email
@@ -653,7 +700,7 @@ function NewSurvey({ shurveyPopup, setShurveyPopup, logovideo }) {
                   name="email"
                   value={data?.email}
                   onChange={handle}
-                  className=" w-[220px] lg:w-[400px] h-7 lg:h-8 "
+                  className="w-full  h-10 border border-black rounded "
                 />
               </div>
               <div className=" flex flex-col gap-1 ">
@@ -666,10 +713,24 @@ function NewSurvey({ shurveyPopup, setShurveyPopup, logovideo }) {
                   name="contact"
                   value={data.contact}
                   onChange={handle}
-                  className=" w-[220px] lg:w-[400px] h-7 lg:h-8 "
+                  className="w-full h-10 px-2 border border-black rounded"
                 />
               </div>
+              <p className=" text-red-500">{data.message}</p>
+
               <div className=" mt-3  flex gap-3 lg:mt-5">
+                <button
+                  className=" button2  text-xl  "
+                  onClick={() => {
+                    setData({ ...data, next: data?.next - 1 });
+                  }}
+                  style={{ width: "120px", height: "40px" }}
+                >
+                  <div className="flex items-center gap-1  ">
+                    <IoArrowBack size={16} />
+                    <span className=" text-[16px]">Back</span>
+                  </div>
+                </button>
                 <button
                   className=" button3  text-xl  "
                   onClick={handlesubmit}
@@ -677,17 +738,7 @@ function NewSurvey({ shurveyPopup, setShurveyPopup, logovideo }) {
                 >
                   Submit
                 </button>
-                <button
-                  className=" button3  text-xl  "
-                  onClick={() => {
-                    setData({ ...data, next: data?.next - 1 });
-                  }}
-                  style={{ width: "140px", height: "40px" }}
-                >
-                  Back
-                </button>
               </div>
-              <p className=" text-red-500">{data.message}</p>
             </div>
           )}
 
@@ -710,13 +761,23 @@ function NewSurvey({ shurveyPopup, setShurveyPopup, logovideo }) {
           alignItems: "center",
         }}
       >
-        <p className=" text-6xl text-white font-bold heading ">
-          Congratulation
-        </p>
-        <div className=" absolute top-5 right-5  ">
-          <button onClick={() => setCongrats(!congrats)}>
-            <HiXMark className="   text-3xl lg:text-5xl " />
-          </button>
+        <div>
+          <p className="text-xl w-[80vw] text-center lg:text-6xl text-white font-bold heading ">
+            Congratulation
+          </p>
+          <div className="flex justify-center items-center mt-4 w-[70vw] lg:w-[50vw] mx-auto gap-4 ">
+            <button onClick={() => navigate("/login")}>
+              <span className="button3 text-lg ">Login</span>
+            </button>
+            <button onClick={() => navigate("/home")}>
+              <span className="button3 text-lg ">Home</span>
+            </button>
+          </div>
+          <div className=" absolute top-5 right-5  ">
+            <button onClick={() => setCongrats(!congrats)}>
+              <HiXMark className="   text-3xl lg:text-5xl " />
+            </button>
+          </div>
         </div>
       </Popup>
     </>

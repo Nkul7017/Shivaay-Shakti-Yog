@@ -37,21 +37,28 @@ function ForgotPassword() {
             <label className=" text-2xl bluish ml-1 " htmlFor="">
               Email
             </label>
+            <p className="my-2 text-[14px]">
+              Reset Password details will be redirected to your registered email
+            </p>
             <input
               type="email"
               placeholder="Enter Email"
               autoComplete="off"
               name="email"
               onChange={(e) => setData({ ...data, email: e.target.value })}
-              className=" font-semibold  border border-gray-300 px-3   text-red-900  rounded-lg py-1 "
+              className=" font-semibold  border border-gray-300 px-3 outline-none rounded-lg h-10 "
             />
           </div>
-          <button type="submit" className="button3 mt-7 text-2xl px-3 py-1 ">
-            <span>Send</span>
-          </button>
-          <p className="mt-1 font-bold text-center text-red-500">
-            {data?.message}
-          </p>
+
+          <p className="mt-5 text-red-500">{data?.message}</p>
+          <div className="flex justify-between items-center">
+            <button type="submit" className="button3  mt-5 text-2xl px-3 ">
+              <span>Send</span>
+            </button>
+            <button type="button" className="button2  mt-5 text-lg px-3 " onClick={() => navigate('/')}>
+              <span>Home</span>
+            </button>
+          </div>
         </form>
       </div>
     </div>

@@ -3,7 +3,7 @@ import footerlogo from "../assets/Images/footerlogo.png";
 import { Link } from "react-router-dom";
 import { GoLocation, GoMail } from "react-icons/go";
 import { BsTelephone } from "react-icons/bs";
-import yt from "../../public/yt.svg";
+
 function Footer() {
   return (
     <div className="">
@@ -43,7 +43,11 @@ function Footer() {
                 <p>
                   <GoLocation size={24} />
                 </p>
-                <a target="_blank" href="https://maps.app.goo.gl/ECf6xCU2eRYGUe9x6" className=" text-justify">
+                <a
+                  target="_blank"
+                  href="https://maps.app.goo.gl/ECf6xCU2eRYGUe9x6"
+                  className=" text-justify"
+                >
                   Shaheed Gireesh Bhadri Chowk, Mothrowala, Banjarawala Rd,
                   Ajabpur Khurd, Dehradun, Uttarakhand 248001
                 </a>
@@ -52,9 +56,9 @@ function Footer() {
             <div></div>
           </div>
           <div className="text-2xl  flex sm:flex-row flex-col heading justify-center items-center w-full    flex-wrap gap-x-28 gap-y-4">
-            <Link to="/">Home</Link>
-            <Link to="/Courses">Courses</Link>
-            <Link to="/about-us">About</Link>
+            <a href="/">Home</a>
+            <a href="/Courses">Courses</a>
+            <a to="/about-us">About</a>
             <a
               href={"/terms&conditions"}
               target="_blank"
@@ -62,16 +66,17 @@ function Footer() {
             >
               Terms And Condition
             </a>
-            {/* <Link to='/' ><img src={yt} className=" w-[50px] h-[50px] " alt="" /></Link> */}
           </div>
           <div className=" flex flex-row justify-center w-[50vw] para mx-auto gap-10 md:hidden">
             <a>
-              <BsTelephone size={20} clas />
+              <BsTelephone size={20} />
             </a>
-            <a>
+
+            <a href="mailto:shivaayshaktiyog@gmail.com">
               <GoMail size={24} />
             </a>
-            <a>
+
+            <a target="_blank" href="https://maps.app.goo.gl/ECf6xCU2eRYGUe9x6">
               <GoLocation size={24} />
             </a>
           </div>
