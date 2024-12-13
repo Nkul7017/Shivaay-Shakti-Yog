@@ -14,6 +14,45 @@ import axios from "axios";
 AOS.init({
   duration: 1200,
 });
+
+const packages = [
+  {
+    title: "Drop-In Class",
+    description:
+      "Perfect for those who want the flexibility to join a session whenever it suits their schedule.",
+    price: 200,
+    currency: "Rs",
+    duration: "1 Day",
+  },
+  {
+    title: "Monthly Unlimited",
+    description:
+      "Unlimited access to all group sessions for the month. Best for those who want to practice regularly without any limits.",
+    price: 2500,
+    currency: "Rs",
+    duration: "1 Month",
+  },
+  {
+    title: "Half Yearly Package",
+    description:
+      "Half Yearly Group Yoga Class Package, perfect for those committed to making a lasting change in their lives, this package offers the perfect blend of flexibility, community support, and expert guidance.",
+    price: 12000,
+    currency: "Rs",
+    duration: "6 Month",
+
+    recommendation: "Highly Recommended",
+  },
+  {
+    title: "Yearly Package",
+    description:
+      "Our Yearly Group Yoga Class Package, designed for those who are serious about their practice and long-term health, this package offers unparalleled value, flexibility, and comprehensive support.",
+    price: 25000,
+    duration: "12 Month",
+
+    currency: "Rs",
+  },
+];
+
 function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
   const navigate = useNavigate();
   const [purchasedData, setPurchasedData] = useState({
@@ -30,6 +69,7 @@ function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
     index1: null,
     link: "",
   });
+  const [price, setPrice] = useState(0);
   const addDays = (date, days) => {
     console.log(date, days);
     const result = new Date(date);
@@ -41,7 +81,6 @@ function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
       setPurchasedData({ ...purchasedData, message: "" });
       if (
         purchasedData.duration !== "" &&
-        purchasedData.price !== "" &&
         purchasedData.preferred_timing !== ""
       ) {
         setPurchasedData({ ...purchasedData, toggle2: true, message: "" });
@@ -76,94 +115,103 @@ function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
     }
   }
 
+  // For popup courses
+  const [expandedIndex, setExpandedIndex] = useState(null);
+  const [selectedPackageIndex, setSelectedPackageIndex] = useState(null);
+
+  const toggleExpand = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
+  const handlePackageClick = (index, pkg) => {
+    setSelectedPackageIndex(index); // Mark the clicked package as selected
+
+    setPurchasedData({
+      ...purchasedData, // Preserve existing data
+      price: pkg.price,
+      duration: pkg.duration,
+    });
+  };
+
   async function handleSubmit() {
-    // Set initial loading message
     setPurchasedData({ ...purchasedData, message: "Loading" });
-  
-    if (!localStorage.getItem("user")) {
-      navigate("/login", { replace: true });
-      return;
-    }
-  
-    console.log(purchasedData.duration);
-  
-    // Validate fields
-    const isTransactionIdValid =
-      purchasedData?.transaction_id?.trim().length === 6;
-    const isAgreeChecked = purchasedData?.agree === true;
-    const isDurationValid = Boolean(purchasedData?.duration);
-    const isPriceValid = purchasedData?.price !== "";
-    const isTimingValid = purchasedData?.preferred_timing !== "";
-  
-    if (!isTransactionIdValid || !isAgreeChecked || !isDurationValid || !isPriceValid || !isTimingValid) {
-      setPurchasedData({
-        ...purchasedData,
-        message: "* All Fields Are Mandatory",
-      });
-      alert("All fields are mandatory. Please check again.");
-      return;
-    }
-  
-    // Process duration and calculate expiration date
-    let calculatedDuration = 0;
-    if (typeof purchasedData.duration === "string") {
-      const durationParts = purchasedData.duration.split(" ");
-      if (durationParts[1] === "Month") {
-        calculatedDuration = parseInt(durationParts[0], 10) * 30;
+    console.log(purchasedData, price);
+
+    if (localStorage.getItem("user")) {
+      console.log(purchasedData.duration);
+      if (
+        purchasedData?.transaction_id?.trim().length === 6 &&
+        purchasedData.agree === true &&
+        purchasedData.preferred_timing !== ""
+      ) {
+        if (typeof purchasedData.duration === "string") {
+          const b = purchasedData.duration.split(" ");
+          if (b[1] === "Days") {
+            b[0] = parseInt(b[0]) * 1;
+          }
+          if (b[1] === "Month" && b[0] == "1") {
+            b[0] = parseInt(b[0]) * 30;
+          }
+          if (b[1] === "Month" && b[0] == "6") {
+            b[0] = parseInt(b[0]) * 180;
+          }
+          if (b[1] === "Month" && b[0] == "12") {
+            b[0] = parseInt(b[0]) * 360;
+          }
+          const expirationDate = addDays(
+            courseData?.group_starting_date,
+            parseInt(b[0])
+          );
+          console.log(purchasedData);
+          try {
+            const response = await axios.post(
+              "https://shivaay-shakti-backend-vm3k.onrender.com/api/purchase/",
+              {
+                name: JSON.parse(localStorage.getItem("user"))?.name,
+                user_id: purchasedData?.user_id,
+                preferred_timing: purchasedData?.preferred_timing,
+                duration: purchasedData?.duration,
+                status: purchasedData?.status,
+                price: purchasedData?.price,
+                transaction_id: purchasedData?.transaction_id,
+                transaction_status: "pending",
+                link: purchasedData?.link,
+                starting_date: courseData?.group_starting_date,
+                course_id: courseData?._id,
+                course_name: courseData?.name,
+                expiration_date: expirationDate,
+                course_type: type,
+                points: {},
+              },
+              {
+                headers: {
+                  Authorization: localStorage.getItem("jwt"),
+                },
+              }
+            );
+            // console.log("Response:", response);
+            setPurchasedData({ ...purchasedData, message: "" });
+            alert("Purchase submitted successfully!");
+            navigate("/home", { replace: true });
+          } catch (error) {
+            console.error("Error:", error);
+            setPurchasedData({ ...purchasedData, message: "" });
+            alert("Submission failed. Please try again.");
+          }
+        } else {
+          setPurchasedData({ ...purchasedData, message: "" });
+          alert("Duration is missing");
+        }
+      } else {
+        setPurchasedData({
+          ...purchasedData,
+          message: "* All Fields Are Mandatory",
+        });
+        alert("All fields are mandatory. Please check again.");
       }
     } else {
-      setPurchasedData({ ...purchasedData, message: "" });
-      alert("Duration is missing or invalid.");
-      return;
-    }
-  
-    const expirationDate = addDays(
-      courseData?.group_starting_date,
-      calculatedDuration
-    );
-  
-    // Prepare data for submission
-    const purchasePayload = {
-      name: JSON.parse(localStorage.getItem("user"))?.name,
-      user_id: purchasedData?.user_id,
-      preferred_timing: purchasedData?.preferred_timing,
-      duration: purchasedData?.duration,
-      status: purchasedData?.status,
-      price: purchasedData?.price,
-      transaction_id: purchasedData?.transaction_id,
-      transaction_status: "pending",
-      link: purchasedData?.link,
-      starting_date: courseData?.group_starting_date,
-      course_id: courseData?._id,
-      course_name: courseData?.name,
-      expiration_date: expirationDate,
-      course_type: type,
-    };
-  
-    console.log("Data being sent:", purchasePayload);
-  
-    try {
-      const response = await axios.post(
-        "https://shivaay-shakti-backend-vm3k.onrender.com/api/purchase",
-        purchasePayload,
-        {
-          headers: {
-            Authorization: localStorage.getItem("jwt"),
-          },
-        }
-      );
-  
-      console.log("Response:", response);
-      setPurchasedData({ ...purchasedData, message: "" });
-      alert("Form submitted successfully!");
-      navigate("/home", { replace: true });
-    } catch (error) {
-      console.error("Error:", error);
-      setPurchasedData({ ...purchasedData, message: "" });
-      alert("Submission failed. Please try again.");
+      navigate("/login", { replace: true });
     }
   }
-  
 
   return (
     <>
@@ -177,12 +225,12 @@ function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
           // backgroundImage:"url('https://cdn.discordapp.com/attachments/1111568797476868128/1113746626696204349/WhatsApp_Image_2023-06-01_at_11.16.50.jpg')",
           width: "95vw",
           backgroundColor: "#FFF1C1",
-          height: "95vh",
+          height: "80vh",
           borderRadius: "10px",
         }}
       >
-        <div className="  w-[100%] h-[100%] p-4 sm:p-6 md:p-10 lg:p-24   ">
-          <div className=" relative w-[100%] h-[100%]">
+        <div className="h-[75vh] md:w-[100%] md:h-[90%] lg:h-[95%] p-3 sm:p-6 md:p-10 lg:p-24 overflow-y-scroll z-[9999] ">
+          <div className="h-fit relative md:w-[100%] md:min-h-[100%] sm:max-h-screen ">
             <div className="  flex justify-between   ">
               <h1 className=" text-2xl  lg:text-4xl heading">
                 {courseData?.name} {courseData?.course_duration_days2} Days
@@ -266,7 +314,7 @@ function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
               </div>
             </div>
 
-            <div className=" mt-6 sm:mt-14">
+            <div className=" mt-6 sm:mt-10">
               <p
                 className=" text-xl lg:text-2xl   heading "
                 style={{ color: "#283143" }}
@@ -308,14 +356,14 @@ function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
               {/* <p className=' font-semibold mt-2 text-sm text-red-500'>{purchasedData.message}</p> */}
             </div>
 
-            <div className=" mt-6 sm:mt-14">
+            <div className=" mt-6 sm:mt-10">
               <p
                 className=" text-xl lg:text-2xl   heading "
                 style={{ color: "#283143" }}
               >
                 Select Duration
               </p>
-              <div className=" mt-4 flex flex-wrap gap-3 lg:gap-10">
+              {/* <div className=" mt-4 flex flex-wrap gap-3 lg:gap-10">
                 {
                   // data&&data.group_duration?.map
                   courseData &&
@@ -347,6 +395,48 @@ function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
                       </>
                     ))
                 }
+              </div> */}
+
+              <div className="flex flex-wrap   gap-6 pt-2 ">
+                {packages.map((pkg, index) => {
+                  const words = pkg.description.split(" ");
+                  const shortDescription = words.slice(0, 20).join(" ");
+                  const isExpanded = expandedIndex === index;
+                  const isSelected = selectedPackageIndex === index;
+
+                  return (
+                    <div key={index}>
+                      <div
+                        className={`w-72 p-3 h-[240px]  border  shadow-lg rounded-lg  cursor-pointer ${
+                          selectedPackageIndex === index
+                            ? " text-white "
+                            : "border-[#db9562] text-[#db9562]"
+                        }`}
+                        style={
+                          selectedPackageIndex === index
+                            ? {
+                                background:
+                                  "linear-gradient(103deg, #E5C75E 24.85%, #B96E38 111.06%)",
+                              }
+                            : { background: "" }
+                        }
+                        onClick={() => handlePackageClick(index, pkg)}
+                      >
+                        <h2 className="text-lg font-semibold ">{pkg.title}</h2>
+                        <p className="mt-1 ">{pkg.description}</p>
+
+                        {pkg.recommendation && (
+                          <p className="mt-2 bg-green-600 p-2 rounded-lg text-white text-sm text-primary02 font-semibold">
+                            {pkg.recommendation}
+                          </p>
+                        )}
+                      </div>
+                      <p className="heading text-[#283143] font-bold mt-2">
+                        {pkg.currency} {pkg.price}
+                      </p>
+                    </div>
+                  );
+                })}
               </div>
               <p className=" font-semibold mt-2 text-sm text-red-500">
                 {purchasedData.message}
@@ -354,7 +444,7 @@ function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
             </div>
             <button
               onClick={handle1}
-              className="absolute bottom-10 sm:bottom-0 button3 right-4"
+              className="mt-8 p-3 xl:mt-0 xl:absolute xl:bottom-10  button3 xl:right-4"
             >
               Proceed
             </button>

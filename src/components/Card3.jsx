@@ -20,11 +20,11 @@ function Card3({ img, type, types, staticData, courseData }) {
               <div className=" w-[100%]  gap-1 pb-4 h-[100%] flex flex-col justify-end items-center">
                 <p className="text-sm bluish ">{types}</p>
                 <p className="text-sm bluish ">Training Course</p>
-                <p className="price1 mt-1 text-xl ">
+                {/* <p className="price1 mt-1 text-xl ">
                   {types === "group"
                     ? "₹" + courseData?.price2
                     : "₹" + courseData?.price1}
-                </p>
+                </p> */}
               </div>
             </div>
           </button>

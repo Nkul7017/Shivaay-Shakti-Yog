@@ -91,7 +91,7 @@ function Gallery() {
   return (
     <>
       <div className="  flex flex-col gap-8  ">
-        <div className="text-left heading text-3xl sm:text-4xl pt-28 pl-8 sm:pl-40 ">
+        <div className="text-left heading text-3xl sm:text-4xl pl-8 sm:pl-40 ">
           Shivaay Shakti Gallery
         </div>
         <div className="flex overflow-x-scroll scrollbar-hide   w-[87vw] sm:w-[96vw] mx-auto space-x-2 mt-8">

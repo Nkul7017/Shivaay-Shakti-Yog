@@ -1,0 +1,25 @@
+const trainerData = {
+    data: `
+      <h1 style='font-size:16px;font-weight:bold;'>About Our Trainers</h1>
+      <p style='margin-top:10px;'>At Shivaayshakti, our trainers are more than just instructors—they are the heart and soul of our community. Each of our trainers brings a unique blend of expertise, passion, and dedication, ensuring that every class you take is a step toward greater well-being, mindfulness, and personal growth.</p>
+      <h2 style='font-size:16px;font-weight:bold;margin-top:10px;'>Highly Trained and Certified Experts</h2>
+      <p style='margin-top:10px;'>Our team of trainers is comprised of highly skilled professionals, each holding certifications from respected yoga institutions. With years of experience across various disciplines—including Hatha, Vinyasa, Ashtanga, Kundalini, and specialized areas like pre and post-natal yoga—our trainers are equipped to guide you safely and effectively through your yoga journey.</p>
+      <h2 style='font-size:16px;font-weight:bold;margin-top:10px;'>Diverse Teaching Styles and Specialties</h2>
+      <p style='margin-top:10px;'>We understand that every individual’s path in yoga is different, and our trainers reflect that diversity in their teaching styles and specialties. Whether you’re looking to deepen your practice, find relaxation, improve flexibility, or focus on spiritual growth, you’ll find a trainer who resonates with your personal goals. From restorative yoga to dynamic flows, our trainers offer a wide range of classes tailored to all levels, from beginners to advanced practitioners.</p>
+      <h2 style='font-size:16px;font-weight:bold;margin-top:10px;'>A Commitment to Continuous Learning</h2>
+      <p style='margin-top:10px;'>Our trainers are lifelong learners, continuously enhancing their knowledge and skills to bring the latest and most effective practices to their students. They regularly participate in advanced workshops, teacher training, and wellness courses, ensuring that you receive instruction that is both current and grounded in deep tradition.</p>
+      <h2 style='font-size:16px;font-weight:bold;margin-top:10px;'>Personalized Attention and Support</h2>
+      <p style='margin-top:10px;'>What sets our trainers apart is their commitment to providing personalized attention and support to every student. Whether you’re in a live interactive class or following along with a recorded session, our trainers are dedicated to helping you achieve your personal best. They take the time to understand your needs, offer modifications, and provide encouragement, making your practice both safe and rewarding.</p>
+      <h2 style='font-size:16px;font-weight:bold;margin-top:10px;'>Inspiring and Approachable Mentors</h2>
+      <p style='margin-top:10px;'>Beyond their technical skills, our trainers are approachable mentors who genuinely care about your progress. They create a welcoming and inclusive environment where you feel supported every step of the way. Many of our students describe their relationship with our trainers as transformative, not just in terms of their physical practice but in their overall approach to life.</p>
+      <h2 style='font-size:16px;font-weight:bold;margin-top:10px;'>Community Leaders and Contributors</h2>
+      <p style='margin-top:10px;'>Our trainers are also active leaders within the Shivaayshakti Community. They don’t just teach; they engage with members through community discussions, Q&A sessions, and special events. Their involvement goes beyond the mat, as they contribute to the growth and cohesion of our community, ensuring that every member feels connected and valued.</p>
+      <h2 style='font-size:16px;font-weight:bold;margin-top:10px;'>Global Experience and Recognition</h2>
+      <p style='margin-top:10px;'>Many of our trainers have taught internationally, leading workshops, retreats, and masterclasses around the world. Their global experience brings a rich and diverse perspective to their teaching, allowing them to connect with students from all walks of life. Some of our trainers have been featured in leading yoga publications and have received accolades for their contributions to the yoga community.</p>
+      <h2 style='font-size:16px;font-weight:bold;margin-top:10px;'>Join Us on the Mat</h2>
+      <p style='margin-top:10px;'>Whether you’re taking your first steps into yoga or you’re a seasoned practitioner, our trainers are here to guide, inspire, and support you. Explore their profiles, find the perfect match for your needs, and start your journey with the assurance that you are in expert hands. At Shivaayshakti, we believe that the right teacher can make all the difference, and we are proud to have a team of trainers who are as passionate about your growth as you are.</p>
+    `
+  };
+  
+  export default trainerData;
+  

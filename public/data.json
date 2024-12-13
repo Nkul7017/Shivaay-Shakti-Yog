@@ -1,76 +1,244 @@
 [
   {
     "_id": 2,
-    "name":"Stress Management",
-    "questions":"<h1   style='font-size: 16px;font-weight:bold;' >Signs of Gaining Extra Weight?</h1><p style='margin-top:10px;'>In many cases, symptoms are common to most people who are gaining weight, no matter what the cause is. These symptoms include:</p> <ol style='list-style-type:decimal;list-style-position: inside;margin-top:10px;'> <li>You have high blood pressure</li> <li>You get breathless</li> <li>You snore in the night</li> <li>Skin sensitivity</li> <li>You are always tired</li> </ol><h1 style='margin-top:10px;font-size: 16px;font-weight:bold;'>Causes of Excessive Weight Gain?</h1><p style='margin-top:10px;'>Before starting the weight loss journey, it's essential to understand the causes. Only then can you achieve your goal and maintain a healthy life. Here are some reasons that might be causing you to gain weight:</p><ul style='margin-top: 10px; list-style-type: disk; list-style-position: inside;'><li><strong>Hypothyroidism:</strong> A thyroid imbalance can lead to weight gain, along with other symptoms like thinning hair, dry skin, fatigue, and depression.</li> <li><strong>Depression:</strong> Weight gain and obesity can be physical side effects of depression, often linked to higher levels of the stress hormone cortisol.</li><li><strong>Insomnia:</strong> Lack of sleep can lead to weight gain by affecting hormones like cortisol and insulin, as well as disrupting hunger signals.</li><li><strong>Menopause:</strong> Changes in hormones during menopause, coupled with hot flashes and moodiness, may contribute to weight gain.</li><li><strong>Polycystic Ovarian Syndrome (PCOS):</strong> PCOS can cause weight gain due to hormonal imbalances and insuli sensitivity issues.</li><li><strong>Steroids:</strong> Medications like steroids, when used to treat certain conditions, can increase appetite and lead to overeating and weight gain.</li></ul><h1 style='margin-top:10px;font-size: 16px;font-weight:bold;' >Does Yoga Help with Weight Loss?</h1><p style='margin-top:10px; >Incorporating yoga into a weight loss journey can have several benefits:</p><ul  style='margin-top:10px; ' > <li><strong>Increased Metabolic Rate:</strong> Yoga can help boost the metabolic rate, allowing the body to burn more calories at rest.</li> <li><strong>Mindfulness:</strong> Yoga promotes increased awareness of the body and mind, helping individuals notice hunger, fullness, and fatigue.</li> <li><strong>Stress Reduction:</strong> Decreasing stress through yoga can contribute to better lifestyle decisions, including healthier eating and exercise habits.</li> <li><strong>Overall Well-being:</strong> The combination of physical and mental benefits from yoga can support weight loss efforts.</li></ol><p style='margin-top:10px;'>These off-the-mat benefits, combined with the calories burned during yoga practice, contribute to a person's ability to lose weight. However, the effectiveness may vary based on individual factors.</p>",
-  "banner1":"/assets/Programs/1/banner1.jpg",
-      "banner2":"/assets/Programs/2/banner2.jpg",
-      "banner3":"/assets/Programs/2/banner3.jpg",
-      "banner4":"/assets/Programs/2/banner4.jpeg",
-      "group_benefits":[
-        { "icon":"","heading":"Yoga session" },
-        { "icon":"","heading":"Free workshops" },
-        { "icon":"","heading":"Consultancy" },
-        { "icon":"","heading":"6 days classes/week " },
-        { "icon":"","heading":"Twenty four yoga sessions/month" }
-      ],
-      "personal_benefits":[
-        { "icon":"","heading":"Online Live sessions" },
-        { "icon":"","heading":"Recorded sessions" },
-        { "icon":"","heading":"Free Workshops " },
-        { "icon":"","heading":"Free personal consultation " },
-        { "icon":"","heading":"Diet and health tips " },
-        { "icon":"","heading":"Weekly encouraging tasks  " },
-        { "icon":"","heading":"Yogaasana,  pranayama and meditation " }
-      ],
-      "group_card_description":"This program  helps you to expands the capacity to cope with stress and nervousness, works on interactive abilities , profound prosperity, tactile ,mental and actual wellbeing ,improve concentration. ",
-      "personal_card_description":"In personal training  we customized the session according to the person needs . First we will examine your specific necessities and objectives, capacity ,limits  and then we will make a program for you . ",
-      "benefits":[
-        {"heading":"Flexible Body","icon":"/assets/Programs/2/benefits/flexible.svg"},
-        {"heading":"Energize the body","icon":"/assets/Programs/2/benefits/energy.svg"},
-        {"heading":"Reduce Stress","icon":"/assets/Programs/2/benefits/stressmanagement.svg"},
-        {"heading":"Burn Fat","icon":"/assets/Programs/2/benefits/burn_fat.svg"},
-        {"heading":"Boost your Willpower","icon":"/assets/Programs/2/benefits/willpower.svg"},
-        {"heading":"Calm your Mind","icon":"/assets/Programs/2/benefits/calm.svg"}
-      ]
-     
-  },{
+    "name": "Stress Management",
+
+    "questions": "<h2 style='font-size:16px;font-weight:bold;margin-top:10px;'>Signs of Gaining Excess Weight</h2><p style='margin-top:10px;'>If you're gaining weight, certain symptoms are common regardless of the underlying cause. These may include:</p><ul style='list-style-type:decimal;list-style-position:inside;margin-top:10px;'><li>High blood pressure</li><li>Shortness of breath</li><li>Snoring at night</li><li>Skin sensitivity</li><li>Constant fatigue</li></ul><h2 style='font-size:16px;font-weight:bold;margin-top:10px;'>Causes of Excessive Weight Gain</h2><p style='margin-top:10px;'>Understanding the causes of weight gain is crucial before starting a weight loss journey. Identifying these factors can help you achieve your goals and maintain a healthy lifestyle. Some common causes include:</p><ul style='list-style-type:decimal;list-style-position:inside;margin-top:10px;'><li><b>Hypothyroidism:</b> An imbalance in thyroid hormones can lead to weight gain, along with symptoms like thinning hair, dry skin, fatigue, and depression.</li><li><b>Depression:</b> Weight gain and obesity can be physical side effects of depression, often linked to higher levels of the stress hormone cortisol.</li><li><b>Insomnia:</b> Lack of sleep can lead to weight gain by disrupting hormones like cortisol and insulin, as well as hunger signals.</li><li><b>Menopause:</b> Hormonal changes during menopause, along with symptoms like hot flashes and mood swings, may contribute to weight gain.</li><li><b>Polycystic Ovarian Syndrome (PCOS):</b> PCOS can cause weight gain due to hormonal imbalances and insulin sensitivity issues.</li><li><b>Steroid Medications:</b> Medications like steroids, used to treat certain conditions, can increase appetite and lead to overeating and weight gain.</li></ul><h2 style='font-size:16px;font-weight:bold;margin-top:10px;'>Does Yoga Help with Weight Loss?</h2><p style='margin-top:10px;'>Yoga offers several benefits that can support weight loss, including:</p><ul style='list-style-type:decimal;list-style-position:inside;margin-top:10px;'><li><b>Increased Metabolic Rate:</b> Yoga can help boost your metabolic rate, allowing your body to burn more calories even at rest.</li><li><b>Mindfulness:</b> Yoga promotes greater awareness of your body and mind, helping you recognize hunger, fullness, and fatigue.</li><li><b>Stress Reduction:</b> Reducing stress through yoga can lead to better lifestyle choices, including healthier eating and exercise habits.</li><li><b>Overall Well-being:</b> The physical and mental benefits of yoga can support weight loss efforts.</li></ul><p style='margin-top:10px;'>These off-the-mat benefits, combined with the calories burned during yoga practice, contribute to an individual’s ability to lose weight. However, the effectiveness may vary depending on individual factors.</p>",
+
+    "banner1": "/assets/Programs/1/banner1.jpg",
+    "banner2": "/assets/Programs/2/banner2.jpg",
+    "banner3": "/assets/Programs/2/banner3.jpg",
+    "banner4": "/assets/Programs/2/banner4.jpeg",
+    "group_benefits": [
+      {
+        "icon": "",
+        "heading": "Live Interactive Sessions:",
+        "description": "Engage with our expert instructors in real-time, allowing for personalized guidance, adjustments, and encouragement during each session."
+      },
+      {
+        "icon": "",
+        "heading": "Recorded Sessions On-Demand:",
+        "description": "Missed a class? No problem. Access recorded sessions at your convenience, so you never miss out on your practice."
+      },
+      {
+        "icon": "",
+        "heading": "Diet and Health Tips:",
+        "description": "Complement your yoga practice with expert advice on diet, nutrition, and healthy living, provided during and after sessions to support your overall well-being."
+      },
+      {
+        "icon": "",
+        "heading": "Holistic Wellness Approach:",
+        "description": "Our sessions go beyond yoga, incorporating mindfulness practices, breathing techniques, and meditation to nurture both body and mind."
+      },
+      {
+        "icon": "",
+        "heading": "Flexible Schedule—6 Days a Week:",
+        "description": "With classes available six days a week, you can easily fit yoga into your routine, whether you're an early riser or prefer evening sessions."
+      },
+      {
+        "icon": "",
+        "heading": "Community Support:",
+        "description": "Join a vibrant community of like-minded individuals, where you can share your journey, exchange tips, and motivate each other towards your wellness goals."
+      },
+      {
+        "icon": "",
+        "heading": "Variety of Yoga Styles:",
+        "description": "Whether you're into Vinyasa, Hatha, Restorative, or Power Yoga, Meditation, Yin yoga .We offer a range of styles to keep your practice diverse and engaging."
+      },
+      {
+        "icon": "",
+        "heading": "Progress Tracking:",
+        "description": "Monitor your growth with regular assessments and feedback from our trainers, ensuring you continue to advance in your practice."
+      }
+    ],
+
+    "personal_benefits": [
+      {
+        "icon": "",
+        "heading": "Tailored Programs:",
+        "description": "Customized yoga plans based on your specific goals and fitness level."
+      },
+      {
+        "icon": "",
+        "heading": "Flexible Scheduling:",
+        "description": "Choose session times that fit your schedule, from the comfort of your home or any location."
+      },
+      {
+        "icon": "",
+        "heading": "Expert Guidance:",
+        "description": "Receive personalized instruction and adjustments from experienced trainers during live video sessions."
+      },
+      {
+        "icon": "",
+        "heading": "Interactive Experience:",
+        "description": "Engage directly with your instructor, ask questions, and get immediate feedback."
+      },
+      {
+        "icon": "",
+        "heading": "Holistic Approach:",
+        "description": "Incorporate yoga with mindfulness, meditation, and advice on diet and stress management."
+      },
+      {
+        "icon": "",
+        "heading": "Convenient Access:",
+        "description": "Join sessions easily through a secure online platform with privacy assured."
+      },
+      {
+        "icon": "",
+        "heading": "Focused Progress:",
+        "description": ": Achieve your personal fitness goals with one-on-one attention and customized support."
+      }
+    ],
+
+    "group_card_description": "Discover the benefits of practicing yoga in a supportive and dynamic group environment with our Shivaayshakti Group Sessions. Tailored to fit your lifestyle and goals, our sessions are designed to offer more than just a workout—they provide a holistic approach to wellness.",
+
+    "personal_card_description": "Elevate your yoga practice with our Online Personal Training Sessions at Shivaayshakti. Designed to offer flexibility, personalization, and expert guidance, our virtual sessions allow you to achieve your wellness goals from the comfort of your own home or any location that suits you.",
+    "benefits": [
+      {
+        "heading": "Flexible Body",
+        "icon": "/assets/Programs/2/benefits/flexible.svg"
+      },
+      {
+        "heading": "Energize the body",
+        "icon": "/assets/Programs/2/benefits/energy.svg"
+      },
+      {
+        "heading": "Reduce Stress",
+        "icon": "/assets/Programs/2/benefits/stressmanagement.svg"
+      },
+      {
+        "heading": "Burn Fat",
+        "icon": "/assets/Programs/2/benefits/burn_fat.svg"
+      },
+      {
+        "heading": "Boost your Willpower",
+        "icon": "/assets/Programs/2/benefits/willpower.svg"
+      },
+      {
+        "heading": "Calm your Mind",
+        "icon": "/assets/Programs/2/benefits/calm.svg"
+      }
+    ]
+  },
+  {
     "_id": 1,
-    "name":"Weight Loss",
-    "questions":" <h1  style='font-size: 16px;font-weight:bold;'>What are the Signs and Symptoms of Stress?</h1><p style='margin-top:10px;'>Stress can affect our emotions, our body, and how we behave in lots of different ways. Sometimes when we are stressed, we might be able to tell right away. But at other times, we might keep going without recognizing the signs.</p><ul style='list-style-type:decimal;list-style-position: inside;margin-top:10px;'><li>Difficulty breathing</li><li>Panic attacks</li><li>Blurred eyesight or sore eyes</li><li>Sleep problems< li><li>Fatigue</li><li>Muscle aches and headaches</li><li>Chest pains and high blood pressure</li><li>Indigestion or heartburn</li><li>Constipation or diarrhea</li><li>Feeling sick, dizzy, or fainting</li><li>Sudden weight gain or weight loss</li><li>Developing rashes or itchy skin</li><li>Sweating</li><li>Changes to your period or menstrual cycle</li></ul><h2 style='font-size: 16px;font-weight:bold; margin-top:10px'>How Stress Can Make You Feel?</h2> <ul style='list-style-type:decimal;list-style-position: inside;margin-top:10px;'><li>Irritable, angry, impatient, or wound up</li><li>Over-burdened or overwhelmed</li><li>Anxious, nervous, or afraid</li><li>Like your thoughts are racing and you can't switch off</li><li>Unable to enjoy yourself</li><li>Depressed</li><li>Uninterested in life</li><li>Like you've lost your sense of humour</li><li>A sense of dread</li><li>Worried or tense</li><li>Neglected or lonely</li></ul><h2 style='font-size: 16px;font-weight:bold; margin-top:10px'>How Stress Can Make You Behave?</h2><ul style='list-style-type:decimal;list-style-position: inside;margin-top:10px;'><li>Find it hard to make decisions</li><li>Unable to concentrate</li><li>Unable to remember things, or make your memory feel slower than usual</li><li>Snap at people</li><li>Bite your nails</li><li>Pick at or itch your skin</li><li>Grind your teeth or clench your jaw</li><li>Experience sexual problems, such as losing interest in sex or being unable to enjoy sex</li><li>Eat too much or too little</li><li>Smoke, use recreational drugs, or drink alcohol more than you usually would</li><li>Restless, like you can't sit still</li><li>Cry or feel tearful</li><li>Spend or shop too much</li><li>Not exercise as much as you usually would, or exercise too much</li><li>Withdraw from people around you</li></ul><h1  style='font-size: 16px;font-weight:bold;margin-top:10px;'>Does Yoga Help You to Reduce Stress?</h1><p style='margin-top:10px;'>Yoga encourages mental and physical relaxation, which helps reduce stress and anxiety. The physical postures promote flexibility, relieve tension, and alleviate pain.</p><p style='margin-top:5px;'>Yoga poses may help you release physical blockages like muscle knots, helping release emotions and tension. They also promote the release of mood-boosting endorphins, which are the feel-good hormones that can positively affect how you handle stress.</p><p style='margin-top:5px;'>Focusing on the present moment during your yoga practice enhances your awareness, boosts your concentration, and centers your mind.</p><p style='margin-top:10px;'>As you become aware of the transitory nature of your bodily sensations, thoughts, and feelings, you may find it easier to let go of attachments to positive, negative, and neutral experiences. You may also learn to cultivate feelings such as love, joy, and serenity.</p><p style='margin-top:5px;'>Breathing exercises, known as pranayama in Sanskrit, teach you to relax, regulate your breath, and breathe deeply. This helps reduce stress and calm your body and mind. Breathing techniques can also enhance your sleep quality and encourage mindfulness.</p>",
-    
-    "banner1":"/assets/Programs/1/banner1.jpg",
-    "banner2":"/assets/Programs/1/banner2.jpg",
-    "banner3":"/assets/Programs/1/banner3.jpg",
-    "banner4":"/assets/Programs/1/banner4.jpg",
-    "group_benefits":[
-      { "icon":"","heading":"Yoga session" },
-      { "icon":"","heading":"Free workshops" },
-      { "icon":"","heading":"Consultancy" },
-      { "icon":"","heading":"6 days classes/week " },
-      { "icon":"","heading":"Twenty four yoga sessions/month" },
-      { "icon":"","heading":"Every age group" }
+    "name": "Weight Loss",
+    "questions": "<h1 style='font-size:16px;font-weight:bold;'>WEIGHT LOSS COURSE</h1><p>Many of us find it difficult to carve out time for regular gym sessions or walking. If you're one of them, then this program is designed for you. It incorporates various yoga styles, including Ashtanga, Vinyasa, Power Yoga, and Restorative Yoga. This program aims to support weight loss, improve posture, and enhance overall wellness through circular and dynamic yoga movements. It might seem challenging at first, but please take it at your own pace and allow your body to adapt over a few sessions. By integrating these postures into your daily routine, you'll experience improvements in flexibility, strength, and general well-being. We will focus on high-intensity sessions to elevate your heart rate and burn more calories, helping you achieve your goals through the right yogic practices. This program is suitable for all age groups.</p><h2 style='font-size:16px;font-weight:bold;margin-top:10px;'>Signs and Symptoms of Stress</h2><p>Stress can affect our emotions, body, and behavior in various ways. Sometimes, we recognize stress immediately, but other times, it goes unnoticed as we push through our day. Here are some common signs and symptoms of stress:</p><ul style='list-style-type:decimal;list-style-position:inside;margin-top:10px;'><li>Difficulty breathing</li><li>Panic attacks</li><li>Blurred vision or sore eyes</li><li>Sleep problems</li><li>Fatigue</li><li>Muscle aches and headaches</li><li>Chest pains and high blood pressure</li><li>Indigestion or heartburn</li><li>Constipation or diarrhea</li><li>Feeling sick, dizzy, or faint</li><li>Sudden weight gain or weight loss</li><li>Rashes or itchy skin</li><li>Sweating</li><li>Changes in your menstrual cycle</li></ul><h2 style='font-size:16px;font-weight:bold;margin-top:10px;'>How Stress Can Make You Feel</h2><ul style='list-style-type:decimal;list-style-position:inside;margin-top:10px;'><li>Irritable, angry, or impatient</li><li>Overwhelmed or overburdened</li><li>Anxious, nervous, or afraid</li><li>Racing thoughts and inability to switch off</li><li>Unable to enjoy yourself</li><li>Depressed or uninterested in life</li><li>Loss of sense of humor</li><li>A sense of dread or worry</li><li>Neglected or lonely</li></ul><h style='font-size:16px;font-weight:bold;margin-top:10px;'>How Stress Can Affect Your Behavior</h><ul style='list-style-type:decimal;list-style-position:inside;margin-top:10px;'><li>Difficulty making decisions</li><li>Difficulty concentrating or remembering things</li><li>Snapping at people</li><li>Nail biting</li><li>Picking at or itching your skin</li><li>Grinding your teeth or clenching your jaw</li><li>Sexual problems, such as loss of interest in sex</li><li>Eating too much or too little</li><li>Increased use of alcohol, drugs, or smoking</li> <li>Restlessness or an inability to sit still</li><li>Crying or feeling tearful</li><li>Excessive spending or shopping</li><li>Changes in exercise habits, either too much or too little</li><li>Withdrawing from social interactions</li></ul><h1 style='font-size:16px;font-weight:bold;margin-top:10px;'>Does Yoga Help Reduce Stress?</h1><p style='margin-top:10px;'>Yoga promotes both mental and physical relaxation, helping to reduce stress and anxiety. The physical postures enhance flexibility, relieve tension, and alleviate pain, while helping to release physical blockages like muscle knots and trapped emotions. These postures also promote the release of endorphins, the 'feel-good' hormones that positively influence how you handle stress.</p><p style='margin-top:10px;'>Practicing yoga encourages focus on the present moment, enhancing awareness, concentration, and mental clarity. As you become more aware of the temporary nature of your bodily sensations, thoughts, and feelings, you may find it easier to let go of attachments to them, fostering feelings of love, joy, and serenity.</p><p style='margin-top:10px;'>Breathing exercises, known as pranayama, teach you to relax, regulate your breath, and breathe deeply. These techniques help reduce stress, calm your body and mind, improve sleep quality, and promote mindfulness.</p>",
+
+    "banner1": "/assets/Programs/1/banner1.jpg",
+    "banner2": "/assets/Programs/1/banner2.jpg",
+    "banner3": "/assets/Programs/1/banner3.jpg",
+    "banner4": "/assets/Programs/1/banner4.jpg",
+    "group_benefits": [
+      {
+        "icon": "",
+        "heading": "Live Interactive Sessions:",
+        "description": "Engage with our expert instructors in real-time, allowing for personalized guidance, adjustments, and encouragement during each session."
+      },
+      {
+        "icon": "",
+        "heading": "Recorded Sessions On-Demand:",
+        "description": "Missed a class? No problem. Access recorded sessions at your convenience, so you never miss out on your practice."
+      },
+      {
+        "icon": "",
+        "heading": "Diet and Health Tips:",
+        "description": "Complement your yoga practice with expert advice on diet, nutrition, and healthy living, provided during and after sessions to support your overall well-being."
+      },
+      {
+        "icon": "",
+        "heading": "Holistic Wellness Approach:",
+        "description": "Our sessions go beyond yoga, incorporating mindfulness practices, breathing techniques, and meditation to nurture both body and mind."
+      },
+      {
+        "icon": "",
+        "heading": "Flexible Schedule—6 Days a Week:",
+        "description": "With classes available six days a week, you can easily fit yoga into your routine, whether you're an early riser or prefer evening sessions."
+      },
+      {
+        "icon": "",
+        "heading": "Community Support:",
+        "description": "Join a vibrant community of like-minded individuals, where you can share your journey, exchange tips, and motivate each other towards your wellness goals."
+      },
+      {
+        "icon": "",
+        "heading": "Variety of Yoga Styles:",
+        "description": "Whether you're into Vinyasa, Hatha, Restorative, or Power Yoga, Meditation, Yin yoga .We offer a range of styles to keep your practice diverse and engaging."
+      },
+      {
+        "icon": "",
+        "heading": "Progress Tracking:",
+        "description": "Monitor your growth with regular assessments and feedback from our trainers, ensuring you continue to advance in your practice."
+      }
     ],
-    "personal_benefits":[
-      { "icon":"","heading":"Online Live sessions" },
-      { "icon":"","heading":"Recorded sessions" },
-      { "icon":"","heading":"Free Workshops " },
-      { "icon":"","heading":"Free personal consultation " },
-      { "icon":"","heading":"Diet and health tips " },
-      { "icon":"","heading":"Weekly encouraging tasks  " },
-      { "icon":"","heading":"Yogaasana,  pranayama and meditation " }
+    "personal_benefits": [
+      {
+        "icon": "",
+        "heading": "Tailored Programs:",
+        "description": "Customized yoga plans based on your specific goals and fitness level."
+      },
+      {
+        "icon": "",
+        "heading": "Flexible Scheduling:",
+        "description": "Choose session times that fit your schedule, from the comfort of your home or any location."
+      },
+      {
+        "icon": "",
+        "heading": "Expert Guidance:",
+        "description": "Receive personalized instruction and adjustments from experienced trainers during live video sessions."
+      },
+      {
+        "icon": "",
+        "heading": "Interactive Experience:",
+        "description": "Engage directly with your instructor, ask questions, and get immediate feedback."
+      },
+      {
+        "icon": "",
+        "heading": "Holistic Approach:",
+        "description": "Incorporate yoga with mindfulness, meditation, and advice on diet and stress management."
+      },
+      {
+        "icon": "",
+        "heading": "Convenient Access:",
+        "description": "Join sessions easily through a secure online platform with privacy assured."
+      },
+      {
+        "icon": "",
+        "heading": "Focused Progress:",
+        "description": ": Achieve your personal fitness goals with one-on-one attention and customized support."
+      }
     ],
-    "group_card_description":"This program  helps you to expands the capacity to cope with stress and nervousness, works on interactive abilities , profound prosperity, tactile ,mental and actual wellbeing , improve concentration.",
-    "personal_card_description":"In personal training  we customized the session according to the person needs . First we will examine your specific necessities and objectives, capacity ,limits  and then we will make a program for you . ",
-    "benefits":[
-      {"heading":"Stress Management","icon":"/assets/Programs/1/benefits/stress_management.svg"},
-      {"heading":"Self Awareness","icon":"/assets/Programs/1/benefits/Self_Awareness.svg"},
-      {"heading":"Increase Positivity","icon":"/assets/Programs/1/benefits/happiness.svg"},
-      {"heading":"Imagination & Creativity","icon":"/assets/Programs/1/benefits/Imagination.svg"},
-      {"heading":"Patience & Tolerance","icon":"/assets/Programs/1/benefits/patience.svg"},
-      {"heading":"Improve Sleep Quality","icon":"/assets/Programs/1/benefits/sleep.svg"},
-      {"heading":"Lower Heart Rate","icon":"/assets/Programs/1/benefits/heartrate.svg"}
+    "group_card_description": "This program  helps you to expands the capacity to cope with stress and nervousness, works on interactive abilities , profound prosperity, tactile ,mental and actual wellbeing , improve concentration.",
+    "personal_card_description": "In personal training  we customized the session according to the person needs . First we will examine your specific necessities and objectives, capacity ,limits  and then we will make a program for you . ",
+    "benefits": [
+      {
+        "heading": "Stress Management",
+        "icon": "/assets/Programs/1/benefits/stress_management.svg"
+      },
+      {
+        "heading": "Self Awareness",
+        "icon": "/assets/Programs/1/benefits/Self_Awareness.svg"
+      },
+      {
+        "heading": "Increase Positivity",
+        "icon": "/assets/Programs/1/benefits/happiness.svg"
+      },
+      {
+        "heading": "Imagination & Creativity",
+        "icon": "/assets/Programs/1/benefits/Imagination.svg"
+      },
+      {
+        "heading": "Patience & Tolerance",
+        "icon": "/assets/Programs/1/benefits/patience.svg"
+      },
+      {
+        "heading": "Improve Sleep Quality",
+        "icon": "/assets/Programs/1/benefits/sleep.svg"
+      },
+      {
+        "heading": "Lower Heart Rate",
+        "icon": "/assets/Programs/1/benefits/heartrate.svg"
+      }
     ]
   }
-  
 ]

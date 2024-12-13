@@ -313,6 +313,7 @@ const Stats = ({ completed, active }) => {
                             >
                               <option value="inches">inches</option>
                               <option value="cm">cm</option>
+                              <option value="ft">ft</option>
                             </select>
                           </div>
                         </div>

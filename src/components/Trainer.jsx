@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import s2 from "../../public/img/s2.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -7,6 +7,12 @@ AOS.init({
 });
 
 function Trainer() {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const toggleContent = () => {
+    setIsExpanded(!isExpanded);
+  };
+
   return (
     <div>
       <section className="text-gray-600 body-font ">
@@ -16,28 +22,26 @@ function Trainer() {
               OUR EXPERTS
             </h1>
             <h1 className="sm:text-[40px] text-2xl font-medium title-font text-gray-900 mb-4">
-              Meet Richa Aggarwal
+              About Our Trainers
             </h1>
             <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">
-              With the country's best trainers in our team, we assure guaranteed
-              results and exemplary services to our customers.
+              At Shivaayshakti, our trainers are more than just instructors—they
+              are the heart and soul of our community. Each of our trainers
+              brings a unique blend of expertise, passion, and dedication,
+              ensuring that every class you take is a step toward greater
+              well-being, mindfulness, and personal growth.
             </p>
             <div className="flex mt-6 justify-center">
               <div className="w-16 h-1 rounded-full bg-indigo-500 inline-flex" />
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center">
-            <div
-              className="p-4 md:w-1/3 flex flex-col text-center items-center"
-              // data-aos="fade-left"
-              // data-aos-offset="300"
-              // data-aos-easing="ease-in-sine"
-            >
+          <div className="flex flex-wrap  justify-center">
+            <div className="p-4 md:w-1/3 flex flex-col text-center ">
               <div className=" inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500  flex-shrink-0">
                 <img src={s2} alt="" />
               </div>
-              <div className="flex-grow ">
+              {/* <div className="flex-grow ">
                 <h2 className="text-gray-900 text-lg title-font font-medium">
                   Yamini Das
                 </h2>
@@ -103,39 +107,128 @@ function Trainer() {
                     <p className=" mx-2">5/5</p>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div
-              className="lg:w-[650px] lg:mt-10 text-center p-3 "
-             
-
-
+              className="lg:w-[650px] lg:mt-10 text-center p-3  mx-auto"
 
               // data-aos="fade-right"
               // data-aos-offset="300"
               // data-aos-easing="ease-in-sine"
             >
-              <h1 className="lg:flex lg:justify-end text-2xl font-bold">
-                About Richha
-              </h1>
-              <p className="lg:mt-10 mt-4 lg:text-right text-center">
-                Richa is a highly experienced and dedicated yoga instructor who
-                is passionate about helping her clients achieve their fitness
-                goals through the practice of yoga. With a warm and friendly
-                demeanor, Richa creates a welcoming and supportive environment
-                for her students to learn and grow in their practice. She has a
-                deep understanding of the principles and techniques of yoga, and
-                she uses this knowledge to design custom-tailored programs that
-                meet the unique needs and preferences of each of her clients.
-                Whether you're a beginner or an experienced yogi, Richa is
-                committed to helping you develop your skills and achieve your
-                fitness objectives. During her classes, Richa emphasizes the
-                importance of mindfulness, breath awareness, and proper
-                alignment. She encourages her students to approach their
-                practice with an open mind and a positive attitude, and she
-                provides plenty of guidance and feedback to help them progress.
-              </p>
+              <div
+                className={`overflow-hidden transition-all duration-500 space-y-4 ${
+                  isExpanded ? "h-auto" : "h-[60vh]"
+                }`}
+              >
+                <h1 className="lg:flex lg:justify-end text-2xl font-bold">
+                  Highly Trained and Certified Experts{" "}
+                </h1>
+                <p className="lg:mt-10 mt-4 lg:text-right text-center">
+                  Our team of trainers is comprised of highly skilled
+                  professionals, each holding certifications from respected yoga
+                  institutions. With years of experience across various
+                  disciplines—including Hatha, Vinyasa, Ashtanga, Kundalini, and
+                  specialized areas like pre and post-natal yoga—our trainers
+                  are equipped to guide you safely and effectively through your
+                  yoga journey.
+                </p>
+                <h1 className="lg:flex lg:justify-end text-2xl font-bold">
+                  Diverse Teaching Styles and Specialties{" "}
+                </h1>
+                <p className="lg:mt-10 mt-4 lg:text-right text-center">
+                  We understand that every individual&apos;s path in yoga is
+                  different, and our trainers reflect that diversity in their
+                  teaching styles and specialties. Whether you&apos;re looking
+                  to deepen your practice, find relaxation, improve flexibility,
+                  or focus on spiritual growth, you&apos;ll find a trainer who
+                  resonates with your personal goals. From restorative yoga to
+                  dynamic flows, our trainers offer a wide range of classes
+                  tailored to all levels, from beginners to advanced
+                  practitioners.
+                </p>
+                <h1 className="lg:flex lg:justify-end text-2xl font-bold">
+                  A Commitment to Continuous Learning{" "}
+                </h1>
+                <p className="lg:mt-10 mt-4 lg:text-right text-center">
+                  Our trainers are lifelong learners, continuously enhancing
+                  their knowledge and skills to bring the latest and most
+                  effective practices to their students. They regularly
+                  participate in advanced workshops, teacher training, and
+                  wellness courses, ensuring that you receive instruction that
+                  is both current and grounded in deep tradition.
+                </p>
+                <h1 className="lg:flex lg:justify-end text-2xl font-bold">
+                  Personalized Attention and Support{" "}
+                </h1>
+                <p className="lg:mt-10 mt-4 lg:text-right text-center">
+                  What sets our trainers apart is their commitment to providing
+                  personalized attention and support to every student. Whether
+                  you&apos;re in a live interactive class or following along
+                  with a recorded session, our trainers are dedicated to helping
+                  you achieve your personal best. They take the time to
+                  understand your needs, offer modifications, and provide
+                  encouragement, making your practice both safe and rewarding.
+                </p>
+                <h1 className="lg:flex lg:justify-end text-2xl font-bold">
+                  Inspiring and Approachable Mentors{" "}
+                </h1>
+                <p className="lg:mt-10 mt-4 lg:text-right text-center">
+                  Beyond their technical skills, our trainers are approachable
+                  mentors who genuinely care about your progress. They create a
+                  welcoming and inclusive environment where you feel supported
+                  every step of the way. Many of our students describe their
+                  relationship with our trainers as transformative, not just in
+                  terms of their physical practice but in their overall approach
+                  to life.
+                </p>
+                <h1 className="lg:flex lg:justify-end text-2xl font-bold">
+                  Community Leaders and Contributors{" "}
+                </h1>
+                <p className="lg:mt-10 mt-4 lg:text-right text-center">
+                  Our trainers are also active leaders within the Shivaayshakti
+                  Community. They don&apos;t just teach; they engage with
+                  members through community discussions, Q&A sessions, and
+                  special events. Their involvement goes beyond the mat, as they
+                  contribute to the growth and cohesion of our community,
+                  ensuring that every member feels connected and valued.
+                </p>
+                <h1 className="lg:flex lg:justify-end text-2xl font-bold">
+                  Global Experience and Recognition{" "}
+                </h1>
+                <p className="lg:mt-10 mt-4 lg:text-right text-center">
+                  Many of our trainers have taught internationally, leading
+                  workshops, retreats, and masterclasses around the world. Their
+                  global experience brings a rich and diverse perspective to
+                  their teaching, allowing them to connect with students from
+                  all walks of life. Some of our trainers have been featured in
+                  leading yoga publications and have received accolades for
+                  their contributions to the yoga community.
+                </p>
+                <h1 className="lg:flex lg:justify-end text-2xl font-bold">
+                  Join Us on the Mat{" "}
+                </h1>
+                <p className="lg:mt-10 mt-4 lg:text-right text-center">
+                  Whether you&apos;re taking your first steps into yoga or
+                  you&apos;re a seasoned practitioner, our trainers are here to
+                  guide, inspire, and support you. Explore their profiles, find
+                  the perfect match for your needs, and start your journey with
+                  the assurance that you are in expert hands. At Shivaayshakti,
+                  we believe that the right teacher can make all the difference,
+                  and we are proud to have a team of trainers who are as
+                  passionate about your growth as you are.
+                </p>
+              </div>
             </div>
+          </div>
+          {/* Toggle Button */}
+          <div className="text-center">
+            <button
+              onClick={toggleContent}
+              className="mt-4 px-4 py-2 border border-[#db9562] text-[#db9562] rounded-md"
+            >
+              {isExpanded ? "Read Less" : "Read More"}
+            </button>
           </div>
         </div>
       </section>

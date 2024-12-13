@@ -60,7 +60,7 @@ const MobileGallery = () => {
 
   return (
     <>
-      <h1 className='px-8 pb-4 heading text-3xl'>Shivaay Shakti Gallery</h1>
+      <h1 className='px-8 pb-4 heading text-3xl pt-8 md:pt-0'>Shivaay Shakti Gallery</h1>
       <div className="relative">
         <Carousel
           responsive={responsive}

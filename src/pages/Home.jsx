@@ -7,6 +7,7 @@ import Program from  "../components/Program";
 // import Testimonial from "../components/Testimonial";
 import Gallery from "../components/Gallery";
 import Mobilegallery from "../components/Mobilegallery";
+import TrainerSection from "../components/Trainer";
 
 function Home() {
   return (
@@ -15,7 +16,7 @@ function Home() {
       <Article/>
       <Program/>
       <div className="hidden md:block">
-
+<TrainerSection />
       <Gallery />
       </div>
       <div className="md:hidden">
