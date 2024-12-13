@@ -246,9 +246,9 @@ function PersonalForm({ toggle1, setToggle1, staticData, courseData, type }) {
     <>
       <Popup
         open={toggle1}
+        lockScroll={true}
         position="center center"
         closeOnDocumentClick={false}
-        lockScroll={true}
         closeOnEscape={false}
         contentStyle={{
           placeContent: "center",

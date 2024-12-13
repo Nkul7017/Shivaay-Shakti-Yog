@@ -40,10 +40,10 @@ background: var(--the, #B7DFC7);
     <>
       <Popup
         open={toggle1}
+        lockScroll={true}
         // onClose={toggle1}
         position="center center"
         closeOnDocumentClick={false}
-        lockScroll={true}
         contentStyle={{
           border: "none",
           display: "grid",

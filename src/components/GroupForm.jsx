@@ -217,9 +217,9 @@ function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
     <>
       <Popup
         open={toggle1}
+        lockScroll={true}
         position="center center"
         closeOnDocumentClick={false}
-        lockScroll={true}
         contentStyle={{
           placeContent: "center",
           // backgroundImage:"url('https://cdn.discordapp.com/attachments/1111568797476868128/1113746626696204349/WhatsApp_Image_2023-06-01_at_11.16.50.jpg')",
@@ -444,7 +444,7 @@ function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
             </div>
             <button
               onClick={handle1}
-              className="mt-8 p-3 xl:mt-0 xl:absolute xl:bottom-10  button3 xl:right-4"
+              className="mt-8 p-3 xl:mt-0 xl:absolute xl:bottom-  button3 xl:right-4"
             >
               Proceed
             </button>
