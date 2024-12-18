@@ -14,7 +14,8 @@ function ResetPassword() {
   useEffect(() => {
     const fetchToken = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/api/auth/get-token/${id}`);
+        // const response = await axios.get(`http://localhost:3000/api/auth/get-token/${id}`);
+        const response = await axios.get(`https://shivaay-shakti-backend-vm3k.onrender.com/api/auth/get-token/${id}`);
         setToken(response.data.token);
         console.log(response.data.token)
         setIsLoading(false);
