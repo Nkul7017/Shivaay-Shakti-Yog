@@ -58,7 +58,7 @@ function Footer() {
           <div className="text-2xl  flex sm:flex-row flex-col heading justify-center items-center w-full    flex-wrap gap-x-28 gap-y-4">
             <a href="/">Home</a>
             <a href="/Courses">Courses</a>
-            <a to="/about-us">About</a>
+            <a href="/about-us">About</a>
             <a
               href={"/terms&conditions"}
               target="_blank"

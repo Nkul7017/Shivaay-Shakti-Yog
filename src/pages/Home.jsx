@@ -15,8 +15,8 @@ function Home() {
       <NewHero />
       <Article/>
       <Program/>
-      <div className="hidden md:block">
 <TrainerSection />
+      <div className="hidden md:block">
       <Gallery />
       </div>
       <div className="md:hidden">

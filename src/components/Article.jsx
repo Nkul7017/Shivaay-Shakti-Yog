@@ -50,10 +50,10 @@ export default function Article() {
           <Link
             to={value?.src}
             key={index}
-            className="carousel-cell h-[400px] w-[88vw] sm:w-[70vw] mx-12  relative overflow-hidden"
+            className="carousel-cell h-[400px] w-[78vw] sm:w-[70vw] mx-12  relative overflow-hidden"
           >
             <div className="absolute w-[100%] md:w-[50%] rounded-2xl h-[100%] left-0 top-0 bg-[#4CAF7440] text-white grid place-content-center ">
-              <div className=" w-[100%]  md:w-[80%] lg:w-[70%] mx-auto space-y-2 sm:space-y-6">
+              <div className=" w-[95%]  md:w-[80%] lg:w-[70%] mx-auto space-y-2 sm:space-y-6">
                 <p className=" text-[16px]  font-bold md:text-2xl lg:text-4xl ">
                   {value?.heading}
                 </p>
