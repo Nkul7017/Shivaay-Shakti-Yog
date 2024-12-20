@@ -25,10 +25,13 @@ export default function Consultation({ setClose }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     try {
-      const response = await axios.post("https://shivaay-shakti-backend-vm3k.onrender.com/send-email", formData);
-      
+      const response = await axios.post(
+        "https://shivaay-shakti-backend-vm3k.onrender.com/send-email",
+        formData
+      );
+
       if (response.status === 200) {
         alert("Your message has been sent successfully!");
         setFormData({
@@ -47,13 +50,13 @@ export default function Consultation({ setClose }) {
       alert("An error occurred while sending your message.");
     }
   };
-  
 
   const renderPersonalSlotOptions = () => {
     const personalSlots = [];
     for (let hour = 5; hour < 21; hour++) {
       let startHour = hour < 12 ? `${hour}:00 AM` : `${hour - 12}:00 PM`;
-      let endHour = hour + 1 < 12 ? `${hour + 1}:00 AM` : `${hour + 1 - 12}:00 PM`;
+      let endHour =
+        hour + 1 < 12 ? `${hour + 1}:00 AM` : `${hour + 1 - 12}:00 PM`;
       if (hour === 11) endHour = "12:00 PM";
       personalSlots.push(
         <option key={hour} value={`${startHour} to ${endHour}`}>
@@ -117,7 +120,7 @@ export default function Consultation({ setClose }) {
                   className="mt-1 p-2 w-full h-[3.3rem] border border-gray-300 rounded-md text-black placeholder-[#02618f]"
                 />
               </div>
-              <div>
+              {/* <div>
                 <label
                   htmlFor="number"
                   className="block font-semibold text-black text-[1rem]"
@@ -138,6 +141,87 @@ export default function Consultation({ setClose }) {
                   maxLength={10}
                   className="mt-1 p-2 w-full h-[3.3rem] border border-gray-300 rounded-md text-black placeholder-[#02618f]"
                 />
+              </div> */}
+
+              <div className="">
+                <label
+                  htmlFor="number"
+                  className="block font-semibold text-black text-[1rem]"
+                >
+                  Phone Number
+                </label>
+                <div className="flex">
+                  <select
+                    // className="w-[80px] md:w-[100px] h-[39px] border-b-2 border-[#D9D9D9] rounded-l placeholder:text-[#898989] sm:border sm:rounded-l sm:p-2 sm:border-[#D9D9D9]"
+                    className="mt-1 p-2 w-[6rem] h-[3.3rem] border border-gray-300 rounded-md text-black"
+                  >
+                    <option value="🇮🇳">🇮🇳 +91</option>
+                    <option value="🇺🇸">🇺🇸 +1</option>
+                    <option value="🇬🇧">🇬🇧 +44</option>
+                    <option value="🇨🇦">🇨🇦 +1</option>
+                    <option value="🇦🇺">🇦🇺 +61</option>
+                    <option value="🇳🇿">🇳🇿 +64</option>
+                    <option value="🇿🇦">🇿🇦 +27</option>
+                    <option value="🇸🇬">🇸🇬 +65</option>
+                    <option value="🇦🇪">🇦🇪 +971</option>
+                    <option value="🇸🇦">🇸🇦 +966</option>
+                    <option value="🇫🇷">🇫🇷 +33</option>
+                    <option value="🇩🇪">🇩🇪 +49</option>
+                    <option value="🇮🇹">🇮🇹 +39</option>
+                    <option value="🇪🇸">🇪🇸 +34</option>
+                    <option value="🇧🇷">🇧🇷 +55</option>
+                    <option value="🇲🇽">🇲🇽 +52</option>
+                    <option value="🇯🇵">🇯🇵 +81</option>
+                    <option value="🇰🇷">🇰🇷 +82</option>
+                    <option value="🇨🇳">🇨🇳 +86</option>
+                    <option value="🇹🇷">🇹🇷 +90</option>
+                    <option value="🇷🇺">🇷🇺 +7</option>
+                    <option value="🇮🇩">🇮🇩 +62</option>
+                    <option value="🇵🇭">🇵🇭 +63</option>
+                    <option value="🇻🇳">🇻🇳 +84</option>
+                    <option value="🇹🇭">🇹🇭 +66</option>
+                    <option value="🇲🇾">🇲🇾 +60</option>
+                    <option value="🇳🇬">🇳🇬 +234</option>
+                    <option value="🇪🇬">🇪🇬 +20</option>
+                    <option value="🇮🇱">🇮🇱 +972</option>
+                    <option value="🇰🇪">🇰🇪 +254</option>
+                    <option value="🇦🇷">🇦🇷 +54</option>
+                    <option value="🇨🇱">🇨🇱 +56</option>
+                    <option value="🇵🇪">🇵🇪 +51</option>
+                    <option value="🇨🇴">🇨🇴 +57</option>
+                    <option value="🇻🇪">🇻🇪 +58</option>
+                    <option value="🇺🇦">🇺🇦 +380</option>
+                    <option value="🇵🇱">🇵🇱 +48</option>
+                    <option value="🇳🇱">🇳🇱 +31</option>
+                    <option value="🇧🇪">🇧🇪 +32</option>
+                    <option value="🇸🇪">🇸🇪 +46</option>
+                    <option value="🇨🇭">🇨🇭 +41</option>
+                    <option value="🇦🇹">🇦🇹 +43</option>
+                    <option value="🇩🇰">🇩🇰 +45</option>
+                    <option value="🇫🇮">🇫🇮 +358</option>
+                    <option value="🇮🇪">🇮🇪 +353</option>
+                    <option value="🇳🇴">🇳🇴 +47</option>
+                    <option value="🇨🇿">🇨🇿 +420</option>
+                    <option value="🇸🇰">🇸🇰 +421</option>
+                    <option value="🇷🇴">🇷🇴 +40</option>
+                    <option value="🇭🇺">🇭🇺 +36</option>
+                  </select>
+
+                  <input
+                    type="tel"
+                    name="number"
+                    id="number"
+                    value={formData.number}
+                    onChange={(e) => {
+                      const value = e.target.value;
+                      if (/^\d*$/.test(value) && value.length <= 10) {
+                        setFormData({ ...formData, number: value });
+                      }
+                    }}
+                    maxLength={10}
+                    className="mt-1 p-2 w-full h-[3.3rem] border border-gray-300 rounded-md text-black "
+                  />
+                </div>
               </div>
             </div>
 

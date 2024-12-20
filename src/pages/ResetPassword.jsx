@@ -82,7 +82,7 @@ function ResetPassword() {
               autoComplete="off"
               name="password"
               onChange={(e) => setData({ ...data, password: e.target.value })}
-              className="font-semibold border border-gray-300 px-3 text-red-900 rounded-lg py-1"
+              className="font-semibold border border-gray-300 px-3 text-black rounded-lg py-1"
             />
           </div>
           <button type="submit" className="button3 ml-2 mt-7 text-2xl px-3 py-1">

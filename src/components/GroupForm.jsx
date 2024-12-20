@@ -282,7 +282,9 @@ function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
                     <p className=' heading text-xl lg:text-2xl  '>{data?.group_session}</p>
                 </div>
              </div> */}
-              <div className=" flex gap-2 sm:gap-3 ">
+
+             {/*  popup starting date  */}
+              {/* <div className=" flex gap-2 sm:gap-3 ">
                 <p>
                   <img src={img1} className="mt-1" alt="" />
                 </p>
@@ -294,7 +296,7 @@ function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
                     {courseData?.group_starting_date}
                   </p>
                 </div>
-              </div>
+              </div> */}
 
               <div className="hidden lg:block ">
                 <div className="lg:flex gap-2 ">
