@@ -233,7 +233,9 @@ function GroupForm({ toggle1, setToggle1, staticData, courseData, type }) {
           <div className="h-fit relative md:w-[100%] md:min-h-[100%] sm:max-h-screen ">
             <div className="  flex justify-between   ">
               <h1 className=" text-2xl  lg:text-4xl heading">
-                {courseData?.name} {courseData?.course_duration_days2} Days
+                {courseData?.name} {" "}
+                {/* {courseData?.course_duration_days2} Days */}
+
                 Course
               </h1>
               <div
