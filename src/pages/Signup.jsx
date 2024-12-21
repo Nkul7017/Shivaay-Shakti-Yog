@@ -41,7 +41,7 @@ function Signup() {
   const [message, setMessage] = useState("");
   async function handlesubmit(e) {
     setData({ ...data, message: "Loading..." });
-    console.log("hello");
+    // console.log("hello");
     e.preventDefault();
     if (data.hunit === "cm") {
       data.height = parseFloat(data.height) * 0.393701;
@@ -59,13 +59,13 @@ function Signup() {
       isEmail(data.email.trim()) &&
       isPassword(data.password.trim())
     ) {
-      console.log("naame");
+      // console.log("naame");
       if (data) {
         if (data) {
           console.log(data);
           try {
             console.log(data);
-            console.log("bhai");
+            // console.log("bhai");
             const response = await axios.post(
               "https://shivaay-shakti-backend-vm3k.onrender.com/api/auth/signup",
               // const response=await axios.post('https://shivaay-shakti-backend-vm3k.onrender.com/api/auth/signup',
@@ -84,7 +84,7 @@ function Signup() {
                 contact: data.contact,
               }
             );
-            console.log("hi");
+            // console.log("hi");
             if (response.status === 201) {
               console.log(response);
               navigate("/login");
@@ -127,7 +127,7 @@ function Signup() {
         }
       }
     } else {
-      console.log("name");
+      // console.log("name");
       setData({ ...data, message: "*All Fields Are Mandatory" });
     }
   }
@@ -505,7 +505,12 @@ function Signup() {
                     <span className=" text-[18px]">Sign Up</span>
                   </button>
                   <p className=" text-[18px] font-bold text-red-900">
-                    {data.message}
+                    {/* {data.message} */}
+                    {
+                      <span className="text-red-500">
+                        {data.message === "Loading..." ? "This email id already exist." : ""}
+                      </span>
+                    }
                   </p>
                 </div>
               </div>
